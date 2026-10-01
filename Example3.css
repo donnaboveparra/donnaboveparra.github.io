@@ -65,3 +65,34 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.footer {
+  margin-top: 80px;
+  padding: 24px 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-links a {
+  color: #065f46;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
