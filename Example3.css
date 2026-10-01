@@ -73,9 +73,7 @@ img {
 }
 
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
 }
 
 .footer p {
@@ -84,8 +82,10 @@ img {
 }
 
 .social-links {
+  margin-top: 10px;
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  gap: 15px;
 }
 
 .social-links a {
@@ -95,4 +95,8 @@ img {
 
 .social-links a:hover {
   text-decoration: underline;
+}
+
+.separator {
+  color: #9ca3af;
 }
