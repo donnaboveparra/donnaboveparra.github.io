@@ -70,9 +70,6 @@ img {
   margin-top: 80px;
   padding: 24px 0;
   border-top: 1px solid #e5e7eb;
-}
-
-.footer-content {
   text-align: center;
 }
 
@@ -83,14 +80,12 @@ img {
 
 .social-links {
   margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
 }
 
 .social-links a {
   color: #065f46;
   text-decoration: none;
+  margin: 0 8px;
 }
 
 .social-links a:hover {
