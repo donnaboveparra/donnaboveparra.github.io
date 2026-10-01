@@ -24,13 +24,52 @@ if you find that useful -->
     <title>Page Title</title>
     <link rel="stylesheet" href="Example3.css">
     <title>Project</title>
+
+    <!-- This is a link to the vega-lite packages which we're using to make graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
+
+    <style>
+        /* CSS styles can be defined here, or in a separate CSS file */
+        #chartGrid {
+            display: flex;
+        }
+        
+    </style>
 </head>
 
 <!-- The body contains thigs you see -->
 <!-- Most elements both open and close, with the content in the middle -->
 <!-- Indenting is optional, but helps with readability -->
 <body>
-    <h1>Donnatella Bove Parra</h1>
-    <p>This webpage presents my project for PP434, as part of my Master of Public Administration at LSE</p>
+ <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
+        <!-- This is a header, it is the largest text on the page -->
+        Donnatella Bove Parra
+    </h1>
+    <p style="margin-top: 0px; color: darkblue">
+        <!-- we're setting the margin to 0px so the header and authour name are close together -->
+        Donnatella Bove Parra | LSE MPA | PP434>
+    </p>
+    <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
+        This webpage presents my project for PP434, as part of my Master of Public Administration at LSE.  
+    </h3>
+    
+    <footer class="footer">
+  <div class="footer-content">
+    <p>© 2026 Donnatella Bove Parra</p>
+
+    <div class="social-links">
+      <a href="https://www.github.com/donnaboveparra" target="_blank" rel="noopener noreferrer">
+        GitHub
+      </a>
+
+      <a href="https://www.linkedin.com/in/donnatella-bove-parra/" target="_blank" rel="noopener noreferrer">
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</footer>
+    
 </body>
 </html>
