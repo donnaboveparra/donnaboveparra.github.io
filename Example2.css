@@ -1,4 +1,3 @@
-/* Richard Davies */
 /* Data Science */
 
 /* This is a comment in CSS */
@@ -11,19 +10,822 @@ multi line comment */
 
 
 /* Format my paragraph */
-p {
-	font-size: 18px;
-	margin: 5px 5px;
-	line-height: 22.4px;
-	color: #323232;
+/* =========================================================
+   FROM RESOURCES TO CAPABILITIES
+   Main stylesheet
+   ========================================================= */
+
+
+/* =========================================================
+   1. FONT
+   ========================================================= */
+
+/*
+   Import LINE Seed JP from Google Fonts.
+
+   The numbers are font weights:
+   400 = regular
+   500 = medium
+   600 = semi-bold
+   700 = bold
+   800 = extra-bold
+*/
+@import url('https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   2. BASIC PAGE SETTINGS
+   ========================================================= */
+
+/*
+   Makes width/height calculations easier.
+
+   With border-box, padding and borders are included
+   inside an element's declared width/height.
+*/
+* {
+  box-sizing: border-box;
 }
 
-/* Format my heading */
+
+/*
+   Makes clicking navigation links scroll smoothly
+   instead of jumping immediately.
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+
+/*
+   Overall page styling.
+*/
+body {
+  margin: 0;
+
+  background: #f4f1eb;
+
+  color: #202522;
+
+  font-family:
+    "LINE Seed JP",
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+}
+
+
+/* =========================================================
+   3. GENERAL LINKS
+   ========================================================= */
+
+/*
+   Remove the default underline from links.
+*/
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   4. MAIN SITE CONTAINER
+   ========================================================= */
+
+/*
+   Ensures the website takes at least the full height
+   of the browser window.
+
+   overflow: hidden prevents accidental horizontal
+   scrolling.
+*/
+.site {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   5. HEADER / TOP BAR
+   ========================================================= */
+
+/*
+   The header stays at the top when the user scrolls.
+
+   z-index keeps it above the rest of the page.
+*/
+.topbar {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  width: 100%;
+
+  height: 82px;
+
+  padding:
+    0
+    max(32px, calc((100vw - 1240px) / 2));
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #2448E8;
+
+  color: #f7f3ea;
+
+  border-bottom:
+    1px solid
+    rgba(247, 243, 234, 0.22);
+}
+
+
+/* =========================================================
+   6. BRAND / NAME IN HEADER
+   ========================================================= */
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+}
+
+
+/*
+   The circular "D" mark beside the name.
+*/
+.brand-mark {
+  width: 34px;
+
+  height: 34px;
+
+  border:
+    1px solid
+    #f7f3ea;
+
+  border-radius: 50%;
+
+  display: grid;
+
+  place-items: center;
+
+  font-family:
+    "LINE Seed JP",
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   7. NAVIGATION
+   ========================================================= */
+
+.nav {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+  color: #f7f3ea;
+
+  font-size: 12px;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+/*
+   Navigation links become lighter blue
+   when the mouse is over them.
+*/
+.nav a:hover,
+.social a:hover {
+  color: #C9D4FF;
+}
+
+
+/* =========================================================
+   8. BRAZIL FLAG
+   ========================================================= */
+
+.flag-icon {
+  width: 44px;
+
+  height: 30px;
+
+  border-radius: 6px;
+
+  display: inline-grid;
+
+  place-items: center;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(247, 243, 234, 0.7);
+
+  background: #009c3b;
+
+  flex: 0 0 auto;
+}
+
+
+/*
+   Makes the SVG flag fill the small container.
+*/
+.flag-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+/* =========================================================
+   9. HERO SECTION
+   ========================================================= */
+
+/*
+   The large blue opening section of the website.
+
+   It fills the remaining screen beneath the header.
+*/
+.hero {
+  background: #2448E8;
+
+  width: 100%;
+
+  min-height:
+    calc(100vh - 82px);
+
+  display: flex;
+
+  align-items: center;
+
+  padding:
+    90px
+    max(32px, calc((100vw - 1240px) / 2))
+    110px;
+}
+
+
+/* =========================================================
+   10. HERO EYEBROW
+   ========================================================= */
+
+/*
+   Small label above the main title.
+
+   We can use this later for something like:
+   "BRAZIL · CRITICAL MINERALS"
+*/
+.eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #C9D4FF;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+
+/*
+   Small horizontal line before the eyebrow.
+*/
+.eyebrow::before {
+  content: "";
+
+  width: 30px;
+
+  height: 1px;
+
+  background: #C9D4FF;
+}
+
+
+/* =========================================================
+   11. MAIN HERO TITLE
+   ========================================================= */
+
 h1 {
-	font-family: "Catamaran";
-	font-variant: small-caps;
-	font-size: 60px;
-	color: #320064;
-	font-weight: 900;
-	margin: 0px 0px 30px 0px;
+  color: #f7f3ea;
+
+  font-family:
+    "LINE Seed JP",
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  font-size: 
+  	clamp(52px, 6.2vw, 88px);
+
+  font-weight: 700;
+
+  letter-spacing: -0.045em;
+
+  line-height: 1.11;
+
+  margin:
+    28px
+    0
+    26px;
+
+  max-width: 680px;
+}
+
+
+/*
+   If we use <em> inside the title,
+   it becomes the lighter blue accent.
+*/
+h1 em {
+  color: #C9D4FF;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   12. HERO SUBTITLE
+   ========================================================= */
+
+.intro {
+  max-width: 560px;
+
+  color: #e0e7ee;
+
+  font-size: 17px;
+
+  line-height: 1.75;
+
+  margin:
+    0
+    0
+    34px;
+}
+
+
+/* =========================================================
+   13. HERO BUTTON AREA
+   ========================================================= */
+
+.hero-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 24px;
+}
+
+
+/* =========================================================
+   14. EXPLORE BUTTON
+   ========================================================= */
+
+.primary-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 26px;
+
+  padding:
+    15px
+    19px;
+
+  background: #f7f3ea;
+
+  color: #2448E8;
+
+  font-size: 12px;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+
+
+/*
+   Button moves slightly upward on hover.
+*/
+.primary-link:hover {
+  transform: translateY(-3px);
+
+  background: #C9D4FF;
+}
+
+
+/* =========================================================
+   15. SECONDARY TEXT LINK
+   ========================================================= */
+
+.text-link {
+  color: #f7f3ea;
+
+  font-size: 12px;
+
+  border-bottom:
+    1px solid
+    #d9d7cf;
+
+  padding-bottom: 5px;
+}
+
+
+/* =========================================================
+   16. ABOUT / RESEARCH SECTION
+   ========================================================= */
+
+/*
+   This is the cream section underneath the blue hero.
+*/
+.about {
+  width:
+    min(1240px, calc(100% - 64px));
+
+  margin: auto;
+
+  padding:
+    74px
+    0
+    92px;
+}
+
+
+/* =========================================================
+   17. SECTION LABEL
+   ========================================================= */
+
+.section-tag {
+  color: #2448E8;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.16em;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   18. ABOUT SECTION HEADER
+   ========================================================= */
+
+.about-head {
+  display: grid;
+
+  grid-template-columns:
+    0.72fr
+    1.28fr;
+
+  gap: 64px;
+
+  align-items: end;
+
+  margin-bottom: 48px;
+}
+
+
+/* =========================================================
+   19. ABOUT SECTION TITLE
+   ========================================================= */
+
+.about h2 {
+  font-family:
+    "LINE Seed JP",
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  color: #16213d;
+
+  font-size:
+    clamp(34px, 4vw, 53px);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.04em;
+
+  font-weight: 600;
+
+  margin:
+    17px
+    0
+    0;
+
+  max-width: 520px;
+}
+
+
+/* =========================================================
+   20. ABOUT SECTION TEXT
+   ========================================================= */
+
+.about-copy {
+  color: #1f2a44;
+
+  font-size: 16px;
+
+  line-height: 1.75;
+
+  max-width: 650px;
+}
+
+
+.about-copy p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   21. CHART AREA
+   ========================================================= */
+
+/*
+   This creates the space where our Vega-Lite
+   visualizations will eventually go.
+*/
+.chart-space {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 22px;
+
+  margin-top: 42px;
+}
+
+
+/*
+   Individual chart containers.
+
+   These are intentionally empty for now.
+*/
+.chart-slot {
+  min-height: 360px;
+
+  position: relative;
+}
+
+
+/*
+   A chart that stretches across the entire width.
+*/
+.chart-slot.wide {
+  grid-column: 1 / -1;
+
+  min-height: 430px;
+}
+
+
+/* =========================================================
+   22. FOOTER
+   ========================================================= */
+
+footer {
+  background: #202522;
+
+  color: #f4f1eb;
+}
+
+
+/* =========================================================
+   23. FOOTER CONTENT
+   ========================================================= */
+
+.footer-inner {
+  width:
+    min(1240px, calc(100% - 64px));
+
+  margin: auto;
+
+  min-height: 100px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+
+/* =========================================================
+   24. COPYRIGHT
+   ========================================================= */
+
+.copyright {
+  color: #c5c9c2;
+
+  font-size: 11px;
+
+  letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   25. FOOTER SOCIAL LINKS
+   ========================================================= */
+
+.social {
+  display: flex;
+
+  gap: 24px;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   26. TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  /*
+     Reduce the horizontal padding in the header.
+  */
+  .topbar {
+    padding-left: 20px;
+
+    padding-right: 20px;
+  }
+
+
+  /*
+     Make the main content narrower on smaller screens.
+  */
+  .hero,
+  .about,
+  .footer-inner {
+    width:
+      min(100% - 40px, 620px);
+  }
+
+
+  /*
+     Slightly shorter header.
+  */
+  .topbar {
+    height: 76px;
+  }
+
+
+  /*
+     Adjust hero height and spacing.
+  */
+  .hero {
+    min-height:
+      calc(100vh - 76px);
+
+    padding:
+      72px
+      0
+      80px;
+  }
+
+
+  /*
+     Make navigation smaller.
+  */
+  .nav {
+    gap: 16px;
+
+    font-size: 10px;
+  }
+
+
+  /*
+     Give the research section less
+     vertical padding on smaller screens.
+  */
+  .about {
+    padding:
+      68px
+      0
+      78px;
+  }
+
+
+  /*
+     Stack the two columns vertically.
+  */
+  .about-head {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    margin-bottom: 36px;
+  }
+
+
+  /*
+     Stack charts vertically.
+  */
+  .chart-space {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+
+  .chart-slot.wide {
+    grid-column: auto;
+
+    min-height: 340px;
+  }
+
+
+  .chart-slot {
+    min-height: 280px;
+  }
+
+
+  /*
+     Stack footer elements vertically.
+  */
+  .footer-inner {
+    padding: 28px 0;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+}
+
+
+/* =========================================================
+   27. SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 460px) {
+
+  /*
+     Hide the second navigation link
+     on very small screens.
+  */
+  .nav a:nth-child(2) {
+    display: none;
+  }
+
+
+  /*
+     Make the hero title slightly smaller.
+  */
+  h1 {
+    font-size: 58px;
+  }
+
+
+  /*
+     Allow the button to wrap if necessary.
+  */
+  .hero-links {
+    flex-wrap: wrap;
+  }
+
 }
