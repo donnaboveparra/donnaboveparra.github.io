@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<!-- Richard Davies, Data Science -->
-
 <!-- CODING LESSON NUMBER 1 -->
 <!-- Commenting your code is vital, vital, vital -->
 
@@ -21,60 +19,60 @@ if you find that useful -->
 <!-- The head contains things that you do not see on the page -->
 
 <head>
-    <title>Page Title</title>
-    <link rel="stylesheet" href="Example3.css">
-    <title>Project</title>
-
-    <!-- This is a link to the vega-lite packages which we're using to make graphs -->
-    <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
-
-    <style>
-        /* CSS styles can be defined here, or in a separate CSS file */
-        #chartGrid {
-            display: flex;
-        }
-        
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2448E8">
+  <title>Project</title>
+  <link rel="icon" type="image/png" href="./icon.png?v=2?">
+  <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
+  <link rel="stylesheet" href="Example2.css">
 </head>
 
-<!-- The body contains thigs you see -->
-<!-- Most elements both open and close, with the content in the middle -->
-<!-- Indenting is optional, but helps with readability -->
 <body>
- <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
-        <!-- This is a header, it is the largest text on the page -->
-        Donnatella Bove Parra
-    </h1>
-    <p style="margin-top: 0px; color: darkblue">
-        <!-- we're setting the margin to 0px so the header and authour name are close together -->
-        LSE MPA | PP434
-    </p>
-    <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-        This webpage will present my policy and data visualization project, as part of my Master of Public Administration at LSE.  
-    </h3>
+  <div class="site">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Donnatella Bove Parra home"><span class="brand-mark">D</span><span>DONNATELLA BOVE PARRA</span></a>
+      <nav class="nav" aria-label="Main navigation"><a href="#project">The project</a><a href="#project">About</a><a href="https://www.linkedin.com/in/donnatella-bove-parra/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><span class="flag-icon" aria-label="Brazil" title="Brazil">
+          <svg viewBox="0 0 120 80" role="img" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+            <rect width="120" height="80" fill="#009b3a"/>
+            <path d="M60 8 L112 40 L60 72 L8 40 Z" fill="#ffdf00"/>
+            <circle cx="60" cy="40" r="17" fill="#002776"/>
+            <path d="M44 35 Q60 27 76 35" fill="none" stroke="#fff" stroke-width="4"/>
+          </svg>
+        </span></nav>
+    </header>
+    <main id="top">
+
+      <section class="hero">
+        <div class="hero-copy">
+          <h1>Brazil's Critical<br>Mineral Opportunity<em> Atlas</em></h1>
+          <p class="intro">Mapping Investment Opportunities, Productive Capabilities and Policy Constraints.</p>
+          <div class="hero-links"><a class="primary-link" href="#project">Explore the project <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </section>
+
+      <section class="about" id="project">
+        <div class="about-head">
+          <div><div class="section-tag">01 / Research</div>
+          <h2>First iteration.</h2></div>
+          <div class="about-copy">
+            <p>This webpage will present my policy and data visualization project, as part of my PP434 portfolio for the Master of Public Administration at LSE.</p>
+          </div>
+        </div>
+        <div class="chart-space" aria-label="Space reserved for future data visualisations">
+          <div class="chart-slot wide"></div>
+          <div class="chart-slot"></div>
+          <div class="chart-slot"></div>
+        </div>
+      </section>
+
+    </main>
     
-    <footer class="footer">
-  <div class="footer-content">
-
-    <p>© 2026 Donnatella Bove Parra</p>
-
-    <div class="social-links">
-      <a href="https://www.github.com/donnaboveparra" target="_blank" rel="noopener noreferrer">
-        GitHub
-      </a>
-
-      <span class="separator">•</span>
-
-      <a href="https://www.linkedin.com/in/donnatella-bove-parra/" target="_blank" rel="noopener noreferrer">
-        LinkedIn
-      </a>
-    </div>
-
+    <footer><div class="footer-inner"><div class="copyright">© 2026 Donnatella Bove Parra</div><div class="social"><a href="https://www.linkedin.com/in/donnatella-bove-parra/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div></footer>
+  
   </div>
-</footer>
-
 </body>
-    
+
 </html>
