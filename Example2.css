@@ -680,7 +680,7 @@ footer {
 
 
 /* =========================================================
-   26. TABLET / SMALL LAPTOP
+   26. TABLET / SMALL LAPTOP / iPhone
    ========================================================= */
 
 @media (max-width: 800px) {
@@ -698,13 +698,22 @@ footer {
   /*
      Make the main content narrower on smaller screens.
   */
-  .hero,
-  .about,
-  .footer-inner {
-    width:
-      min(100% - 40px, 620px);
-  }
+  .hero {
+  min-height:
+    calc(100vh - 76px);
+  padding:
+    72px
+    0
+    80px;
+}
 
+.hero {
+  min-height: calc(100svh - 76px);
+  padding:
+    72px
+    0
+    80px;
+}
 
   /*
      Slightly shorter header.
