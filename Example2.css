@@ -690,30 +690,23 @@ footer {
   */
   .topbar {
     padding-left: 20px;
-
     padding-right: 20px;
   }
 
 
   /*
-     Make the main content narrower on smaller screens.
+     Keep the blue hero full width on mobile.
   */
   .hero {
-  min-height:
-    calc(100vh - 76px);
-  padding:
-    72px
-    0
-    80px;
-}
+    width: 100%;
+    min-height: calc(100svh - 76px);
 
-.hero {
-  min-height: calc(100svh - 76px);
-  padding:
-    72px
-    0
-    80px;
-}
+    padding:
+      72px
+      20px
+      80px;
+  }
+
 
   /*
      Slightly shorter header.
@@ -724,16 +717,13 @@ footer {
 
 
   /*
-     Adjust hero height and spacing.
+     Keep the research section narrower
+     on smaller screens.
   */
-  .hero {
-    min-height:
-      calc(100vh - 76px);
-
-    padding:
-      72px
-      0
-      80px;
+  .about,
+  .footer-inner {
+    width:
+      min(100% - 40px, 620px);
   }
 
 
@@ -742,7 +732,6 @@ footer {
   */
   .nav {
     gap: 16px;
-
     font-size: 10px;
   }
 
@@ -806,7 +795,6 @@ footer {
 
 }
 
-
 /* =========================================================
    27. SMALL PHONES
    ========================================================= */
@@ -826,7 +814,17 @@ footer {
      Make the hero title slightly smaller.
   */
   h1 {
-    font-size: 58px;
+    font-size: 52px;
+  }
+
+
+  /*
+     Give the hero content more breathing room
+     on small phone screens.
+  */
+  .hero {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
 
