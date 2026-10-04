@@ -19,171 +19,973 @@
         - Tags appear as an opening <div> and closing </div> pair
     -->
 
-<head>    
-    <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PP434 · Donnatella Bove Parra</title>
 
-    <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
-    <!-- Try swapping to example3.css or another, and take a look at each example.css to see if you understand it-->
-    <link rel="stylesheet" type="text/css" href="Example3.css">
-    <title>Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
+<link rel="stylesheet" type="text/css" href="Example4.css">
 
-    <!-- This is a link to the vega-lite packages which we're using to make graphs -->
-    <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
 
-    <style>
-        /* CSS styles can be defined here, or in a separate CSS file */
-        #chartGrid {
-            display: flex;
-        }
-        
-    </style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root{
+  --paper:#f4f6f9;
+  --ink:#101a2b;
+  --muted:#5d6878;
+  --rule:#d6dce5;
+  --indigo:#243b80;
+  --navy:#0b2347;
+  --blue:#4169a1;
+  --white:#fff;
+  --shadow:0 14px 34px rgba(16,42,86,.09)
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth
+}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Montserrat',Arial,sans-serif;
+  line-height:1.6
+}
+
+a{
+  color:inherit;
+  text-decoration:none
+}
+
+.page{
+  max-width:1400px;
+  margin:0 auto;
+  padding:0 48px
+}
+
+/* TOP BAR */
+
+.topbar{
+  height:86px;
+  border-bottom:1px solid #17365f;
+  background:var(--navy);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 32px;
+  margin:0 -48px;
+  color:#fff;
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase
+}
+
+.brand{
+  font-size:15px;
+  font-weight:700;
+  color:#fff
+}
+
+.meta{
+  color:#cbd7ea;
+  font-weight:700
+}
+
+/* HERO */
+
+.hero{
+  padding:78px 0 84px;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:80px;
+  align-items:end
+}
+
+.kicker{
+  font-size:11px;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  color:var(--indigo);
+  font-weight:700;
+  margin-bottom:16px
+}
+
+.hero h1{
+  font-family:'Montserrat',Arial,sans-serif;
+  font-weight:700;
+  font-size:clamp(58px,7vw,96px);
+  line-height:.9;
+  letter-spacing:-.065em;
+  margin:0;
+  color:var(--navy)
+}
+
+.hero-copy{
+  max-width:420px;
+  color:var(--muted);
+  font-size:15px
+}
+
+.hero-copy p{
+  margin:0 0 24px
+}
+
+.links{
+  display:flex;
+  gap:18px;
+  font-size:11px;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  font-weight:700
+}
+
+.links a{
+  border-bottom:1px solid var(--navy);
+  padding-bottom:3px
+}
+
+/* GENERAL SECTIONS */
+
+.section{
+  border-top:1px solid var(--rule);
+  padding:72px 0 82px;
+  display:flex;
+  flex-direction:column;
+  gap:34px;
+  align-items:stretch
+}
+
+.section.reverse{
+  display:flex;
+  flex-direction:column
+}
+
+.section.reverse .text,
+.section.reverse .visual{
+  grid-column:auto;
+  grid-row:auto;
+  order:initial
+}
+
+.num{
+  font-family:'Montserrat',Arial,sans-serif;
+  color:var(--indigo);
+  font-size:44px;
+  font-weight:700;
+  line-height:1;
+  margin-bottom:14px
+}
+
+.eyebrow{
+  font-size:10px;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:700
+}
+
+.text{
+  max-width:900px
+}
+
+.text h2{
+  font-family:'Montserrat',Arial,sans-serif;
+  font-size:38px;
+  line-height:1.06;
+  font-weight:700;
+  letter-spacing:-.04em;
+  margin:10px 0 16px;
+  color:var(--navy)
+}
+
+.text p{
+  color:var(--muted);
+  font-size:14px;
+  max-width:700px
+}
+
+.figure-meta{
+  margin-top:28px;
+  padding-top:12px;
+  border-top:1px solid var(--rule);
+  font-size:10px;
+  letter-spacing:.075em;
+  text-transform:uppercase;
+  color:var(--muted)
+}
+
+/* VISUAL PANELS */
+
+.visual{
+  order:-1;
+  background:var(--white);
+  box-shadow:var(--shadow);
+  min-height:390px;
+  padding:30px 34px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center
+}
+
+.visual:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:4px;
+  height:100%;
+  background:var(--indigo)
+}
+
+.chart-title{
+  font-family:'Montserrat',Arial,sans-serif;
+  font-weight:700;
+  font-size:14px;
+  margin-bottom:16px;
+  color:var(--navy);
+  align-self:stretch;
+  text-align:left
+}
+
+.visual svg{
+  display:block;
+  width:auto;
+  max-width:100%;
+  height:auto;
+  max-height:350px;
+  margin:0 auto
+}
+
+.axis{
+  stroke:#d6dce5;
+  stroke-width:1
+}
+
+.line{
+  fill:none;
+  stroke:var(--indigo);
+  stroke-width:4;
+  stroke-linecap:round;
+  stroke-linejoin:round
+}
+
+.line2{
+  fill:none;
+  stroke:var(--blue);
+  stroke-width:3;
+  stroke-linecap:round;
+  stroke-linejoin:round
+}
+
+.dot{
+  fill:var(--indigo)
+}
+
+.bar{
+  fill:var(--blue)
+}
+
+.bar.alt{
+  fill:#8294b3
+}
+
+.label{
+  font-size:11px;
+  fill:#697487
+}
+
+.caption{
+  font-size:10px;
+  fill:#7d8795;
+  letter-spacing:.05em;
+  margin-top:8px
+}
+
+/* VEGA FIGURES */
+
+figure[id^="Location"]{
+  width:100%;
+  min-height:430px;
+  margin:0;
+  padding:30px;
+  background:var(--white);
+  border-left:4px solid var(--indigo);
+  box-shadow:var(--shadow);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow-x:auto;
+  overflow-y:hidden
+}
+
+figure[id^="Location"]>div{
+  width:auto!important;
+  max-width:100%;
+  min-width:0;
+  margin:0 auto
+}
+
+figure[id^="Location"] svg{
+  display:block;
+  max-width:100%;
+  height:auto;
+  margin:0 auto
+}
+
+figure[id^="Location"] canvas{
+  display:block;
+  max-width:100%;
+  height:auto;
+  margin:0 auto
+}
+
+.vega-actions{
+  margin-top:5px;
+  font-family:'Montserrat',Arial,sans-serif;
+  font-size:9px
+}
+
+.vega-actions a{
+  color:var(--indigo)!important
+}
+
+.vega-actions a:hover{
+  color:var(--navy)!important
+}
+
+/* CODING CHALLENGES */
+
+.challenges-intro{
+  border-top:1px solid var(--rule);
+  padding:48px 0 34px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:40px
+}
+
+.challenges-label{
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--indigo);
+  font-weight:700
+}
+
+.challenges-copy{
+  max-width:560px;
+  color:var(--muted);
+  font-size:14px
+}
+
+.challenge-header{
+  border-top:1px solid var(--rule);
+  padding:58px 0 42px;
+  display:grid;
+  grid-template-columns:90px 1fr;
+  column-gap:34px;
+  align-items:end
+}
+
+.challenge-header .challenges-label{
+  font-size:42px;
+  line-height:1;
+  color:var(--indigo);
+  letter-spacing:-.04em
+}
+
+.challenge-title{
+  font-size:30px;
+  line-height:1.05;
+  letter-spacing:-.035em;
+  color:var(--navy);
+  font-weight:700
+}
+
+.challenge-header .challenges-copy{
+  grid-column:2;
+  margin-top:12px
+}
+
+#challenges>section:not(.challenge-header){
+  border-top:0;
+  padding:0 0 58px;
+  display:block
+}
+
+#challenges .chart-description{
+  max-width:850px;
+  padding:0 0 18px
+}
+
+#challenges .chart-description h2{
+  font-size:20px;
+  line-height:1.2;
+  letter-spacing:-.02em;
+  color:var(--navy);
+  margin:0 0 7px;
+  font-weight:700
+}
+
+#challenges .chart-description p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  max-width:700px
+}
+
+#challenges .challenge-header~.challenge-header{
+  margin-top:10px
+}
+
+#challenges figure[id^="Location"]{
+  margin-top:0
+}
+
+#challenges .vega-embed{
+  width:auto!important;
+  max-width:100%
+}
+
+/* FOOTER */
+
+.footer{
+  border-top:0;
+  padding:28px 32px 36px;
+  margin:0 -48px;
+  background:var(--navy);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:#cbd7ea;
+  font-size:11px;
+  min-height:96px;
+  position:relative;
+  z-index:10;
+  visibility:visible;
+  opacity:1
+}
+
+.footer a{
+  color:#fff
+}
+
+.footer{
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center
+}
+
+.footer-links{
+  margin-top:8px
+}
+
+.footer div+div{
+  margin-top:8px
+}
+
+/* TABLET */
+
+@media(max-width:800px){
+
+  .page{
+    padding:0 22px
+  }
+
+  .topbar{
+    height:76px;
+    margin:0 -22px;
+    padding:0 22px
+  }
+
+  .brand{
+    font-size:13px
+  }
+
+  .hero{
+    padding:56px 0 64px;
+    display:block
+  }
+
+  .hero-copy{
+    margin-top:34px
+  }
+
+  .section,
+  .section.reverse{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:28px;
+    padding:48px 0 58px
+  }
+
+  .section.reverse .text,
+  .section.reverse .visual{
+    order:initial
+  }
+
+  .text h2{
+    font-size:32px
+  }
+
+  .text p{
+    font-size:14px;
+    line-height:1.65
+  }
+
+  .visual{
+    min-height:300px;
+    padding:20px 16px
+  }
+
+  .chart-title{
+    font-size:13px;
+    margin-bottom:12px
+  }
+
+  .visual svg{
+    max-height:300px
+  }
+
+  .caption{
+    font-size:9px
+  }
+
+  .challenges-intro{
+    display:block;
+    padding:38px 0 28px
+  }
+
+  .challenges-copy{
+    margin-top:10px
+  }
+
+  .challenge-header{
+    grid-template-columns:58px 1fr;
+    column-gap:20px;
+    padding:44px 0 32px
+  }
+
+  .challenge-header .challenges-label{
+    font-size:32px
+  }
+
+  .challenge-title{
+    font-size:24px
+  }
+
+  .challenge-header .challenges-copy{
+    grid-column:2
+  }
+
+  #challenges .chart-description h2{
+    font-size:18px
+  }
+
+  .footer{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    margin:0 -22px;
+    padding:26px 22px 32px
+  }
+
+  .footer-links{
+    margin-top:8px
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+  body{
+    overflow-x:hidden
+  }
+
+  .page{
+    padding:0 16px
+  }
+
+  .topbar{
+    height:72px;
+    margin:0 -16px;
+    padding:0 16px
+  }
+
+  .brand{
+    font-size:11px;
+    letter-spacing:.08em
+  }
+
+  .meta{
+    font-size:10px
+  }
+
+  .hero{
+    padding:48px 0 54px
+  }
+
+  .hero h1{
+    font-size:clamp(52px,18vw,72px);
+    letter-spacing:-.055em
+  }
+
+  .kicker{
+    font-size:9px;
+    letter-spacing:.14em
+  }
+
+  .hero-copy{
+    font-size:14px;
+    margin-top:30px
+  }
+
+  .links{
+    gap:14px;
+    font-size:10px;
+    flex-wrap:wrap
+  }
+
+  .section,
+  .section.reverse{
+    gap:24px;
+    padding:42px 0 50px
+  }
+
+  .num{
+    font-size:36px;
+    margin-bottom:11px
+  }
+
+  .eyebrow{
+    font-size:9px;
+    letter-spacing:.14em
+  }
+
+  .text h2{
+    font-size:28px;
+    line-height:1.1;
+    margin:8px 0 13px
+  }
+
+  .text p{
+    font-size:13px;
+    max-width:none
+  }
+
+  .figure-meta{
+    margin-top:22px;
+    padding-top:10px;
+    font-size:9px
+  }
+
+  .visual{
+    min-height:250px;
+    padding:16px 10px
+  }
+
+  .visual:before{
+    width:3px
+  }
+
+  .chart-title{
+    font-size:12px;
+    margin-bottom:8px
+  }
+
+  .visual svg{
+    max-height:250px
+  }
+
+  .caption{
+    font-size:8px;
+    line-height:1.4
+  }
+
+  .challenges-intro{
+    padding:32px 0 24px
+  }
+
+  .challenge-header{
+    grid-template-columns:46px 1fr;
+    column-gap:14px;
+    padding:38px 0 26px
+  }
+
+  .challenge-header .challenges-label{
+    font-size:27px
+  }
+
+  .challenge-title{
+    font-size:20px
+  }
+
+  .challenge-header .challenges-copy{
+    font-size:12px
+  }
+
+  #challenges>section:not(.challenge-header){
+    padding-bottom:42px
+  }
+
+  #challenges .chart-description h2{
+    font-size:17px
+  }
+
+  .footer{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    margin:0 -16px;
+    padding:24px 16px 30px;
+    font-size:10px
+  }
+
+  .footer-links{
+    margin-top:8px
+  }
+}
+</style>
 </head>
 
-<body> 
-<!-- The body tag contains the elements that visitors to our page will see. -->
-    <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
-        <!-- This is a header, it is the largest text on the page -->
-        Donnatella Bove Parra
+<body>
+
+<div class="page">
+
+<header class="topbar">
+  <a class="brand" href="#top">Donnatella Bove Parra</a>
+  <span class="meta">PP434 · LSE</span>
+</header>
+
+<main id="top">
+
+<section class="hero">
+
+  <div>
+    <div class="kicker">PP434 · Portfolio</div>
+
+    <h1>
+      Code<br>
+      in<br>
+      practice.
     </h1>
-     <p style="margin-top: 0px; color: darkblue">
-        <!-- we're setting the margin to 0px so the header and authour name are close together -->
-        <a href="https://donnaboveparra.github.io/ ">Project</a> | <a href="https://www.linkedin.com/in/donnatella-bove-parra/">LinkedIn</a> | <a
-            href="https://www.github.com/donnaboveparra">GitHub</a>
+  </div>
+
+  <div class="hero-copy">
+    <p>
+      A portfolio of coding challenges developed for the PP434 course.
     </p>
-    <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-        This page is my portfolio of charts for the PP434 Automated Data Visualization course at LSE.  
-    </h3>
 
-    <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
-    <section>
-        <div class="chart-description">
-            <h2>Section 1: Gross Domestic Product (GDP) and Life Expectancy</h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This graph shows the positive, non-linear correlation between GDP and Life Expectancy.
-            </p>
-        </div>
-
-        <!-- This element will contain our vega-lite chart -->
-        <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-
-    </section>
-
-    <!-- Do you want to add more sections? -->
-        <!-- Try copying pasting the section above -->
-        <!-- You'll need to change the id of the figure "<figure id="Location2"... -->
-        <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
-
-    <section>
-        <div class="chart-description">
-            <h2>Section 2: Declining Populations</h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This graph shows the cumulative percentage change in populations in 7 countries.
-            </p>
-        </div>
-
-        <!-- This element will contain our vega-lite chart -->
-        <figure id="Location2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-
-    </section>
-
-    <section>
-        <div class="chart-description">
-            <h2>Section 3: GDP Per Capita</h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This graph shows the GDP Per Capita in 6 countries.
-            </p>
-        </div>
-
-        <!-- This element will contain our vega-lite chart -->
-        <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-
-    </section>
-
-    <section>
-        <div class="chart-description">
-            <h2>Section 4: Real GDP Per Capita</h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This graph shows the Real GDP Per Capita in 6 countries.
-            </p>
-        </div>
-
-        <!-- This element will contain our vega-lite chart -->
-        <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-
-    </section>
-    
-  <section>
-        <div class="chart-description">
-            <h2>Section 5: Inflation</h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This graph shows inflation data in G7 countries.
-            </p>
-        </div>
-
-        <!-- This element will contain our vega-lite chart -->
-        <figure id="Location5"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-
-    </section>
-
-    <!-- This is a script, it's a way to run JavaScript code on the page -->
-    <script>
-        // This is a comment in JavaScript - it's a different language to HTML and CSS
-
-        let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // We're storing the URL of the graph we want to display in a variable
-        // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
-
-        vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-        
-        // Do you want to add more graphs?
-        // try defining a new variable for figure_2_spec, adding VegaEmbed for Location2, and adding a new section in the HTML
-        // e.g. 
-        // let figure_2_spec = ...
-        // vegaEmbed('#Location2', figure_2_spec)
-
-        let figure_2_spec = "figure_2.json"; // We're storing the URL of the graph we want to display in a variable
-        // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
-
-        vegaEmbed('#Location2', figure_2_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-
-        let figure_3_spec = "wk1_chart1.json"; // We're storing the URL of the graph we want to display in a variable
-        // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
-
-        vegaEmbed('#Location3', figure_3_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-
-        let figure_4_spec = "wk1_chart2.json"; // We're storing the URL of the graph we want to display in a variable
-        // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
-
-        vegaEmbed('#Location4', figure_4_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-        
-        let figure_5_spec = "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/charts/library/chartLine2.json"; // We're storing the URL of the graph we want to display in a variable
-        // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
-
-        vegaEmbed('#Location5', figure_5_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-
-    </script>
-
-      <footer class="footer">
-  <div class="footer-content">
-
-    <p>© 2026 Donnatella Bove Parra</p>
-
-    <div class="social-links">
-      <a href="https://www.github.com/donnaboveparra" target="_blank" rel="noopener noreferrer">
-        GitHub
-      </a>
-
-      <span class="separator">•</span>
-
-      <a href="https://www.linkedin.com/in/donnatella-bove-parra/" target="_blank" rel="noopener noreferrer">
-        LinkedIn
-      </a>
+    <div class="links">
+      <a href="#footer">GitHub</a>
+      <a href="#footer">LinkedIn</a>
     </div>
+  </div>
+
+</section>
+
+<section class="challenge-header">
+
+  <div class="challenges-label">01</div>
+
+  <div class="challenge-title">
+    CC1 · HOSTING
+  </div>
+
+  <div class="challenges-copy">
+    Displaying charts in your own site
+  </div>
+
+</section>
+
+<section>
+
+  <div class="chart-description">
+
+    <h2>
+      Section 1: Gross Domestic Product (GDP) and Life Expectancy
+    </h2>
+
+    <p>
+      This graph shows the positive, non-linear correlation between
+      GDP and Life Expectancy.
+    </p>
 
   </div>
+
+  <figure id="Location1"></figure>
+
+</section>
+
+<section>
+
+  <div class="chart-description">
+
+    <h2>
+      Section 2: Declining Populations
+    </h2>
+
+    <p>
+      This graph shows the cumulative percentage change in populations
+      in 7 countries.
+    </p>
+
+  </div>
+
+  <figure id="Location2"></figure>
+
+</section>
+
+<section>
+
+  <div class="chart-description">
+
+    <h2>
+      Section 3: GDP Per Capita
+    </h2>
+
+    <p>
+      This graph shows the GDP Per Capita in 6 countries.
+    </p>
+
+  </div>
+
+  <figure id="Location3"></figure>
+
+</section>
+
+<section>
+
+  <div class="chart-description">
+
+    <h2>
+      Section 4: Real GDP Per Capita
+    </h2>
+
+    <p>
+      This graph shows the Real GDP Per Capita in 6 countries.
+    </p>
+
+  </div>
+
+  <figure id="Location4"></figure>
+
+</section>
+
+<section>
+
+  <div class="chart-description">
+
+    <h2>
+      Section 5: Inflation
+    </h2>
+
+    <p>
+      This graph shows inflation data in G7 countries.
+    </p>
+
+  </div>
+
+  <figure id="Location5"></figure>
+
+</section>
+
+<section class="challenge-header">
+
+  <div class="challenges-label">02</div>
+
+  <div class="challenge-title">
+    CC2 · Week 2
+  </div>
+
+</section>
+
+<section class="challenge-header">
+
+  <div class="challenges-label">03</div>
+
+  <div class="challenge-title">
+    CC3 · Week 3
+  </div>
+
+</section>
+
+<section class="challenge-header">
+
+  <div class="challenges-label">04</div>
+
+  <div class="challenge-title">
+    CC4 · Week 4
+  </div>
+
+</section>
+
+</div>
+
+</main>
+
+<script>
+
+let figure_1_spec =
+  "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json";
+
+vegaEmbed('#Location1', figure_1_spec);
+
+let figure_2_spec =
+  "figure_2.json";
+
+vegaEmbed('#Location2', figure_2_spec);
+
+let figure_3_spec =
+  "wk1_chart1.json";
+
+vegaEmbed('#Location3', figure_3_spec);
+
+let figure_4_spec =
+  "wk1_chart2.json";
+
+vegaEmbed('#Location4', figure_4_spec);
+
+let figure_5_spec =
+  "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/charts/library/chartLine2.json";
+
+vegaEmbed('#Location5', figure_5_spec);
+
+</script>
+
+<footer id="footer" class="footer">
+
+  <div>
+    © 2026 Donnatella Bove Parra
+  </div>
+
+  <div>
+    <a href="#">GitHub</a> ·
+    <a href="#">LinkedIn</a>
+  </div>
+
 </footer>
-    
+
+</div>
+
 </body>
-    
+
 </html>
