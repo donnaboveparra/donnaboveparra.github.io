@@ -1,0 +1,63 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/donnaboveparra/donnaboveparra.github.io/refs/heads/main/SLUEM1524ZSBRA.csv"
+  },
+  "title": {
+    "text": "Renewable Energy Output in Brazil",
+    "subtitle": "Output in Thousand GWh. Source: IEA via ECO-API",
+    "anchor": "start",
+    "fontSize": 20,
+    "fontWeight": "bold",
+    "color": "#111111",
+    "subtitleFontSize": 14,
+    "subtitleColor": "#111111"
+  },
+  "width": 400,
+  "height": 300,
+  "mark": {
+    "type": "line",
+    "color": "#82a77d",
+    "strokeWidth": 2.5,
+    "point": {"filled": true, "size": 35, "color": "#82a77d"}
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": "Year",
+      "scale": {"domain": [{"year": 1990}, {"year": 2025}]},
+      "axis": {
+        "format": "%Y",
+        "values": [
+          {"year": 1990},
+          {"year": 1995},
+          {"year": 2000},
+          {"year": 2005},
+          {"year": 2010},
+          {"year": 2015},
+          {"year": 2020},
+          {"year": 2025}
+        ],
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Thousand GWh",
+      "scale": {"zero": true},
+      "axis": {"format": ",.0f", "tickCount": 6, "grid": true}
+    },
+    "tooltip": [
+      {"field": "date", "type": "temporal", "title": "Year", "format": "%Y"},
+      {
+        "field": "value",
+        "type": "quantitative",
+        "title": "Output (GWh)",
+        "format": ",.0f"
+      }
+    ]
+  },
+  "config": {}
+}
