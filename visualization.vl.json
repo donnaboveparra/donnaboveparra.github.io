@@ -4,8 +4,8 @@
     "url": "https://raw.githubusercontent.com/donnaboveparra/donnaboveparra.github.io/refs/heads/main/SLUEM1524ZSBRA.csv"
   },
   "title": {
-    "text": "Renewable Energy Output in Brazil",
-    "subtitle": "Output in Thousand GWh. Source: IEA via ECO-API",
+    "text": "Youth Unemployment Rate in Brazil",
+    "subtitle": "% of 15-24 age-group unemployment. Source: World Bank via FRED",
     "anchor": "start",
     "fontSize": 20,
     "fontWeight": "bold",
@@ -19,45 +19,64 @@
     "type": "line",
     "color": "#82a77d",
     "strokeWidth": 2.5,
-    "point": {"filled": true, "size": 35, "color": "#82a77d"}
+    "point": {
+      "filled": true,
+      "size": 35,
+      "color": "#82a77d"
+    }
   },
   "encoding": {
     "x": {
-      "field": "date",
-      "type": "temporal",
-      "title": "Year",
-      "scale": {"domain": [{"year": 1990}, {"year": 2025}]},
-      "axis": {
-        "format": "%Y",
-        "values": [
-          {"year": 1990},
-          {"year": 1995},
-          {"year": 2000},
-          {"year": 2005},
-          {"year": 2010},
-          {"year": 2015},
-          {"year": 2020},
-          {"year": 2025}
-        ],
-        "labelAngle": 0
-      }
-    },
+  "field": "date",
+  "type": "temporal",
+  "title": "Year",
+  "scale": {
+    "domain": [
+      {"year": 1990},
+      {"year": 2025}
+    ]
+  },
+  "axis": {
+    "format": "%Y",
+    "values": [
+      {"year": 1990},
+      {"year": 1995},
+      {"year": 2000},
+      {"year": 2005},
+      {"year": 2010},
+      {"year": 2015},
+      {"year": 2020},
+      {"year": 2025}
+    ],
+    "labelAngle": 0
+  }
+},
     "y": {
       "field": "value",
       "type": "quantitative",
-      "title": "Thousand GWh",
-      "scale": {"zero": true},
-      "axis": {"format": ",.0f", "tickCount": 6, "grid": true}
+      "title": "Percent",
+      "scale": {
+        "zero": true
+      },
+      "axis": {
+        "format": ",.0f",
+        "tickCount": 6,
+        "grid": true
+      }
     },
     "tooltip": [
-      {"field": "date", "type": "temporal", "title": "Year", "format": "%Y"},
+      {
+        "field": "date",
+        "type": "temporal",
+        "title": "Year",
+        "format": "%Y"
+      },
       {
         "field": "value",
         "type": "quantitative",
-        "title": "Output (GWh)",
+        "title": "Percent",
         "format": ",.0f"
       }
     ]
-  },
-  "config": {}
+  }
 }
