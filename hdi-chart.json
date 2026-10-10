@@ -1,0 +1,286 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Human Development Index in six Latin American countries and the Latin America and Caribbean regional benchmark, 1990–2023.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/donnaboveparra/donnaboveparra.github.io/main/hdi-chart.csv",
+    "format": {"type": "csv"}
+  },
+  "width": 500,
+  "height": 340,
+  "title": {
+    "text": "Human Development Index",
+    "subtitle": [
+      "Selected Latin American Countries and Regional Benchmark, 1990–2023 | Source: UNDP",
+      "Note: The y-axis starts at 0.6 to highlight differences in HDI trajectories."
+    ],
+    "anchor": "start",
+    "fontSize": 21,
+    "fontWeight": "bold",
+    "color": "#17202A",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#626B73",
+    "offset": 16
+  },
+  "transform": [
+    {"calculate": "toNumber(datum.Year)", "as": "Year_numeric"},
+    {"calculate": "toNumber(datum.HDI)", "as": "HDI_numeric"}
+  ],
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {"lower": 0.6, "upper": 0.7, "shade": "#E8EFF5"},
+          {"lower": 0.7, "upper": 0.8, "shade": "#E5F0E9"},
+          {"lower": 0.8, "upper": 1, "shade": "#F8F0DC"}
+        ]
+      },
+      "mark": {"type": "rect", "opacity": 0.65},
+      "encoding": {
+        "x": {
+          "datum": 1990,
+          "type": "quantitative",
+          "scale": {"domain": [1990, 2023], "nice": false}
+        },
+        "x2": {"datum": 2023},
+        "y": {
+          "field": "lower",
+          "type": "quantitative",
+          "scale": {"domain": [0.6, 1], "nice": false}
+        },
+        "y2": {"field": "upper"},
+        "fill": {
+          "field": "shade",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
+        }
+      }
+    },
+    {
+      "data": {"values": [{"threshold": 0.7}, {"threshold": 0.8}]},
+      "mark": {
+        "type": "rule",
+        "color": "#8B949E",
+        "strokeWidth": 1,
+        "strokeDash": [4, 4]
+      },
+      "encoding": {
+        "x": {
+          "datum": 1990,
+          "type": "quantitative",
+          "scale": {"domain": [1990, 2023], "nice": false}
+        },
+        "x2": {"datum": 2023},
+        "y": {
+          "field": "threshold",
+          "type": "quantitative",
+          "scale": {"domain": [0.6, 1], "nice": false}
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "isValid(datum.HDI_numeric) && isValid(datum.Year_numeric) && datum.HDI_numeric >= 0.6 && datum.HDI_numeric <= 1"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5,
+        "point": {"filled": true, "size": 28}
+      },
+      "encoding": {
+        "x": {
+          "field": "Year_numeric",
+          "type": "quantitative",
+          "title": "Year",
+          "scale": {"domain": [1990, 2023], "nice": false, "zero": false},
+          "axis": {
+            "orient": "bottom",
+            "values": [1990, 1995, 2000, 2005, 2010, 2015, 2020],
+            "format": "d",
+            "grid": false,
+            "domain": true,
+            "domainColor": "#374151",
+            "domainWidth": 1.5,
+            "ticks": true,
+            "tickColor": "#374151",
+            "tickSize": 6,
+            "labelColor": "#374151",
+            "titleColor": "#17202A",
+            "titlePadding": 10,
+            "labelPadding": 6,
+            "labelOverlap": false
+          }
+        },
+        "y": {
+          "field": "HDI_numeric",
+          "type": "quantitative",
+          "title": "Human Development Index",
+          "scale": {"domain": [0.6, 1], "nice": false, "zero": false},
+          "axis": {
+            "orient": "left",
+            "values": [0.6, 0.7, 0.8, 0.9, 1],
+            "format": ".1f",
+            "grid": true,
+            "gridColor": "#FFFFFF",
+            "gridWidth": 1.2,
+            "domain": true,
+            "domainColor": "#374151",
+            "domainWidth": 1.5,
+            "ticks": true,
+            "tickColor": "#374151",
+            "tickSize": 6,
+            "labelColor": "#374151",
+            "titleColor": "#17202A",
+            "titlePadding": 10,
+            "labelPadding": 6
+          }
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Venezuela (Bolivarian Republic of)",
+              "Brazil",
+              "Argentina",
+              "Mexico",
+              "Colombia",
+              "Uruguay",
+              "Latin America And The Caribbean"
+            ],
+            "range": [
+              "#E6A23C",
+              "#26834A",
+              "#75AADB",
+              "#D85C41",
+              "#2448A5",
+              "#8064A2",
+              "#343A40"
+            ]
+          },
+          "legend": {
+            "title": "Legend",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "columns": 3,
+            "labelFontSize": 11,
+            "labelColor": "#374151",
+            "symbolType": "stroke",
+            "symbolStrokeWidth": 3,
+            "symbolSize": 150,
+            "labelLimit": 260,
+            "labelExpr": "datum.label === 'Latin America And The Caribbean' ? 'Latin America & Caribbean' : datum.label",
+            "offset": 20
+          }
+        },
+        "strokeDash": {
+          "condition": {
+            "test": "datum.Country === 'Latin America And The Caribbean'",
+            "value": [6, 4]
+          },
+          "value": [1, 0]
+        },
+        "detail": {"field": "Country"},
+        "order": {"field": "Year_numeric", "type": "quantitative"},
+        "tooltip": [
+          {"field": "Country", "type": "nominal", "title": "Observation"},
+          {
+            "field": "Year_numeric",
+            "type": "quantitative",
+            "format": "d",
+            "title": "Year"
+          },
+          {
+            "field": "HDI_numeric",
+            "type": "quantitative",
+            "format": ".3f",
+            "title": "HDI"
+          },
+          {
+            "field": "Life expectancy",
+            "type": "quantitative",
+            "title": "Life expectancy at birth"
+          },
+          {
+            "field": "Expected schooling",
+            "type": "quantitative",
+            "title": "Expected schooling (years)"
+          },
+          {
+            "field": "Mean schooling",
+            "type": "quantitative",
+            "title": "Mean schooling (years)"
+          },
+          {
+            "field": "GNI per capita",
+            "type": "quantitative",
+            "format": ",.0f",
+            "title": "GNI per capita (constant 2021 PPP$)"
+          }
+        ],
+        "opacity": {
+          "condition": {"param": "countrySelect", "value": 1},
+          "value": 0.85
+        }
+      },
+      "params": [
+        {
+          "name": "countrySelect",
+          "select": {
+            "type": "point",
+            "fields": ["Country"],
+            "on": "click",
+            "clear": "dblclick"
+          }
+        }
+      ]
+    },
+    {
+      "data": {
+        "values": [
+          {"label": "Very high", "position": 0.97},
+          {"label": "High", "position": 0.75},
+          {"label": "Medium", "position": 0.625}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -8,
+        "fontSize": 10,
+        "fontWeight": 500,
+        "color": "#626B73"
+      },
+      "encoding": {
+        "x": {
+          "datum": 2023,
+          "type": "quantitative",
+          "scale": {"domain": [1990, 2023], "nice": false}
+        },
+        "y": {
+          "field": "position",
+          "type": "quantitative",
+          "scale": {"domain": [0.6, 1], "nice": false}
+        },
+        "text": {"field": "label"}
+      }
+    }
+  ],
+  "resolve": {"scale": {"x": "shared", "y": "shared"}},
+  "config": {
+    "background": "white",
+    "view": {"stroke": null},
+    "axis": {
+      "labelFont": "Arial",
+      "labelFontSize": 11,
+      "titleFont": "Arial",
+      "titleFontSize": 12,
+      "titleFontWeight": "normal",
+      "labelPadding": 6
+    },
+    "legend": {"labelFont": "Arial", "titleFont": "Arial"}
+  }
+}
