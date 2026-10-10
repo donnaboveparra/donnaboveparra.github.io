@@ -912,8 +912,49 @@ figure[id^="Location"] canvas{
   <div class="challenges-label">02</div>
 
   <div class="challenge-title">
-    CC2 · Week 2
+    CC2 · Charts
   </div>
+
+   <div class="challenges-copy">
+    Creating your own charts
+  </div>
+
+</section>
+
+<section>
+
+  <div class="chart-description">
+
+    <h2>
+      Section 1: Youth Unemployment
+    </h2>
+
+    <p>
+      This graph shows the youth unemployment rate, as the share of the labor force ages 15-24 without work but available for and seeking employment in Brazil from 1990 to 2025.
+    </p>
+
+  </div>
+
+  <figure id="Location6"></figure>
+
+</section>
+
+<section>
+
+  <div class="chart-description">
+
+    <h2>
+      Section 2: Human Development
+    </h2>
+
+    <p>
+      This graph shows the Human Development Index (HDI) trajectory of Venezuela, Brazil, Mexico, Colombia, Argentina and Uruguay from 1990 to 2023, and are compared to the Latin America & the Caribbean regional benchmark.
+      Based on the classification by the UNDP, these countries are categorized in High-to Very-High HDI.
+    </p>
+
+  </div>
+
+  <figure id="Location7"></figure>
 
 </section>
 
@@ -967,6 +1008,16 @@ let figure_5_spec =
   "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/charts/library/chartLine2.json";
 
 vegaEmbed('#Location5', figure_5_spec);
+
+let figure_6_spec =
+  "visualization.vl.json";
+
+vegaEmbed('#Location6', figure_6_spec);
+
+let figure_7_spec =
+  "hdi-chart.json";
+
+vegaEmbed('#Location7', figure_7_spec);
 
 </script>
 
