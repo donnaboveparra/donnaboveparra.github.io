@@ -10,9 +10,9 @@
   "title": {
     "text": "Human Development Index",
     "subtitle": [
-  "Selected Latin American Countries and Regional Benchmark, 1990–2023 | Source: UNDP",
-  "Note: The y-axis starts at 0.6 to visualize the differences in HDI trajectories."
-],
+      "Selected Latin American Countries and Regional Benchmark, 1990–2023 | Source: UNDP",
+      "Note: The y-axis starts at 0.6 to visualize the differences in HDI trajectories."
+    ],
     "anchor": "start",
     "fontSize": 21,
     "fontWeight": "bold",
@@ -23,7 +23,11 @@
   },
   "transform": [
     {"calculate": "toNumber(datum.Year)", "as": "Year_numeric"},
-    {"calculate": "toNumber(datum.HDI)", "as": "HDI_numeric"}
+    {"calculate": "toNumber(datum.HDI)", "as": "HDI_numeric"},
+    {"calculate": "toNumber(datum['Life expectancy'])", "as": "Life_exp_num"},
+    {"calculate": "toNumber(datum['Expected schooling'])", "as": "Exp_school_num"},
+    {"calculate": "toNumber(datum['Mean schooling'])", "as": "Mean_school_num"},
+    {"calculate": "toNumber(datum['GNI per capita'])", "as": "GNI_num"}
   ],
   "layer": [
     {
@@ -196,10 +200,10 @@
           {"field": "Country", "type": "nominal", "title": "Observation"},
           {"field": "Year_numeric", "type": "quantitative", "format": "d", "title": "Year"},
           {"field": "HDI_numeric", "type": "quantitative", "format": ".3f", "title": "HDI"},
-          {"field": "Life expectancy", "type": "quantitative", "title": "Life expectancy at birth"},
-          {"field": "Expected schooling", "type": "quantitative", "title": "Expected schooling (years)"},
-          {"field": "Mean schooling", "type": "quantitative", "title": "Mean schooling (years)"},
-          {"field": "GNI per capita", "type": "quantitative", "format": ",.0f", "title": "GNI per capita (constant 2021 PPP$)"}
+          {"field": "Life_exp_num", "type": "quantitative", "format": ".1f", "title": "Life expectancy at birth (years)"},
+          {"field": "Exp_school_num", "type": "quantitative", "format": ".1f", "title": "Expected schooling (years)"},
+          {"field": "Mean_school_num", "type": "quantitative", "format": ".1f", "title": "Mean schooling (years)"},
+          {"field": "GNI_num", "type": "quantitative", "format": ",.0f", "title": "GNI per capita (constant 2021 PPP$)"}
         ],
         "opacity": {
           "condition": {"param": "countrySelect", "value": 1},
@@ -272,3 +276,4 @@
       "titleFont": "Arial"
     }
   }
+}
