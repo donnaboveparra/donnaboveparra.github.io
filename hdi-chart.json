@@ -10,9 +10,9 @@
   "title": {
     "text": "Human Development Index",
     "subtitle": [
-      "Selected Latin American Countries and Regional Benchmark, 1990–2023 | Source: UNDP",
-      "Note: The y-axis starts at 0.6 to highlight differences in HDI trajectories."
-    ],
+  "Selected Latin American Countries and Regional Benchmark, 1990–2023 | Source: UNDP",
+  "Note: The y-axis starts at 0.6 to visualize the differences in HDI trajectories."
+],
     "anchor": "start",
     "fontSize": 21,
     "fontWeight": "bold",
@@ -31,7 +31,7 @@
         "values": [
           {"lower": 0.6, "upper": 0.7, "shade": "#E8EFF5"},
           {"lower": 0.7, "upper": 0.8, "shade": "#E5F0E9"},
-          {"lower": 0.8, "upper": 1, "shade": "#F8F0DC"}
+          {"lower": 0.8, "upper": 1.0, "shade": "#F8F0DC"}
         ]
       },
       "mark": {"type": "rect", "opacity": 0.65},
@@ -45,7 +45,7 @@
         "y": {
           "field": "lower",
           "type": "quantitative",
-          "scale": {"domain": [0.6, 1], "nice": false}
+          "scale": {"domain": [0.6, 1.0], "nice": false}
         },
         "y2": {"field": "upper"},
         "fill": {
@@ -57,7 +57,12 @@
       }
     },
     {
-      "data": {"values": [{"threshold": 0.7}, {"threshold": 0.8}]},
+      "data": {
+        "values": [
+          {"threshold": 0.7},
+          {"threshold": 0.8}
+        ]
+      },
       "mark": {
         "type": "rule",
         "color": "#8B949E",
@@ -74,7 +79,7 @@
         "y": {
           "field": "threshold",
           "type": "quantitative",
-          "scale": {"domain": [0.6, 1], "nice": false}
+          "scale": {"domain": [0.6, 1.0], "nice": false}
         }
       }
     },
@@ -117,10 +122,10 @@
           "field": "HDI_numeric",
           "type": "quantitative",
           "title": "Human Development Index",
-          "scale": {"domain": [0.6, 1], "nice": false, "zero": false},
+          "scale": {"domain": [0.6, 1.0], "nice": false, "zero": false},
           "axis": {
             "orient": "left",
-            "values": [0.6, 0.7, 0.8, 0.9, 1],
+            "values": [0.6, 0.7, 0.8, 0.9, 1.0],
             "format": ".1f",
             "grid": true,
             "gridColor": "#FFFFFF",
@@ -183,42 +188,18 @@
           "value": [1, 0]
         },
         "detail": {"field": "Country"},
-        "order": {"field": "Year_numeric", "type": "quantitative"},
+        "order": {
+          "field": "Year_numeric",
+          "type": "quantitative"
+        },
         "tooltip": [
           {"field": "Country", "type": "nominal", "title": "Observation"},
-          {
-            "field": "Year_numeric",
-            "type": "quantitative",
-            "format": "d",
-            "title": "Year"
-          },
-          {
-            "field": "HDI_numeric",
-            "type": "quantitative",
-            "format": ".3f",
-            "title": "HDI"
-          },
-          {
-            "field": "Life expectancy",
-            "type": "quantitative",
-            "title": "Life expectancy at birth"
-          },
-          {
-            "field": "Expected schooling",
-            "type": "quantitative",
-            "title": "Expected schooling (years)"
-          },
-          {
-            "field": "Mean schooling",
-            "type": "quantitative",
-            "title": "Mean schooling (years)"
-          },
-          {
-            "field": "GNI per capita",
-            "type": "quantitative",
-            "format": ",.0f",
-            "title": "GNI per capita (constant 2021 PPP$)"
-          }
+          {"field": "Year_numeric", "type": "quantitative", "format": "d", "title": "Year"},
+          {"field": "HDI_numeric", "type": "quantitative", "format": ".3f", "title": "HDI"},
+          {"field": "Life expectancy", "type": "quantitative", "title": "Life expectancy at birth"},
+          {"field": "Expected schooling", "type": "quantitative", "title": "Expected schooling (years)"},
+          {"field": "Mean schooling", "type": "quantitative", "title": "Mean schooling (years)"},
+          {"field": "GNI per capita", "type": "quantitative", "format": ",.0f", "title": "GNI per capita (constant 2021 PPP$)"}
         ],
         "opacity": {
           "condition": {"param": "countrySelect", "value": 1},
@@ -263,13 +244,18 @@
         "y": {
           "field": "position",
           "type": "quantitative",
-          "scale": {"domain": [0.6, 1], "nice": false}
+          "scale": {"domain": [0.6, 1.0], "nice": false}
         },
         "text": {"field": "label"}
       }
     }
   ],
-  "resolve": {"scale": {"x": "shared", "y": "shared"}},
+  "resolve": {
+    "scale": {
+      "x": "shared",
+      "y": "shared"
+    }
+  },
   "config": {
     "background": "white",
     "view": {"stroke": null},
@@ -281,6 +267,8 @@
       "titleFontWeight": "normal",
       "labelPadding": 6
     },
-    "legend": {"labelFont": "Arial", "titleFont": "Arial"}
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
   }
-}
