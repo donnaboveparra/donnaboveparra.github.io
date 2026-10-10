@@ -498,16 +498,18 @@ a {
     }
     
 @media (max-width: 800px) {
-  .hero h1 {
-    font-size: clamp(30px, 8.5vw, 44px);
-    line-height: 1.1;
-    letter-spacing: -.04em;
-    overflow-wrap: break-word;
-    padding-top: 4px;
+  .hero h1,
+  .hero h1 * {
+    font-size: clamp(30px, 8.5vw, 44px) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -.04em !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
   }
 
-  .hero h1 span {
-    font-size: inherit;
+  .hero h1 {
+    padding-top: 4px;
   }
 }
 }
