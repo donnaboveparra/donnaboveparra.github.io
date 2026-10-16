@@ -1,0 +1,252 @@
+:root {
+  --black: #000;
+  --white: #fff;
+  --amber: #FFB020;
+  --teal: #00857F;
+  --coral: #E02F47;
+  --violet: #5B35E8;
+  --ink-soft: #3d3d3d;
+  --sans: "Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --pad: clamp(1.25rem, 4vw, 3.5rem);
+  --sky: #55B9FF;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--black);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; }
+
+/* Straight rules between sections */
+.zig { height: 2px; background: var(--black); }
+
+/* ---------- Top ---------- */
+.nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.25rem var(--pad);
+  border-bottom: 2px solid var(--black);
+  font-size: 0.95rem;
+}
+.nav .name { font-weight: 700; text-decoration: none; }
+.nav ul { display: flex; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
+.nav ul a { text-decoration: none; }
+.nav ul a:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+
+.title-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: var(--pad);
+  align-items: end;
+  padding: clamp(2rem, 5vw, 4rem) var(--pad) clamp(1.5rem, 3vw, 2.5rem);
+}
+h1 {
+  margin: 0 0 1.5rem;
+  font-weight: 850;
+  font-stretch: 125%;
+  font-size: clamp(4rem, 14.5vw, 12.5rem);
+  line-height: 0.84;
+  letter-spacing: -0.035em;
+}
+.sub { font-size: clamp(1.1rem, 1.7vw, 1.35rem); line-height: 1.4; max-width: 27rem; margin: 0 0 0.4rem; }
+.sub strong { font-weight: 700; }
+
+/* The sun sinks behind the bands: the bands are the lake, their top edge is the horizon */
+.sun {
+  position: relative; z-index: 1;
+  justify-self: end; align-self: end;
+  width: clamp(11rem, 27vw, 26rem);
+  transform: translateY(55%);
+  margin-top: -1rem;
+}
+.sun svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+/* Puente General Rafael Urdaneta: stands on the horizon, in front of the sun */
+.bridge { position: relative; z-index: 2; height: clamp(5rem, 12vw, 9rem); }
+.bridge svg { display: block; width: 100%; height: 100%; color: var(--black); }
+.key .credit { margin-left: auto; color: var(--ink-soft); }
+
+/* ---------- Bands: six chapters, one lattice ---------- */
+.bands {
+  position: relative; z-index: 2;
+  display: flex;
+  height: clamp(20rem, 52vh, 34rem);
+  border-top: 2px solid var(--black);
+  border-bottom: 2px solid var(--black);
+  background: var(--white);
+}
+.band {
+  --line: rgba(255,255,255,0.26);
+  position: relative;
+  flex: var(--f) 1 0;
+  min-width: 0;
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 1rem 0.9rem;
+  background: var(--c);
+  color: var(--t);
+  text-decoration: none;
+  overflow: hidden;
+  transition: flex-grow 0.55s cubic-bezier(.6,.05,.2,1);
+  animation: rise 1s cubic-bezier(.6,.05,.2,1) both;
+}
+/* crossing diagonals: the lattice of a derrick */
+.band::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 13px, var(--line) 13px 14px),
+    repeating-linear-gradient(-45deg, transparent 0 13px, var(--line) 13px 14px);
+}
+.band + .band { border-left: 2px solid var(--black); }
+.band.dark-line { --line: rgba(0,0,0,0.2); }
+.band:nth-child(1) { animation-delay: 0.05s; }
+.band:nth-child(2) { animation-delay: 0.15s; }
+.band:nth-child(3) { animation-delay: 0.25s; }
+.band:nth-child(4) { animation-delay: 0.35s; }
+.band:nth-child(5) { animation-delay: 0.45s; }
+.band:nth-child(6) { animation-delay: 0.55s; }
+@keyframes rise { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+
+.b-num { position: relative; font-weight: 800; font-stretch: 125%; font-size: 1.6rem; line-height: 1; }
+.b-name {
+  position: relative;
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  align-self: flex-start;
+  font-weight: 600; font-size: 1.1rem; white-space: nowrap;
+}
+.b-take {
+  position: absolute; top: 3.4rem; left: 0.9rem; right: 0.9rem;
+  max-width: 14rem; font-size: 0.95rem; line-height: 1.35;
+  opacity: 0; transition: opacity 0.3s ease 0.1s;
+}
+.band:hover, .band:focus-visible { flex-grow: 3.2; }
+@media (hover: hover) {
+  .band:hover .b-take, .band:focus-visible .b-take { opacity: 1; }
+}
+
+.key {
+  display: flex; flex-wrap: wrap; gap: 0.6rem 2rem;
+  padding: 1rem var(--pad);
+  font-size: 0.9rem;
+  border-bottom: 2px solid var(--black);
+}
+.key span { display: inline-flex; align-items: center; gap: 0.55rem; }
+.key i { width: 14px; height: 14px; display: inline-block; border: 1px solid var(--black); }
+
+/* ---------- Content ---------- */
+section { padding: clamp(3rem, 7vw, 6rem) var(--pad); }
+.inner { max-width: 78rem; margin: 0 auto; }
+
+.thesis p {
+  font-size: clamp(1.6rem, 3.3vw, 2.7rem);
+  line-height: 1.18; font-weight: 500; letter-spacing: -0.015em;
+  max-width: 46rem; margin: 0;
+}
+.thesis strong { font-weight: 800; }
+
+h2 {
+  margin: 0 0 0.75rem;
+  font-weight: 800; font-stretch: 112%;
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  line-height: 1; letter-spacing: -0.02em;
+}
+.lede { color: var(--ink-soft); max-width: 34rem; margin: 0 0 2rem; }
+
+.power-grid, .method-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.bars { margin: 0; }
+.bar-row { margin-bottom: 1.4rem; }
+.bar-label { display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.4rem; }
+.bar-label b { font-weight: 700; font-variant-numeric: tabular-nums; }
+.bar-track { height: 28px; border: 2px solid var(--black); }
+.bar-fill {
+  height: 100%;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 13px, rgba(255,255,255,0.26) 13px 14px),
+    repeating-linear-gradient(-45deg, transparent 0 13px, rgba(255,255,255,0.26) 13px 14px),
+    var(--violet);
+}
+.bars figcaption { font-size: 0.85rem; color: var(--ink-soft); max-width: 30rem; }
+.flag { color: var(--coral); font-weight: 700; }
+
+.map-block { margin: 0 0 clamp(2.5rem, 5vw, 4rem); padding-left: 1.25rem; border-left: 10px solid var(--c); }
+.map-head { display: flex; align-items: center; gap: 0.9rem; }
+.map-n {
+  display: inline-grid; place-items: center;
+  width: 2.4rem; height: 2.4rem;
+  font-weight: 800; font-stretch: 125%;
+  background: var(--c); color: var(--t);
+}
+.map-head h3 { margin: 0; font-weight: 700; font-stretch: 108%; font-size: 1.6rem; letter-spacing: -0.01em; }
+.map-take { margin: 0.5rem 0 1rem; color: var(--ink-soft); max-width: 40rem; }
+.map-frame {
+  aspect-ratio: 16 / 8;
+  border: 2px solid var(--black);
+  background: repeating-linear-gradient(0deg, transparent 0 11px, rgba(0,133,127,0.16) 11px 12px);
+  display: grid; place-items: center;
+  color: var(--ink-soft); font-size: 0.95rem;
+}
+
+/* Chapter 6: the day side */
+.sunband {
+  position: relative; overflow: hidden;
+  background: var(--amber);
+  border-top: 2px solid var(--black);
+  border-bottom: 2px solid var(--black);
+}
+.sunband .rings { position: absolute; right: -9rem; top: -9rem; width: 34rem; height: 34rem; pointer-events: none; }
+.sunband .inner { position: relative; }
+.sun-head { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.25rem; }
+.sun-head .map-n { background: var(--black); color: var(--white); }
+.sun-head h2 { margin: 0; font-size: clamp(1.6rem, 2.6vw, 2.2rem); }
+.quote {
+  font-size: clamp(1.7rem, 3.6vw, 3rem); line-height: 1.12; font-weight: 600;
+  letter-spacing: -0.015em; max-width: 42rem; margin: 0 0 2.25rem;
+}
+.moves { list-style: none; margin: 0 0 2.25rem; padding: 0; max-width: 42rem; border-top: 2px solid var(--black); }
+.moves li { padding: 0.85rem 0; border-bottom: 2px solid var(--black); font-weight: 500; }
+.sunband .map-frame { background: repeating-linear-gradient(0deg, transparent 0 11px, rgba(0,0,0,0.1) 11px 12px); color: var(--black); }
+
+.windband {
+  position: relative; overflow: hidden;
+  background: var(--sky);
+  border-bottom: 2px solid var(--black);
+}
+.windband .inner { position: relative; }
+.windband .map-frame { background: repeating-linear-gradient(0deg, transparent 0 11px, rgba(0,0,0,0.1) 11px 12px); color: var(--black); }
+.turbines { position: absolute; right: var(--pad); bottom: 0; width: clamp(14rem, 30vw, 27rem); height: auto; pointer-events: none; }
+.spin { animation: spin linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-width: 860px) { .turbines { opacity: 0.25; } }
+
+.method ul { margin: 0; padding-left: 1.1rem; color: var(--ink-soft); }
+.method li { margin-bottom: 0.5rem; }
+
+/* Derricks stand on a ground of the six colors */
+.skyline { display: block; width: 100%; height: 64px; color: var(--black); margin-top: clamp(1rem, 3vw, 2.5rem); }
+.endstripe { display: flex; height: 18px; border-top: 2px solid var(--black); }
+.endstripe i { flex: 1; background: var(--c); }
+.endstripe i + i { border-left: 2px solid var(--black); }
+
+footer { padding: 1.75rem var(--pad); font-size: 0.9rem; }
+footer .row { max-width: 78rem; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
+
+@media (max-width: 860px) {
+  .title-row, .power-grid, .method-grid { grid-template-columns: 1fr; }
+  .sun { justify-self: end; margin-top: 0; }
+  .nav ul { gap: 1.1rem; }
+  .band { padding: 0.75rem 0.5rem; }
+  .b-num { font-size: 1.2rem; }
+  .b-name { font-size: 0.95rem; }
+  .bands { height: 24rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .band { animation: none; transition: none; }
+  .spin { animation: none; }
+}
