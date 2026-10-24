@@ -441,6 +441,7 @@ a {
     }
 }
 
+
 /* =========================
    MOBILE
    ========================= */
@@ -473,6 +474,20 @@ a {
         font-size: 8px;
         margin-top: 4px;
     }
+
+    .hero h1,
+    .hero h1 * {
+        font-size: clamp(30px, 8.5vw, 44px) !important;
+        line-height: 1.1 !important;
+        letter-spacing: -.04em !important;
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+        hyphens: none !important;
+    }
+
+    .hero h1 {
+        padding-top: 4px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -496,20 +511,110 @@ a {
         font-size: 11.5px;
         line-height: 1.55;
     }
-    
-@media (max-width: 800px) {
-  .hero h1,
-  .hero h1 * {
-    font-size: clamp(30px, 8.5vw, 44px) !important;
-    line-height: 1.1 !important;
-    letter-spacing: -.04em !important;
-    overflow-wrap: normal !important;
-    word-break: normal !important;
-    hyphens: none !important;
-  }
+}
 
-  .hero h1 {
-    padding-top: 4px;
-  }
+
+/* =========================
+   CC4: ORIGINAL + REPLICA
+   ========================= */
+
+.side-by-side {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
 }
+
+.side-by-side .panel {
+  min-width: 0;
 }
+
+/* wrapper from my last version: now just a neutral box */
+.side-by-side .media {
+  display: block;
+}
+
+/* original image: always fills its column, keeps its shape */
+.side-by-side img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* remove the site's card styling from the replica's figure */
+.side-by-side figure {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: none !important;
+  width: 100%;
+}
+
+/* replica: fill the column and scale with it */
+.side-by-side .vega-embed {
+  display: block;
+  width: 100%;
+}
+.side-by-side .vega-embed.has-actions {
+  padding-right: 0;
+}
+.side-by-side .vega-embed > canvas,
+.side-by-side .vega-embed > svg {
+  width: 100% !important;
+  height: auto !important;
+}
+
+@media (max-width: 900px) {
+  .side-by-side { grid-template-columns: 1fr; }
+}
+
+
+/* =========================
+   CC4: IMPROVED CHART
+   ========================= */
+
+figure#Location11.improved-chart {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 18px;
+    background: #fff;
+    border-left: 4px solid var(--indigo);
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+figure#Location11.improved-chart .vega-embed {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* =========================
+   CC4: RESPONSIVE LAYOUT
+   ========================= */
+
+@media (max-width: 700px) {
+    .side-by-side {
+        grid-template-columns: 1fr;
+        padding: 16px;
+        gap: 24px;
+    }
+
+    .side-by-side .panel img {
+        height: 260px;
+    }
+
+    .side-by-side .panel figure[id^="Location"] {
+        min-height: 260px;
+    }
+
+    figure#Location11.improved-chart {
+        padding: 12px 8px;
+    }
+}
+
