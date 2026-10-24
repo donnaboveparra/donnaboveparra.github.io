@@ -1,24 +1,7 @@
 <!DOCTYPE html>
-<!-- This HTML file provides a simple example of a portfolio page. It contains a header, a few sections, and a few charts. -->
-<!-- It works with the three css files in this folder: example1.css, example2.css and example3.css. -->
-<!-- The HTML file defines the structure of the page, and the CSS files define how it looks. -->
-<!-- The CSS examples are all designed to work with this page. Try swapping them out on line 29 and see what happens. -->
-
-<!-- Take a look around and make your own copy to adapt for your own use. -->
-
-<!-- This is a comment -->
-<!-- Comments are not displayed in the browser -->
-<!-- They can be used to leave notes in the code -->
+<!-- Portfolio for PP434 course -->
 
 <html> 
-    <!-- HTML is hierarchial: tags like this define elements on the page. 
-    Each tag does something different. For example:
-        - The <html> tag defines the whole document.
-        - The <h1> tag defines a large heading
-        - The <p> tag defines a paragraph
-        - Tags appear as an opening <div> and closing </div> pair
-    -->
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -1012,9 +995,47 @@ figure[id^="Location"] canvas{
   <div class="challenges-label">04</div>
 
   <div class="challenge-title">
-    CC4 · Week 4
+    CC4 · Replication
   </div>
 
+</section>
+
+<section>
+  <div class="chart-description">
+    <h2>Section 1: Image file and Replica</h2>
+    <p>
+      The chart was published by the
+      <a href="https://www.instagram.com/p/DTF0S4Dkohp/?img_index=5"
+         target="_blank" rel="noopener">Financial Times</a>
+      on January 4, 2026.
+    </p>
+  </div>
+
+  <div class="side-by-side">
+    <div class="panel">
+      <h3>Original</h3>
+      <img src="image-ft_chart.jpg"
+           alt="Original Financial Times chart of Venezuelan oil production">
+    </div>
+
+    <div class="panel">
+      <h3>Replica</h3>
+      <figure id="Location10"></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="chart-description">
+    <h2>Section 2: Improved Chart</h2>
+    <p>
+      This version presents the same data interactively, and with different colors.
+      Shaded periods and year-by-year notes add political,
+      economic and social context to Venezuela's oil production.
+    </p>
+  </div>
+
+  <figure id="Location11" class="improved-chart"></figure>
 </section>
 
 </div>
@@ -1067,6 +1088,16 @@ let figure_9_spec =
   "br_solarwind_curtailment_chart.json";
 
 vegaEmbed('#Location9', figure_9_spec);
+
+let figure_10_spec =
+  "cc4_replicachart.json";
+
+vegaEmbed('#Location10', figure_10_spec);
+
+let figure_11_spec =
+  "cc4_improvedchart.json";
+
+vegaEmbed('#Location11', figure_11_spec);
 
 </script>
 
