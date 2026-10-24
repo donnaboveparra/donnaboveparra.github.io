@@ -1,0 +1,1197 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "white",
+  "padding": {"left": 20, "right": 20, "top": 20, "bottom": 16},
+  "title": {
+    "text": "Venezuelan crude oil production, 1960–2025",
+    "subtitle": [
+      "Bars: million barrels per day. Line: Venezuela’s share of world crude output (%). Shaded bands mark broad periods."
+    ],
+    "anchor": "start",
+    "color": "#1F2937",
+    "fontSize": 22,
+    "fontWeight": 700,
+    "font": "Helvetica Neue, Arial, sans-serif",
+    "subtitleColor": "#6B7280",
+    "subtitleFontSize": 13,
+    "subtitleFont": "Helvetica Neue, Arial, sans-serif",
+    "offset": 8,
+    "subtitlePadding": 6
+  },
+  "data": {
+    "values": [
+      {
+        "year": 1960,
+        "barrels": 2.846,
+        "share": 13.55,
+        "period": "Concession era and early OPEC",
+        "note": "Venezuela co-founds OPEC in Baghdad.",
+        "event": true
+      },
+      {
+        "year": 1961,
+        "barrels": 2.92,
+        "share": 13.03,
+        "period": "Concession era and early OPEC",
+        "note": "New constitution adopted (Jan); Kennedy visits Caracas to back President Rómulo Betancourt (Dec).",
+        "event": false
+      },
+      {
+        "year": 1962,
+        "barrels": 3.2,
+        "share": 13.15,
+        "period": "Concession era and early OPEC",
+        "note": "Military uprisings at Carúpano (May) and Puerto Cabello (Jun).",
+        "event": false
+      },
+      {
+        "year": 1963,
+        "barrels": 3.248,
+        "share": 12.48,
+        "period": "Concession era and early OPEC",
+        "note": "Raúl Leoni elected president (Dec).",
+        "event": false
+      },
+      {
+        "year": 1964,
+        "barrels": 3.393,
+        "share": 12.06,
+        "period": "Concession era and early OPEC",
+        "note": "Raúl Leoni takes office (Mar).",
+        "event": false
+      },
+      {
+        "year": 1965,
+        "barrels": 3.473,
+        "share": 11.48,
+        "period": "Concession era and early OPEC",
+        "note": "Saudi Arabia surpasses Venezuela as world's largest exporter of crude oil.",
+        "event": false
+      },
+      {
+        "year": 1966,
+        "barrels": 3.371,
+        "share": 10.25,
+        "period": "Concession era and early OPEC",
+        "note": "Geneva Agreement on the Guyana border (Feb).",
+        "event": false
+      },
+      {
+        "year": 1967,
+        "barrels": 3.542,
+        "share": 10.01,
+        "period": "Concession era and early OPEC",
+        "note": "Six-Day War (Jun): Arab states briefly restrict oil exports.",
+        "event": false
+      },
+      {
+        "year": 1968,
+        "barrels": 3.605,
+        "share": 9.4,
+        "period": "Concession era and early OPEC",
+        "note": "Rafael Caldera elected (Dec).",
+        "event": false
+      },
+      {
+        "year": 1969,
+        "barrels": 3.594,
+        "share": 8.62,
+        "period": "Concession era and early OPEC",
+        "note": "Caldera takes office (Mar) and actively pursued nationalistic economic policies.",
+        "event": false
+      },
+      {
+        "year": 1970,
+        "barrels": 3.708,
+        "share": 8.2,
+        "period": "Concession era and early OPEC",
+        "note": "'Saudi Venezuela' and 'Dame Dos' era: Venezuela is the nation with the highest per-capita income in Latin America.",
+        "event": false
+      },
+      {
+        "year": 1971,
+        "barrels": 3.549,
+        "share": 7.41,
+        "period": "Concession era and early OPEC",
+        "note": "Reversion Law: oil concessions return to the state as they expire (Aug).",
+        "event": false
+      },
+      {
+        "year": 1972,
+        "barrels": 3.22,
+        "share": 6.39,
+        "period": "Concession era and early OPEC",
+        "note": "Venezuela slipped to third place in global petroleum sales.",
+        "event": false
+      },
+      {
+        "year": 1973,
+        "barrels": 3.366,
+        "share": 6.12,
+        "period": "Concession era and early OPEC",
+        "note": "Venezuela entered its first massive oil bonanza; Arab oil embargo; world oil prices jump sharply.",
+        "event": true
+      },
+      {
+        "year": 1974,
+        "barrels": 2.976,
+        "share": 5.37,
+        "period": "Concession era and early OPEC",
+        "note": "Carlos Andrés Pérez (CAP) takes office and launches 'La Gran Venezuela' spending plan; oil income surges (Bonanza).",
+        "event": false
+      },
+      {
+        "year": 1975,
+        "barrels": 2.346,
+        "share": 4.45,
+        "period": "Concession era and early OPEC",
+        "note": "Law nationalising the oil industry approved (Aug), takes effect 1 Jan 1976.",
+        "event": false
+      },
+      {
+        "year": 1976,
+        "barrels": 2.294,
+        "share": 4.01,
+        "period": "Oil economy and instability",
+        "note": "Oil industry nationalised; state company PDVSA is created.",
+        "event": true
+      },
+      {
+        "year": 1977,
+        "barrels": 2.238,
+        "share": 3.76,
+        "period": "Oil economy and instability",
+        "note": "Former concession companies run as PDVSA subsidiaries (Lagoven, Maraven, Corpoven).",
+        "event": false
+      },
+      {
+        "year": 1978,
+        "barrels": 2.166,
+        "share": 3.61,
+        "period": "Oil economy and instability",
+        "note": "Luis Herrera Campins elected president (Dec).",
+        "event": false
+      },
+      {
+        "year": 1979,
+        "barrels": 2.356,
+        "share": 3.77,
+        "period": "Oil economy and instability",
+        "note": "Iranian revolution triggers second oil price shock; Herrera Campins takes office (Mar).",
+        "event": false
+      },
+      {
+        "year": 1980,
+        "barrels": 2.165,
+        "share": 3.64,
+        "period": "Oil economy and instability",
+        "note": "Iran–Iraq war begins (Sep), keeping oil prices high.",
+        "event": false
+      },
+      {
+        "year": 1981,
+        "barrels": 2.108,
+        "share": 3.79,
+        "period": "Oil economy and instability",
+        "note": "Venezuela signed a massive development accord with a U.S. firm to tap the Orinoco Heavy Oil Belt.",
+        "event": false
+      },
+      {
+        "year": 1982,
+        "barrels": 1.895,
+        "share": 3.56,
+        "period": "Oil economy and instability",
+        "note": "OPEC sets national production quotas for the first time (Mar).",
+        "event": false
+      },
+      {
+        "year": 1983,
+        "barrels": 1.801,
+        "share": 3.46,
+        "period": "Oil economy and instability",
+        "note": "'Black Friday': Bolívar devalued amid a debt crisis.",
+        "event": true
+      },
+      {
+        "year": 1984,
+        "barrels": 1.696,
+        "share": 3.22,
+        "period": "Oil economy and instability",
+        "note": "Jaime Lusinchi takes office (Feb); foreign-debt refinancing talks continue.",
+        "event": false
+      },
+      {
+        "year": 1985,
+        "barrels": 1.564,
+        "share": 2.99,
+        "period": "Oil economy and instability",
+        "note": "Venezuela negotiates with foreign banks as its debt reaches about $36 billion; Output hits its lowest level since 1960.",
+        "event": false
+      },
+      {
+        "year": 1986,
+        "barrels": 1.649,
+        "share": 3,
+        "period": "Oil economy and instability",
+        "note": "World oil prices collapse.",
+        "event": true
+      },
+      {
+        "year": 1987,
+        "barrels": 1.576,
+        "share": 2.89,
+        "period": "Oil economy and instability",
+        "note": "PDVSA buys half of Champlin refinery in Texas (Mar).",
+        "event": false
+      },
+      {
+        "year": 1988,
+        "barrels": 1.578,
+        "share": 2.77,
+        "period": "Oil economy and instability",
+        "note": "Carlos Andrés Pérez elected president for a second time (Dec).",
+        "event": false
+      },
+      {
+        "year": 1989,
+        "barrels": 1.747,
+        "share": 3.02,
+        "period": "Oil economy and instability",
+        "note": "Caracazo riots after austerity measures (Feb); CAP announces an IMF-backed reform package.",
+        "event": false
+      },
+      {
+        "year": 1990,
+        "barrels": 2.135,
+        "share": 3.62,
+        "period": "Oil economy and instability",
+        "note": "Iraq invades Kuwait (Aug), prices spike and Venezuela raises output.",
+        "event": false
+      },
+      {
+        "year": 1991,
+        "barrels": 2.286,
+        "share": 3.9,
+        "period": "Oil economy and instability",
+        "note": "Gulf War (Jan-Feb).",
+        "event": false
+      },
+      {
+        "year": 1992,
+        "barrels": 2.346,
+        "share": 3.97,
+        "period": "Oil economy and instability",
+        "note": "Two failed coup attempts against (Feb, Nov); 'Apertura' first round of operating agreements with private firms.",
+        "event": false
+      },
+      {
+        "year": 1993,
+        "barrels": 2.326,
+        "share": 3.94,
+        "period": "Oil economy and instability",
+        "note": "CAP removed from office (May-Aug); Caldera elected president; Apertura policy second round.",
+        "event": false
+      },
+      {
+        "year": 1994,
+        "barrels": 2.368,
+        "share": 3.97,
+        "period": "Oil economy and instability",
+        "note": "Banking crisis; Caldera takes office (Feb); exchange controls imposed (Jun).",
+        "event": false
+      },
+      {
+        "year": 1995,
+        "barrels": 2.379,
+        "share": 3.94,
+        "period": "Oil economy and instability",
+        "note": "Operating agreements bring foreign firms into marginal oil fields (Apertura).",
+        "event": false
+      },
+      {
+        "year": 1996,
+        "barrels": 2.381,
+        "share": 3.87,
+        "period": "Oil economy and instability",
+        "note": "'Agenda Venezuela' stabilization plan, with exchange controls lifted.",
+        "event": false
+      },
+      {
+        "year": 1997,
+        "barrels": 2.411,
+        "share": 3.83,
+        "period": "Oil economy and instability",
+        "note": "Orinoco heavy-oil projects start up; Asian financial crisis begins (Jul), weakening oil demand.",
+        "event": false
+      },
+      {
+        "year": 1998,
+        "barrels": 3.12,
+        "share": 4.8,
+        "period": "Oil economy and instability",
+        "note": "Oil prices hit lows; Hugo Chávez is elected president (Dec).",
+        "event": true
+      },
+      {
+        "year": 1999,
+        "barrels": 2.8,
+        "share": 4.44,
+        "period": "Oil boom and state expansion",
+        "note": "Chávez takes office (Feb); new constitution approved (Dec).",
+        "event": true
+      },
+      {
+        "year": 2000,
+        "barrels": 2.891,
+        "share": 4.4,
+        "period": "Oil boom and state expansion",
+        "note": "Chávez re-elected under the new constitution (Jul).",
+        "event": false
+      },
+      {
+        "year": 2001,
+        "barrels": 2.792,
+        "share": 4.28,
+        "period": "Oil boom and state expansion",
+        "note": "New Hydrocarbons Law raises royalties and requires PDVSA to hold a majority of ventures (Nov).",
+        "event": false
+      },
+      {
+        "year": 2002,
+        "barrels": 2.782,
+        "share": 4.36,
+        "period": "Oil boom and state expansion",
+        "note": "Coup briefly removes Chávez; PDVSA strike begins (Dec).",
+        "event": false
+      },
+      {
+        "year": 2003,
+        "barrels": 2.643,
+        "share": 3.95,
+        "period": "Oil boom and state expansion",
+        "note": "Oil-industry strike ends (Feb); thousands of PDVSA staff dismissed.",
+        "event": true
+      },
+      {
+        "year": 2004,
+        "barrels": 3.009,
+        "share": 4.28,
+        "period": "Oil boom and state expansion",
+        "note": "Chávez wins recall referendum (Aug); output rebounds after 2002-03 strike.",
+        "event": false
+      },
+      {
+        "year": 2005,
+        "barrels": 3.067,
+        "share": 4.31,
+        "period": "Oil boom and state expansion",
+        "note": "PetroCaribe launched to supply oil on credit to Caribbean states (Jun).",
+        "event": false
+      },
+      {
+        "year": 2006,
+        "barrels": 3.036,
+        "share": 4.26,
+        "period": "Oil boom and state expansion",
+        "note": "Chávez re-elected (Dec); operating agreements converted into state-majority ventures.",
+        "event": false
+      },
+      {
+        "year": 2007,
+        "barrels": 2.982,
+        "share": 4.21,
+        "period": "Oil boom and state expansion",
+        "note": "Orinoco Belt projects nationalised; ExxonMobil and ConocoPhillips exit.",
+        "event": true
+      },
+      {
+        "year": 2008,
+        "barrels": 2.958,
+        "share": 4.14,
+        "period": "Oil boom and state expansion",
+        "note": "World oil price peaks near $147 (Jul), then collapses.",
+        "event": false
+      },
+      {
+        "year": 2009,
+        "barrels": 2.878,
+        "share": 4.2,
+        "period": "Oil boom and state expansion",
+        "note": "Global recession cuts oil demand; government takes over dozens of oil-service companies (May).",
+        "event": false
+      },
+      {
+        "year": 2010,
+        "barrels": 2.854,
+        "share": 4.12,
+        "period": "Oil boom and state expansion",
+        "note": "Venezuela surpassed Saudi Arabia to claim the world's largest proven crude oil reserves; Bolívar devaluated (Jan).",
+        "event": false
+      },
+      {
+        "year": 2011,
+        "barrels": 2.881,
+        "share": 4.11,
+        "period": "Oil boom and state expansion",
+        "note": "Libyan conflict rises world oil prices; increase in oil revenue.",
+        "event": false
+      },
+      {
+        "year": 2012,
+        "barrels": 2.804,
+        "share": 3.87,
+        "period": "Oil boom and state expansion",
+        "note": "Chávez re-elected (Oct); Amuay refinery explosion (Aug).",
+        "event": false
+      },
+      {
+        "year": 2013,
+        "barrels": 2.789,
+        "share": 3.84,
+        "period": "Oil boom and state expansion",
+        "note": "Chavez dies (Mar); Nicolas Maduro is elected president (Apr).",
+        "event": true
+      },
+      {
+        "year": 2014,
+        "barrels": 2.683,
+        "share": 3.67,
+        "period": "Economic crisis and sanctions",
+        "note": "Severe economic collapse; chronic fuel shortages, hyperinflation and protests; US sanctions on officials (Dec).",
+        "event": true
+      },
+      {
+        "year": 2015,
+        "barrels": 2.654,
+        "share": 3.54,
+        "period": "Economic crisis and sanctions",
+        "note": "US declares national emergency over Venezuela (Mar); opposition wins Assembly (Dec).",
+        "event": false
+      },
+      {
+        "year": 2016,
+        "barrels": 2.373,
+        "share": 3.16,
+        "period": "Economic crisis and sanctions",
+        "note": "Falling oil prices, deep recession and shortages trigger a major humanitarian crisis.",
+        "event": true
+      },
+      {
+        "year": 2017,
+        "barrels": 2.035,
+        "share": 2.74,
+        "period": "Economic crisis and sanctions",
+        "note": "Protests (Apr–Jul); Constituent Assembly elected (Jul); US financial sanctions on PDVSA (Aug); partial default (Nov).",
+        "event": true
+      },
+      {
+        "year": 2018,
+        "barrels": 1.51,
+        "share": 2,
+        "period": "Economic crisis and sanctions",
+        "note": "'Petro' digital currency launched (Feb); Maduro re-elected in a disputed vote (May); hyperinflation deepens.",
+        "event": false
+      },
+      {
+        "year": 2019,
+        "barrels": 1.013,
+        "share": 1.35,
+        "period": "Economic crisis and sanctions",
+        "note": "Interim government and US sanctions (Jan); nationwide blackouts (Mar).",
+        "event": true
+      },
+      {
+        "year": 2020,
+        "barrels": 0.569,
+        "share": 0.83,
+        "period": "Economic crisis and sanctions",
+        "note": "COVID-19 slump in demand; output at its lowest in this series.",
+        "event": true
+      },
+      {
+        "year": 2021,
+        "barrels": 0.636,
+        "share": 0.92,
+        "period": "Economic crisis and sanctions",
+        "note": "Bolívar redenominated again (Oct).",
+        "event": false
+      },
+      {
+        "year": 2022,
+        "barrels": 0.716,
+        "share": 0.98,
+        "period": "Economic crisis and sanctions",
+        "note": "US licenses Chevron to resume limited operations (Nov).",
+        "event": true
+      },
+      {
+        "year": 2023,
+        "barrels": 0.783,
+        "share": 1.07,
+        "period": "Economic crisis and sanctions",
+        "note": "US temporarily eases oil sanctions (Oct).",
+        "event": true
+      },
+      {
+        "year": 2024,
+        "barrels": 0.921,
+        "share": 1.27,
+        "period": "Economic crisis and sanctions",
+        "note": "Disputed presidential election (Jul); US oil sanctions relief expires (Apr).",
+        "event": false
+      },
+      {
+        "year": 2025,
+        "barrels": 1.081,
+        "share": 1.44,
+        "period": "Economic crisis and sanctions",
+        "note": "Latest data. US forces capture Maduro on 3 Jan 2026 (after this series).",
+        "event": true
+      }
+    ]
+  },
+  "vconcat": [
+    {
+      "width": 640,
+      "height": 70,
+      "layer": [
+        {
+          "data": {"values": [{"x": 0}]},
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#6B7280",
+            "fontSize": 12.5,
+            "font": "Helvetica Neue, Arial, sans-serif",
+            "lineHeight": 14,
+            "text": [
+              "Explore the chart by hovering over bars to view additional details.",
+              "",
+              "Click a bar to pin its year for reference, and double-click to clear the selection.",
+              "",
+              "● = year with a note"
+            ]
+          },
+          "encoding": {
+            "x": {"value": -30},
+            "y": {"value": 0},
+            "opacity": {"condition": {"param": "pick", "value": 1}, "value": 0}
+          }
+        },
+        {
+          "transform": [
+            {"filter": {"param": "pick", "empty": false}},
+            {
+              "calculate": "datum.year + '  ·  ' + format(datum.barrels,'.2f') + ' million barrels/day  ·  ' + format(datum.share,'.1f') + '% of world output'",
+              "as": "l1"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#1F2937",
+            "fontSize": 14,
+            "fontWeight": 700,
+            "font": "Helvetica Neue, Arial, sans-serif"
+          },
+          "encoding": {
+            "x": {"value": -30},
+            "y": {"value": 0},
+            "text": {"field": "l1"}
+          }
+        },
+        {
+          "transform": [
+            {"filter": {"param": "pick", "empty": false}},
+            {
+              "calculate": "datum.note != '—' ? datum.note : 'No major event marked. Period: ' + datum.period",
+              "as": "l2"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#1F2937",
+            "fontSize": 13,
+            "font": "Helvetica Neue, Arial, sans-serif"
+          },
+          "encoding": {
+            "x": {"value": -30},
+            "y": {"value": 22},
+            "text": {"field": "l2"}
+          }
+        }
+      ]
+    },
+    {
+      "width": 640,
+      "height": 240,
+      "layer": [
+        {
+          "data": {
+            "values": [
+              {
+                "start": 1959.5,
+                "end": 1975.5,
+                "mid": 1967.5,
+                "l1": "Concession era",
+                "l2": "and early OPEC",
+                "color": "#FFFFFF"
+              },
+              {
+                "start": 1975.5,
+                "end": 1998.5,
+                "mid": 1987,
+                "l1": "Oil economy",
+                "l2": "and instability",
+                "color": "#F3E7D3"
+              },
+              {
+                "start": 1998.5,
+                "end": 2013.5,
+                "mid": 2006,
+                "l1": "Oil boom and",
+                "l2": "state expansion",
+                "color": "#DCEAF5"
+              },
+              {
+                "start": 2013.5,
+                "end": 2025.5,
+                "mid": 2019.5,
+                "l1": "Economic crisis",
+                "l2": "and sanctions",
+                "color": "#F4DEDE"
+              }
+            ]
+          },
+          "mark": {"type": "rect", "opacity": 1},
+          "encoding": {
+            "x": {
+              "field": "start",
+              "type": "quantitative",
+              "scale": {"domain": [1959.5, 2025.5], "nice": false}
+            },
+            "x2": {"field": "end"},
+            "color": {
+              "field": "color",
+              "type": "nominal",
+              "scale": null,
+              "legend": null
+            }
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "start": 1959.5,
+                "end": 1975.5,
+                "mid": 1967.5,
+                "l1": "Concession era",
+                "l2": "and early OPEC",
+                "color": "#FFFFFF"
+              },
+              {
+                "start": 1975.5,
+                "end": 1998.5,
+                "mid": 1987,
+                "l1": "Oil economy",
+                "l2": "and instability",
+                "color": "#F3E7D3"
+              },
+              {
+                "start": 1998.5,
+                "end": 2013.5,
+                "mid": 2006,
+                "l1": "Oil boom and",
+                "l2": "state expansion",
+                "color": "#DCEAF5"
+              },
+              {
+                "start": 2013.5,
+                "end": 2025.5,
+                "mid": 2019.5,
+                "l1": "Economic crisis",
+                "l2": "and sanctions",
+                "color": "#F4DEDE"
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "top",
+            "fontSize": 12,
+            "color": "#1F2937",
+            "font": "Helvetica Neue, Arial, sans-serif",
+            "fontWeight": 600,
+            "opacity": 0.75
+          },
+          "encoding": {
+            "x": {
+              "field": "mid",
+              "type": "quantitative",
+              "scale": {"domain": [1959.5, 2025.5], "nice": false}
+            },
+            "y": {"value": 6},
+            "text": {"field": "l1"}
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "start": 1959.5,
+                "end": 1975.5,
+                "mid": 1967.5,
+                "l1": "Concession era",
+                "l2": "and early OPEC",
+                "color": "#FFFFFF"
+              },
+              {
+                "start": 1975.5,
+                "end": 1998.5,
+                "mid": 1987,
+                "l1": "Oil economy",
+                "l2": "and instability",
+                "color": "#F3E7D3"
+              },
+              {
+                "start": 1998.5,
+                "end": 2013.5,
+                "mid": 2006,
+                "l1": "Oil boom and",
+                "l2": "state expansion",
+                "color": "#DCEAF5"
+              },
+              {
+                "start": 2013.5,
+                "end": 2025.5,
+                "mid": 2019.5,
+                "l1": "Economic crisis",
+                "l2": "and sanctions",
+                "color": "#F4DEDE"
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "top",
+            "fontSize": 12,
+            "color": "#1F2937",
+            "font": "Helvetica Neue, Arial, sans-serif",
+            "fontWeight": 600,
+            "opacity": 0.75
+          },
+          "encoding": {
+            "x": {
+              "field": "mid",
+              "type": "quantitative",
+              "scale": {"domain": [1959.5, 2025.5], "nice": false}
+            },
+            "y": {"value": 21},
+            "text": {"field": "l2"}
+          }
+        },
+        {
+          "data": {"values": [{"v": 1}, {"v": 2}, {"v": 3}, {"v": 4}]},
+          "mark": {
+            "type": "rule",
+            "color": "#D1D5DB",
+            "strokeWidth": 1,
+            "opacity": 0.8
+          },
+          "encoding": {
+            "y": {
+              "field": "v",
+              "type": "quantitative",
+              "scale": {"domain": [0, 4.8]}
+            }
+          }
+        },
+        {
+          "mark": {"type": "bar", "width": 7, "color": "#1F4E79"},
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "scale": {
+                "domain": [1959.5, 2025.5],
+                "nice": false,
+                "padding": 0
+              },
+              "axis": {
+                "labels": false,
+                "ticks": false,
+                "domain": false,
+                "grid": false,
+                "title": null
+              }
+            },
+            "y": {
+              "field": "barrels",
+              "type": "quantitative",
+              "scale": {"domain": [0, 4.8]},
+              "axis": {
+                "values": [0, 1, 2, 3, 4],
+                "format": "d",
+                "title": null,
+                "labelColor": "#6B7280",
+                "labelFontSize": 13,
+                "labelFont": "Helvetica Neue, Arial, sans-serif",
+                "grid": false,
+                "domain": false,
+                "ticks": false,
+                "labelPadding": 6
+              }
+            },
+            "opacity": {
+              "condition": {"param": "pick", "value": 1},
+              "value": 0.3
+            },
+            "stroke": {
+              "condition": {
+                "param": "hover",
+                "empty": false,
+                "value": "#1F2937"
+              },
+              "value": null
+            },
+            "strokeWidth": {"value": 1.5}
+          }
+        },
+        {
+          "transform": [{"filter": "datum.event"}],
+          "mark": {
+            "type": "point",
+            "shape": "circle",
+            "filled": true,
+            "size": 26,
+            "color": "#1F2937",
+            "yOffset": -9
+          },
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "scale": {"domain": [1959.5, 2025.5], "nice": false, "padding": 0}
+            },
+            "y": {"field": "barrels", "type": "quantitative"},
+            "opacity": {
+              "condition": {"param": "pick", "value": 1},
+              "value": 0.3
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "bar",
+            "width": 9,
+            "opacity": 0.01,
+            "color": "black",
+            "cursor": "pointer"
+          },
+          "params": [
+            {
+              "name": "pick",
+              "select": {
+                "type": "point",
+                "on": "click",
+                "fields": ["year"],
+                "clear": "dblclick"
+              }
+            },
+            {
+              "name": "hover",
+              "select": {
+                "type": "point",
+                "on": "mouseover",
+                "fields": ["year"],
+                "clear": "mouseout"
+              }
+            }
+          ],
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "scale": {"domain": [1959.5, 2025.5], "nice": false, "padding": 0}
+            },
+            "y": {"value": 0},
+            "y2": {"value": 240},
+            "tooltip": [
+              {
+                "field": "year",
+                "type": "quantitative",
+                "title": "Year",
+                "format": "d"
+              },
+              {
+                "field": "barrels",
+                "type": "quantitative",
+                "title": "Production (million b/d)",
+                "format": ".2f"
+              },
+              {
+                "field": "share",
+                "type": "quantitative",
+                "title": "Share of world output (%)",
+                "format": ".1f"
+              },
+              {"field": "period", "type": "nominal", "title": "Period"},
+              {"field": "note", "type": "nominal", "title": "What happened"}
+            ]
+          }
+        }
+      ],
+      "title": {
+        "text": "Production (million barrels per day)",
+        "anchor": "start",
+        "color": "#1F4E79",
+        "fontSize": 13,
+        "fontWeight": 700,
+        "font": "Helvetica Neue, Arial, sans-serif",
+        "offset": 6
+      }
+    },
+    {
+      "width": 640,
+      "height": 130,
+      "layer": [
+        {
+          "data": {
+            "values": [
+              {
+                "start": 1959.5,
+                "end": 1975.5,
+                "mid": 1967.5,
+                "l1": "Concession era",
+                "l2": "and early OPEC",
+                "color": "#FFFFFF"
+              },
+              {
+                "start": 1975.5,
+                "end": 1998.5,
+                "mid": 1987,
+                "l1": "Oil economy",
+                "l2": "and instability",
+                "color": "#F3E7D3"
+              },
+              {
+                "start": 1998.5,
+                "end": 2013.5,
+                "mid": 2006,
+                "l1": "Oil boom and",
+                "l2": "state expansion",
+                "color": "#DCEAF5"
+              },
+              {
+                "start": 2013.5,
+                "end": 2025.5,
+                "mid": 2019.5,
+                "l1": "Economic crisis",
+                "l2": "and sanctions",
+                "color": "#F4DEDE"
+              }
+            ]
+          },
+          "mark": {"type": "rect", "opacity": 1},
+          "encoding": {
+            "x": {
+              "field": "start",
+              "type": "quantitative",
+              "scale": {"domain": [1959.5, 2025.5], "nice": false}
+            },
+            "x2": {"field": "end"},
+            "color": {
+              "field": "color",
+              "type": "nominal",
+              "scale": null,
+              "legend": null
+            }
+          }
+        },
+        {
+          "data": {"values": [{"v": 5}, {"v": 10}, {"v": 15}]},
+          "mark": {
+            "type": "rule",
+            "color": "#D1D5DB",
+            "strokeWidth": 1,
+            "opacity": 0.8
+          },
+          "encoding": {
+            "y": {
+              "field": "v",
+              "type": "quantitative",
+              "scale": {"domain": [0, 15]}
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "line",
+            "color": "#C2410C",
+            "strokeWidth": 2.5,
+            "interpolate": "monotone"
+          },
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "scale": {
+                "domain": [1959.5, 2025.5],
+                "nice": false,
+                "padding": 0
+              },
+              "axis": {
+                "values": [1960, 1970, 1980, 1990, 2000, 2010, 2020],
+                "format": "d",
+                "labelAngle": 0,
+                "labelFontSize": 13,
+                "labelColor": "#6B7280",
+                "labelFont": "Helvetica Neue, Arial, sans-serif",
+                "grid": false,
+                "title": null,
+                "domainColor": "#9CA3AF",
+                "tickColor": "#9CA3AF",
+                "labelPadding": 6
+              }
+            },
+            "y": {
+              "field": "share",
+              "type": "quantitative",
+              "scale": {"domain": [0, 15]},
+              "axis": {
+                "values": [0, 5, 10, 15],
+                "format": "d",
+                "labelOverlap": false,
+                "title": null,
+                "labelColor": "#6B7280",
+                "labelFontSize": 13,
+                "labelFont": "Helvetica Neue, Arial, sans-serif",
+                "grid": false,
+                "domain": false,
+                "ticks": false,
+                "labelPadding": 6
+              }
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "point",
+            "shape": "circle",
+            "filled": true,
+            "size": 150,
+            "opacity": 0.01,
+            "color": "black"
+          },
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "scale": {"domain": [1959.5, 2025.5], "nice": false, "padding": 0}
+            },
+            "y": {"field": "share", "type": "quantitative"},
+            "tooltip": [
+              {
+                "field": "year",
+                "type": "quantitative",
+                "title": "Year",
+                "format": "d"
+              },
+              {
+                "field": "barrels",
+                "type": "quantitative",
+                "title": "Production (million b/d)",
+                "format": ".2f"
+              },
+              {
+                "field": "share",
+                "type": "quantitative",
+                "title": "Share of world output (%)",
+                "format": ".1f"
+              },
+              {"field": "period", "type": "nominal", "title": "Period"},
+              {"field": "note", "type": "nominal", "title": "What happened"}
+            ]
+          }
+        },
+        {
+          "transform": [{"filter": {"param": "pick", "empty": false}}],
+          "mark": {
+            "type": "rule",
+            "color": "#1F2937",
+            "strokeWidth": 1.2,
+            "strokeDash": [3, 3]
+          },
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "scale": {"domain": [1959.5, 2025.5], "nice": false, "padding": 0}
+            }
+          }
+        },
+        {
+          "transform": [{"filter": {"param": "pick", "empty": false}}],
+          "mark": {
+            "type": "point",
+            "shape": "circle",
+            "filled": true,
+            "size": 70,
+            "color": "#C2410C",
+            "stroke": "white",
+            "strokeWidth": 1.5
+          },
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "scale": {"domain": [1959.5, 2025.5], "nice": false, "padding": 0}
+            },
+            "y": {"field": "share", "type": "quantitative"}
+          }
+        }
+      ],
+      "title": {
+        "text": "Share of world output (%)",
+        "anchor": "start",
+        "color": "#C2410C",
+        "fontSize": 13,
+        "fontWeight": 700,
+        "font": "Helvetica Neue, Arial, sans-serif",
+        "offset": 6
+      }
+    },
+    {
+      "width": 640,
+      "height": 1,
+      "layer": [
+        {
+          "data": {"values": [{"x": 0}]},
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#6B7280",
+            "fontSize": 12,
+            "font": "Helvetica Neue, Arial, sans-serif",
+            "lineHeight": 16,
+            "text": [
+              "Source: OPEC Annual Statistical Bulletin 2026, Table 3.5; share = Venezuela / world crude output.",
+              "Event notes compiled from general historical sources; original chart: Financial Times (Clara Murray)."
+            ]
+          },
+          "encoding": {"x": {"value": -30}, "y": {"value": 14}}
+        }
+      ]
+    }
+  ],
+  "spacing": 16,
+  "config": {"view": {"stroke": null}, "concat": {"spacing": 16}}
+}
