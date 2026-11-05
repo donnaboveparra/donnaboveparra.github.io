@@ -1,0 +1,219 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Venezuela: GDP per capita (current US$), 1970–2025",
+    "subtitle": [
+      "Political transitions, oil shocks, economic crisis and US sanctions",
+      "Source: World Bank, World Development Indicators"
+    ],
+    "anchor": "start",
+    "fontSize": 20,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#666666"
+  },
+  "width": 700,
+  "height": 400,
+  "data": {
+    "url": "https://api.worldbank.org/v2/country/VEN/indicator/NY.GDP.PCAP.CD?format=json&date=1970:2025&per_page=100",
+    "format": {"type": "json", "property": "[1]"}
+  },
+  "transform": [
+    {"calculate": "toNumber(datum.date)", "as": "year"},
+    {"filter": "isValid(datum.value) && isValid(datum.year)"}
+  ],
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "start": 1970,
+            "end": 1999,
+            "period": "Oil economy and instability",
+            "color": "#F3E7D3"
+          },
+          {
+            "start": 1999,
+            "end": 2014,
+            "period": "Oil boom and state expansion",
+            "color": "#DCEAF5"
+          },
+          {
+            "start": 2014,
+            "end": 2025,
+            "period": "Economic crisis and sanctions",
+            "color": "#F4DEDE"
+          }
+        ]
+      },
+      "mark": {"type": "rect", "opacity": 0.4},
+      "encoding": {
+        "x": {
+          "field": "start",
+          "type": "quantitative",
+          "scale": {"domain": [1970, 2025]}
+        },
+        "x2": {"field": "end"},
+        "y": {"datum": 0, "type": "quantitative", "scale": {"zero": true}},
+        "y2": {"datum": 14000},
+        "color": {
+          "field": "color",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
+        },
+        "tooltip": {
+          "field": "period",
+          "type": "nominal",
+          "title": "Historical period"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "#003DA5",
+        "strokeWidth": 2.5,
+        "point": {"filled": true, "size": 20}
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {"domain": [1970, 2025]},
+          "axis": {
+            "title": "Year",
+            "format": "d",
+            "tickCount": 10,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "axis": {
+            "title": "GDP per capita (current US$)",
+            "format": "$,.0f",
+            "grid": true,
+            "gridColor": "#FFFFFF"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Year",
+            "format": "d"
+          },
+          {
+            "field": "value",
+            "type": "quantitative",
+            "title": "GDP per capita (current US$)",
+            "format": "$,.0f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "year": 1976,
+            "label": "Oil industry nationalized",
+            "kind": "Economic"
+          },
+          {
+            "year": 1983,
+            "label": "Black Friday: currency devaluation",
+            "kind": "Economic"
+          },
+          {"year": 1989, "label": "Caracazo protests", "kind": "Political"},
+          {"year": 1999, "label": "Chávez takes office", "kind": "Political"},
+          {
+            "year": 2002,
+            "label": "Political crisis and oil strike",
+            "kind": "Economic"
+          },
+          {
+            "year": 2008,
+            "label": "Global financial crisis",
+            "kind": "Economic"
+          },
+          {"year": 2013, "label": "Maduro takes office", "kind": "Political"},
+          {
+            "year": 2014,
+            "label": "Global oil-price collapse",
+            "kind": "Economic"
+          },
+          {"year": 2015, "label": "US targeted sanctions", "kind": "Sanctions"},
+          {
+            "year": 2017,
+            "label": "US financial sanctions",
+            "kind": "Sanctions"
+          },
+          {
+            "year": 2019,
+            "label": "US sanctions on oil sector",
+            "kind": "Sanctions"
+          },
+          {
+            "year": 2022,
+            "label": "Limited Chevron license",
+            "kind": "Sanctions relief"
+          },
+          {
+            "year": 2023,
+            "label": "Temporary broader oil-sector relief",
+            "kind": "Sanctions relief"
+          },
+          {
+            "year": 2024,
+            "label": "Broad relief not renewed",
+            "kind": "Sanctions policy"
+          }
+        ]
+      },
+      "mark": {"type": "rule", "strokeWidth": 1.3, "strokeDash": [4, 3]},
+      "encoding": {
+        "x": {"field": "year", "type": "quantitative"},
+        "color": {
+          "field": "kind",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Political",
+              "Economic",
+              "Sanctions",
+              "Sanctions relief",
+              "Sanctions policy"
+            ],
+            "range": ["#526D82", "#A67C52", "#7B4AB5", "#16856B", "#C06A35"]
+          },
+          "legend": {
+            "title": "Event category",
+            "orient": "bottom",
+            "columns": 3
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Year",
+            "format": "d"
+          },
+          {"field": "label", "type": "nominal", "title": "Historical event"},
+          {"field": "kind", "type": "nominal", "title": "Category"}
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "labelColor": "#555555",
+      "titleColor": "#333333"
+    }
+  }
+}
