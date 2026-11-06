@@ -56,7 +56,7 @@
       <li><a href="#cc4"><span class="cc">CC4</span> Replication</a></li>
       <li><a href="#cc5"><span class="cc">CC5</span> Accessing data</a></li>
       <li><a href="#cc6"><span class="cc">CC6</span> Loops</a></li>
-      <li class="upcoming"><a href="#cc7"><span class="cc">CC7</span> Challenge 7</a></li>
+      <li><a href="#cc7"><span class="cc">CC7</span> Maps</a></li>
       <li class="upcoming"><a href="#cc8"><span class="cc">CC8</span> Challenge 8</a></li>
       <li class="upcoming"><a href="#cc9"><span class="cc">CC9</span> Challenge 9</a></li>
       <li class="upcoming"><a href="#cc10"><span class="cc">CC10</span> Challenge 10</a></li>
@@ -292,6 +292,37 @@
       </section>
     </article>
 
+    <article class="challenge" id="cc7">
+      <header class="challenge-head">
+        <h2><span class="cc">CC7</span>Maps</h2>
+        <p>Base maps and choropleths</p>
+      </header>
+      <p>As an extension of the Week 6 coding challenge, these interactive maps 
+        offer a comprehensive look at alcohol-specific death rates across the UK.</p>
+        <p>Both maps out data down to the local level, 
+            covering 296 local authorities in England, 32 council areas in Scotland, 
+            22 local authorities in Wales, and 11 districts in Northern Ireland..</p>
+      <section class="piece">
+        <div class="chart-description">
+          <h3>Section 1: Coordinates map</h3>
+          <p>This coordinates map shows where the burden falls, which depends on how many people live in a place.
+            A circle is placed at the latitude and longitude of the centre of every local area in the UK. The area of each circle is proportional to the average
+        number of alcohol-specific deaths per year. To compare areas fairly, the deaths in each period are divided by the
+        number of years it covers (five years for Scotland, three for the rest).</p>
+        </div>
+        <figure id="Location14"></figure>
+      </section>
+
+      <section class="piece">
+        <div class="chart-description">
+          <h3>Section 2: Choropleth</h3>
+          <p>. 
+            This choropleth colours every local area by its rate of alcohol-specific deaths per 100,000 people.</p>
+        </div>
+        <figure id="Location15"></figure>
+      </section>
+    </article>
+
     <!-- ==========================================================
          CC7 to CC11: ready for your next challenges.
 
@@ -308,20 +339,6 @@
          <figure> the next free number (Location20, Location21...).
          ========================================================== -->
 
-    <article class="challenge upcoming" id="cc7">
-      <header class="challenge-head">
-        <h2><span class="cc">CC7</span>Challenge 7</h2>
-        <p>One line describing this challenge</p>
-      </header>
-      <section class="piece">
-        <div class="chart-description">
-          <h3>Section 1: Title of your chart</h3>
-          <p>What this chart shows.</p>
-        </div>
-        <figure id="Location14" class="pending"></figure>
-      </section>
-    </article>
-
     <article class="challenge upcoming" id="cc8">
       <header class="challenge-head">
         <h2><span class="cc">CC8</span>Challenge 8</h2>
@@ -332,7 +349,7 @@
           <h3>Section 1: Title of your chart</h3>
           <p>What this chart shows.</p>
         </div>
-        <figure id="Location15" class="pending"></figure>
+        <figure id="Location16" class="pending"></figure>
       </section>
     </article>
 
@@ -346,7 +363,7 @@
           <h3>Section 1: Title of your chart</h3>
           <p>What this chart shows.</p>
         </div>
-        <figure id="Location16" class="pending"></figure>
+        <figure id="Location17" class="pending"></figure>
       </section>
     </article>
 
@@ -360,7 +377,7 @@
           <h3>Section 1: Title of your chart</h3>
           <p>What this chart shows.</p>
         </div>
-        <figure id="Location17" class="pending"></figure>
+        <figure id="Location18" class="pending"></figure>
       </section>
     </article>
 
@@ -374,7 +391,7 @@
           <h3>Section 1: Title of your chart</h3>
           <p>What this chart shows.</p>
         </div>
-        <figure id="Location18" class="pending"></figure>
+        <figure id="Location19" class="pending"></figure>
       </section>
     </article>
 
@@ -450,22 +467,25 @@ let figure_13_spec =
   "scraping-chart.json";
 vegaEmbed('#Location13', figure_13_spec);
 
-/* ---------- CC6 to CC11: uncomment and add your file name ----------
-
-let figure_14_spec = "your-cc7-chart.json";
+let figure_14_spec = "uk-devolution-points-map.json";
 vegaEmbed('#Location14', figure_14_spec);
 
-let figure_15_spec = "your-cc8-chart.json";
+let figure_15_spec = "uk-devolution-map.json";
 vegaEmbed('#Location15', figure_15_spec);
 
+/* ---------- CC8 to CC11: uncomment and add your file name ----------
+
+let figure_15_spec = "your-cc8-chart.json";
+vegaEmbed('#Location16', figure_15_spec);
+
 let figure_16_spec = "your-cc9-chart.json";
-vegaEmbed('#Location16', figure_16_spec);
+vegaEmbed('#Location17', figure_16_spec);
 
 let figure_17_spec = "your-cc10-chart.json";
-vegaEmbed('#Location17', figure_17_spec);
+vegaEmbed('#Location18', figure_17_spec);
 
 let figure_18_spec = "your-cc11-chart.json";
-vegaEmbed('#Location18', figure_18_spec);
+vegaEmbed('#Location19', figure_18_spec);
 
 ---------------------------------------------------------------------- */
 
