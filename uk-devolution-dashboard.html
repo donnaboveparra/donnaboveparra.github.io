@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CC6 Devolution Dashboard | Donnatella Bove Parra, PP434 portfolio</title>
+<title>UK Devolution Dashboard | Donnatella Bove Parra, PP434 portfolio</title>
 
 <link rel="icon" href="portfolio-favicon1.svg" type="image/svg+xml">
 <link rel="icon" href="portfolio-favicon1.ico" sizes="48x48">
@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="portfolio-style.css">
 
 <style>
-  /* Layout for this page. It does not depend on the portfolio's layout classes,
+  /* Layout for the page. It does not depend on the portfolio's layout classes,
      so the margins and spacing are the same wherever the page is opened. */
   .dash-wrap { max-width: 1180px; margin: 0 auto; padding: 56px clamp(20px, 5vw, 56px) 80px; box-sizing: border-box; }
   .dash-wrap .challenge-head { margin-bottom: 40px; }
@@ -61,7 +61,7 @@
 <article class="challenge" id="dashboard">
 
   <header class="challenge-head">
-    <h2><span class="cc">CC6</span>Devolution dashboard</h2>
+    <h2><span class="cc">CC6</span>UK Devolution dashboard</h2>
     <p>Alcohol-specific deaths in six UK cities, compared with London</p>
   </header>
 
@@ -71,13 +71,11 @@
         <a href="portfolio.html#cc6">&larr; Back to the portfolio</a>
       </p>
 
-      <h3>Did devolved alcohol policy show up in the numbers?</h3>
+      <h3>Was the impact of devolved alcohol policy reflected in the data?</h3>
       <p>
-        Health is a devolved power. Scotland introduced a minimum price per unit of alcohol on
-        1 May 2018, and Wales followed on 2 March 2020. Northern Ireland has not introduced one:
-        in March 2026 its Health Minister said the legislation could not be delivered before the
-        next Assembly election. England has not either, so London is the comparison line on every
-        chart.
+        Alcohol pricing varies across the UK due to devolved health powers. Scotland (2018) and Wales (2020) both have a minimum unit price in place. 
+        However, Northern Ireland shelved its plans in March 2026 until after the next election, and England has yet to adopt the policy. 
+        Therefore, as England lacks a minimum price, London is used as the control line on each chart.
       </p>
 
       <h4>How to read the charts</h4>
@@ -107,10 +105,10 @@
     <div class="chart-description dash-note">
       <h3>What stands out</h3>
       <p>
-        By 2024 London&rsquo;s index was about 150, well above all six cities: Cardiff 135,
-        Derry 123, Swansea 111, Belfast 109, Glasgow 104 and Edinburgh 101. Cardiff was already
-        36% above its 2018 level in 2020, the year Wales introduced the policy, so the charts do
-        not show a simple before-and-after pattern.
+        By 2024, London’s index stood at roughly 150, well ahead of Cardiff (135), Derry (123), 
+        Swansea (111), Belfast (109), Glasgow (104), and Edinburgh (101). 
+        Furthermore, the charts do not show a simple before-and-after pattern; 
+        by the time Wales introduced the policy in 2020, Cardiff was already 36% above its 2018 baseline.
       </p>
 
       <h4>Limitations</h4>
@@ -126,7 +124,7 @@
         <li><strong>Areas are not the same as cities.</strong> Derry&rsquo;s area includes Strabane,
             and London is a whole region.</li>
         <li><strong>Correlation, not cause.</strong> Other things changed at the same time,
-            including COVID-19 from 2020, so these charts cannot show that the policy caused any
+            including COVID-19 from 2020, so these charts are not indicative that the policy caused any
             change.</li>
       </ul>
 
@@ -136,10 +134,10 @@
         <a href="https://nrscotland.gov.uk/publications/alcohol-specific-deaths-2024" target="_blank" rel="noopener noreferrer">National Records of Scotland</a>,
         <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/bulletins/alcoholrelateddeathsintheunitedkingdom/registeredin2024" target="_blank" rel="noopener noreferrer">Office for National Statistics</a> and
         <a href="https://datavis.nisra.gov.uk/vitalStatistics/Alcohol_Specific_Deaths_2024.html" target="_blank" rel="noopener noreferrer">NISRA</a>.
-        The data was cleaned in Python and saved as six chart files (JSON) on GitHub. A loop in this page embeds each one.
+        The data was cleaned in Python through Colab and saved as six chart files (JSON) on GitHub. A loop in this page embeds each one.
       </p>
       <p>
-        <a href="YOUR_COLAB_LINK" target="_blank" rel="noopener noreferrer">Open the notebook in Google Colab</a>
+        <a href="https://colab.research.google.com/drive/1EsX3Id4vCwhuzixsIbi-meRJn4r9p7Uz?usp=sharing" target="_blank" rel="noopener noreferrer">Open the notebook in Google Colab</a>
       </p>
     </div>
   </section>
@@ -158,14 +156,7 @@
 
 <script>
 /* ==========================================================
-   THE SIX CHARTS: for each one, give its location (the id of
-   the <figure> above) and its file. Same idea as the portfolio:
-   a location and a spec, then vegaEmbed.
-
-   The file can be:
-     - a file in the same folder as this page:   "glasgow_chart.json"
-     - a raw GitHub address, for example:
-       "https://raw.githubusercontent.com/donnaboveparra/donnaboveparra.github.io/main/glasgow_chart.json"
+   THE SIX CHARTS
    ========================================================== */
 const charts = [
   { location: "#Location1", spec: "glasgow_chart.json"   },
