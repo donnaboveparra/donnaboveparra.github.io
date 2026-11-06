@@ -1,0 +1,668 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "domain": false,
+      "gridColor": "#ececec",
+      "labelColor": "#555555",
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "tickColor": "#ececec",
+      "titleColor": "#555555",
+      "titleFont": "Helvetica, Arial, sans-serif"
+    },
+    "title": {
+      "color": "#222222",
+      "font": "Helvetica, Arial, sans-serif",
+      "fontSize": 15,
+      "subtitleColor": "#666666",
+      "subtitleFont": "Helvetica, Arial, sans-serif",
+      "subtitleFontSize": 11
+    },
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 300,
+      "stroke": null
+    }
+  },
+  "datasets": {
+    "data-27d0cd414b557643a4891d4df6820935": [
+      {
+        "deaths": 92,
+        "index": 101.1,
+        "kind": "city",
+        "label": "Edinburgh 101",
+        "series": "Edinburgh",
+        "year": 2024
+      },
+      {
+        "deaths": 834,
+        "index": 150.3,
+        "kind": "london",
+        "label": "London 150",
+        "series": "London",
+        "year": 2024
+      }
+    ],
+    "data-9d78020f76d997398dca41cfa4b6d9e0": [
+      {
+        "y": 100
+      }
+    ],
+    "data-be894811b98c7df7596708c0bc9fcb8d": [
+      {
+        "end": 2024,
+        "label": "Minimum unit pricing in force",
+        "start": 2018
+      }
+    ],
+    "data-fe36aa034cbc03fcb0d5c2888e8a6c44": [
+      {
+        "deaths": 91,
+        "index": 100.0,
+        "kind": "city",
+        "label": "Edinburgh 100",
+        "series": "Edinburgh",
+        "year": 2018
+      },
+      {
+        "deaths": 561,
+        "index": 100.0,
+        "kind": "london",
+        "label": "London 100",
+        "series": "London",
+        "year": 2018
+      },
+      {
+        "deaths": 71,
+        "index": 95.2,
+        "kind": "city",
+        "label": "Edinburgh 95",
+        "series": "Edinburgh",
+        "year": 2019
+      },
+      {
+        "deaths": 579,
+        "index": 100.1,
+        "kind": "london",
+        "label": "London 100",
+        "series": "London",
+        "year": 2019
+      },
+      {
+        "deaths": 102,
+        "index": 97.4,
+        "kind": "city",
+        "label": "Edinburgh 97",
+        "series": "Edinburgh",
+        "year": 2020
+      },
+      {
+        "deaths": 737,
+        "index": 111.1,
+        "kind": "london",
+        "label": "London 111",
+        "series": "London",
+        "year": 2020
+      },
+      {
+        "deaths": 102,
+        "index": 101.5,
+        "kind": "city",
+        "label": "Edinburgh 102",
+        "series": "Edinburgh",
+        "year": 2021
+      },
+      {
+        "deaths": 793,
+        "index": 124.8,
+        "kind": "london",
+        "label": "London 125",
+        "series": "London",
+        "year": 2021
+      },
+      {
+        "deaths": 93,
+        "index": 109.6,
+        "kind": "city",
+        "label": "Edinburgh 110",
+        "series": "Edinburgh",
+        "year": 2022
+      },
+      {
+        "deaths": 837,
+        "index": 140.1,
+        "kind": "london",
+        "label": "London 140",
+        "series": "London",
+        "year": 2022
+      },
+      {
+        "deaths": 89,
+        "index": 104.8,
+        "kind": "city",
+        "label": "Edinburgh 105",
+        "series": "Edinburgh",
+        "year": 2023
+      },
+      {
+        "deaths": 869,
+        "index": 147.9,
+        "kind": "london",
+        "label": "London 148",
+        "series": "London",
+        "year": 2023
+      },
+      {
+        "deaths": 92,
+        "index": 101.1,
+        "kind": "city",
+        "label": "Edinburgh 101",
+        "series": "Edinburgh",
+        "year": 2024
+      },
+      {
+        "deaths": 834,
+        "index": 150.3,
+        "kind": "london",
+        "label": "London 150",
+        "series": "London",
+        "year": 2024
+      }
+    ]
+  },
+  "height": 230,
+  "layer": [
+    {
+      "data": {
+        "name": "data-be894811b98c7df7596708c0bc9fcb8d"
+      },
+      "encoding": {
+        "x": {
+          "field": "start",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "type": "quantitative"
+        },
+        "x2": {
+          "field": "end"
+        }
+      },
+      "mark": {
+        "color": "#c0392b",
+        "opacity": 0.07,
+        "type": "rect"
+      }
+    },
+    {
+      "data": {
+        "name": "data-be894811b98c7df7596708c0bc9fcb8d"
+      },
+      "encoding": {
+        "x": {
+          "field": "start",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "color": "#c0392b",
+        "strokeDash": [
+          4,
+          3
+        ],
+        "type": "rule"
+      }
+    },
+    {
+      "data": {
+        "name": "data-be894811b98c7df7596708c0bc9fcb8d"
+      },
+      "encoding": {
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "start",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "type": "quantitative"
+        },
+        "y": {
+          "value": 0
+        }
+      },
+      "mark": {
+        "align": "left",
+        "baseline": "top",
+        "color": "#c0392b",
+        "dx": 5,
+        "dy": 4,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 10,
+        "type": "text"
+      }
+    },
+    {
+      "data": {
+        "name": "data-9d78020f76d997398dca41cfa4b6d9e0"
+      },
+      "encoding": {
+        "y": {
+          "field": "y",
+          "scale": {
+            "domain": [
+              80,
+              160
+            ]
+          },
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "color": "#cccccc",
+        "type": "rule"
+      }
+    },
+    {
+      "data": {
+        "name": "data-fe36aa034cbc03fcb0d5c2888e8a6c44"
+      },
+      "encoding": {
+        "x": {
+          "axis": {
+            "format": "d",
+            "grid": false,
+            "values": [
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024
+            ]
+          },
+          "field": "year",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "title": null,
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "color": "#bbbbbb",
+        "type": "rule"
+      },
+      "transform": [
+        {
+          "filter": {
+            "empty": false,
+            "param": "hover_edinburgh"
+          }
+        }
+      ]
+    },
+    {
+      "data": {
+        "name": "data-fe36aa034cbc03fcb0d5c2888e8a6c44"
+      },
+      "encoding": {
+        "color": {
+          "field": "kind",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "city",
+              "london"
+            ],
+            "range": [
+              "#1f6f8b",
+              "#8a8a8a"
+            ]
+          },
+          "type": "nominal"
+        },
+        "strokeDash": {
+          "field": "kind",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "city",
+              "london"
+            ],
+            "range": [
+              [
+                1,
+                0
+              ],
+              [
+                6,
+                4
+              ]
+            ]
+          },
+          "type": "nominal"
+        },
+        "x": {
+          "axis": {
+            "format": "d",
+            "grid": false,
+            "values": [
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024
+            ]
+          },
+          "field": "year",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "title": null,
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "index",
+          "scale": {
+            "domain": [
+              80,
+              160
+            ]
+          },
+          "title": "Index (2018 = 100)",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "strokeWidth": 3,
+        "type": "line"
+      }
+    },
+    {
+      "data": {
+        "name": "data-fe36aa034cbc03fcb0d5c2888e8a6c44"
+      },
+      "encoding": {
+        "color": {
+          "field": "kind",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "city",
+              "london"
+            ],
+            "range": [
+              "#1f6f8b",
+              "#8a8a8a"
+            ]
+          },
+          "type": "nominal"
+        },
+        "size": {
+          "condition": {
+            "empty": false,
+            "param": "hover_edinburgh",
+            "value": 140
+          },
+          "value": 40
+        },
+        "x": {
+          "axis": {
+            "format": "d",
+            "grid": false,
+            "values": [
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024
+            ]
+          },
+          "field": "year",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "title": null,
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "index",
+          "scale": {
+            "domain": [
+              80,
+              160
+            ]
+          },
+          "title": "Index (2018 = 100)",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "opacity": 1,
+        "type": "circle"
+      }
+    },
+    {
+      "data": {
+        "name": "data-fe36aa034cbc03fcb0d5c2888e8a6c44"
+      },
+      "encoding": {
+        "color": {
+          "field": "kind",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "city",
+              "london"
+            ],
+            "range": [
+              "#1f6f8b",
+              "#8a8a8a"
+            ]
+          },
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "field": "series",
+            "title": "Area",
+            "type": "nominal"
+          },
+          {
+            "field": "year",
+            "format": "d",
+            "title": "Year",
+            "type": "quantitative"
+          },
+          {
+            "field": "deaths",
+            "title": "Deaths registered that year",
+            "type": "quantitative"
+          },
+          {
+            "field": "index",
+            "format": ".1f",
+            "title": "Index (2018 = 100)",
+            "type": "quantitative"
+          }
+        ],
+        "x": {
+          "axis": {
+            "format": "d",
+            "grid": false,
+            "values": [
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024
+            ]
+          },
+          "field": "year",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "title": null,
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "index",
+          "scale": {
+            "domain": [
+              80,
+              160
+            ]
+          },
+          "title": "Index (2018 = 100)",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "opacity": 0,
+        "size": 500,
+        "type": "circle"
+      },
+      "name": "view_8"
+    },
+    {
+      "data": {
+        "name": "data-27d0cd414b557643a4891d4df6820935"
+      },
+      "encoding": {
+        "color": {
+          "field": "kind",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "city",
+              "london"
+            ],
+            "range": [
+              "#1f6f8b",
+              "#8a8a8a"
+            ]
+          },
+          "type": "nominal"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        },
+        "x": {
+          "axis": {
+            "format": "d",
+            "grid": false,
+            "values": [
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024
+            ]
+          },
+          "field": "year",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "title": null,
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "index",
+          "scale": {
+            "domain": [
+              80,
+              160
+            ]
+          },
+          "title": "Index (2018 = 100)",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "align": "left",
+        "dx": 9,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "type": "text"
+      }
+    }
+  ],
+  "padding": {
+    "bottom": 5,
+    "left": 5,
+    "right": 100,
+    "top": 5
+  },
+  "params": [
+    {
+      "name": "hover_edinburgh",
+      "select": {
+        "clear": "mouseout",
+        "fields": [
+          "year"
+        ],
+        "nearest": true,
+        "on": "mouseover",
+        "type": "point"
+      },
+      "views": [
+        "view_8"
+      ]
+    }
+  ],
+  "title": {
+    "anchor": "start",
+    "subtitle": "Scotland, compared with London",
+    "text": "Edinburgh"
+  },
+  "width": 300
+}

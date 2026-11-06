@@ -1,0 +1,606 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "domain": false,
+      "gridColor": "#ececec",
+      "labelColor": "#555555",
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "tickColor": "#ececec",
+      "titleColor": "#555555",
+      "titleFont": "Helvetica, Arial, sans-serif"
+    },
+    "title": {
+      "color": "#222222",
+      "font": "Helvetica, Arial, sans-serif",
+      "fontSize": 15,
+      "subtitleColor": "#666666",
+      "subtitleFont": "Helvetica, Arial, sans-serif",
+      "subtitleFontSize": 11
+    },
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 300,
+      "stroke": null
+    }
+  },
+  "datasets": {
+    "data-0c3de843fabac6afe8a69fbd25caf254": [
+      {
+        "note": "No minimum unit pricing"
+      }
+    ],
+    "data-5fd83bb2fb542a398dd3f9315bf0a79f": [
+      {
+        "deaths": 81,
+        "index": 100.0,
+        "kind": "city",
+        "label": "Belfast 100",
+        "series": "Belfast",
+        "year": 2018
+      },
+      {
+        "deaths": 561,
+        "index": 100.0,
+        "kind": "london",
+        "label": "London 100",
+        "series": "London",
+        "year": 2018
+      },
+      {
+        "deaths": 79,
+        "index": 96.7,
+        "kind": "city",
+        "label": "Belfast 97",
+        "series": "Belfast",
+        "year": 2019
+      },
+      {
+        "deaths": 579,
+        "index": 100.1,
+        "kind": "london",
+        "label": "London 100",
+        "series": "London",
+        "year": 2019
+      },
+      {
+        "deaths": 91,
+        "index": 103.3,
+        "kind": "city",
+        "label": "Belfast 103",
+        "series": "Belfast",
+        "year": 2020
+      },
+      {
+        "deaths": 737,
+        "index": 111.1,
+        "kind": "london",
+        "label": "London 111",
+        "series": "London",
+        "year": 2020
+      },
+      {
+        "deaths": 75,
+        "index": 100.8,
+        "kind": "city",
+        "label": "Belfast 101",
+        "series": "Belfast",
+        "year": 2021
+      },
+      {
+        "deaths": 793,
+        "index": 124.8,
+        "kind": "london",
+        "label": "London 125",
+        "series": "London",
+        "year": 2021
+      },
+      {
+        "deaths": 92,
+        "index": 106.2,
+        "kind": "city",
+        "label": "Belfast 106",
+        "series": "Belfast",
+        "year": 2022
+      },
+      {
+        "deaths": 837,
+        "index": 140.1,
+        "kind": "london",
+        "label": "London 140",
+        "series": "London",
+        "year": 2022
+      },
+      {
+        "deaths": 77,
+        "index": 100.4,
+        "kind": "city",
+        "label": "Belfast 100",
+        "series": "Belfast",
+        "year": 2023
+      },
+      {
+        "deaths": 869,
+        "index": 147.9,
+        "kind": "london",
+        "label": "London 148",
+        "series": "London",
+        "year": 2023
+      },
+      {
+        "deaths": 96,
+        "index": 109.0,
+        "kind": "city",
+        "label": "Belfast 109",
+        "series": "Belfast",
+        "year": 2024
+      },
+      {
+        "deaths": 834,
+        "index": 150.3,
+        "kind": "london",
+        "label": "London 150",
+        "series": "London",
+        "year": 2024
+      }
+    ],
+    "data-9d78020f76d997398dca41cfa4b6d9e0": [
+      {
+        "y": 100
+      }
+    ],
+    "data-ea463ea05767822162d53091ca0bcc87": [
+      {
+        "deaths": 96,
+        "index": 109.0,
+        "kind": "city",
+        "label": "Belfast 109",
+        "series": "Belfast",
+        "year": 2024
+      },
+      {
+        "deaths": 834,
+        "index": 150.3,
+        "kind": "london",
+        "label": "London 150",
+        "series": "London",
+        "year": 2024
+      }
+    ]
+  },
+  "height": 230,
+  "layer": [
+    {
+      "data": {
+        "name": "data-0c3de843fabac6afe8a69fbd25caf254"
+      },
+      "encoding": {
+        "text": {
+          "field": "note",
+          "type": "nominal"
+        },
+        "x": {
+          "value": 0
+        },
+        "y": {
+          "value": 0
+        }
+      },
+      "mark": {
+        "align": "left",
+        "baseline": "top",
+        "color": "#999999",
+        "dx": 5,
+        "dy": 4,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 10,
+        "type": "text"
+      }
+    },
+    {
+      "data": {
+        "name": "data-9d78020f76d997398dca41cfa4b6d9e0"
+      },
+      "encoding": {
+        "y": {
+          "field": "y",
+          "scale": {
+            "domain": [
+              80,
+              160
+            ]
+          },
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "color": "#cccccc",
+        "type": "rule"
+      }
+    },
+    {
+      "data": {
+        "name": "data-5fd83bb2fb542a398dd3f9315bf0a79f"
+      },
+      "encoding": {
+        "x": {
+          "axis": {
+            "format": "d",
+            "grid": false,
+            "values": [
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024
+            ]
+          },
+          "field": "year",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "title": null,
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "color": "#bbbbbb",
+        "type": "rule"
+      },
+      "transform": [
+        {
+          "filter": {
+            "empty": false,
+            "param": "hover_belfast"
+          }
+        }
+      ]
+    },
+    {
+      "data": {
+        "name": "data-5fd83bb2fb542a398dd3f9315bf0a79f"
+      },
+      "encoding": {
+        "color": {
+          "field": "kind",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "city",
+              "london"
+            ],
+            "range": [
+              "#1f6f8b",
+              "#8a8a8a"
+            ]
+          },
+          "type": "nominal"
+        },
+        "strokeDash": {
+          "field": "kind",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "city",
+              "london"
+            ],
+            "range": [
+              [
+                1,
+                0
+              ],
+              [
+                6,
+                4
+              ]
+            ]
+          },
+          "type": "nominal"
+        },
+        "x": {
+          "axis": {
+            "format": "d",
+            "grid": false,
+            "values": [
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024
+            ]
+          },
+          "field": "year",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "title": null,
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "index",
+          "scale": {
+            "domain": [
+              80,
+              160
+            ]
+          },
+          "title": "Index (2018 = 100)",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "strokeWidth": 3,
+        "type": "line"
+      }
+    },
+    {
+      "data": {
+        "name": "data-5fd83bb2fb542a398dd3f9315bf0a79f"
+      },
+      "encoding": {
+        "color": {
+          "field": "kind",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "city",
+              "london"
+            ],
+            "range": [
+              "#1f6f8b",
+              "#8a8a8a"
+            ]
+          },
+          "type": "nominal"
+        },
+        "size": {
+          "condition": {
+            "empty": false,
+            "param": "hover_belfast",
+            "value": 140
+          },
+          "value": 40
+        },
+        "x": {
+          "axis": {
+            "format": "d",
+            "grid": false,
+            "values": [
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024
+            ]
+          },
+          "field": "year",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "title": null,
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "index",
+          "scale": {
+            "domain": [
+              80,
+              160
+            ]
+          },
+          "title": "Index (2018 = 100)",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "opacity": 1,
+        "type": "circle"
+      }
+    },
+    {
+      "data": {
+        "name": "data-5fd83bb2fb542a398dd3f9315bf0a79f"
+      },
+      "encoding": {
+        "color": {
+          "field": "kind",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "city",
+              "london"
+            ],
+            "range": [
+              "#1f6f8b",
+              "#8a8a8a"
+            ]
+          },
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "field": "series",
+            "title": "Area",
+            "type": "nominal"
+          },
+          {
+            "field": "year",
+            "format": "d",
+            "title": "Year",
+            "type": "quantitative"
+          },
+          {
+            "field": "deaths",
+            "title": "Deaths registered that year",
+            "type": "quantitative"
+          },
+          {
+            "field": "index",
+            "format": ".1f",
+            "title": "Index (2018 = 100)",
+            "type": "quantitative"
+          }
+        ],
+        "x": {
+          "axis": {
+            "format": "d",
+            "grid": false,
+            "values": [
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024
+            ]
+          },
+          "field": "year",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "title": null,
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "index",
+          "scale": {
+            "domain": [
+              80,
+              160
+            ]
+          },
+          "title": "Index (2018 = 100)",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "opacity": 0,
+        "size": 500,
+        "type": "circle"
+      },
+      "name": "view_11"
+    },
+    {
+      "data": {
+        "name": "data-ea463ea05767822162d53091ca0bcc87"
+      },
+      "encoding": {
+        "color": {
+          "field": "kind",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "city",
+              "london"
+            ],
+            "range": [
+              "#1f6f8b",
+              "#8a8a8a"
+            ]
+          },
+          "type": "nominal"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        },
+        "x": {
+          "axis": {
+            "format": "d",
+            "grid": false,
+            "values": [
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024
+            ]
+          },
+          "field": "year",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "title": null,
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "index",
+          "scale": {
+            "domain": [
+              80,
+              160
+            ]
+          },
+          "title": "Index (2018 = 100)",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "align": "left",
+        "dx": 9,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "type": "text"
+      }
+    }
+  ],
+  "padding": {
+    "bottom": 5,
+    "left": 5,
+    "right": 100,
+    "top": 5
+  },
+  "params": [
+    {
+      "name": "hover_belfast",
+      "select": {
+        "clear": "mouseout",
+        "fields": [
+          "year"
+        ],
+        "nearest": true,
+        "on": "mouseover",
+        "type": "point"
+      },
+      "views": [
+        "view_11"
+      ]
+    }
+  ],
+  "title": {
+    "anchor": "start",
+    "subtitle": "Northern Ireland, compared with London",
+    "text": "Belfast"
+  },
+  "width": 300
+}

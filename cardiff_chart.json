@@ -1,0 +1,668 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "domain": false,
+      "gridColor": "#ececec",
+      "labelColor": "#555555",
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "tickColor": "#ececec",
+      "titleColor": "#555555",
+      "titleFont": "Helvetica, Arial, sans-serif"
+    },
+    "title": {
+      "color": "#222222",
+      "font": "Helvetica, Arial, sans-serif",
+      "fontSize": 15,
+      "subtitleColor": "#666666",
+      "subtitleFont": "Helvetica, Arial, sans-serif",
+      "subtitleFontSize": 11
+    },
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 300,
+      "stroke": null
+    }
+  },
+  "datasets": {
+    "data-80fd611ffc39c1a9ed0a92d5f053c235": [
+      {
+        "deaths": 42,
+        "index": 135.1,
+        "kind": "city",
+        "label": "Cardiff 135",
+        "series": "Cardiff",
+        "year": 2024
+      },
+      {
+        "deaths": 834,
+        "index": 150.3,
+        "kind": "london",
+        "label": "London 150",
+        "series": "London",
+        "year": 2024
+      }
+    ],
+    "data-88c5f21bcecd8ec31a0f2306fed075c0": [
+      {
+        "end": 2024,
+        "label": "Minimum unit pricing in force",
+        "start": 2020
+      }
+    ],
+    "data-9d78020f76d997398dca41cfa4b6d9e0": [
+      {
+        "y": 100
+      }
+    ],
+    "data-ae05c041b008cba67d38242473174dde": [
+      {
+        "deaths": 33,
+        "index": 100.0,
+        "kind": "city",
+        "label": "Cardiff 100",
+        "series": "Cardiff",
+        "year": 2018
+      },
+      {
+        "deaths": 561,
+        "index": 100.0,
+        "kind": "london",
+        "label": "London 100",
+        "series": "London",
+        "year": 2018
+      },
+      {
+        "deaths": 50,
+        "index": 118.1,
+        "kind": "city",
+        "label": "Cardiff 118",
+        "series": "Cardiff",
+        "year": 2019
+      },
+      {
+        "deaths": 579,
+        "index": 100.1,
+        "kind": "london",
+        "label": "London 100",
+        "series": "London",
+        "year": 2019
+      },
+      {
+        "deaths": 45,
+        "index": 136.2,
+        "kind": "city",
+        "label": "Cardiff 136",
+        "series": "Cardiff",
+        "year": 2020
+      },
+      {
+        "deaths": 737,
+        "index": 111.1,
+        "kind": "london",
+        "label": "London 111",
+        "series": "London",
+        "year": 2020
+      },
+      {
+        "deaths": 41,
+        "index": 144.7,
+        "kind": "city",
+        "label": "Cardiff 145",
+        "series": "Cardiff",
+        "year": 2021
+      },
+      {
+        "deaths": 793,
+        "index": 124.8,
+        "kind": "london",
+        "label": "London 125",
+        "series": "London",
+        "year": 2021
+      },
+      {
+        "deaths": 39,
+        "index": 133.0,
+        "kind": "city",
+        "label": "Cardiff 133",
+        "series": "Cardiff",
+        "year": 2022
+      },
+      {
+        "deaths": 837,
+        "index": 140.1,
+        "kind": "london",
+        "label": "London 140",
+        "series": "London",
+        "year": 2022
+      },
+      {
+        "deaths": 46,
+        "index": 134.1,
+        "kind": "city",
+        "label": "Cardiff 134",
+        "series": "Cardiff",
+        "year": 2023
+      },
+      {
+        "deaths": 869,
+        "index": 147.9,
+        "kind": "london",
+        "label": "London 148",
+        "series": "London",
+        "year": 2023
+      },
+      {
+        "deaths": 42,
+        "index": 135.1,
+        "kind": "city",
+        "label": "Cardiff 135",
+        "series": "Cardiff",
+        "year": 2024
+      },
+      {
+        "deaths": 834,
+        "index": 150.3,
+        "kind": "london",
+        "label": "London 150",
+        "series": "London",
+        "year": 2024
+      }
+    ]
+  },
+  "height": 230,
+  "layer": [
+    {
+      "data": {
+        "name": "data-88c5f21bcecd8ec31a0f2306fed075c0"
+      },
+      "encoding": {
+        "x": {
+          "field": "start",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "type": "quantitative"
+        },
+        "x2": {
+          "field": "end"
+        }
+      },
+      "mark": {
+        "color": "#c0392b",
+        "opacity": 0.07,
+        "type": "rect"
+      }
+    },
+    {
+      "data": {
+        "name": "data-88c5f21bcecd8ec31a0f2306fed075c0"
+      },
+      "encoding": {
+        "x": {
+          "field": "start",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "color": "#c0392b",
+        "strokeDash": [
+          4,
+          3
+        ],
+        "type": "rule"
+      }
+    },
+    {
+      "data": {
+        "name": "data-88c5f21bcecd8ec31a0f2306fed075c0"
+      },
+      "encoding": {
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "start",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "type": "quantitative"
+        },
+        "y": {
+          "value": 0
+        }
+      },
+      "mark": {
+        "align": "left",
+        "baseline": "top",
+        "color": "#c0392b",
+        "dx": 5,
+        "dy": 4,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 10,
+        "type": "text"
+      }
+    },
+    {
+      "data": {
+        "name": "data-9d78020f76d997398dca41cfa4b6d9e0"
+      },
+      "encoding": {
+        "y": {
+          "field": "y",
+          "scale": {
+            "domain": [
+              80,
+              160
+            ]
+          },
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "color": "#cccccc",
+        "type": "rule"
+      }
+    },
+    {
+      "data": {
+        "name": "data-ae05c041b008cba67d38242473174dde"
+      },
+      "encoding": {
+        "x": {
+          "axis": {
+            "format": "d",
+            "grid": false,
+            "values": [
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024
+            ]
+          },
+          "field": "year",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "title": null,
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "color": "#bbbbbb",
+        "type": "rule"
+      },
+      "transform": [
+        {
+          "filter": {
+            "empty": false,
+            "param": "hover_cardiff"
+          }
+        }
+      ]
+    },
+    {
+      "data": {
+        "name": "data-ae05c041b008cba67d38242473174dde"
+      },
+      "encoding": {
+        "color": {
+          "field": "kind",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "city",
+              "london"
+            ],
+            "range": [
+              "#1f6f8b",
+              "#8a8a8a"
+            ]
+          },
+          "type": "nominal"
+        },
+        "strokeDash": {
+          "field": "kind",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "city",
+              "london"
+            ],
+            "range": [
+              [
+                1,
+                0
+              ],
+              [
+                6,
+                4
+              ]
+            ]
+          },
+          "type": "nominal"
+        },
+        "x": {
+          "axis": {
+            "format": "d",
+            "grid": false,
+            "values": [
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024
+            ]
+          },
+          "field": "year",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "title": null,
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "index",
+          "scale": {
+            "domain": [
+              80,
+              160
+            ]
+          },
+          "title": "Index (2018 = 100)",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "strokeWidth": 3,
+        "type": "line"
+      }
+    },
+    {
+      "data": {
+        "name": "data-ae05c041b008cba67d38242473174dde"
+      },
+      "encoding": {
+        "color": {
+          "field": "kind",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "city",
+              "london"
+            ],
+            "range": [
+              "#1f6f8b",
+              "#8a8a8a"
+            ]
+          },
+          "type": "nominal"
+        },
+        "size": {
+          "condition": {
+            "empty": false,
+            "param": "hover_cardiff",
+            "value": 140
+          },
+          "value": 40
+        },
+        "x": {
+          "axis": {
+            "format": "d",
+            "grid": false,
+            "values": [
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024
+            ]
+          },
+          "field": "year",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "title": null,
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "index",
+          "scale": {
+            "domain": [
+              80,
+              160
+            ]
+          },
+          "title": "Index (2018 = 100)",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "opacity": 1,
+        "type": "circle"
+      }
+    },
+    {
+      "data": {
+        "name": "data-ae05c041b008cba67d38242473174dde"
+      },
+      "encoding": {
+        "color": {
+          "field": "kind",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "city",
+              "london"
+            ],
+            "range": [
+              "#1f6f8b",
+              "#8a8a8a"
+            ]
+          },
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "field": "series",
+            "title": "Area",
+            "type": "nominal"
+          },
+          {
+            "field": "year",
+            "format": "d",
+            "title": "Year",
+            "type": "quantitative"
+          },
+          {
+            "field": "deaths",
+            "title": "Deaths registered that year",
+            "type": "quantitative"
+          },
+          {
+            "field": "index",
+            "format": ".1f",
+            "title": "Index (2018 = 100)",
+            "type": "quantitative"
+          }
+        ],
+        "x": {
+          "axis": {
+            "format": "d",
+            "grid": false,
+            "values": [
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024
+            ]
+          },
+          "field": "year",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "title": null,
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "index",
+          "scale": {
+            "domain": [
+              80,
+              160
+            ]
+          },
+          "title": "Index (2018 = 100)",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "opacity": 0,
+        "size": 500,
+        "type": "circle"
+      },
+      "name": "view_9"
+    },
+    {
+      "data": {
+        "name": "data-80fd611ffc39c1a9ed0a92d5f053c235"
+      },
+      "encoding": {
+        "color": {
+          "field": "kind",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "city",
+              "london"
+            ],
+            "range": [
+              "#1f6f8b",
+              "#8a8a8a"
+            ]
+          },
+          "type": "nominal"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        },
+        "x": {
+          "axis": {
+            "format": "d",
+            "grid": false,
+            "values": [
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024
+            ]
+          },
+          "field": "year",
+          "scale": {
+            "domain": [
+              2018,
+              2024
+            ],
+            "nice": false
+          },
+          "title": null,
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "index",
+          "scale": {
+            "domain": [
+              80,
+              160
+            ]
+          },
+          "title": "Index (2018 = 100)",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "align": "left",
+        "dx": 9,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "type": "text"
+      }
+    }
+  ],
+  "padding": {
+    "bottom": 5,
+    "left": 5,
+    "right": 100,
+    "top": 5
+  },
+  "params": [
+    {
+      "name": "hover_cardiff",
+      "select": {
+        "clear": "mouseout",
+        "fields": [
+          "year"
+        ],
+        "nearest": true,
+        "on": "mouseover",
+        "type": "point"
+      },
+      "views": [
+        "view_9"
+      ]
+    }
+  ],
+  "title": {
+    "anchor": "start",
+    "subtitle": "Wales, compared with London",
+    "text": "Cardiff"
+  },
+  "width": 300
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CC6 Devolution Dashboard | Donnatella Bove Parra, PP434 portfolio</title>
+
+<link rel="icon" href="portfolio-favicon1.svg" type="image/svg+xml">
+<link rel="icon" href="portfolio-favicon1.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="portfolio-apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
+
+<!-- The same stylesheet as the portfolio -->
+<link rel="stylesheet" href="portfolio-style.css">
+
+<style>
+  /* Layout for this page. It does not depend on the portfolio's layout classes,
+     so the margins and spacing are the same wherever the page is opened. */
+  .dash-wrap { max-width: 1180px; margin: 0 auto; padding: 56px clamp(20px, 5vw, 56px) 80px; box-sizing: border-box; }
+  .dash-wrap .challenge-head { margin-bottom: 40px; }
+
+  .dash-note { max-width: 64ch; }
+  .dash-note p, .dash-note li { font-size: 1.05rem; line-height: 1.7; color: #586172; }
+  .dash-note p  { margin: 0 0 1.1em; }
+  .dash-note h3 { margin: 1.8em 0 0.6em; }
+  .dash-note h4 { margin: 1.8em 0 0.7em; }
+  .dash-note ul { margin: 0 0 1.4em; padding-left: 1.25em; }
+  .dash-note li { margin-bottom: 0.7em; }
+  .dash-note strong { color: #141c31; font-weight: 600; }
+
+  .dash-section { margin-top: 72px; }
+
+  .dash-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 40px; margin-top: 40px; }
+  .dash-grid figure { margin: 0; min-width: 0; overflow-x: auto; }
+
+  .dash-error { color: #b5533c; font-size: 0.95rem; line-height: 1.6; max-width: 80ch; }
+  .dash-error code { word-break: break-all; }
+
+  @media (max-width: 1040px) { .dash-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; } }
+</style>
+</head>
+
+<body>
+
+<a class="skip" href="#dashboard">Skip to the dashboard</a>
+
+<header class="masthead">
+  <a class="name" href="portfolio.html">Donnatella Bove Parra</a>
+  <span class="course">PP434, LSE</span>
+</header>
+
+<main id="top" class="dash-wrap">
+
+<article class="challenge" id="dashboard">
+
+  <header class="challenge-head">
+    <h2><span class="cc">CC6</span>Devolution dashboard</h2>
+    <p>Alcohol-specific deaths in six UK cities, compared with London</p>
+  </header>
+
+  <section class="piece">
+    <div class="chart-description dash-note">
+      <p>
+        <a href="portfolio.html#cc6">&larr; Back to the portfolio</a>
+      </p>
+
+      <h3>Did devolved alcohol policy show up in the numbers?</h3>
+      <p>
+        Health is a devolved power. Scotland introduced a minimum price per unit of alcohol on
+        1 May 2018, and Wales followed on 2 March 2020. Northern Ireland has not introduced one:
+        in March 2026 its Health Minister said the legislation could not be delivered before the
+        next Assembly election. England has not either, so London is the comparison line on every
+        chart.
+      </p>
+
+      <h4>How to read the charts</h4>
+      <ul>
+        <li>Each line is an <strong>index</strong>: the 3-year rolling average of alcohol-specific
+            deaths, where 2018 = 100. A value of 120 means 20% higher than in 2018.</li>
+        <li>The <strong>solid line</strong> is the city and the <strong>dashed grey line</strong> is
+            London.</li>
+        <li>The <strong>red shaded area</strong> marks the years minimum unit pricing has been in
+            force. Belfast and Derry have none.</li>
+        <li><strong>Hover over a year</strong> to see the actual number of deaths registered that year.</li>
+      </ul>
+    </div>
+
+    <!-- The six locations. Each one is filled by the script at the bottom. -->
+    <div class="dash-grid">
+      <figure id="Location1" aria-label="Glasgow compared with London"></figure>
+      <figure id="Location2" aria-label="Edinburgh compared with London"></figure>
+      <figure id="Location3" aria-label="Cardiff compared with London"></figure>
+      <figure id="Location4" aria-label="Swansea compared with London"></figure>
+      <figure id="Location5" aria-label="Belfast compared with London"></figure>
+      <figure id="Location6" aria-label="Derry compared with London"></figure>
+    </div>
+  </section>
+
+  <section class="piece dash-section">
+    <div class="chart-description dash-note">
+      <h3>What stands out</h3>
+      <p>
+        By 2024 London&rsquo;s index was about 150, well above all six cities: Cardiff 135,
+        Derry 123, Swansea 111, Belfast 109, Glasgow 104 and Edinburgh 101. Cardiff was already
+        36% above its 2018 level in 2020, the year Wales introduced the policy, so the charts do
+        not show a simple before-and-after pattern.
+      </p>
+
+      <h4>Limitations</h4>
+      <ul>
+        <li><strong>Counts, not rates.</strong> The index follows the number of deaths and does not
+            adjust for population.</li>
+        <li><strong>Small numbers.</strong> Cardiff, Swansea and Derry have only a few dozen deaths a
+            year, so a difference of five or ten moves the line a lot.</li>
+        <li><strong>Year of registration.</strong> Deaths are counted when registered, not when they
+            happened.</li>
+        <li><strong>Residents.</strong> Scotland&rsquo;s and Northern Ireland&rsquo;s figures include
+            non-residents; the ONS figures for Wales and London do not.</li>
+        <li><strong>Areas are not the same as cities.</strong> Derry&rsquo;s area includes Strabane,
+            and London is a whole region.</li>
+        <li><strong>Correlation, not cause.</strong> Other things changed at the same time,
+            including COVID-19 from 2020, so these charts cannot show that the policy caused any
+            change.</li>
+      </ul>
+
+      <h4>Data and code</h4>
+      <p>
+        Sources:
+        <a href="https://nrscotland.gov.uk/publications/alcohol-specific-deaths-2024" target="_blank" rel="noopener noreferrer">National Records of Scotland</a>,
+        <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/bulletins/alcoholrelateddeathsintheunitedkingdom/registeredin2024" target="_blank" rel="noopener noreferrer">Office for National Statistics</a> and
+        <a href="https://datavis.nisra.gov.uk/vitalStatistics/Alcohol_Specific_Deaths_2024.html" target="_blank" rel="noopener noreferrer">NISRA</a>.
+        The data was cleaned in Python and saved as six chart files (JSON) on GitHub. A loop in this page embeds each one.
+      </p>
+      <p>
+        <a href="YOUR_COLAB_LINK" target="_blank" rel="noopener noreferrer">Open the notebook in Google Colab</a>
+      </p>
+    </div>
+  </section>
+
+</article>
+
+</main>
+
+<footer id="footer" class="footer">
+  <div>&copy; 2026 Donnatella Bove Parra</div>
+  <div class="footer-links">
+    <a href="#">GitHub</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+/* ==========================================================
+   THE SIX CHARTS: for each one, give its location (the id of
+   the <figure> above) and its file. Same idea as the portfolio:
+   a location and a spec, then vegaEmbed.
+
+   The file can be:
+     - a file in the same folder as this page:   "glasgow_chart.json"
+     - a raw GitHub address, for example:
+       "https://raw.githubusercontent.com/donnaboveparra/donnaboveparra.github.io/main/glasgow_chart.json"
+   ========================================================== */
+const charts = [
+  { location: "#Location1", spec: "glasgow_chart.json"   },
+  { location: "#Location2", spec: "edinburgh_chart.json" },
+  { location: "#Location3", spec: "cardiff_chart.json"   },
+  { location: "#Location4", spec: "swansea_chart.json"   },
+  { location: "#Location5", spec: "belfast_chart.json"   },
+  { location: "#Location6", spec: "derry_chart.json"     }
+];
+
+/* The loop: the embed function is written once and runs six times */
+charts.forEach(chart => {
+  vegaEmbed(chart.location, chart.spec, { actions: false, renderer: "svg" })
+    .catch(error => {
+      console.error("Could not load " + chart.spec, error);
+      const place = document.querySelector(chart.location);
+      place.textContent = "Could not load " + chart.spec + ". Check that the file is on GitHub and that the address is right.";
+      place.className = "dash-error";
+    });
+});
+</script>
+
+</body>
+</html>
