@@ -1,0 +1,1797 @@
+{
+  "config": {
+    "view": {"continuousWidth": 300, "continuousHeight": 300, "stroke": null},
+    "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif"
+  },
+  "vconcat": [
+    {
+      "layer": [
+        {
+          "data": {"name": "data-c74ba06b70f449194e83602f6b2723d9"},
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#6A6A6A",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 13,
+            "lineHeight": 19,
+            "text": [
+              "Hover over a year for details.",
+              "○ marks the April 2026 snapshot reported by Reuters."
+            ]
+          },
+          "encoding": {
+            "opacity": {
+              "condition": {"test": "active_year == null", "value": 1},
+              "value": 0
+            },
+            "x": {"value": -40},
+            "y": {"value": 4}
+          }
+        },
+        {
+          "data": {"name": "data-9024e289fa99546aebb616599cfb665c"},
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#262626",
+            "font": "Newsreader, Georgia, serif",
+            "fontSize": 32
+          },
+          "encoding": {
+            "text": {"field": "year", "type": "nominal"},
+            "x": {"value": -40},
+            "y": {"value": 0}
+          },
+          "transform": [{"filter": "datum.year === active_year"}]
+        },
+        {
+          "data": {"name": "data-9024e289fa99546aebb616599cfb665c"},
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#262626",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 14,
+            "fontWeight": 600
+          },
+          "encoding": {
+            "text": {"field": "l1", "type": "nominal"},
+            "x": {"value": 52},
+            "y": {"value": 1}
+          },
+          "transform": [{"filter": "datum.year === active_year"}]
+        },
+        {
+          "data": {"name": "data-9024e289fa99546aebb616599cfb665c"},
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#262626",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 13
+          },
+          "encoding": {
+            "text": {"field": "l2", "type": "nominal"},
+            "x": {"value": 52},
+            "y": {"value": 22}
+          },
+          "transform": [{"filter": "datum.year === active_year"}]
+        },
+        {
+          "data": {"name": "data-9024e289fa99546aebb616599cfb665c"},
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#6A6A6A",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 12,
+            "fontStyle": "italic"
+          },
+          "encoding": {
+            "text": {"field": "l3", "type": "nominal"},
+            "x": {"value": 52},
+            "y": {"value": 42}
+          },
+          "transform": [{"filter": "datum.year === active_year"}]
+        }
+      ],
+      "height": 62,
+      "width": 840
+    },
+    {
+      "layer": [
+        {
+          "data": {"name": "data-b602332639f3d53da503c68dfbbed450"},
+          "mark": {"type": "rule", "color": "#E6E6E6", "strokeWidth": 1},
+          "encoding": {
+            "y": {
+              "axis": null,
+              "field": "v",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-c60050fb7ac314161d1b68dc3fdfb512"},
+          "mark": {"type": "rule", "color": "#CFCFCF", "strokeWidth": 1},
+          "encoding": {
+            "y": {
+              "axis": null,
+              "field": "v",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-bb4bb4dbf3c5c5086531b66c798f77a9"},
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "middle",
+            "color": "#6A6A6A",
+            "dx": -8,
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 12
+          },
+          "encoding": {
+            "text": {"field": "label", "type": "nominal"},
+            "x": {"value": 0},
+            "y": {
+              "axis": null,
+              "field": "v",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-aa00fdb2528ee1de01aa891af4fce091"},
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "angle": 270,
+            "baseline": "middle",
+            "color": "#6A6A6A",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 12
+          },
+          "encoding": {
+            "text": {"field": "t", "type": "nominal"},
+            "x": {"value": -54},
+            "y": {
+              "axis": null,
+              "field": "v",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-eb837fa87d944734e7f752de6ab860ce"},
+          "mark": {"type": "rule", "color": "#CFCFCF", "strokeWidth": 1},
+          "encoding": {
+            "x": {
+              "axis": null,
+              "field": "year",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "y": {"value": 346},
+            "y2": {"value": 351}
+          }
+        },
+        {
+          "data": {"name": "data-eb837fa87d944734e7f752de6ab860ce"},
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "top",
+            "color": "#6A6A6A",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 12
+          },
+          "encoding": {
+            "text": {"field": "label", "type": "nominal"},
+            "x": {
+              "axis": null,
+              "field": "year",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "y": {"value": 355}
+          }
+        },
+        {
+          "data": {"name": "data-7be1d6ec72244db0523c79b61ba6a84b"},
+          "mark": {
+            "type": "area",
+            "color": "#C9A8A1",
+            "interpolate": "monotone",
+            "opacity": 0.55
+          },
+          "encoding": {
+            "x": {
+              "axis": null,
+              "field": "year",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "y": {
+              "axis": null,
+              "field": "throughput",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            },
+            "y2": {"field": "capacity"}
+          }
+        },
+        {
+          "data": {"name": "data-7be1d6ec72244db0523c79b61ba6a84b"},
+          "mark": {
+            "type": "line",
+            "color": "#9DB0BF",
+            "interpolate": "monotone",
+            "strokeWidth": 3
+          },
+          "encoding": {
+            "x": {
+              "axis": null,
+              "field": "year",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "y": {
+              "axis": null,
+              "field": "capacity",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-7be1d6ec72244db0523c79b61ba6a84b"},
+          "mark": {
+            "type": "line",
+            "color": "#4B5563",
+            "interpolate": "monotone",
+            "strokeWidth": 2
+          },
+          "encoding": {
+            "x": {
+              "axis": null,
+              "field": "year",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "y": {
+              "axis": null,
+              "field": "throughput",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-392fbb6a8bf5a1b1d166dd010dd41c8d"},
+          "mark": {
+            "type": "rule",
+            "color": "#C9A8A1",
+            "opacity": 0.55,
+            "strokeWidth": 16
+          },
+          "encoding": {
+            "x": {
+              "axis": null,
+              "field": "year",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "y": {
+              "axis": null,
+              "field": "throughput",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            },
+            "y2": {"field": "capacity"}
+          }
+        },
+        {
+          "data": {"name": "data-504579b1c8a47b33ad89d506636c248e"},
+          "mark": {
+            "type": "point",
+            "fill": "white",
+            "filled": true,
+            "opacity": 1,
+            "shape": "circle",
+            "size": 120,
+            "strokeWidth": 1.8
+          },
+          "encoding": {
+            "stroke": {
+              "field": "c",
+              "legend": null,
+              "scale": null,
+              "type": "nominal"
+            },
+            "x": {
+              "axis": null,
+              "field": "year",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "y": {
+              "axis": null,
+              "field": "v",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-532dc1f8b798ad0e53d195c3836c03b8"},
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "bottom",
+            "color": "#4B5563",
+            "dy": -9,
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 12,
+            "fontWeight": 600,
+            "lineBreak": "\n",
+            "lineHeight": 14
+          },
+          "encoding": {
+            "text": {"field": "t", "type": "nominal"},
+            "x": {
+              "axis": null,
+              "field": "year",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "y": {
+              "axis": null,
+              "field": "v",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-6c20926fe1453e99038df6611670cc2c"},
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#4B5563",
+            "dy": 24,
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 12,
+            "fontWeight": 600,
+            "lineBreak": "\n",
+            "lineHeight": 14
+          },
+          "encoding": {
+            "text": {"field": "t", "type": "nominal"},
+            "x": {
+              "axis": null,
+              "field": "year",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "y": {
+              "axis": null,
+              "field": "v",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-fca86db1f7f043fac6f0ffe77e04de0a"},
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "bottom",
+            "color": "#6A6A6A",
+            "dy": -10,
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 11.5,
+            "lineBreak": "\n",
+            "lineHeight": 14
+          },
+          "encoding": {
+            "text": {"field": "t", "type": "nominal"},
+            "x": {
+              "axis": null,
+              "field": "year",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "y": {
+              "axis": null,
+              "field": "v",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-382752f4b30609b09adc8c5cb9856add"},
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "middle",
+            "color": "#4B5563",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 12,
+            "fontWeight": 600,
+            "lineBreak": "\n",
+            "lineHeight": 14
+          },
+          "encoding": {
+            "text": {"field": "t", "type": "nominal"},
+            "x": {
+              "axis": null,
+              "field": "year",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "y": {
+              "axis": null,
+              "field": "v",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-f334f80df97ae4e3fd146a76dc09f898"},
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "middle",
+            "color": "#6A6A6A",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 11.5,
+            "lineBreak": "\n",
+            "lineHeight": 14
+          },
+          "encoding": {
+            "text": {"field": "t", "type": "nominal"},
+            "x": {
+              "axis": null,
+              "field": "year",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "y": {
+              "axis": null,
+              "field": "v",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-6c1938aebe0a69a24cd29c7e637936f7"},
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "middle",
+            "color": "#6A6A6A",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 11.5,
+            "lineBreak": "\n",
+            "lineHeight": 14
+          },
+          "encoding": {
+            "text": {"field": "t", "type": "nominal"},
+            "x": {
+              "axis": null,
+              "field": "year",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "y": {
+              "axis": null,
+              "field": "v",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-9024e289fa99546aebb616599cfb665c"},
+          "mark": {
+            "type": "rule",
+            "color": "#3A3A3A",
+            "strokeDash": [3, 3],
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "x": {
+              "axis": null,
+              "field": "year",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "y": {"value": 10},
+            "y2": {"value": 346}
+          },
+          "transform": [{"filter": "datum.year === active_year"}]
+        },
+        {
+          "data": {"name": "data-9024e289fa99546aebb616599cfb665c"},
+          "mark": {
+            "type": "point",
+            "color": "#9DB0BF",
+            "filled": true,
+            "shape": "circle",
+            "size": 90,
+            "stroke": "white",
+            "strokeWidth": 1.6
+          },
+          "encoding": {
+            "x": {
+              "axis": null,
+              "field": "year",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "y": {
+              "axis": null,
+              "field": "capacity",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            }
+          },
+          "transform": [{"filter": "datum.year === active_year"}]
+        },
+        {
+          "data": {"name": "data-9024e289fa99546aebb616599cfb665c"},
+          "mark": {
+            "type": "point",
+            "color": "#4B5563",
+            "filled": true,
+            "shape": "circle",
+            "size": 90,
+            "stroke": "white",
+            "strokeWidth": 1.6
+          },
+          "encoding": {
+            "x": {
+              "axis": null,
+              "field": "year",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "y": {
+              "axis": null,
+              "field": "throughput",
+              "scale": {"domain": [0, 1500], "nice": false, "range": [346, 14]},
+              "type": "quantitative"
+            }
+          },
+          "transform": [{"filter": "datum.year === active_year"}]
+        },
+        {
+          "data": {"name": "data-9024e289fa99546aebb616599cfb665c"},
+          "mark": {
+            "type": "rect",
+            "color": "black",
+            "cursor": "pointer",
+            "opacity": 0.002
+          },
+          "encoding": {
+            "x": {
+              "axis": null,
+              "field": "x0",
+              "scale": {
+                "domain": [1979.5, 2026.5],
+                "nice": false,
+                "padding": 0,
+                "range": [0, 840]
+              },
+              "type": "quantitative"
+            },
+            "x2": {"field": "x1"},
+            "y": {"value": 0},
+            "y2": {"value": 346}
+          },
+          "name": "view_1eee4580e61bb8df_1"
+        }
+      ],
+      "height": 392,
+      "width": 840
+    }
+  ],
+  "background": "white",
+  "padding": {"left": 0, "right": 12, "top": 12, "bottom": 10},
+  "params": [
+    {
+      "name": "hover",
+      "select": {
+        "type": "point",
+        "clear": "mouseout",
+        "fields": ["year"],
+        "on": "mouseover"
+      },
+      "views": ["view_1eee4580e61bb8df_1"]
+    },
+    {
+      "name": "active_year",
+      "expr": "(hover && hover.year && length(hover.year)) ? hover.year[0] : null"
+    }
+  ],
+  "spacing": 4,
+  "title": {
+    "text": "Refining capacity and refinery throughput, 1980–2026",
+    "anchor": "start",
+    "color": "#262626",
+    "font": "Newsreader, Georgia, serif",
+    "fontSize": 26,
+    "fontWeight": 400,
+    "offset": 10,
+    "subtitle": [
+      "Lines: thousand barrels per day. Shaded area: capacity not in use. Annual figures to 2025 (Energy Institute);",
+      "the 2026 marker is a snapshot reported by Reuters in April."
+    ],
+    "subtitleColor": "#6A6A6A",
+    "subtitleFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+    "subtitleFontSize": 13,
+    "subtitlePadding": 6
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json",
+  "datasets": {
+    "data-c74ba06b70f449194e83602f6b2723d9": [{"a": 0}],
+    "data-9024e289fa99546aebb616599cfb665c": [
+      {
+        "year": 1980,
+        "capacity": 1283.0000000000002,
+        "throughput": 925.294,
+        "unused": 357.70600000000024,
+        "share": 0.7211956352299297,
+        "kind": "annual",
+        "l1": "1,283 thousand b/d of capacity   ·   925 thousand b/d processed   ·   72% in use",
+        "l2": "358 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1979.5,
+        "x1": 1980.5
+      },
+      {
+        "year": 1981,
+        "capacity": 1263,
+        "throughput": 860.681,
+        "unused": 402.31899999999996,
+        "share": 0.6814576405384006,
+        "kind": "annual",
+        "l1": "1,263 thousand b/d of capacity   ·   861 thousand b/d processed   ·   68% in use",
+        "l2": "402 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1980.5,
+        "x1": 1981.5
+      },
+      {
+        "year": 1982,
+        "capacity": 1253,
+        "throughput": 872.664,
+        "unused": 380.336,
+        "share": 0.6964596967278531,
+        "kind": "annual",
+        "l1": "1,253 thousand b/d of capacity   ·   873 thousand b/d processed   ·   70% in use",
+        "l2": "380 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1981.5,
+        "x1": 1982.5
+      },
+      {
+        "year": 1983,
+        "capacity": 1243,
+        "throughput": 898.0319999999999,
+        "unused": 344.9680000000001,
+        "share": 0.7224714400643604,
+        "kind": "annual",
+        "l1": "1,243 thousand b/d of capacity   ·   898 thousand b/d processed   ·   72% in use",
+        "l2": "345 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1982.5,
+        "x1": 1983.5
+      },
+      {
+        "year": 1984,
+        "capacity": 1243.0000000000002,
+        "throughput": 900.3559999999999,
+        "unused": 342.64400000000035,
+        "share": 0.7243411102172161,
+        "kind": "annual",
+        "l1": "1,243 thousand b/d of capacity   ·   900 thousand b/d processed   ·   72% in use",
+        "l2": "343 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1983.5,
+        "x1": 1984.5
+      },
+      {
+        "year": 1985,
+        "capacity": 1243,
+        "throughput": 942.357,
+        "unused": 300.64300000000003,
+        "share": 0.7581311343523732,
+        "kind": "annual",
+        "l1": "1,243 thousand b/d of capacity   ·   942 thousand b/d processed   ·   76% in use",
+        "l2": "301 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1984.5,
+        "x1": 1985.5
+      },
+      {
+        "year": 1986,
+        "capacity": 1243,
+        "throughput": 931.086,
+        "unused": 311.914,
+        "share": 0.7490635559131135,
+        "kind": "annual",
+        "l1": "1,243 thousand b/d of capacity   ·   931 thousand b/d processed   ·   75% in use",
+        "l2": "312 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1985.5,
+        "x1": 1986.5
+      },
+      {
+        "year": 1987,
+        "capacity": 1243,
+        "throughput": 924.514,
+        "unused": 318.486,
+        "share": 0.7437763475462591,
+        "kind": "annual",
+        "l1": "1,243 thousand b/d of capacity   ·   925 thousand b/d processed   ·   74% in use",
+        "l2": "318 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1986.5,
+        "x1": 1987.5
+      },
+      {
+        "year": 1988,
+        "capacity": 1243.0000000000002,
+        "throughput": 1050.713,
+        "unused": 192.28700000000026,
+        "share": 0.8453041029766691,
+        "kind": "annual",
+        "l1": "1,243 thousand b/d of capacity   ·   1,051 thousand b/d processed   ·   85% in use",
+        "l2": "192 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1987.5,
+        "x1": 1988.5
+      },
+      {
+        "year": 1989,
+        "capacity": 1243,
+        "throughput": 1017.808,
+        "unused": 225.192,
+        "share": 0.8188318584070796,
+        "kind": "annual",
+        "l1": "1,243 thousand b/d of capacity   ·   1,018 thousand b/d processed   ·   82% in use",
+        "l2": "225 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1988.5,
+        "x1": 1989.5
+      },
+      {
+        "year": 1990,
+        "capacity": 1243,
+        "throughput": 1069.8170000000002,
+        "unused": 173.18299999999977,
+        "share": 0.8606733708769109,
+        "kind": "annual",
+        "l1": "1,243 thousand b/d of capacity   ·   1,070 thousand b/d processed   ·   86% in use",
+        "l2": "173 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1989.5,
+        "x1": 1990.5
+      },
+      {
+        "year": 1991,
+        "capacity": 1195.9999999999998,
+        "throughput": 1126.61,
+        "unused": 69.38999999999987,
+        "share": 0.9419816053511707,
+        "kind": "annual",
+        "l1": "1,196 thousand b/d of capacity   ·   1,127 thousand b/d processed   ·   94% in use",
+        "l2": "69 thousand b/d of capacity not in use.",
+        "l3": "The highest share in use since 1980.",
+        "x0": 1990.5,
+        "x1": 1991.5
+      },
+      {
+        "year": 1992,
+        "capacity": 1201.9999999999998,
+        "throughput": 1101.3,
+        "unused": 100.69999999999982,
+        "share": 0.9162229617304494,
+        "kind": "annual",
+        "l1": "1,202 thousand b/d of capacity   ·   1,101 thousand b/d processed   ·   92% in use",
+        "l2": "101 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1991.5,
+        "x1": 1992.5
+      },
+      {
+        "year": 1993,
+        "capacity": 1202,
+        "throughput": 949.9,
+        "unused": 252.10000000000002,
+        "share": 0.7902662229617304,
+        "kind": "annual",
+        "l1": "1,202 thousand b/d of capacity   ·   950 thousand b/d processed   ·   79% in use",
+        "l2": "252 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1992.5,
+        "x1": 1993.5
+      },
+      {
+        "year": 1994,
+        "capacity": 1205,
+        "throughput": 937.7000000000002,
+        "unused": 267.29999999999984,
+        "share": 0.7781742738589212,
+        "kind": "annual",
+        "l1": "1,205 thousand b/d of capacity   ·   938 thousand b/d processed   ·   78% in use",
+        "l2": "267 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1993.5,
+        "x1": 1994.5
+      },
+      {
+        "year": 1995,
+        "capacity": 1217.0000000000002,
+        "throughput": 1005,
+        "unused": 212.00000000000023,
+        "share": 0.8258011503697615,
+        "kind": "annual",
+        "l1": "1,217 thousand b/d of capacity   ·   1,005 thousand b/d processed   ·   83% in use",
+        "l2": "212 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1994.5,
+        "x1": 1995.5
+      },
+      {
+        "year": 1996,
+        "capacity": 1217,
+        "throughput": 1018.8999999999997,
+        "unused": 198.10000000000025,
+        "share": 0.8372226787181593,
+        "kind": "annual",
+        "l1": "1,217 thousand b/d of capacity   ·   1,019 thousand b/d processed   ·   84% in use",
+        "l2": "198 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1995.5,
+        "x1": 1996.5
+      },
+      {
+        "year": 1997,
+        "capacity": 1217.0000000000002,
+        "throughput": 1054.04,
+        "unused": 162.96000000000026,
+        "share": 0.8660969597370581,
+        "kind": "annual",
+        "l1": "1,217 thousand b/d of capacity   ·   1,054 thousand b/d processed   ·   87% in use",
+        "l2": "163 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1996.5,
+        "x1": 1997.5
+      },
+      {
+        "year": 1998,
+        "capacity": 1219.9999999999998,
+        "throughput": 1056.1,
+        "unused": 163.89999999999986,
+        "share": 0.8656557377049181,
+        "kind": "annual",
+        "l1": "1,220 thousand b/d of capacity   ·   1,056 thousand b/d processed   ·   87% in use",
+        "l2": "164 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1997.5,
+        "x1": 1998.5
+      },
+      {
+        "year": 1999,
+        "capacity": 1231,
+        "throughput": 1048.64,
+        "unused": 182.3599999999999,
+        "share": 0.8518602761982129,
+        "kind": "annual",
+        "l1": "1,231 thousand b/d of capacity   ·   1,049 thousand b/d processed   ·   85% in use",
+        "l2": "182 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1998.5,
+        "x1": 1999.5
+      },
+      {
+        "year": 2000,
+        "capacity": 1274,
+        "throughput": 1079.41,
+        "unused": 194.58999999999992,
+        "share": 0.8472605965463109,
+        "kind": "annual",
+        "l1": "1,274 thousand b/d of capacity   ·   1,079 thousand b/d processed   ·   85% in use",
+        "l2": "195 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 1999.5,
+        "x1": 2000.5
+      },
+      {
+        "year": 2001,
+        "capacity": 1274,
+        "throughput": 1060.03,
+        "unused": 213.97000000000003,
+        "share": 0.8320486656200942,
+        "kind": "annual",
+        "l1": "1,274 thousand b/d of capacity   ·   1,060 thousand b/d processed   ·   83% in use",
+        "l2": "214 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2000.5,
+        "x1": 2001.5
+      },
+      {
+        "year": 2002,
+        "capacity": 1274,
+        "throughput": 931.0700000000002,
+        "unused": 342.92999999999984,
+        "share": 0.7308241758241759,
+        "kind": "annual",
+        "l1": "1,274 thousand b/d of capacity   ·   931 thousand b/d processed   ·   73% in use",
+        "l2": "343 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2001.5,
+        "x1": 2002.5
+      },
+      {
+        "year": 2003,
+        "capacity": 1269,
+        "throughput": 856.1200000000001,
+        "unused": 412.8799999999999,
+        "share": 0.6746414499605989,
+        "kind": "annual",
+        "l1": "1,269 thousand b/d of capacity   ·   856 thousand b/d processed   ·   67% in use",
+        "l2": "413 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2002.5,
+        "x1": 2003.5
+      },
+      {
+        "year": 2004,
+        "capacity": 1284,
+        "throughput": 1012.3500000000003,
+        "unused": 271.64999999999975,
+        "share": 0.7884345794392525,
+        "kind": "annual",
+        "l1": "1,284 thousand b/d of capacity   ·   1,012 thousand b/d processed   ·   79% in use",
+        "l2": "272 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2003.5,
+        "x1": 2004.5
+      },
+      {
+        "year": 2005,
+        "capacity": 1291.0000000000002,
+        "throughput": 1013.31,
+        "unused": 277.6900000000003,
+        "share": 0.7849031758326876,
+        "kind": "annual",
+        "l1": "1,291 thousand b/d of capacity   ·   1,013 thousand b/d processed   ·   78% in use",
+        "l2": "278 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2004.5,
+        "x1": 2005.5
+      },
+      {
+        "year": 2006,
+        "capacity": 1294,
+        "throughput": 1022.0700000000002,
+        "unused": 271.92999999999984,
+        "share": 0.789853168469861,
+        "kind": "annual",
+        "l1": "1,294 thousand b/d of capacity   ·   1,022 thousand b/d processed   ·   79% in use",
+        "l2": "272 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2005.5,
+        "x1": 2006.5
+      },
+      {
+        "year": 2007,
+        "capacity": 1302.9999999999998,
+        "throughput": 1004.0000000000001,
+        "unused": 298.99999999999966,
+        "share": 0.7705295471987723,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   1,004 thousand b/d processed   ·   77% in use",
+        "l2": "299 thousand b/d of capacity not in use.",
+        "l3": "From this year on, installed capacity stays at 1,303 thousand b/d.",
+        "x0": 2006.5,
+        "x1": 2007.5
+      },
+      {
+        "year": 2008,
+        "capacity": 1302.9999999999998,
+        "throughput": 1010,
+        "unused": 292.9999999999998,
+        "share": 0.7751343054489641,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   1,010 thousand b/d processed   ·   78% in use",
+        "l2": "293 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2007.5,
+        "x1": 2008.5
+      },
+      {
+        "year": 2009,
+        "capacity": 1302.9999999999998,
+        "throughput": 961,
+        "unused": 341.9999999999998,
+        "share": 0.7375287797390638,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   961 thousand b/d processed   ·   74% in use",
+        "l2": "342 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2008.5,
+        "x1": 2009.5
+      },
+      {
+        "year": 2010,
+        "capacity": 1302.9999999999998,
+        "throughput": 969,
+        "unused": 333.9999999999998,
+        "share": 0.7436684574059863,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   969 thousand b/d processed   ·   74% in use",
+        "l2": "334 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2009.5,
+        "x1": 2010.5
+      },
+      {
+        "year": 2011,
+        "capacity": 1302.9999999999998,
+        "throughput": 991,
+        "unused": 311.9999999999998,
+        "share": 0.7605525709900232,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   991 thousand b/d processed   ·   76% in use",
+        "l2": "312 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2010.5,
+        "x1": 2011.5
+      },
+      {
+        "year": 2012,
+        "capacity": 1302.9999999999998,
+        "throughput": 935.9999999999999,
+        "unused": 366.9999999999999,
+        "share": 0.718342287029931,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   936 thousand b/d processed   ·   72% in use",
+        "l2": "367 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2011.5,
+        "x1": 2012.5
+      },
+      {
+        "year": 2013,
+        "capacity": 1302.9999999999998,
+        "throughput": 952,
+        "unused": 350.9999999999998,
+        "share": 0.730621642363776,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   952 thousand b/d processed   ·   73% in use",
+        "l2": "351 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2012.5,
+        "x1": 2013.5
+      },
+      {
+        "year": 2014,
+        "capacity": 1302.9999999999998,
+        "throughput": 920,
+        "unused": 382.9999999999998,
+        "share": 0.706062931696086,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   920 thousand b/d processed   ·   71% in use",
+        "l2": "383 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2013.5,
+        "x1": 2014.5
+      },
+      {
+        "year": 2015,
+        "capacity": 1302.9999999999998,
+        "throughput": 863,
+        "unused": 439.9999999999998,
+        "share": 0.6623177283192634,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   863 thousand b/d processed   ·   66% in use",
+        "l2": "440 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2014.5,
+        "x1": 2015.5
+      },
+      {
+        "year": 2016,
+        "capacity": 1302.9999999999998,
+        "throughput": 654,
+        "unused": 648.9999999999998,
+        "share": 0.5019186492709133,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   654 thousand b/d processed   ·   50% in use",
+        "l2": "649 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2015.5,
+        "x1": 2016.5
+      },
+      {
+        "year": 2017,
+        "capacity": 1302.9999999999998,
+        "throughput": 648.5849317681723,
+        "unused": 654.4150682318275,
+        "share": 0.4977628025849366,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   649 thousand b/d processed   ·   50% in use",
+        "l2": "654 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2016.5,
+        "x1": 2017.5
+      },
+      {
+        "year": 2018,
+        "capacity": 1302.9999999999998,
+        "throughput": 401.3242550958903,
+        "unused": 901.6757449041095,
+        "share": 0.3080001957758176,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   401 thousand b/d processed   ·   31% in use",
+        "l2": "902 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2017.5,
+        "x1": 2018.5
+      },
+      {
+        "year": 2019,
+        "capacity": 1302.9999999999998,
+        "throughput": 351.98098986301375,
+        "unused": 951.019010136986,
+        "share": 0.270131227830402,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   352 thousand b/d processed   ·   27% in use",
+        "l2": "951 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2018.5,
+        "x1": 2019.5
+      },
+      {
+        "year": 2020,
+        "capacity": 1302.9999999999998,
+        "throughput": 160.48402084931504,
+        "unused": 1142.5159791506846,
+        "share": 0.12316501983830781,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   160 thousand b/d processed   ·   12% in use",
+        "l2": "1,143 thousand b/d of capacity not in use.",
+        "l3": "The lowest share in use since 1980.",
+        "x0": 2019.5,
+        "x1": 2020.5
+      },
+      {
+        "year": 2021,
+        "capacity": 1302.9999999999998,
+        "throughput": 217.71499638356198,
+        "unused": 1085.2850036164377,
+        "share": 0.1670874876312832,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   218 thousand b/d processed   ·   17% in use",
+        "l2": "1,085 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2020.5,
+        "x1": 2021.5
+      },
+      {
+        "year": 2022,
+        "capacity": 1302.9999999999998,
+        "throughput": 257.188035068493,
+        "unused": 1045.8119649315067,
+        "share": 0.197381454388713,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   257 thousand b/d processed   ·   20% in use",
+        "l2": "1,046 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2021.5,
+        "x1": 2022.5
+      },
+      {
+        "year": 2023,
+        "capacity": 1302.9999999999998,
+        "throughput": 259.9753858082191,
+        "unused": 1043.0246141917808,
+        "share": 0.19952063377453502,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   260 thousand b/d processed   ·   20% in use",
+        "l2": "1,043 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2022.5,
+        "x1": 2023.5
+      },
+      {
+        "year": 2024,
+        "capacity": 1302.9999999999998,
+        "throughput": 257.752,
+        "unused": 1045.2479999999998,
+        "share": 0.19781427475057564,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   258 thousand b/d processed   ·   20% in use",
+        "l2": "1,045 thousand b/d of capacity not in use.",
+        "l3": "",
+        "x0": 2023.5,
+        "x1": 2024.5
+      },
+      {
+        "year": 2025,
+        "capacity": 1302.9999999999998,
+        "throughput": 277.5225,
+        "unused": 1025.4774999999997,
+        "share": 0.212987336914812,
+        "kind": "annual",
+        "l1": "1,303 thousand b/d of capacity   ·   278 thousand b/d processed   ·   21% in use",
+        "l2": "1,025 thousand b/d of capacity not in use.",
+        "l3": "The latest annual figure.",
+        "x0": 2024.5,
+        "x1": 2025.5
+      },
+      {
+        "year": 2026,
+        "capacity": 1290,
+        "throughput": 399,
+        "unused": 891,
+        "share": 0.30930232558139537,
+        "kind": "snapshot",
+        "l1": "1,290 thousand b/d of capacity   ·   399 thousand b/d processed   ·   31% in use",
+        "l2": "Reuters, April 2026: Paraguaná 237 of 955, Puerto La Cruz 82 of 187, El Palito 80 of 146 thousand b/d.",
+        "l3": "A snapshot reported by workers at the refineries, not an annual average.",
+        "x0": 2025.5,
+        "x1": 2026.5
+      }
+    ],
+    "data-b602332639f3d53da503c68dfbbed450": [
+      {"v": 200, "label": "200"},
+      {"v": 400, "label": "400"},
+      {"v": 600, "label": "600"},
+      {"v": 800, "label": "800"},
+      {"v": 1000, "label": "1,000"},
+      {"v": 1200, "label": "1,200"},
+      {"v": 1400, "label": "1,400"}
+    ],
+    "data-c60050fb7ac314161d1b68dc3fdfb512": [{"v": 0, "label": "0"}],
+    "data-bb4bb4dbf3c5c5086531b66c798f77a9": [
+      {"v": 0, "label": "0"},
+      {"v": 200, "label": "200"},
+      {"v": 400, "label": "400"},
+      {"v": 600, "label": "600"},
+      {"v": 800, "label": "800"},
+      {"v": 1000, "label": "1,000"},
+      {"v": 1200, "label": "1,200"},
+      {"v": 1400, "label": "1,400"}
+    ],
+    "data-aa00fdb2528ee1de01aa891af4fce091": [{"v": 750, "t": "Thousand b/d"}],
+    "data-eb837fa87d944734e7f752de6ab860ce": [
+      {"year": 1980, "label": "1980"},
+      {"year": 1985, "label": "1985"},
+      {"year": 1990, "label": "1990"},
+      {"year": 1995, "label": "1995"},
+      {"year": 2000, "label": "2000"},
+      {"year": 2005, "label": "2005"},
+      {"year": 2010, "label": "2010"},
+      {"year": 2015, "label": "2015"},
+      {"year": 2020, "label": "2020"},
+      {"year": 2026, "label": "2026"}
+    ],
+    "data-7be1d6ec72244db0523c79b61ba6a84b": [
+      {
+        "year": 1980,
+        "capacity": 1283.0000000000002,
+        "throughput": 925.294,
+        "unused": 357.70600000000024,
+        "share": 0.7211956352299297,
+        "kind": "annual"
+      },
+      {
+        "year": 1981,
+        "capacity": 1263,
+        "throughput": 860.681,
+        "unused": 402.31899999999996,
+        "share": 0.6814576405384006,
+        "kind": "annual"
+      },
+      {
+        "year": 1982,
+        "capacity": 1253,
+        "throughput": 872.664,
+        "unused": 380.336,
+        "share": 0.6964596967278531,
+        "kind": "annual"
+      },
+      {
+        "year": 1983,
+        "capacity": 1243,
+        "throughput": 898.0319999999999,
+        "unused": 344.9680000000001,
+        "share": 0.7224714400643604,
+        "kind": "annual"
+      },
+      {
+        "year": 1984,
+        "capacity": 1243.0000000000002,
+        "throughput": 900.3559999999999,
+        "unused": 342.64400000000035,
+        "share": 0.7243411102172161,
+        "kind": "annual"
+      },
+      {
+        "year": 1985,
+        "capacity": 1243,
+        "throughput": 942.357,
+        "unused": 300.64300000000003,
+        "share": 0.7581311343523732,
+        "kind": "annual"
+      },
+      {
+        "year": 1986,
+        "capacity": 1243,
+        "throughput": 931.086,
+        "unused": 311.914,
+        "share": 0.7490635559131135,
+        "kind": "annual"
+      },
+      {
+        "year": 1987,
+        "capacity": 1243,
+        "throughput": 924.514,
+        "unused": 318.486,
+        "share": 0.7437763475462591,
+        "kind": "annual"
+      },
+      {
+        "year": 1988,
+        "capacity": 1243.0000000000002,
+        "throughput": 1050.713,
+        "unused": 192.28700000000026,
+        "share": 0.8453041029766691,
+        "kind": "annual"
+      },
+      {
+        "year": 1989,
+        "capacity": 1243,
+        "throughput": 1017.808,
+        "unused": 225.192,
+        "share": 0.8188318584070796,
+        "kind": "annual"
+      },
+      {
+        "year": 1990,
+        "capacity": 1243,
+        "throughput": 1069.8170000000002,
+        "unused": 173.18299999999977,
+        "share": 0.8606733708769109,
+        "kind": "annual"
+      },
+      {
+        "year": 1991,
+        "capacity": 1195.9999999999998,
+        "throughput": 1126.61,
+        "unused": 69.38999999999987,
+        "share": 0.9419816053511707,
+        "kind": "annual"
+      },
+      {
+        "year": 1992,
+        "capacity": 1201.9999999999998,
+        "throughput": 1101.3,
+        "unused": 100.69999999999982,
+        "share": 0.9162229617304494,
+        "kind": "annual"
+      },
+      {
+        "year": 1993,
+        "capacity": 1202,
+        "throughput": 949.9,
+        "unused": 252.10000000000002,
+        "share": 0.7902662229617304,
+        "kind": "annual"
+      },
+      {
+        "year": 1994,
+        "capacity": 1205,
+        "throughput": 937.7000000000002,
+        "unused": 267.29999999999984,
+        "share": 0.7781742738589212,
+        "kind": "annual"
+      },
+      {
+        "year": 1995,
+        "capacity": 1217.0000000000002,
+        "throughput": 1005,
+        "unused": 212.00000000000023,
+        "share": 0.8258011503697615,
+        "kind": "annual"
+      },
+      {
+        "year": 1996,
+        "capacity": 1217,
+        "throughput": 1018.8999999999997,
+        "unused": 198.10000000000025,
+        "share": 0.8372226787181593,
+        "kind": "annual"
+      },
+      {
+        "year": 1997,
+        "capacity": 1217.0000000000002,
+        "throughput": 1054.04,
+        "unused": 162.96000000000026,
+        "share": 0.8660969597370581,
+        "kind": "annual"
+      },
+      {
+        "year": 1998,
+        "capacity": 1219.9999999999998,
+        "throughput": 1056.1,
+        "unused": 163.89999999999986,
+        "share": 0.8656557377049181,
+        "kind": "annual"
+      },
+      {
+        "year": 1999,
+        "capacity": 1231,
+        "throughput": 1048.64,
+        "unused": 182.3599999999999,
+        "share": 0.8518602761982129,
+        "kind": "annual"
+      },
+      {
+        "year": 2000,
+        "capacity": 1274,
+        "throughput": 1079.41,
+        "unused": 194.58999999999992,
+        "share": 0.8472605965463109,
+        "kind": "annual"
+      },
+      {
+        "year": 2001,
+        "capacity": 1274,
+        "throughput": 1060.03,
+        "unused": 213.97000000000003,
+        "share": 0.8320486656200942,
+        "kind": "annual"
+      },
+      {
+        "year": 2002,
+        "capacity": 1274,
+        "throughput": 931.0700000000002,
+        "unused": 342.92999999999984,
+        "share": 0.7308241758241759,
+        "kind": "annual"
+      },
+      {
+        "year": 2003,
+        "capacity": 1269,
+        "throughput": 856.1200000000001,
+        "unused": 412.8799999999999,
+        "share": 0.6746414499605989,
+        "kind": "annual"
+      },
+      {
+        "year": 2004,
+        "capacity": 1284,
+        "throughput": 1012.3500000000003,
+        "unused": 271.64999999999975,
+        "share": 0.7884345794392525,
+        "kind": "annual"
+      },
+      {
+        "year": 2005,
+        "capacity": 1291.0000000000002,
+        "throughput": 1013.31,
+        "unused": 277.6900000000003,
+        "share": 0.7849031758326876,
+        "kind": "annual"
+      },
+      {
+        "year": 2006,
+        "capacity": 1294,
+        "throughput": 1022.0700000000002,
+        "unused": 271.92999999999984,
+        "share": 0.789853168469861,
+        "kind": "annual"
+      },
+      {
+        "year": 2007,
+        "capacity": 1302.9999999999998,
+        "throughput": 1004.0000000000001,
+        "unused": 298.99999999999966,
+        "share": 0.7705295471987723,
+        "kind": "annual"
+      },
+      {
+        "year": 2008,
+        "capacity": 1302.9999999999998,
+        "throughput": 1010,
+        "unused": 292.9999999999998,
+        "share": 0.7751343054489641,
+        "kind": "annual"
+      },
+      {
+        "year": 2009,
+        "capacity": 1302.9999999999998,
+        "throughput": 961,
+        "unused": 341.9999999999998,
+        "share": 0.7375287797390638,
+        "kind": "annual"
+      },
+      {
+        "year": 2010,
+        "capacity": 1302.9999999999998,
+        "throughput": 969,
+        "unused": 333.9999999999998,
+        "share": 0.7436684574059863,
+        "kind": "annual"
+      },
+      {
+        "year": 2011,
+        "capacity": 1302.9999999999998,
+        "throughput": 991,
+        "unused": 311.9999999999998,
+        "share": 0.7605525709900232,
+        "kind": "annual"
+      },
+      {
+        "year": 2012,
+        "capacity": 1302.9999999999998,
+        "throughput": 935.9999999999999,
+        "unused": 366.9999999999999,
+        "share": 0.718342287029931,
+        "kind": "annual"
+      },
+      {
+        "year": 2013,
+        "capacity": 1302.9999999999998,
+        "throughput": 952,
+        "unused": 350.9999999999998,
+        "share": 0.730621642363776,
+        "kind": "annual"
+      },
+      {
+        "year": 2014,
+        "capacity": 1302.9999999999998,
+        "throughput": 920,
+        "unused": 382.9999999999998,
+        "share": 0.706062931696086,
+        "kind": "annual"
+      },
+      {
+        "year": 2015,
+        "capacity": 1302.9999999999998,
+        "throughput": 863,
+        "unused": 439.9999999999998,
+        "share": 0.6623177283192634,
+        "kind": "annual"
+      },
+      {
+        "year": 2016,
+        "capacity": 1302.9999999999998,
+        "throughput": 654,
+        "unused": 648.9999999999998,
+        "share": 0.5019186492709133,
+        "kind": "annual"
+      },
+      {
+        "year": 2017,
+        "capacity": 1302.9999999999998,
+        "throughput": 648.5849317681723,
+        "unused": 654.4150682318275,
+        "share": 0.4977628025849366,
+        "kind": "annual"
+      },
+      {
+        "year": 2018,
+        "capacity": 1302.9999999999998,
+        "throughput": 401.3242550958903,
+        "unused": 901.6757449041095,
+        "share": 0.3080001957758176,
+        "kind": "annual"
+      },
+      {
+        "year": 2019,
+        "capacity": 1302.9999999999998,
+        "throughput": 351.98098986301375,
+        "unused": 951.019010136986,
+        "share": 0.270131227830402,
+        "kind": "annual"
+      },
+      {
+        "year": 2020,
+        "capacity": 1302.9999999999998,
+        "throughput": 160.48402084931504,
+        "unused": 1142.5159791506846,
+        "share": 0.12316501983830781,
+        "kind": "annual"
+      },
+      {
+        "year": 2021,
+        "capacity": 1302.9999999999998,
+        "throughput": 217.71499638356198,
+        "unused": 1085.2850036164377,
+        "share": 0.1670874876312832,
+        "kind": "annual"
+      },
+      {
+        "year": 2022,
+        "capacity": 1302.9999999999998,
+        "throughput": 257.188035068493,
+        "unused": 1045.8119649315067,
+        "share": 0.197381454388713,
+        "kind": "annual"
+      },
+      {
+        "year": 2023,
+        "capacity": 1302.9999999999998,
+        "throughput": 259.9753858082191,
+        "unused": 1043.0246141917808,
+        "share": 0.19952063377453502,
+        "kind": "annual"
+      },
+      {
+        "year": 2024,
+        "capacity": 1302.9999999999998,
+        "throughput": 257.752,
+        "unused": 1045.2479999999998,
+        "share": 0.19781427475057564,
+        "kind": "annual"
+      },
+      {
+        "year": 2025,
+        "capacity": 1302.9999999999998,
+        "throughput": 277.5225,
+        "unused": 1025.4774999999997,
+        "share": 0.212987336914812,
+        "kind": "annual"
+      }
+    ],
+    "data-392fbb6a8bf5a1b1d166dd010dd41c8d": [
+      {
+        "year": 2026,
+        "capacity": 1290,
+        "throughput": 399,
+        "unused": 891,
+        "share": 0.30930232558139537,
+        "kind": "snapshot"
+      }
+    ],
+    "data-504579b1c8a47b33ad89d506636c248e": [
+      {"year": 2026, "v": 1290, "c": "#9DB0BF"},
+      {"year": 2026, "v": 399, "c": "#4B5563"}
+    ],
+    "data-532dc1f8b798ad0e53d195c3836c03b8": [
+      {"year": 1980, "v": 1283.0000000000002, "t": "Refining capacity"}
+    ],
+    "data-6c20926fe1453e99038df6611670cc2c": [
+      {"year": 1980, "v": 925.294, "t": "Refinery throughput"}
+    ],
+    "data-fca86db1f7f043fac6f0ffe77e04de0a": [
+      {
+        "year": 2013,
+        "v": 1302.9999999999998,
+        "t": "Installed capacity: 1.3 million b/d, unchanged since 2007"
+      }
+    ],
+    "data-382752f4b30609b09adc8c5cb9856add": [
+      {"year": 2012.5, "v": 1130, "t": "Capacity not in use"}
+    ],
+    "data-f334f80df97ae4e3fd146a76dc09f898": [
+      {
+        "year": 2019.1,
+        "v": 230.48402084931504,
+        "t": "2020: the lowest,\n12% of capacity in use"
+      }
+    ],
+    "data-6c1938aebe0a69a24cd29c7e637936f7": [
+      {
+        "year": 2024.7,
+        "v": 880,
+        "t": "April 2026 (Reuters):\n31% of capacity in use"
+      }
+    ]
+  }
+}

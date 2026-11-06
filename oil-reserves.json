@@ -1,0 +1,5379 @@
+{
+  "config": {
+    "view": {"continuousWidth": 300, "continuousHeight": 300, "stroke": null},
+    "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif"
+  },
+  "vconcat": [
+    {
+      "layer": [
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#262626",
+            "font": "Newsreader, Georgia, serif",
+            "fontSize": 34
+          },
+          "encoding": {
+            "text": {"field": "year", "type": "nominal"},
+            "x": {"value": 0},
+            "y": {"value": 0}
+          },
+          "transform": [{"filter": "(datum.year === year)"}]
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#262626",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 14,
+            "fontWeight": 600
+          },
+          "encoding": {
+            "text": {"field": "l1", "type": "nominal"},
+            "x": {"value": 96},
+            "y": {"value": 2}
+          },
+          "transform": [
+            {"filter": "(datum.year === year)"},
+            {
+              "calculate": "'Venezuela ranks ' + datum.rank + ((datum.rank % 100 >= 11 && datum.rank % 100 <= 13) ? 'th' : (datum.rank % 10 == 1 ? 'st' : (datum.rank % 10 == 2 ? 'nd' : (datum.rank % 10 == 3 ? 'rd' : 'th')))) + ': ' + format(datum.reserves, '.1f') + ' billion barrels'",
+              "as": "l1"
+            }
+          ]
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#6A6A6A",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 13
+          },
+          "encoding": {
+            "text": {"field": "l2", "type": "nominal"},
+            "x": {"value": 96},
+            "y": {"value": 23}
+          },
+          "transform": [
+            {"filter": "(datum.year === year)"},
+            {
+              "calculate": "format(datum.share, '.1f') + '% of the world’s proven reserves (world total: ' + format(datum.world, ',.0f') + ' billion barrels)'",
+              "as": "l2"
+            }
+          ]
+        }
+      ],
+      "data": {"name": "data-6eb4e3e338318e7c8015a55c55801945"},
+      "height": 50,
+      "width": 880
+    },
+    {
+      "layer": [
+        {
+          "data": {"name": "data-ca4fe8868f956947e60b295d701fa8cf"},
+          "mark": {"type": "rule", "color": "#E6E6E6", "strokeWidth": 1},
+          "encoding": {
+            "x": {
+              "axis": null,
+              "field": "v",
+              "scale": {"domain": [0, 310], "range": [150, 810]},
+              "type": "quantitative"
+            },
+            "y": {"value": 0},
+            "y2": {"value": 340}
+          }
+        },
+        {
+          "data": {"name": "data-bc225b201bc32fa505f5126723c0b65d"},
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "top",
+            "color": "#6A6A6A",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 12
+          },
+          "encoding": {
+            "text": {"field": "v", "format": "d", "type": "quantitative"},
+            "x": {
+              "axis": null,
+              "field": "v",
+              "scale": {"domain": [0, 310], "range": [150, 810]},
+              "type": "quantitative"
+            },
+            "y": {"value": 348}
+          }
+        },
+        {
+          "data": {"name": "data-1c93a8a82b365723ba5da35127a90c87"},
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "top",
+            "color": "#6A6A6A",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 12
+          },
+          "encoding": {
+            "text": {"field": "t", "type": "nominal"},
+            "x": {"value": 480},
+            "y": {"value": 370}
+          }
+        },
+        {
+          "data": {"name": "data-f392215e8ab6f66cf12a17bb4d192e16"},
+          "mark": {"type": "bar", "cornerRadiusEnd": 2, "size": 20},
+          "encoding": {
+            "color": {
+              "condition": {
+                "test": "(datum.country === 'Venezuela')",
+                "value": "#B9AE98"
+              },
+              "value": "#C9CFD5"
+            },
+            "tooltip": [
+              {"field": "country", "title": "Country", "type": "nominal"},
+              {
+                "field": "reserves",
+                "format": ".1f",
+                "title": "Oil reserves (billion barrels)",
+                "type": "quantitative"
+              },
+              {
+                "field": "share",
+                "format": ".1%",
+                "title": "Share of world’s proven reserves",
+                "type": "quantitative"
+              }
+            ],
+            "x": {
+              "axis": null,
+              "field": "reserves",
+              "scale": {"domain": [0, 310], "range": [150, 810]},
+              "type": "quantitative"
+            },
+            "x2": {"datum": 0},
+            "y": {
+              "axis": null,
+              "field": "rank",
+              "scale": {
+                "domain": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                "paddingInner": 0,
+                "paddingOuter": 0
+              },
+              "type": "ordinal"
+            }
+          },
+          "transform": [{"filter": "(datum.year === year)"}]
+        },
+        {
+          "data": {"name": "data-f392215e8ab6f66cf12a17bb4d192e16"},
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "color": "#9A9A9A",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 12
+          },
+          "encoding": {
+            "text": {"field": "rank", "format": "d", "type": "quantitative"},
+            "x": {"value": 0},
+            "y": {
+              "axis": null,
+              "field": "rank",
+              "scale": {
+                "domain": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                "paddingInner": 0,
+                "paddingOuter": 0
+              },
+              "type": "ordinal"
+            }
+          },
+          "transform": [{"filter": "(datum.year === year)"}]
+        },
+        {
+          "data": {"name": "data-f392215e8ab6f66cf12a17bb4d192e16"},
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "color": "#6A6A6A",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 13
+          },
+          "encoding": {
+            "text": {"field": "country", "type": "nominal"},
+            "x": {"value": 30},
+            "y": {
+              "axis": null,
+              "field": "rank",
+              "scale": {
+                "domain": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                "paddingInner": 0,
+                "paddingOuter": 0
+              },
+              "type": "ordinal"
+            }
+          },
+          "transform": [
+            {"filter": "(datum.year === year)"},
+            {"filter": "(datum.country !== 'Venezuela')"}
+          ]
+        },
+        {
+          "data": {"name": "data-f392215e8ab6f66cf12a17bb4d192e16"},
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "color": "#262626",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 13.5,
+            "fontWeight": 700
+          },
+          "encoding": {
+            "text": {"field": "country", "type": "nominal"},
+            "x": {"value": 30},
+            "y": {
+              "axis": null,
+              "field": "rank",
+              "scale": {
+                "domain": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                "paddingInner": 0,
+                "paddingOuter": 0
+              },
+              "type": "ordinal"
+            }
+          },
+          "transform": [
+            {"filter": "(datum.year === year)"},
+            {"filter": "(datum.country === 'Venezuela')"}
+          ]
+        },
+        {
+          "data": {"name": "data-f392215e8ab6f66cf12a17bb4d192e16"},
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "color": "#6A6A6A",
+            "dx": 7,
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 12.5
+          },
+          "encoding": {
+            "text": {
+              "field": "reserves",
+              "format": ".1f",
+              "type": "quantitative"
+            },
+            "x": {
+              "axis": null,
+              "field": "reserves",
+              "scale": {"domain": [0, 310], "range": [150, 810]},
+              "type": "quantitative"
+            },
+            "y": {
+              "axis": null,
+              "field": "rank",
+              "scale": {
+                "domain": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                "paddingInner": 0,
+                "paddingOuter": 0
+              },
+              "type": "ordinal"
+            }
+          },
+          "transform": [
+            {"filter": "(datum.year === year)"},
+            {"filter": "(datum.country !== 'Venezuela')"}
+          ]
+        },
+        {
+          "data": {"name": "data-f392215e8ab6f66cf12a17bb4d192e16"},
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "color": "#262626",
+            "dx": 7,
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 13,
+            "fontWeight": 700
+          },
+          "encoding": {
+            "text": {
+              "field": "reserves",
+              "format": ".1f",
+              "type": "quantitative"
+            },
+            "x": {
+              "axis": null,
+              "field": "reserves",
+              "scale": {"domain": [0, 310], "range": [150, 810]},
+              "type": "quantitative"
+            },
+            "y": {
+              "axis": null,
+              "field": "rank",
+              "scale": {
+                "domain": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                "paddingInner": 0,
+                "paddingOuter": 0
+              },
+              "type": "ordinal"
+            }
+          },
+          "transform": [
+            {"filter": "(datum.year === year)"},
+            {"filter": "(datum.country === 'Venezuela')"}
+          ]
+        }
+      ],
+      "height": 340,
+      "width": 880
+    }
+  ],
+  "padding": {"left": 0, "right": 14, "top": 12, "bottom": 10},
+  "params": [
+    {
+      "name": "year",
+      "bind": {
+        "input": "range",
+        "max": 2025,
+        "min": 1960,
+        "name": "Year",
+        "step": 1
+      },
+      "value": 2025
+    }
+  ],
+  "spacing": 10,
+  "title": {
+    "text": "Proven crude oil reserves by country, 1960–2025",
+    "anchor": "start",
+    "color": "#262626",
+    "font": "Newsreader, Georgia, serif",
+    "fontSize": 26,
+    "fontWeight": 400,
+    "offset": 10,
+    "subtitle": [
+      "The ten countries with the largest reserves in each year, in billion barrels at year-end. Move the slider to change the year."
+    ],
+    "subtitleColor": "#6A6A6A",
+    "subtitleFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+    "subtitleFontSize": 13,
+    "subtitlePadding": 6
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json",
+  "datasets": {
+    "data-6eb4e3e338318e7c8015a55c55801945": [
+      {"year": 1960, "rank": 7, "reserves": 18.5, "world": 291.2, "share": 6.4},
+      {
+        "year": 1961,
+        "rank": 7,
+        "reserves": 17.55,
+        "world": 297.3,
+        "share": 5.9
+      },
+      {"year": 1962, "rank": 7, "reserves": 17, "world": 310.7, "share": 5.5},
+      {"year": 1963, "rank": 7, "reserves": 17, "world": 332.3, "share": 5.1},
+      {"year": 1964, "rank": 7, "reserves": 17, "world": 342.5, "share": 5},
+      {
+        "year": 1965,
+        "rank": 7,
+        "reserves": 17.25,
+        "world": 353.8,
+        "share": 4.9
+      },
+      {"year": 1966, "rank": 8, "reserves": 17.4, "world": 389.4, "share": 4.5},
+      {"year": 1967, "rank": 8, "reserves": 17, "world": 411.6, "share": 4.1},
+      {"year": 1968, "rank": 9, "reserves": 15.5, "world": 464.1, "share": 3.3},
+      {"year": 1969, "rank": 9, "reserves": 14.75, "world": 528, "share": 2.8},
+      {"year": 1970, "rank": 8, "reserves": 14, "world": 548.5, "share": 2.6},
+      {
+        "year": 1971,
+        "rank": 9,
+        "reserves": 13.762,
+        "world": 569.3,
+        "share": 2.4
+      },
+      {
+        "year": 1972,
+        "rank": 10,
+        "reserves": 13.919,
+        "world": 578.8,
+        "share": 2.4
+      },
+      {
+        "year": 1973,
+        "rank": 10,
+        "reserves": 13.812,
+        "world": 582.7,
+        "share": 2.4
+      },
+      {
+        "year": 1974,
+        "rank": 10,
+        "reserves": 18.567,
+        "world": 644.6,
+        "share": 2.9
+      },
+      {
+        "year": 1975,
+        "rank": 10,
+        "reserves": 18.398,
+        "world": 636.6,
+        "share": 2.9
+      },
+      {
+        "year": 1976,
+        "rank": 10,
+        "reserves": 18.228,
+        "world": 621.4,
+        "share": 2.9
+      },
+      {
+        "year": 1977,
+        "rank": 10,
+        "reserves": 18.039,
+        "world": 624,
+        "share": 2.9
+      },
+      {"year": 1978, "rank": 9, "reserves": 18.228, "world": 616.8, "share": 3},
+      {
+        "year": 1979,
+        "rank": 10,
+        "reserves": 18.523,
+        "world": 622.9,
+        "share": 3
+      },
+      {"year": 1980, "rank": 10, "reserves": 19.53, "world": 644, "share": 3},
+      {
+        "year": 1981,
+        "rank": 10,
+        "reserves": 19.888,
+        "world": 657.6,
+        "share": 3
+      },
+      {"year": 1982, "rank": 9, "reserves": 24.9, "world": 686.7, "share": 3.6},
+      {"year": 1983, "rank": 9, "reserves": 25.887, "world": 698, "share": 3.7},
+      {
+        "year": 1984,
+        "rank": 9,
+        "reserves": 28.028,
+        "world": 732.3,
+        "share": 3.8
+      },
+      {
+        "year": 1985,
+        "rank": 7,
+        "reserves": 54.454,
+        "world": 758.2,
+        "share": 7.2
+      },
+      {
+        "year": 1986,
+        "rank": 7,
+        "reserves": 55.521,
+        "world": 865.1,
+        "share": 6.4
+      },
+      {
+        "year": 1987,
+        "rank": 7,
+        "reserves": 58.101,
+        "world": 899.2,
+        "share": 6.5
+      },
+      {
+        "year": 1988,
+        "rank": 7,
+        "reserves": 58.505,
+        "world": 987.5,
+        "share": 5.9
+      },
+      {
+        "year": 1989,
+        "rank": 7,
+        "reserves": 59.04,
+        "world": 995.4,
+        "share": 5.9
+      },
+      {"year": 1990, "rank": 7, "reserves": 60.054, "world": 993, "share": 6},
+      {
+        "year": 1991,
+        "rank": 7,
+        "reserves": 62.649,
+        "world": 996.9,
+        "share": 6.3
+      },
+      {"year": 1992, "rank": 7, "reserves": 63.33, "world": 1002, "share": 6.3},
+      {
+        "year": 1993,
+        "rank": 6,
+        "reserves": 64.448,
+        "world": 1003.3,
+        "share": 6.4
+      },
+      {
+        "year": 1994,
+        "rank": 6,
+        "reserves": 64.877,
+        "world": 1009.2,
+        "share": 6.4
+      },
+      {
+        "year": 1995,
+        "rank": 6,
+        "reserves": 66.329,
+        "world": 1018.7,
+        "share": 6.5
+      },
+      {
+        "year": 1996,
+        "rank": 6,
+        "reserves": 72.667,
+        "world": 1034.2,
+        "share": 7
+      },
+      {
+        "year": 1997,
+        "rank": 6,
+        "reserves": 74.931,
+        "world": 1040.1,
+        "share": 7.2
+      },
+      {
+        "year": 1998,
+        "rank": 6,
+        "reserves": 76.108,
+        "world": 1046.8,
+        "share": 7.3
+      },
+      {
+        "year": 1999,
+        "rank": 6,
+        "reserves": 76.848,
+        "world": 1063.3,
+        "share": 7.2
+      },
+      {
+        "year": 2000,
+        "rank": 6,
+        "reserves": 76.848,
+        "world": 1085.9,
+        "share": 7.1
+      },
+      {
+        "year": 2001,
+        "rank": 6,
+        "reserves": 77.685,
+        "world": 1125.2,
+        "share": 6.9
+      },
+      {
+        "year": 2002,
+        "rank": 6,
+        "reserves": 77.307,
+        "world": 1161.6,
+        "share": 6.7
+      },
+      {
+        "year": 2003,
+        "rank": 7,
+        "reserves": 77.226,
+        "world": 1183.1,
+        "share": 6.5
+      },
+      {
+        "year": 2004,
+        "rank": 6,
+        "reserves": 79.729,
+        "world": 1191.1,
+        "share": 6.7
+      },
+      {
+        "year": 2005,
+        "rank": 6,
+        "reserves": 80.012,
+        "world": 1200.1,
+        "share": 6.7
+      },
+      {
+        "year": 2006,
+        "rank": 6,
+        "reserves": 87.324,
+        "world": 1211.3,
+        "share": 7.2
+      },
+      {
+        "year": 2007,
+        "rank": 5,
+        "reserves": 99.377,
+        "world": 1207.7,
+        "share": 8.2
+      },
+      {
+        "year": 2008,
+        "rank": 2,
+        "reserves": 172.323,
+        "world": 1285.7,
+        "share": 13.4
+      },
+      {
+        "year": 2009,
+        "rank": 2,
+        "reserves": 211.173,
+        "world": 1323.8,
+        "share": 16
+      },
+      {
+        "year": 2010,
+        "rank": 1,
+        "reserves": 296.501,
+        "world": 1457.6,
+        "share": 20.3
+      },
+      {
+        "year": 2011,
+        "rank": 1,
+        "reserves": 297.571,
+        "world": 1466.5,
+        "share": 20.3
+      },
+      {
+        "year": 2012,
+        "rank": 1,
+        "reserves": 297.735,
+        "world": 1480,
+        "share": 20.1
+      },
+      {"year": 2013, "rank": 1, "reserves": 298.35, "world": 1490, "share": 20},
+      {
+        "year": 2014,
+        "rank": 1,
+        "reserves": 299.953,
+        "world": 1490.4,
+        "share": 20.1
+      },
+      {
+        "year": 2015,
+        "rank": 1,
+        "reserves": 300.878,
+        "world": 1486.5,
+        "share": 20.2
+      },
+      {
+        "year": 2016,
+        "rank": 1,
+        "reserves": 302.25,
+        "world": 1488.5,
+        "share": 20.3
+      },
+      {
+        "year": 2017,
+        "rank": 1,
+        "reserves": 302.809,
+        "world": 1489.7,
+        "share": 20.3
+      },
+      {
+        "year": 2018,
+        "rank": 1,
+        "reserves": 303.806,
+        "world": 1493.1,
+        "share": 20.3
+      },
+      {
+        "year": 2019,
+        "rank": 1,
+        "reserves": 303.806,
+        "world": 1554.1,
+        "share": 19.5
+      },
+      {
+        "year": 2020,
+        "rank": 1,
+        "reserves": 303.561,
+        "world": 1543.8,
+        "share": 19.7
+      },
+      {
+        "year": 2021,
+        "rank": 1,
+        "reserves": 303.468,
+        "world": 1558.7,
+        "share": 19.5
+      },
+      {
+        "year": 2022,
+        "rank": 1,
+        "reserves": 303.221,
+        "world": 1564,
+        "share": 19.4
+      },
+      {
+        "year": 2023,
+        "rank": 1,
+        "reserves": 303.008,
+        "world": 1565.2,
+        "share": 19.4
+      },
+      {
+        "year": 2024,
+        "rank": 1,
+        "reserves": 303.221,
+        "world": 1565.1,
+        "share": 19.4
+      },
+      {
+        "year": 2025,
+        "rank": 1,
+        "reserves": 303.701,
+        "world": 1572.5,
+        "share": 19.3
+      }
+    ],
+    "data-ca4fe8868f956947e60b295d701fa8cf": [
+      {"v": 100},
+      {"v": 200},
+      {"v": 300}
+    ],
+    "data-bc225b201bc32fa505f5126723c0b65d": [
+      {"v": 0},
+      {"v": 100},
+      {"v": 200},
+      {"v": 300}
+    ],
+    "data-1c93a8a82b365723ba5da35127a90c87": [{"t": "billion barrels"}],
+    "data-f392215e8ab6f66cf12a17bb4d192e16": [
+      {
+        "year": 1960,
+        "country": "Canada",
+        "reserves": 5,
+        "rank": 10,
+        "share": 0.017172263908846873
+      },
+      {
+        "year": 1961,
+        "country": "Canada",
+        "reserves": 5,
+        "rank": 10,
+        "share": 0.016818209950460284
+      },
+      {
+        "year": 1968,
+        "country": "Canada",
+        "reserves": 9.9,
+        "rank": 10,
+        "share": 0.021329518437645092
+      },
+      {
+        "year": 1970,
+        "country": "Canada",
+        "reserves": 10.75,
+        "rank": 10,
+        "share": 0.019600614237667388
+      },
+      {
+        "year": 1979,
+        "country": "Mexico",
+        "reserves": 31.25,
+        "rank": 5,
+        "share": 0.05016945505001197
+      },
+      {
+        "year": 1980,
+        "country": "Mexico",
+        "reserves": 47.224,
+        "rank": 5,
+        "share": 0.07332984792856986
+      },
+      {
+        "year": 1981,
+        "country": "Mexico",
+        "reserves": 56.998,
+        "rank": 5,
+        "share": 0.08667130957341013
+      },
+      {
+        "year": 1982,
+        "country": "Mexico",
+        "reserves": 56.998,
+        "rank": 5,
+        "share": 0.08300368893413122
+      },
+      {
+        "year": 1983,
+        "country": "Mexico",
+        "reserves": 57.096,
+        "rank": 5,
+        "share": 0.08179549535978609
+      },
+      {
+        "year": 1984,
+        "country": "Mexico",
+        "reserves": 56.41,
+        "rank": 6,
+        "share": 0.07702645690132837
+      },
+      {
+        "year": 1985,
+        "country": "Mexico",
+        "reserves": 55.593,
+        "rank": 6,
+        "share": 0.07332538885272184
+      },
+      {
+        "year": 1986,
+        "country": "Mexico",
+        "reserves": 54.88,
+        "rank": 8,
+        "share": 0.06343845723974226
+      },
+      {
+        "year": 1987,
+        "country": "Mexico",
+        "reserves": 54.11,
+        "rank": 8,
+        "share": 0.060172601900309375
+      },
+      {
+        "year": 1988,
+        "country": "Mexico",
+        "reserves": 53.012,
+        "rank": 8,
+        "share": 0.05368036183877132
+      },
+      {
+        "year": 1989,
+        "country": "Mexico",
+        "reserves": 51.983,
+        "rank": 8,
+        "share": 0.05222255619757296
+      },
+      {
+        "year": 1990,
+        "country": "Mexico",
+        "reserves": 51.298,
+        "rank": 8,
+        "share": 0.05166102005060737
+      },
+      {
+        "year": 1991,
+        "country": "Mexico",
+        "reserves": 50.925,
+        "rank": 8,
+        "share": 0.0510831397358824
+      },
+      {
+        "year": 1992,
+        "country": "Mexico",
+        "reserves": 51.225,
+        "rank": 8,
+        "share": 0.05112132110427502
+      },
+      {
+        "year": 1993,
+        "country": "Mexico",
+        "reserves": 50.776,
+        "rank": 8,
+        "share": 0.05060932754246449
+      },
+      {
+        "year": 1994,
+        "country": "Mexico",
+        "reserves": 49.775,
+        "rank": 8,
+        "share": 0.0493188305321728
+      },
+      {
+        "year": 1995,
+        "country": "Mexico",
+        "reserves": 48.796,
+        "rank": 8,
+        "share": 0.0479012596754641
+      },
+      {
+        "year": 1996,
+        "country": "Mexico",
+        "reserves": 48.472,
+        "rank": 8,
+        "share": 0.04686919322531011
+      },
+      {
+        "year": 1997,
+        "country": "Mexico",
+        "reserves": 47.822,
+        "rank": 8,
+        "share": 0.045979033437685286
+      },
+      {
+        "year": 1998,
+        "country": "Mexico",
+        "reserves": 28.399,
+        "rank": 9,
+        "share": 0.027130456679136872
+      },
+      {
+        "year": 1999,
+        "country": "Mexico",
+        "reserves": 28.26,
+        "rank": 10,
+        "share": 0.02657868103735509
+      },
+      {
+        "year": 1960,
+        "country": "United States",
+        "reserves": 31.613,
+        "rank": 4,
+        "share": 0.10857335579007524
+      },
+      {
+        "year": 1961,
+        "country": "United States",
+        "reserves": 31.759,
+        "rank": 4,
+        "share": 0.10682590596333362
+      },
+      {
+        "year": 1962,
+        "country": "United States",
+        "reserves": 31.389,
+        "rank": 4,
+        "share": 0.10101679751424465
+      },
+      {
+        "year": 1963,
+        "country": "United States",
+        "reserves": 30.97,
+        "rank": 5,
+        "share": 0.09318492347974226
+      },
+      {
+        "year": 1964,
+        "country": "United States",
+        "reserves": 30.991,
+        "rank": 5,
+        "share": 0.09047885975207431
+      },
+      {
+        "year": 1965,
+        "country": "United States",
+        "reserves": 31.352,
+        "rank": 5,
+        "share": 0.08862325280579997
+      },
+      {
+        "year": 1966,
+        "country": "United States",
+        "reserves": 31.452,
+        "rank": 5,
+        "share": 0.08076803073355564
+      },
+      {
+        "year": 1967,
+        "country": "United States",
+        "reserves": 31.377,
+        "rank": 5,
+        "share": 0.07622270429419238
+      },
+      {
+        "year": 1968,
+        "country": "United States",
+        "reserves": 30.707,
+        "rank": 5,
+        "share": 0.0661581336025018
+      },
+      {
+        "year": 1969,
+        "country": "United States",
+        "reserves": 29.632,
+        "rank": 5,
+        "share": 0.05612652713325125
+      },
+      {
+        "year": 1970,
+        "country": "United States",
+        "reserves": 39.001,
+        "rank": 5,
+        "share": 0.07111102845425728
+      },
+      {
+        "year": 1971,
+        "country": "United States",
+        "reserves": 38.063,
+        "rank": 5,
+        "share": 0.06686115047045176
+      },
+      {
+        "year": 1972,
+        "country": "United States",
+        "reserves": 36.339,
+        "rank": 5,
+        "share": 0.06278526485692461
+      },
+      {
+        "year": 1973,
+        "country": "United States",
+        "reserves": 35.3,
+        "rank": 5,
+        "share": 0.06058486323714566
+      },
+      {
+        "year": 1974,
+        "country": "United States",
+        "reserves": 32.25,
+        "rank": 7,
+        "share": 0.05003482268512147
+      },
+      {
+        "year": 1975,
+        "country": "United States",
+        "reserves": 32.682,
+        "rank": 6,
+        "share": 0.05133620639271753
+      },
+      {
+        "year": 1976,
+        "country": "United States",
+        "reserves": 30.942,
+        "rank": 7,
+        "share": 0.04979632624052046
+      },
+      {
+        "year": 1977,
+        "country": "United States",
+        "reserves": 31.78,
+        "rank": 7,
+        "share": 0.05092610620084615
+      },
+      {
+        "year": 1978,
+        "country": "United States",
+        "reserves": 31.355,
+        "rank": 6,
+        "share": 0.050836804801925865
+      },
+      {
+        "year": 1979,
+        "country": "United States",
+        "reserves": 29.81,
+        "rank": 7,
+        "share": 0.04785764656130742
+      },
+      {
+        "year": 1980,
+        "country": "United States",
+        "reserves": 29.805,
+        "rank": 8,
+        "share": 0.046281469539027294
+      },
+      {
+        "year": 1981,
+        "country": "United States",
+        "reserves": 29.426,
+        "rank": 8,
+        "share": 0.04474525343884288
+      },
+      {
+        "year": 1982,
+        "country": "United States",
+        "reserves": 27.858,
+        "rank": 8,
+        "share": 0.04056838426483434
+      },
+      {
+        "year": 1983,
+        "country": "United States",
+        "reserves": 27.735,
+        "rank": 8,
+        "share": 0.039733047215280703
+      },
+      {
+        "year": 1984,
+        "country": "United States",
+        "reserves": 28.446,
+        "rank": 8,
+        "share": 0.03884230797757821
+      },
+      {
+        "year": 1985,
+        "country": "United States",
+        "reserves": 28.416,
+        "rank": 9,
+        "share": 0.03747979511159577
+      },
+      {
+        "year": 1986,
+        "country": "United States",
+        "reserves": 26.889,
+        "rank": 9,
+        "share": 0.031082300960631002
+      },
+      {
+        "year": 1987,
+        "country": "United States",
+        "reserves": 27.256,
+        "rank": 9,
+        "share": 0.030309821426627838
+      },
+      {
+        "year": 1988,
+        "country": "United States",
+        "reserves": 26.825,
+        "rank": 9,
+        "share": 0.027163202790406713
+      },
+      {
+        "year": 1989,
+        "country": "United States",
+        "reserves": 26.501,
+        "rank": 9,
+        "share": 0.026623126056439243
+      },
+      {
+        "year": 1990,
+        "country": "United States",
+        "reserves": 26.254,
+        "rank": 9,
+        "share": 0.02643979142283609
+      },
+      {
+        "year": 1991,
+        "country": "United States",
+        "reserves": 24.682,
+        "rank": 9,
+        "share": 0.02475864614552871
+      },
+      {
+        "year": 1992,
+        "country": "United States",
+        "reserves": 23.745,
+        "rank": 9,
+        "share": 0.023696940353753256
+      },
+      {
+        "year": 1993,
+        "country": "United States",
+        "reserves": 22.957,
+        "rank": 9,
+        "share": 0.02288164354010472
+      },
+      {
+        "year": 1994,
+        "country": "United States",
+        "reserves": 22.457,
+        "rank": 10,
+        "share": 0.022251189899769052
+      },
+      {
+        "year": 1995,
+        "country": "United States",
+        "reserves": 22.351,
+        "rank": 10,
+        "share": 0.02194116433736983
+      },
+      {
+        "year": 1996,
+        "country": "United States",
+        "reserves": 22.017,
+        "rank": 10,
+        "share": 0.021288971514310376
+      },
+      {
+        "year": 1997,
+        "country": "United States",
+        "reserves": 22.546,
+        "rank": 10,
+        "share": 0.021677121155243454
+      },
+      {
+        "year": 2012,
+        "country": "United States",
+        "reserves": 30.529,
+        "rank": 10,
+        "share": 0.020628269701359087
+      },
+      {
+        "year": 2013,
+        "country": "United States",
+        "reserves": 33.371,
+        "rank": 10,
+        "share": 0.022396365918995423
+      },
+      {
+        "year": 2014,
+        "country": "United States",
+        "reserves": 36.385,
+        "rank": 10,
+        "share": 0.024412817508711417
+      },
+      {
+        "year": 2015,
+        "country": "United States",
+        "reserves": 32.318,
+        "rank": 10,
+        "share": 0.021740792815110214
+      },
+      {
+        "year": 2016,
+        "country": "United States",
+        "reserves": 32.773,
+        "rank": 10,
+        "share": 0.022017132961232838
+      },
+      {
+        "year": 2017,
+        "country": "United States",
+        "reserves": 39.16,
+        "rank": 9,
+        "share": 0.026286457272256473
+      },
+      {
+        "year": 2018,
+        "country": "United States",
+        "reserves": 43.824,
+        "rank": 9,
+        "share": 0.029350110202082502
+      },
+      {
+        "year": 2019,
+        "country": "United States",
+        "reserves": 44.191,
+        "rank": 9,
+        "share": 0.028435578982504862
+      },
+      {
+        "year": 2020,
+        "country": "United States",
+        "reserves": 35.835,
+        "rank": 10,
+        "share": 0.023212023045199627
+      },
+      {
+        "year": 2021,
+        "country": "United States",
+        "reserves": 41.61,
+        "rank": 9,
+        "share": 0.026696091829197428
+      },
+      {
+        "year": 2022,
+        "country": "United States",
+        "reserves": 45.271,
+        "rank": 9,
+        "share": 0.02894578705683892
+      },
+      {
+        "year": 2023,
+        "country": "United States",
+        "reserves": 43.492,
+        "rank": 9,
+        "share": 0.027787652830517633
+      },
+      {
+        "year": 2024,
+        "country": "United States",
+        "reserves": 43.051,
+        "rank": 9,
+        "share": 0.027506068881350754
+      },
+      {
+        "year": 2025,
+        "country": "United States",
+        "reserves": 41.909,
+        "rank": 9,
+        "share": 0.026651891919661195
+      },
+      {
+        "year": 1960,
+        "country": "Indonesia",
+        "reserves": 9.5,
+        "rank": 8,
+        "share": 0.03262730142680906
+      },
+      {
+        "year": 1961,
+        "country": "Indonesia",
+        "reserves": 9.5,
+        "rank": 8,
+        "share": 0.031954598905874536
+      },
+      {
+        "year": 1962,
+        "country": "Indonesia",
+        "reserves": 10,
+        "rank": 8,
+        "share": 0.03218222865151635
+      },
+      {
+        "year": 1963,
+        "country": "Indonesia",
+        "reserves": 10,
+        "rank": 8,
+        "share": 0.030088770900788594
+      },
+      {
+        "year": 1964,
+        "country": "Indonesia",
+        "reserves": 10,
+        "rank": 8,
+        "share": 0.02919520497953416
+      },
+      {
+        "year": 1965,
+        "country": "Indonesia",
+        "reserves": 9.825,
+        "rank": 10,
+        "share": 0.02777250123810234
+      },
+      {
+        "year": 1966,
+        "country": "Indonesia",
+        "reserves": 9.656,
+        "rank": 10,
+        "share": 0.024796391477909616
+      },
+      {
+        "year": 1967,
+        "country": "Indonesia",
+        "reserves": 9.472,
+        "rank": 10,
+        "share": 0.02300989435174141
+      },
+      {
+        "year": 1969,
+        "country": "Indonesia",
+        "reserves": 9,
+        "rank": 10,
+        "share": 0.01704706885121697
+      },
+      {
+        "year": 1960,
+        "country": "Venezuela",
+        "reserves": 18.5,
+        "rank": 7,
+        "share": 0.06353737646273343
+      },
+      {
+        "year": 1961,
+        "country": "Venezuela",
+        "reserves": 17.55,
+        "rank": 7,
+        "share": 0.0590319169261156
+      },
+      {
+        "year": 1962,
+        "country": "Venezuela",
+        "reserves": 17,
+        "rank": 7,
+        "share": 0.05470978870757779
+      },
+      {
+        "year": 1963,
+        "country": "Venezuela",
+        "reserves": 17,
+        "rank": 7,
+        "share": 0.051150910531340604
+      },
+      {
+        "year": 1964,
+        "country": "Venezuela",
+        "reserves": 17,
+        "rank": 7,
+        "share": 0.04963184846520807
+      },
+      {
+        "year": 1965,
+        "country": "Venezuela",
+        "reserves": 17.25,
+        "rank": 7,
+        "share": 0.0487608800363629
+      },
+      {
+        "year": 1966,
+        "country": "Venezuela",
+        "reserves": 17.4,
+        "rank": 8,
+        "share": 0.044682809829704566
+      },
+      {
+        "year": 1967,
+        "country": "Venezuela",
+        "reserves": 17,
+        "rank": 8,
+        "share": 0.04129731883230616
+      },
+      {
+        "year": 1968,
+        "country": "Venezuela",
+        "reserves": 15.5,
+        "rank": 9,
+        "share": 0.033394700584191805
+      },
+      {
+        "year": 1969,
+        "country": "Venezuela",
+        "reserves": 14.75,
+        "rank": 9,
+        "share": 0.027938251728383368
+      },
+      {
+        "year": 1970,
+        "country": "Venezuela",
+        "reserves": 14,
+        "rank": 8,
+        "share": 0.02552638133277613
+      },
+      {
+        "year": 1971,
+        "country": "Venezuela",
+        "reserves": 13.762,
+        "rank": 9,
+        "share": 0.024174215189931354
+      },
+      {
+        "year": 1972,
+        "country": "Venezuela",
+        "reserves": 13.919,
+        "rank": 10,
+        "share": 0.02404876583129788
+      },
+      {
+        "year": 1973,
+        "country": "Venezuela",
+        "reserves": 13.812,
+        "rank": 10,
+        "share": 0.023705329490976087
+      },
+      {
+        "year": 1974,
+        "country": "Venezuela",
+        "reserves": 18.567,
+        "rank": 10,
+        "share": 0.028806094660299236
+      },
+      {
+        "year": 1975,
+        "country": "Venezuela",
+        "reserves": 18.398,
+        "rank": 10,
+        "share": 0.028899196047157977
+      },
+      {
+        "year": 1976,
+        "country": "Venezuela",
+        "reserves": 18.228,
+        "rank": 10,
+        "share": 0.029335124901822992
+      },
+      {
+        "year": 1977,
+        "country": "Venezuela",
+        "reserves": 18.039,
+        "rank": 10,
+        "share": 0.02890673473118514
+      },
+      {
+        "year": 1978,
+        "country": "Venezuela",
+        "reserves": 18.228,
+        "rank": 9,
+        "share": 0.029553604781677713
+      },
+      {
+        "year": 1979,
+        "country": "Venezuela",
+        "reserves": 18.523,
+        "rank": 10,
+        "share": 0.029737242108523895
+      },
+      {
+        "year": 1980,
+        "country": "Venezuela",
+        "reserves": 19.53,
+        "rank": 10,
+        "share": 0.03032635799688653
+      },
+      {
+        "year": 1981,
+        "country": "Venezuela",
+        "reserves": 19.888,
+        "rank": 10,
+        "share": 0.030241745408540313
+      },
+      {
+        "year": 1982,
+        "country": "Venezuela",
+        "reserves": 24.9,
+        "rank": 9,
+        "share": 0.03626077852661264
+      },
+      {
+        "year": 1983,
+        "country": "Venezuela",
+        "reserves": 25.887,
+        "rank": 9,
+        "share": 0.03708560999682609
+      },
+      {
+        "year": 1984,
+        "country": "Venezuela",
+        "reserves": 28.028,
+        "rank": 9,
+        "share": 0.03827153933753646
+      },
+      {
+        "year": 1985,
+        "country": "Venezuela",
+        "reserves": 54.454,
+        "rank": 7,
+        "share": 0.07182308428374283
+      },
+      {
+        "year": 1986,
+        "country": "Venezuela",
+        "reserves": 55.521,
+        "rank": 7,
+        "share": 0.06417942026982015
+      },
+      {
+        "year": 1987,
+        "country": "Venezuela",
+        "reserves": 58.101,
+        "rank": 7,
+        "share": 0.06461076220679865
+      },
+      {
+        "year": 1988,
+        "country": "Venezuela",
+        "reserves": 58.505,
+        "rank": 7,
+        "share": 0.05924261618835955
+      },
+      {
+        "year": 1989,
+        "country": "Venezuela",
+        "reserves": 59.04,
+        "rank": 7,
+        "share": 0.05931207736961521
+      },
+      {
+        "year": 1990,
+        "country": "Venezuela",
+        "reserves": 60.054,
+        "rank": 7,
+        "share": 0.060478983549440035
+      },
+      {
+        "year": 1991,
+        "country": "Venezuela",
+        "reserves": 62.649,
+        "rank": 7,
+        "share": 0.06284354681027583
+      },
+      {
+        "year": 1992,
+        "country": "Venezuela",
+        "reserves": 63.33,
+        "rank": 7,
+        "share": 0.06320182070344045
+      },
+      {
+        "year": 1993,
+        "country": "Venezuela",
+        "reserves": 64.448,
+        "rank": 6,
+        "share": 0.06423644913850542
+      },
+      {
+        "year": 1994,
+        "country": "Venezuela",
+        "reserves": 64.877,
+        "rank": 6,
+        "share": 0.06428242628700702
+      },
+      {
+        "year": 1995,
+        "country": "Venezuela",
+        "reserves": 66.329,
+        "rank": 6,
+        "share": 0.0651127685263927
+      },
+      {
+        "year": 1996,
+        "country": "Venezuela",
+        "reserves": 72.667,
+        "rank": 6,
+        "share": 0.07026414557071319
+      },
+      {
+        "year": 1997,
+        "country": "Venezuela",
+        "reserves": 74.931,
+        "rank": 6,
+        "share": 0.0720433054769603
+      },
+      {
+        "year": 1998,
+        "country": "Venezuela",
+        "reserves": 76.108,
+        "rank": 6,
+        "share": 0.07270836286262718
+      },
+      {
+        "year": 1999,
+        "country": "Venezuela",
+        "reserves": 76.848,
+        "rank": 6,
+        "share": 0.07227595471899023
+      },
+      {
+        "year": 2000,
+        "country": "Venezuela",
+        "reserves": 76.848,
+        "rank": 6,
+        "share": 0.07076745490721771
+      },
+      {
+        "year": 2001,
+        "country": "Venezuela",
+        "reserves": 77.685,
+        "rank": 6,
+        "share": 0.0690393676818287
+      },
+      {
+        "year": 2002,
+        "country": "Venezuela",
+        "reserves": 77.307,
+        "rank": 6,
+        "share": 0.0665533268283017
+      },
+      {
+        "year": 2003,
+        "country": "Venezuela",
+        "reserves": 77.226,
+        "rank": 7,
+        "share": 0.06527599084043773
+      },
+      {
+        "year": 2004,
+        "country": "Venezuela",
+        "reserves": 79.729,
+        "rank": 6,
+        "share": 0.06693801875878345
+      },
+      {
+        "year": 2005,
+        "country": "Venezuela",
+        "reserves": 80.012,
+        "rank": 6,
+        "share": 0.0666708033584243
+      },
+      {
+        "year": 2006,
+        "country": "Venezuela",
+        "reserves": 87.324,
+        "rank": 6,
+        "share": 0.07209336811410967
+      },
+      {
+        "year": 2007,
+        "country": "Venezuela",
+        "reserves": 99.377,
+        "rank": 5,
+        "share": 0.08228675710282425
+      },
+      {
+        "year": 2008,
+        "country": "Venezuela",
+        "reserves": 172.323,
+        "rank": 2,
+        "share": 0.13402928508028938
+      },
+      {
+        "year": 2009,
+        "country": "Venezuela",
+        "reserves": 211.173,
+        "rank": 2,
+        "share": 0.1595211911615414
+      },
+      {
+        "year": 2010,
+        "country": "Venezuela",
+        "reserves": 296.501,
+        "rank": 1,
+        "share": 0.20342329179738047
+      },
+      {
+        "year": 2011,
+        "country": "Venezuela",
+        "reserves": 297.571,
+        "rank": 1,
+        "share": 0.2029186279329083
+      },
+      {
+        "year": 2012,
+        "country": "Venezuela",
+        "reserves": 297.735,
+        "rank": 1,
+        "share": 0.20117782696891964
+      },
+      {
+        "year": 2013,
+        "country": "Venezuela",
+        "reserves": 298.35,
+        "rank": 1,
+        "share": 0.20023241053406504
+      },
+      {
+        "year": 2014,
+        "country": "Venezuela",
+        "reserves": 299.953,
+        "rank": 1,
+        "share": 0.20125595300784704
+      },
+      {
+        "year": 2015,
+        "country": "Venezuela",
+        "reserves": 300.878,
+        "rank": 1,
+        "share": 0.20240504550481872
+      },
+      {
+        "year": 2016,
+        "country": "Venezuela",
+        "reserves": 302.25,
+        "rank": 1,
+        "share": 0.20305368558058842
+      },
+      {
+        "year": 2017,
+        "country": "Venezuela",
+        "reserves": 302.809,
+        "rank": 1,
+        "share": 0.20326291726646353
+      },
+      {
+        "year": 2018,
+        "country": "Venezuela",
+        "reserves": 303.806,
+        "rank": 1,
+        "share": 0.2034670404356945
+      },
+      {
+        "year": 2019,
+        "country": "Venezuela",
+        "reserves": 303.806,
+        "rank": 1,
+        "share": 0.19549002078158156
+      },
+      {
+        "year": 2020,
+        "country": "Venezuela",
+        "reserves": 303.561,
+        "rank": 1,
+        "share": 0.19663080584969564
+      },
+      {
+        "year": 2021,
+        "country": "Venezuela",
+        "reserves": 303.468,
+        "rank": 1,
+        "share": 0.19469862040910563
+      },
+      {
+        "year": 2022,
+        "country": "Venezuela",
+        "reserves": 303.221,
+        "rank": 1,
+        "share": 0.19387622312654357
+      },
+      {
+        "year": 2023,
+        "country": "Venezuela",
+        "reserves": 303.008,
+        "rank": 1,
+        "share": 0.19359608913983
+      },
+      {
+        "year": 2024,
+        "country": "Venezuela",
+        "reserves": 303.221,
+        "rank": 1,
+        "share": 0.19373342575717303
+      },
+      {
+        "year": 2025,
+        "country": "Venezuela",
+        "reserves": 303.701,
+        "rank": 1,
+        "share": 0.19313766083402192
+      },
+      {
+        "year": 1960,
+        "country": "Iran",
+        "reserves": 35,
+        "rank": 3,
+        "share": 0.12020584736192812
+      },
+      {
+        "year": 1961,
+        "country": "Iran",
+        "reserves": 35,
+        "rank": 3,
+        "share": 0.11772746965322198
+      },
+      {
+        "year": 1962,
+        "country": "Iran",
+        "reserves": 37,
+        "rank": 3,
+        "share": 0.11907424601061048
+      },
+      {
+        "year": 1963,
+        "country": "Iran",
+        "reserves": 37,
+        "rank": 3,
+        "share": 0.11132845233291778
+      },
+      {
+        "year": 1964,
+        "country": "Iran",
+        "reserves": 38,
+        "rank": 3,
+        "share": 0.11094177892222981
+      },
+      {
+        "year": 1965,
+        "country": "Iran",
+        "reserves": 40,
+        "rank": 3,
+        "share": 0.11306870733069657
+      },
+      {
+        "year": 1966,
+        "country": "Iran",
+        "reserves": 44.2,
+        "rank": 3,
+        "share": 0.11350460887775529
+      },
+      {
+        "year": 1967,
+        "country": "Iran",
+        "reserves": 43.8,
+        "rank": 3,
+        "share": 0.10640132734441235
+      },
+      {
+        "year": 1968,
+        "country": "Iran",
+        "reserves": 54,
+        "rank": 4,
+        "share": 0.1163428278417005
+      },
+      {
+        "year": 1969,
+        "country": "Iran",
+        "reserves": 55,
+        "rank": 4,
+        "share": 0.10417653186854815
+      },
+      {
+        "year": 1970,
+        "country": "Iran",
+        "reserves": 60,
+        "rank": 3,
+        "share": 0.10939877714046914
+      },
+      {
+        "year": 1971,
+        "country": "Iran",
+        "reserves": 58.344,
+        "rank": 3,
+        "share": 0.10248658705430569
+      },
+      {
+        "year": 1972,
+        "country": "Iran",
+        "reserves": 65,
+        "rank": 3,
+        "share": 0.11230474739811495
+      },
+      {
+        "year": 1973,
+        "country": "Iran",
+        "reserves": 62.861,
+        "rank": 3,
+        "share": 0.10788739625921286
+      },
+      {
+        "year": 1974,
+        "country": "Iran",
+        "reserves": 66,
+        "rank": 3,
+        "share": 0.10239684642536487
+      },
+      {
+        "year": 1975,
+        "country": "Iran",
+        "reserves": 64.5,
+        "rank": 3,
+        "share": 0.10131525954134632
+      },
+      {
+        "year": 1976,
+        "country": "Iran",
+        "reserves": 63,
+        "rank": 3,
+        "share": 0.10138868053625458
+      },
+      {
+        "year": 1977,
+        "country": "Iran",
+        "reserves": 62,
+        "rank": 3,
+        "share": 0.09935237836540155
+      },
+      {
+        "year": 1978,
+        "country": "Iran",
+        "reserves": 60.088,
+        "rank": 3,
+        "share": 0.09742248212208966
+      },
+      {
+        "year": 1979,
+        "country": "Iran",
+        "reserves": 58.833,
+        "rank": 4,
+        "share": 0.09445182556663534
+      },
+      {
+        "year": 1980,
+        "country": "Iran",
+        "reserves": 58.296,
+        "rank": 4,
+        "share": 0.09052254817135162
+      },
+      {
+        "year": 1981,
+        "country": "Iran",
+        "reserves": 57.02,
+        "rank": 4,
+        "share": 0.08670476283160543
+      },
+      {
+        "year": 1982,
+        "country": "Iran",
+        "reserves": 56.148,
+        "rank": 6,
+        "share": 0.08176587119326294
+      },
+      {
+        "year": 1983,
+        "country": "Iran",
+        "reserves": 55.257,
+        "rank": 6,
+        "share": 0.07916095150440836
+      },
+      {
+        "year": 1984,
+        "country": "Iran",
+        "reserves": 58.874,
+        "rank": 5,
+        "share": 0.08039098783210082
+      },
+      {
+        "year": 1985,
+        "country": "Iran",
+        "reserves": 59,
+        "rank": 5,
+        "share": 0.07781911287950981
+      },
+      {
+        "year": 1986,
+        "country": "Iran",
+        "reserves": 92.86,
+        "rank": 4,
+        "share": 0.10734138373328107
+      },
+      {
+        "year": 1987,
+        "country": "Iran",
+        "reserves": 92.86,
+        "rank": 5,
+        "share": 0.10326423604625261
+      },
+      {
+        "year": 1988,
+        "country": "Iran",
+        "reserves": 92.86,
+        "rank": 5,
+        "share": 0.09403075530725694
+      },
+      {
+        "year": 1989,
+        "country": "Iran",
+        "reserves": 92.86,
+        "rank": 5,
+        "share": 0.09328793198750794
+      },
+      {
+        "year": 1990,
+        "country": "Iran",
+        "reserves": 92.85,
+        "rank": 5,
+        "share": 0.09350707067914721
+      },
+      {
+        "year": 1991,
+        "country": "Iran",
+        "reserves": 92.86,
+        "rank": 5,
+        "share": 0.09314836241284322
+      },
+      {
+        "year": 1992,
+        "country": "Iran",
+        "reserves": 92.86,
+        "rank": 5,
+        "share": 0.09267205227414307
+      },
+      {
+        "year": 1993,
+        "country": "Iran",
+        "reserves": 92.86,
+        "rank": 5,
+        "share": 0.09255518661559108
+      },
+      {
+        "year": 1994,
+        "country": "Iran",
+        "reserves": 94.3,
+        "rank": 5,
+        "share": 0.09343577537285574
+      },
+      {
+        "year": 1995,
+        "country": "Iran",
+        "reserves": 93.7,
+        "rank": 5,
+        "share": 0.09198188440837336
+      },
+      {
+        "year": 1996,
+        "country": "Iran",
+        "reserves": 92.6,
+        "rank": 5,
+        "share": 0.0895380279886061
+      },
+      {
+        "year": 1997,
+        "country": "Iran",
+        "reserves": 92.6,
+        "rank": 5,
+        "share": 0.0890313766954468
+      },
+      {
+        "year": 1998,
+        "country": "Iran",
+        "reserves": 93.7,
+        "rank": 5,
+        "share": 0.08951455300662435
+      },
+      {
+        "year": 1999,
+        "country": "Iran",
+        "reserves": 93.1,
+        "rank": 5,
+        "share": 0.0875610475788308
+      },
+      {
+        "year": 2000,
+        "country": "Iran",
+        "reserves": 99.53,
+        "rank": 3,
+        "share": 0.09165475727299838
+      },
+      {
+        "year": 2001,
+        "country": "Iran",
+        "reserves": 99.08,
+        "rank": 3,
+        "share": 0.08805329922012728
+      },
+      {
+        "year": 2002,
+        "country": "Iran",
+        "reserves": 130.69,
+        "rank": 2,
+        "share": 0.11251056544932217
+      },
+      {
+        "year": 2003,
+        "country": "Iran",
+        "reserves": 133.25,
+        "rank": 2,
+        "share": 0.11263079506239256
+      },
+      {
+        "year": 2004,
+        "country": "Iran",
+        "reserves": 132.46,
+        "rank": 2,
+        "share": 0.11120934622017656
+      },
+      {
+        "year": 2005,
+        "country": "Iran",
+        "reserves": 136.27,
+        "rank": 2,
+        "share": 0.11354834741854322
+      },
+      {
+        "year": 2006,
+        "country": "Iran",
+        "reserves": 138.4,
+        "rank": 2,
+        "share": 0.11426093796657023
+      },
+      {
+        "year": 2007,
+        "country": "Iran",
+        "reserves": 136.15,
+        "rank": 2,
+        "share": 0.1127357636027403
+      },
+      {
+        "year": 2008,
+        "country": "Iran",
+        "reserves": 137.62,
+        "rank": 3,
+        "share": 0.10703800544761538
+      },
+      {
+        "year": 2009,
+        "country": "Iran",
+        "reserves": 137.01,
+        "rank": 3,
+        "share": 0.10349807220166776
+      },
+      {
+        "year": 2010,
+        "country": "Iran",
+        "reserves": 151.17,
+        "rank": 3,
+        "share": 0.1037146553334053
+      },
+      {
+        "year": 2011,
+        "country": "Iran",
+        "reserves": 154.58,
+        "rank": 3,
+        "share": 0.10541068015992473
+      },
+      {
+        "year": 2012,
+        "country": "Iran",
+        "reserves": 157.3,
+        "rank": 3,
+        "share": 0.10628670523187082
+      },
+      {
+        "year": 2013,
+        "country": "Iran",
+        "reserves": 157.8,
+        "rank": 3,
+        "share": 0.10590472392249192
+      },
+      {
+        "year": 2014,
+        "country": "Iran",
+        "reserves": 157.53,
+        "rank": 3,
+        "share": 0.1056960599738164
+      },
+      {
+        "year": 2015,
+        "country": "Iran",
+        "reserves": 158.4,
+        "rank": 3,
+        "share": 0.1065580042673884
+      },
+      {
+        "year": 2016,
+        "country": "Iran",
+        "reserves": 157.2,
+        "rank": 3,
+        "share": 0.10560807071387428
+      },
+      {
+        "year": 2017,
+        "country": "Iran",
+        "reserves": 155.6,
+        "rank": 3,
+        "share": 0.10444772092857782
+      },
+      {
+        "year": 2018,
+        "country": "Iran",
+        "reserves": 155.6,
+        "rank": 3,
+        "share": 0.10420950044368467
+      },
+      {
+        "year": 2019,
+        "country": "Iran",
+        "reserves": 208.6,
+        "rank": 3,
+        "share": 0.13422782412143905
+      },
+      {
+        "year": 2020,
+        "country": "Iran",
+        "reserves": 208.6,
+        "rank": 3,
+        "share": 0.13512007833762082
+      },
+      {
+        "year": 2021,
+        "country": "Iran",
+        "reserves": 208.6,
+        "rank": 3,
+        "share": 0.13383332745903828
+      },
+      {
+        "year": 2022,
+        "country": "Iran",
+        "reserves": 208.6,
+        "rank": 3,
+        "share": 0.13337658059368246
+      },
+      {
+        "year": 2023,
+        "country": "Iran",
+        "reserves": 208.6,
+        "rank": 3,
+        "share": 0.13327748506497697
+      },
+      {
+        "year": 2024,
+        "country": "Iran",
+        "reserves": 208.6,
+        "rank": 3,
+        "share": 0.13327834356111976
+      },
+      {
+        "year": 2025,
+        "country": "Iran",
+        "reserves": 208.6,
+        "rank": 3,
+        "share": 0.1326584899291638
+      },
+      {
+        "year": 1960,
+        "country": "Iraq",
+        "reserves": 27,
+        "rank": 5,
+        "share": 0.09273022510777312
+      },
+      {
+        "year": 1961,
+        "country": "Iraq",
+        "reserves": 26.5,
+        "rank": 5,
+        "share": 0.0891365127374395
+      },
+      {
+        "year": 1962,
+        "country": "Iraq",
+        "reserves": 26,
+        "rank": 6,
+        "share": 0.0836737944939425
+      },
+      {
+        "year": 1963,
+        "country": "Iraq",
+        "reserves": 25.5,
+        "rank": 6,
+        "share": 0.0767263657970109
+      },
+      {
+        "year": 1964,
+        "country": "Iraq",
+        "reserves": 25,
+        "rank": 6,
+        "share": 0.0729880124488354
+      },
+      {
+        "year": 1965,
+        "country": "Iraq",
+        "reserves": 25,
+        "rank": 6,
+        "share": 0.07066794208168535
+      },
+      {
+        "year": 1966,
+        "country": "Iraq",
+        "reserves": 24,
+        "rank": 6,
+        "share": 0.061631461834075266
+      },
+      {
+        "year": 1967,
+        "country": "Iraq",
+        "reserves": 23.5,
+        "rank": 7,
+        "share": 0.05708747015054087
+      },
+      {
+        "year": 1968,
+        "country": "Iraq",
+        "reserves": 28,
+        "rank": 7,
+        "share": 0.06032591073273359
+      },
+      {
+        "year": 1969,
+        "country": "Iraq",
+        "reserves": 27.5,
+        "rank": 7,
+        "share": 0.052088265934274076
+      },
+      {
+        "year": 1970,
+        "country": "Iraq",
+        "reserves": 32,
+        "rank": 6,
+        "share": 0.05834601447491687
+      },
+      {
+        "year": 1971,
+        "country": "Iraq",
+        "reserves": 35.99,
+        "rank": 6,
+        "share": 0.06321973584403644
+      },
+      {
+        "year": 1972,
+        "country": "Iraq",
+        "reserves": 29,
+        "rank": 6,
+        "share": 0.050105194993005135
+      },
+      {
+        "year": 1973,
+        "country": "Iraq",
+        "reserves": 31.5,
+        "rank": 6,
+        "share": 0.054062979942495426
+      },
+      {
+        "year": 1974,
+        "country": "Iraq",
+        "reserves": 35,
+        "rank": 5,
+        "share": 0.05430135795284501
+      },
+      {
+        "year": 1975,
+        "country": "Iraq",
+        "reserves": 34.3,
+        "rank": 5,
+        "share": 0.053877727166948504
+      },
+      {
+        "year": 1976,
+        "country": "Iraq",
+        "reserves": 34,
+        "rank": 5,
+        "share": 0.05471770060686755
+      },
+      {
+        "year": 1977,
+        "country": "Iraq",
+        "reserves": 34.5,
+        "rank": 5,
+        "share": 0.05528479118719925
+      },
+      {
+        "year": 1978,
+        "country": "Iraq",
+        "reserves": 32.1,
+        "rank": 5,
+        "share": 0.052044695714936064
+      },
+      {
+        "year": 1979,
+        "country": "Iraq",
+        "reserves": 31,
+        "rank": 6,
+        "share": 0.049768099409611875
+      },
+      {
+        "year": 1980,
+        "country": "Iraq",
+        "reserves": 30,
+        "rank": 7,
+        "share": 0.04658426727632339
+      },
+      {
+        "year": 1981,
+        "country": "Iraq",
+        "reserves": 32,
+        "rank": 7,
+        "share": 0.04865928464769157
+      },
+      {
+        "year": 1982,
+        "country": "Iraq",
+        "reserves": 59,
+        "rank": 4,
+        "share": 0.08591911377791751
+      },
+      {
+        "year": 1983,
+        "country": "Iraq",
+        "reserves": 65,
+        "rank": 3,
+        "share": 0.09311873333308981
+      },
+      {
+        "year": 1984,
+        "country": "Iraq",
+        "reserves": 65,
+        "rank": 3,
+        "share": 0.08875588900170793
+      },
+      {
+        "year": 1985,
+        "country": "Iraq",
+        "reserves": 65,
+        "rank": 3,
+        "share": 0.08573292096895148
+      },
+      {
+        "year": 1986,
+        "country": "Iraq",
+        "reserves": 72,
+        "rank": 5,
+        "share": 0.08322829667021578
+      },
+      {
+        "year": 1987,
+        "country": "Iraq",
+        "reserves": 100,
+        "rank": 2,
+        "share": 0.11120421715082124
+      },
+      {
+        "year": 1988,
+        "country": "Iraq",
+        "reserves": 100,
+        "rank": 2,
+        "share": 0.1012607746147501
+      },
+      {
+        "year": 1989,
+        "country": "Iraq",
+        "reserves": 100,
+        "rank": 2,
+        "share": 0.1004608356531423
+      },
+      {
+        "year": 1990,
+        "country": "Iraq",
+        "reserves": 100,
+        "rank": 2,
+        "share": 0.10070766901362112
+      },
+      {
+        "year": 1991,
+        "country": "Iraq",
+        "reserves": 100,
+        "rank": 2,
+        "share": 0.10031053458199786
+      },
+      {
+        "year": 1992,
+        "country": "Iraq",
+        "reserves": 100,
+        "rank": 2,
+        "share": 0.09979760098443148
+      },
+      {
+        "year": 1993,
+        "country": "Iraq",
+        "reserves": 100,
+        "rank": 2,
+        "share": 0.0996717495321894
+      },
+      {
+        "year": 1994,
+        "country": "Iraq",
+        "reserves": 100,
+        "rank": 2,
+        "share": 0.09908353698075902
+      },
+      {
+        "year": 1995,
+        "country": "Iraq",
+        "reserves": 100,
+        "rank": 2,
+        "share": 0.09816636543049452
+      },
+      {
+        "year": 1996,
+        "country": "Iraq",
+        "reserves": 112,
+        "rank": 2,
+        "share": 0.10829653493222338
+      },
+      {
+        "year": 1997,
+        "country": "Iraq",
+        "reserves": 112.5,
+        "rank": 2,
+        "share": 0.10816446952740569
+      },
+      {
+        "year": 1998,
+        "country": "Iraq",
+        "reserves": 112.5,
+        "rank": 2,
+        "share": 0.10747478349247855
+      },
+      {
+        "year": 1999,
+        "country": "Iraq",
+        "reserves": 112.5,
+        "rank": 2,
+        "share": 0.10580685126335625
+      },
+      {
+        "year": 2000,
+        "country": "Iraq",
+        "reserves": 112.5,
+        "rank": 2,
+        "share": 0.10359851495239944
+      },
+      {
+        "year": 2001,
+        "country": "Iraq",
+        "reserves": 115,
+        "rank": 2,
+        "share": 0.10220154834794748
+      },
+      {
+        "year": 2002,
+        "country": "Iraq",
+        "reserves": 115,
+        "rank": 3,
+        "share": 0.0990030991405008
+      },
+      {
+        "year": 2003,
+        "country": "Iraq",
+        "reserves": 115,
+        "rank": 3,
+        "share": 0.09720481374990728
+      },
+      {
+        "year": 2004,
+        "country": "Iraq",
+        "reserves": 115,
+        "rank": 3,
+        "share": 0.09655046667160126
+      },
+      {
+        "year": 2005,
+        "country": "Iraq",
+        "reserves": 115,
+        "rank": 3,
+        "share": 0.09582490609182116
+      },
+      {
+        "year": 2006,
+        "country": "Iraq",
+        "reserves": 115,
+        "rank": 3,
+        "share": 0.09494225336817613
+      },
+      {
+        "year": 2007,
+        "country": "Iraq",
+        "reserves": 115,
+        "rank": 3,
+        "share": 0.09522301002067671
+      },
+      {
+        "year": 2008,
+        "country": "Iraq",
+        "reserves": 115,
+        "rank": 4,
+        "share": 0.08944463469318245
+      },
+      {
+        "year": 2009,
+        "country": "Iraq",
+        "reserves": 115,
+        "rank": 4,
+        "share": 0.0868716028260112
+      },
+      {
+        "year": 2010,
+        "country": "Iraq",
+        "reserves": 143.1,
+        "rank": 4,
+        "share": 0.09817799284388636
+      },
+      {
+        "year": 2011,
+        "country": "Iraq",
+        "reserves": 141.35,
+        "rank": 4,
+        "share": 0.0963889225035927
+      },
+      {
+        "year": 2012,
+        "country": "Iraq",
+        "reserves": 140.3,
+        "rank": 4,
+        "share": 0.0947999030135504
+      },
+      {
+        "year": 2013,
+        "country": "Iraq",
+        "reserves": 144.211,
+        "rank": 4,
+        "share": 0.09678470305187885
+      },
+      {
+        "year": 2014,
+        "country": "Iraq",
+        "reserves": 143.069,
+        "rank": 4,
+        "share": 0.09599333209162658
+      },
+      {
+        "year": 2015,
+        "country": "Iraq",
+        "reserves": 142.503,
+        "rank": 4,
+        "share": 0.09586385910426545
+      },
+      {
+        "year": 2016,
+        "country": "Iraq",
+        "reserves": 148.766,
+        "rank": 4,
+        "share": 0.09994204992252048
+      },
+      {
+        "year": 2017,
+        "country": "Iraq",
+        "reserves": 147.223,
+        "rank": 4,
+        "share": 0.09882459394773788
+      },
+      {
+        "year": 2018,
+        "country": "Iraq",
+        "reserves": 145.019,
+        "rank": 4,
+        "share": 0.0971231204681408
+      },
+      {
+        "year": 2019,
+        "country": "Iraq",
+        "reserves": 145.019,
+        "rank": 4,
+        "share": 0.09331536350080044
+      },
+      {
+        "year": 2020,
+        "country": "Iraq",
+        "reserves": 145.019,
+        "rank": 4,
+        "share": 0.09393565982954667
+      },
+      {
+        "year": 2021,
+        "country": "Iraq",
+        "reserves": 145.019,
+        "rank": 4,
+        "share": 0.0930411088915737
+      },
+      {
+        "year": 2022,
+        "country": "Iraq",
+        "reserves": 145.019,
+        "rank": 4,
+        "share": 0.09272357785769529
+      },
+      {
+        "year": 2023,
+        "country": "Iraq",
+        "reserves": 145.019,
+        "rank": 4,
+        "share": 0.09265468651312511
+      },
+      {
+        "year": 2024,
+        "country": "Iraq",
+        "reserves": 145.019,
+        "rank": 4,
+        "share": 0.09265528334079591
+      },
+      {
+        "year": 2025,
+        "country": "Iraq",
+        "reserves": 140,
+        "rank": 4,
+        "share": 0.08903254357662
+      },
+      {
+        "year": 1960,
+        "country": "Kuwait",
+        "reserves": 65,
+        "rank": 1,
+        "share": 0.22323943081500935
+      },
+      {
+        "year": 1961,
+        "country": "Kuwait",
+        "reserves": 65,
+        "rank": 1,
+        "share": 0.2186367293559837
+      },
+      {
+        "year": 1962,
+        "country": "Kuwait",
+        "reserves": 66.725,
+        "rank": 1,
+        "share": 0.2147359206772428
+      },
+      {
+        "year": 1963,
+        "country": "Kuwait",
+        "reserves": 68.5,
+        "rank": 1,
+        "share": 0.20610808067040184
+      },
+      {
+        "year": 1964,
+        "country": "Kuwait",
+        "reserves": 69.225,
+        "rank": 1,
+        "share": 0.2021038064708252
+      },
+      {
+        "year": 1965,
+        "country": "Kuwait",
+        "reserves": 68.7,
+        "rank": 1,
+        "share": 0.19419550484047138
+      },
+      {
+        "year": 1966,
+        "country": "Kuwait",
+        "reserves": 75.2,
+        "rank": 1,
+        "share": 0.19311191374676917
+      },
+      {
+        "year": 1967,
+        "country": "Kuwait",
+        "reserves": 76.75,
+        "rank": 2,
+        "share": 0.18644524825761755
+      },
+      {
+        "year": 1968,
+        "country": "Kuwait",
+        "reserves": 76.5,
+        "rank": 2,
+        "share": 0.1648190061090757
+      },
+      {
+        "year": 1969,
+        "country": "Kuwait",
+        "reserves": 74.5,
+        "rank": 2,
+        "share": 0.1411118477128516
+      },
+      {
+        "year": 1970,
+        "country": "Kuwait",
+        "reserves": 79.95,
+        "rank": 2,
+        "share": 0.14577387053967514
+      },
+      {
+        "year": 1971,
+        "country": "Kuwait",
+        "reserves": 78.198,
+        "rank": 2,
+        "share": 0.13736195897560324
+      },
+      {
+        "year": 1972,
+        "country": "Kuwait",
+        "reserves": 72.9,
+        "rank": 2,
+        "share": 0.1259540936203474
+      },
+      {
+        "year": 1973,
+        "country": "Kuwait",
+        "reserves": 72.75,
+        "rank": 2,
+        "share": 0.12485973939100134
+      },
+      {
+        "year": 1974,
+        "country": "Kuwait",
+        "reserves": 81.45,
+        "rank": 2,
+        "share": 0.12636701729312075
+      },
+      {
+        "year": 1975,
+        "country": "Kuwait",
+        "reserves": 71.2,
+        "rank": 2,
+        "share": 0.11183948029990477
+      },
+      {
+        "year": 1976,
+        "country": "Kuwait",
+        "reserves": 70.55,
+        "rank": 2,
+        "share": 0.11353922875925015
+      },
+      {
+        "year": 1977,
+        "country": "Kuwait",
+        "reserves": 70.1,
+        "rank": 2,
+        "share": 0.11233228586152658
+      },
+      {
+        "year": 1978,
+        "country": "Kuwait",
+        "reserves": 69.44,
+        "rank": 2,
+        "share": 0.11258516107305794
+      },
+      {
+        "year": 1979,
+        "country": "Kuwait",
+        "reserves": 68.53,
+        "rank": 2,
+        "share": 0.11001960814647425
+      },
+      {
+        "year": 1980,
+        "country": "Kuwait",
+        "reserves": 67.93,
+        "rank": 2,
+        "share": 0.10548230920268828
+      },
+      {
+        "year": 1981,
+        "country": "Kuwait",
+        "reserves": 67.73,
+        "rank": 2,
+        "share": 0.1029904171621297
+      },
+      {
+        "year": 1982,
+        "country": "Kuwait",
+        "reserves": 67.15,
+        "rank": 2,
+        "share": 0.09778760152859596
+      },
+      {
+        "year": 1983,
+        "country": "Kuwait",
+        "reserves": 67,
+        "rank": 2,
+        "share": 0.0959839251279541
+      },
+      {
+        "year": 1984,
+        "country": "Kuwait",
+        "reserves": 92.71,
+        "rank": 2,
+        "share": 0.12659320722074371
+      },
+      {
+        "year": 1985,
+        "country": "Kuwait",
+        "reserves": 92.464,
+        "rank": 2,
+        "share": 0.12195705853035584
+      },
+      {
+        "year": 1986,
+        "country": "Kuwait",
+        "reserves": 94.522,
+        "rank": 3,
+        "share": 0.10926257024808524
+      },
+      {
+        "year": 1987,
+        "country": "Kuwait",
+        "reserves": 94.525,
+        "rank": 4,
+        "share": 0.10511578626181378
+      },
+      {
+        "year": 1988,
+        "country": "Kuwait",
+        "reserves": 94.525,
+        "rank": 4,
+        "share": 0.09571674720459253
+      },
+      {
+        "year": 1989,
+        "country": "Kuwait",
+        "reserves": 97.125,
+        "rank": 4,
+        "share": 0.09757258662811447
+      },
+      {
+        "year": 1990,
+        "country": "Kuwait",
+        "reserves": 97.025,
+        "rank": 4,
+        "share": 0.09771161586046591
+      },
+      {
+        "year": 1991,
+        "country": "Kuwait",
+        "reserves": 96.5,
+        "rank": 4,
+        "share": 0.09679966587162793
+      },
+      {
+        "year": 1992,
+        "country": "Kuwait",
+        "reserves": 96.5,
+        "rank": 4,
+        "share": 0.09630468494997638
+      },
+      {
+        "year": 1993,
+        "country": "Kuwait",
+        "reserves": 96.5,
+        "rank": 4,
+        "share": 0.09618323829856276
+      },
+      {
+        "year": 1994,
+        "country": "Kuwait",
+        "reserves": 96.5,
+        "rank": 4,
+        "share": 0.09561561318643244
+      },
+      {
+        "year": 1995,
+        "country": "Kuwait",
+        "reserves": 96.5,
+        "rank": 4,
+        "share": 0.09473054264042721
+      },
+      {
+        "year": 1996,
+        "country": "Kuwait",
+        "reserves": 96.5,
+        "rank": 4,
+        "share": 0.09330906804428175
+      },
+      {
+        "year": 1997,
+        "country": "Kuwait",
+        "reserves": 96.5,
+        "rank": 4,
+        "share": 0.09278107830573021
+      },
+      {
+        "year": 1998,
+        "country": "Kuwait",
+        "reserves": 96.5,
+        "rank": 4,
+        "share": 0.09218948095132604
+      },
+      {
+        "year": 1999,
+        "country": "Kuwait",
+        "reserves": 96.5,
+        "rank": 4,
+        "share": 0.09075876575034558
+      },
+      {
+        "year": 2000,
+        "country": "Kuwait",
+        "reserves": 96.5,
+        "rank": 5,
+        "share": 0.08886450393694709
+      },
+      {
+        "year": 2001,
+        "country": "Kuwait",
+        "reserves": 96.5,
+        "rank": 5,
+        "share": 0.08576042970066898
+      },
+      {
+        "year": 2002,
+        "country": "Kuwait",
+        "reserves": 96.5,
+        "rank": 5,
+        "share": 0.08307651362659414
+      },
+      {
+        "year": 2003,
+        "country": "Kuwait",
+        "reserves": 99,
+        "rank": 4,
+        "share": 0.08368066574992017
+      },
+      {
+        "year": 2004,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 4,
+        "share": 0.08521628145363068
+      },
+      {
+        "year": 2005,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 4,
+        "share": 0.08457589537669433
+      },
+      {
+        "year": 2006,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 4,
+        "share": 0.08379685840756415
+      },
+      {
+        "year": 2007,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 4,
+        "share": 0.08404465667042335
+      },
+      {
+        "year": 2008,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 5,
+        "share": 0.07894461235963494
+      },
+      {
+        "year": 2009,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 5,
+        "share": 0.07667363205947944
+      },
+      {
+        "year": 2010,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 5,
+        "share": 0.06963708087808851
+      },
+      {
+        "year": 2011,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 5,
+        "share": 0.06921454286603933
+      },
+      {
+        "year": 2012,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 5,
+        "share": 0.06858296618585434
+      },
+      {
+        "year": 2013,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 5,
+        "share": 0.0681199586700439
+      },
+      {
+        "year": 2014,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 5,
+        "share": 0.06810226678945194
+      },
+      {
+        "year": 2015,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 5,
+        "share": 0.06828053935063082
+      },
+      {
+        "year": 2016,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 5,
+        "share": 0.06818841715940356
+      },
+      {
+        "year": 2017,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 5,
+        "share": 0.06813267142834607
+      },
+      {
+        "year": 2018,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 5,
+        "share": 0.06797727696037272
+      },
+      {
+        "year": 2019,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 6,
+        "share": 0.06531219630070022
+      },
+      {
+        "year": 2020,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 6,
+        "share": 0.06574634684213093
+      },
+      {
+        "year": 2021,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 6,
+        "share": 0.06512024322671327
+      },
+      {
+        "year": 2022,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 6,
+        "share": 0.06489800062444281
+      },
+      {
+        "year": 2023,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 6,
+        "share": 0.06484978300141497
+      },
+      {
+        "year": 2024,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 6,
+        "share": 0.0648502007260482
+      },
+      {
+        "year": 2025,
+        "country": "Kuwait",
+        "reserves": 101.5,
+        "rank": 6,
+        "share": 0.0645485940930495
+      },
+      {
+        "year": 1960,
+        "country": "Saudi Arabia",
+        "reserves": 53,
+        "rank": 2,
+        "share": 0.18202599743377687
+      },
+      {
+        "year": 1961,
+        "country": "Saudi Arabia",
+        "reserves": 55,
+        "rank": 2,
+        "share": 0.1850003094550631
+      },
+      {
+        "year": 1962,
+        "country": "Saudi Arabia",
+        "reserves": 55.75,
+        "rank": 2,
+        "share": 0.17941592473220364
+      },
+      {
+        "year": 1963,
+        "country": "Saudi Arabia",
+        "reserves": 65,
+        "rank": 2,
+        "share": 0.19557701085512585
+      },
+      {
+        "year": 1964,
+        "country": "Saudi Arabia",
+        "reserves": 66.75,
+        "rank": 2,
+        "share": 0.19487799323839053
+      },
+      {
+        "year": 1965,
+        "country": "Saudi Arabia",
+        "reserves": 66.2,
+        "rank": 2,
+        "share": 0.18712871063230282
+      },
+      {
+        "year": 1966,
+        "country": "Saudi Arabia",
+        "reserves": 72.5,
+        "rank": 2,
+        "share": 0.1861783742904357
+      },
+      {
+        "year": 1967,
+        "country": "Saudi Arabia",
+        "reserves": 81.45,
+        "rank": 1,
+        "share": 0.1978627422877257
+      },
+      {
+        "year": 1968,
+        "country": "Saudi Arabia",
+        "reserves": 84.5,
+        "rank": 1,
+        "share": 0.18205498060414244
+      },
+      {
+        "year": 1969,
+        "country": "Saudi Arabia",
+        "reserves": 146.5,
+        "rank": 1,
+        "share": 0.27748839852258733
+      },
+      {
+        "year": 1970,
+        "country": "Saudi Arabia",
+        "reserves": 141.35,
+        "rank": 1,
+        "share": 0.25772528581342186
+      },
+      {
+        "year": 1971,
+        "country": "Saudi Arabia",
+        "reserves": 139.609,
+        "rank": 1,
+        "share": 0.24523601282161941
+      },
+      {
+        "year": 1972,
+        "country": "Saudi Arabia",
+        "reserves": 146,
+        "rank": 1,
+        "share": 0.25225374030961206
+      },
+      {
+        "year": 1973,
+        "country": "Saudi Arabia",
+        "reserves": 143.227,
+        "rank": 1,
+        "share": 0.2458183628007553
+      },
+      {
+        "year": 1974,
+        "country": "Saudi Arabia",
+        "reserves": 173.15,
+        "rank": 1,
+        "share": 0.2686365751295747
+      },
+      {
+        "year": 1975,
+        "country": "Saudi Arabia",
+        "reserves": 170.567,
+        "rank": 1,
+        "share": 0.26792309882463283
+      },
+      {
+        "year": 1976,
+        "country": "Saudi Arabia",
+        "reserves": 167.428,
+        "rank": 1,
+        "share": 0.26944926991784174
+      },
+      {
+        "year": 1977,
+        "country": "Saudi Arabia",
+        "reserves": 164.07,
+        "rank": 1,
+        "share": 0.26291523739373274
+      },
+      {
+        "year": 1978,
+        "country": "Saudi Arabia",
+        "reserves": 168.94,
+        "rank": 1,
+        "share": 0.273907504488514
+      },
+      {
+        "year": 1979,
+        "country": "Saudi Arabia",
+        "reserves": 166.48,
+        "rank": 1,
+        "share": 0.26727074805523177
+      },
+      {
+        "year": 1980,
+        "country": "Saudi Arabia",
+        "reserves": 168.03,
+        "rank": 1,
+        "share": 0.26091848101468734
+      },
+      {
+        "year": 1981,
+        "country": "Saudi Arabia",
+        "reserves": 167.85,
+        "rank": 1,
+        "share": 0.2552331540035947
+      },
+      {
+        "year": 1982,
+        "country": "Saudi Arabia",
+        "reserves": 165.484,
+        "rank": 1,
+        "share": 0.24098709532923565
+      },
+      {
+        "year": 1983,
+        "country": "Saudi Arabia",
+        "reserves": 168.847,
+        "rank": 1,
+        "share": 0.2418895194937264
+      },
+      {
+        "year": 1984,
+        "country": "Saudi Arabia",
+        "reserves": 171.71,
+        "rank": 1,
+        "share": 0.23446574923820412
+      },
+      {
+        "year": 1985,
+        "country": "Saudi Arabia",
+        "reserves": 171.49,
+        "rank": 1,
+        "share": 0.22618982487639214
+      },
+      {
+        "year": 1986,
+        "country": "Saudi Arabia",
+        "reserves": 169.744,
+        "rank": 1,
+        "share": 0.19621533319429316
+      },
+      {
+        "year": 1987,
+        "country": "Saudi Arabia",
+        "reserves": 169.585,
+        "rank": 1,
+        "share": 0.18858567165522022
+      },
+      {
+        "year": 1988,
+        "country": "Saudi Arabia",
+        "reserves": 254.989,
+        "rank": 1,
+        "share": 0.25820383658240514
+      },
+      {
+        "year": 1989,
+        "country": "Saudi Arabia",
+        "reserves": 260.05,
+        "rank": 1,
+        "share": 0.26124840311599656
+      },
+      {
+        "year": 1990,
+        "country": "Saudi Arabia",
+        "reserves": 260.342,
+        "rank": 1,
+        "share": 0.2621843596634415
+      },
+      {
+        "year": 1991,
+        "country": "Saudi Arabia",
+        "reserves": 260.936,
+        "rank": 1,
+        "share": 0.2617462965168819
+      },
+      {
+        "year": 1992,
+        "country": "Saudi Arabia",
+        "reserves": 261.203,
+        "rank": 1,
+        "share": 0.26067432769936455
+      },
+      {
+        "year": 1993,
+        "country": "Saudi Arabia",
+        "reserves": 261.355,
+        "rank": 1,
+        "share": 0.2604971009898536
+      },
+      {
+        "year": 1994,
+        "country": "Saudi Arabia",
+        "reserves": 261.374,
+        "rank": 1,
+        "share": 0.2589786039480891
+      },
+      {
+        "year": 1995,
+        "country": "Saudi Arabia",
+        "reserves": 261.45,
+        "rank": 1,
+        "share": 0.2566559624180279
+      },
+      {
+        "year": 1996,
+        "country": "Saudi Arabia",
+        "reserves": 261.444,
+        "rank": 1,
+        "share": 0.2527989221323233
+      },
+      {
+        "year": 1997,
+        "country": "Saudi Arabia",
+        "reserves": 261.541,
+        "rank": 1,
+        "share": 0.2514617202192641
+      },
+      {
+        "year": 1998,
+        "country": "Saudi Arabia",
+        "reserves": 261.542,
+        "rank": 1,
+        "share": 0.24985928732613175
+      },
+      {
+        "year": 1999,
+        "country": "Saudi Arabia",
+        "reserves": 262.784,
+        "rank": 1,
+        "share": 0.24714975646568715
+      },
+      {
+        "year": 2000,
+        "country": "Saudi Arabia",
+        "reserves": 262.766,
+        "rank": 1,
+        "share": 0.24197482115539728
+      },
+      {
+        "year": 2001,
+        "country": "Saudi Arabia",
+        "reserves": 262.697,
+        "rank": 1,
+        "share": 0.23346121866400663
+      },
+      {
+        "year": 2002,
+        "country": "Saudi Arabia",
+        "reserves": 262.79,
+        "rank": 1,
+        "share": 0.22623499498375832
+      },
+      {
+        "year": 2003,
+        "country": "Saudi Arabia",
+        "reserves": 262.73,
+        "rank": 1,
+        "share": 0.22207496275228816
+      },
+      {
+        "year": 2004,
+        "country": "Saudi Arabia",
+        "reserves": 264.31,
+        "rank": 1,
+        "share": 0.2219065551823559
+      },
+      {
+        "year": 2005,
+        "country": "Saudi Arabia",
+        "reserves": 264.211,
+        "rank": 1,
+        "share": 0.22015647185587967
+      },
+      {
+        "year": 2006,
+        "country": "Saudi Arabia",
+        "reserves": 264.251,
+        "rank": 1,
+        "share": 0.21816161212864268
+      },
+      {
+        "year": 2007,
+        "country": "Saudi Arabia",
+        "reserves": 264.209,
+        "rank": 1,
+        "share": 0.21877196743089541
+      },
+      {
+        "year": 2008,
+        "country": "Saudi Arabia",
+        "reserves": 264.063,
+        "rank": 1,
+        "share": 0.20538277018248552
+      },
+      {
+        "year": 2009,
+        "country": "Saudi Arabia",
+        "reserves": 264.59,
+        "rank": 1,
+        "share": 0.1998726729716026
+      },
+      {
+        "year": 2010,
+        "country": "Saudi Arabia",
+        "reserves": 264.516,
+        "rank": 2,
+        "share": 0.1814790353256006
+      },
+      {
+        "year": 2011,
+        "country": "Saudi Arabia",
+        "reserves": 265.405,
+        "rank": 2,
+        "share": 0.18098409605281937
+      },
+      {
+        "year": 2012,
+        "country": "Saudi Arabia",
+        "reserves": 265.85,
+        "rank": 2,
+        "share": 0.17963331586708747
+      },
+      {
+        "year": 2013,
+        "country": "Saudi Arabia",
+        "reserves": 265.789,
+        "rank": 2,
+        "share": 0.17837966201923447
+      },
+      {
+        "year": 2014,
+        "country": "Saudi Arabia",
+        "reserves": 266.578,
+        "rank": 2,
+        "share": 0.17886271996254696
+      },
+      {
+        "year": 2015,
+        "country": "Saudi Arabia",
+        "reserves": 266.455,
+        "rank": 2,
+        "share": 0.1792481883021905
+      },
+      {
+        "year": 2016,
+        "country": "Saudi Arabia",
+        "reserves": 266.208,
+        "rank": 2,
+        "share": 0.1788404153218769
+      },
+      {
+        "year": 2017,
+        "country": "Saudi Arabia",
+        "reserves": 266.26,
+        "rank": 2,
+        "share": 0.17872911423163965
+      },
+      {
+        "year": 2018,
+        "country": "Saudi Arabia",
+        "reserves": 267.026,
+        "rank": 2,
+        "share": 0.17883448628197524
+      },
+      {
+        "year": 2019,
+        "country": "Saudi Arabia",
+        "reserves": 267.073,
+        "rank": 2,
+        "share": 0.171853440419871
+      },
+      {
+        "year": 2020,
+        "country": "Saudi Arabia",
+        "reserves": 267.082,
+        "rank": 2,
+        "share": 0.17300163356935974
+      },
+      {
+        "year": 2021,
+        "country": "Saudi Arabia",
+        "reserves": 267.192,
+        "rank": 2,
+        "share": 0.17142470963775341
+      },
+      {
+        "year": 2022,
+        "country": "Saudi Arabia",
+        "reserves": 267.192,
+        "rank": 2,
+        "share": 0.17083967076695689
+      },
+      {
+        "year": 2023,
+        "country": "Saudi Arabia",
+        "reserves": 267.23,
+        "rank": 2,
+        "share": 0.17073701981741995
+      },
+      {
+        "year": 2024,
+        "country": "Saudi Arabia",
+        "reserves": 267.2,
+        "rank": 2,
+        "share": 0.1707189520591141
+      },
+      {
+        "year": 2025,
+        "country": "Saudi Arabia",
+        "reserves": 267.2,
+        "rank": 2,
+        "share": 0.16992496888337758
+      },
+      {
+        "year": 1962,
+        "country": "UAE",
+        "reserves": 5,
+        "rank": 10,
+        "share": 0.016091114325758174
+      },
+      {
+        "year": 1963,
+        "country": "UAE",
+        "reserves": 7.5,
+        "rank": 9,
+        "share": 0.022566578175591444
+      },
+      {
+        "year": 1964,
+        "country": "UAE",
+        "reserves": 7.7,
+        "rank": 10,
+        "share": 0.022480307834241306
+      },
+      {
+        "year": 1965,
+        "country": "UAE",
+        "reserves": 10,
+        "rank": 8,
+        "share": 0.028267176832674143
+      },
+      {
+        "year": 1966,
+        "country": "UAE",
+        "reserves": 12.5,
+        "rank": 9,
+        "share": 0.03209971970524753
+      },
+      {
+        "year": 1967,
+        "country": "UAE",
+        "reserves": 15,
+        "rank": 9,
+        "share": 0.03643881073438779
+      },
+      {
+        "year": 1968,
+        "country": "UAE",
+        "reserves": 19,
+        "rank": 8,
+        "share": 0.04093543942578351
+      },
+      {
+        "year": 1969,
+        "country": "UAE",
+        "reserves": 17,
+        "rank": 8,
+        "share": 0.03220001894118761
+      },
+      {
+        "year": 1970,
+        "country": "UAE",
+        "reserves": 12.783,
+        "rank": 9,
+        "share": 0.023307409469776948
+      },
+      {
+        "year": 1971,
+        "country": "UAE",
+        "reserves": 20.502,
+        "rank": 8,
+        "share": 0.036013643352999024
+      },
+      {
+        "year": 1972,
+        "country": "UAE",
+        "reserves": 22.768,
+        "rank": 8,
+        "share": 0.03933776136554279
+      },
+      {
+        "year": 1973,
+        "country": "UAE",
+        "reserves": 25.5,
+        "rank": 7,
+        "share": 0.0437652694772582
+      },
+      {
+        "year": 1974,
+        "country": "UAE",
+        "reserves": 33.92,
+        "rank": 6,
+        "share": 0.05262577319315722
+      },
+      {
+        "year": 1975,
+        "country": "UAE",
+        "reserves": 32.2,
+        "rank": 7,
+        "share": 0.050579090809788396
+      },
+      {
+        "year": 1976,
+        "country": "UAE",
+        "reserves": 31.2,
+        "rank": 6,
+        "share": 0.05021153702747846
+      },
+      {
+        "year": 1977,
+        "country": "UAE",
+        "reserves": 32.425,
+        "rank": 6,
+        "share": 0.05195969142738943
+      },
+      {
+        "year": 1978,
+        "country": "UAE",
+        "reserves": 31.316,
+        "rank": 7,
+        "share": 0.05077357292862734
+      },
+      {
+        "year": 1979,
+        "country": "UAE",
+        "reserves": 29.411,
+        "rank": 8,
+        "share": 0.04721708295922887
+      },
+      {
+        "year": 1980,
+        "country": "UAE",
+        "reserves": 30.41,
+        "rank": 6,
+        "share": 0.04722091892909981
+      },
+      {
+        "year": 1981,
+        "country": "UAE",
+        "reserves": 32.176,
+        "rank": 6,
+        "share": 0.04892691071325388
+      },
+      {
+        "year": 1982,
+        "country": "UAE",
+        "reserves": 32.354,
+        "rank": 7,
+        "share": 0.0471157119859448
+      },
+      {
+        "year": 1983,
+        "country": "UAE",
+        "reserves": 32.34,
+        "rank": 7,
+        "share": 0.046330151322955766
+      },
+      {
+        "year": 1984,
+        "country": "UAE",
+        "reserves": 32.49,
+        "rank": 7,
+        "share": 0.04436428974869986
+      },
+      {
+        "year": 1985,
+        "country": "UAE",
+        "reserves": 32.99,
+        "rank": 8,
+        "share": 0.043512754811780144
+      },
+      {
+        "year": 1986,
+        "country": "UAE",
+        "reserves": 97.203,
+        "rank": 2,
+        "share": 0.1123616683504859
+      },
+      {
+        "year": 1987,
+        "country": "UAE",
+        "reserves": 98.105,
+        "rank": 3,
+        "share": 0.10909689723581319
+      },
+      {
+        "year": 1988,
+        "country": "UAE",
+        "reserves": 98.105,
+        "rank": 3,
+        "share": 0.09934188293580058
+      },
+      {
+        "year": 1989,
+        "country": "UAE",
+        "reserves": 98.105,
+        "rank": 3,
+        "share": 0.09855710281751526
+      },
+      {
+        "year": 1990,
+        "country": "UAE",
+        "reserves": 98.1,
+        "rank": 3,
+        "share": 0.09879422330236232
+      },
+      {
+        "year": 1991,
+        "country": "UAE",
+        "reserves": 98.1,
+        "rank": 3,
+        "share": 0.0984046344249399
+      },
+      {
+        "year": 1992,
+        "country": "UAE",
+        "reserves": 98.1,
+        "rank": 3,
+        "share": 0.09790144656572727
+      },
+      {
+        "year": 1993,
+        "country": "UAE",
+        "reserves": 98.1,
+        "rank": 3,
+        "share": 0.0977779862910778
+      },
+      {
+        "year": 1994,
+        "country": "UAE",
+        "reserves": 98.1,
+        "rank": 3,
+        "share": 0.09720094977812459
+      },
+      {
+        "year": 1995,
+        "country": "UAE",
+        "reserves": 98.1,
+        "rank": 3,
+        "share": 0.0963012044873151
+      },
+      {
+        "year": 1996,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 3,
+        "share": 0.09456608139617363
+      },
+      {
+        "year": 1997,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 3,
+        "share": 0.09403097884249134
+      },
+      {
+        "year": 1998,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 3,
+        "share": 0.09343141178279468
+      },
+      {
+        "year": 1999,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 3,
+        "share": 0.09198142269827769
+      },
+      {
+        "year": 2000,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 4,
+        "share": 0.09006164233195259
+      },
+      {
+        "year": 2001,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 4,
+        "share": 0.08691575155155881
+      },
+      {
+        "year": 2002,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 4,
+        "share": 0.08419567909513893
+      },
+      {
+        "year": 2003,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 5,
+        "share": 0.08266635464992114
+      },
+      {
+        "year": 2004,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 5,
+        "share": 0.08210987513463133
+      },
+      {
+        "year": 2005,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 5,
+        "share": 0.08149283318069661
+      },
+      {
+        "year": 2006,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 5,
+        "share": 0.08074219460354456
+      },
+      {
+        "year": 2007,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 6,
+        "share": 0.08098095982627984
+      },
+      {
+        "year": 2008,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 6,
+        "share": 0.07606682846081081
+      },
+      {
+        "year": 2009,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 6,
+        "share": 0.07387863266420777
+      },
+      {
+        "year": 2010,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 6,
+        "share": 0.06709858630420745
+      },
+      {
+        "year": 2011,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 6,
+        "share": 0.06669145115565168
+      },
+      {
+        "year": 2012,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 6,
+        "share": 0.06608289746774931
+      },
+      {
+        "year": 2013,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 6,
+        "share": 0.06563676805842654
+      },
+      {
+        "year": 2014,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 6,
+        "share": 0.06561972110353102
+      },
+      {
+        "year": 2015,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 6,
+        "share": 0.06579149505903147
+      },
+      {
+        "year": 2016,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 6,
+        "share": 0.06570273101664698
+      },
+      {
+        "year": 2017,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 6,
+        "share": 0.06564901739598272
+      },
+      {
+        "year": 2018,
+        "country": "UAE",
+        "reserves": 97.8,
+        "rank": 6,
+        "share": 0.06549928755393548
+      },
+      {
+        "year": 2019,
+        "country": "UAE",
+        "reserves": 105,
+        "rank": 5,
+        "share": 0.06756434100072436
+      },
+      {
+        "year": 2020,
+        "country": "UAE",
+        "reserves": 107,
+        "rank": 5,
+        "share": 0.06930895676953705
+      },
+      {
+        "year": 2021,
+        "country": "UAE",
+        "reserves": 111,
+        "rank": 5,
+        "share": 0.07121524136123322
+      },
+      {
+        "year": 2022,
+        "country": "UAE",
+        "reserves": 113,
+        "rank": 5,
+        "share": 0.07225097606465061
+      },
+      {
+        "year": 2023,
+        "country": "UAE",
+        "reserves": 113,
+        "rank": 5,
+        "share": 0.0721972953611812
+      },
+      {
+        "year": 2024,
+        "country": "UAE",
+        "reserves": 113,
+        "rank": 5,
+        "share": 0.07219776041422116
+      },
+      {
+        "year": 2025,
+        "country": "UAE",
+        "reserves": 120,
+        "rank": 5,
+        "share": 0.07631360877995999
+      },
+      {
+        "year": 1960,
+        "country": "Algeria",
+        "reserves": 5.2,
+        "rank": 9,
+        "share": 0.017859154465200748
+      },
+      {
+        "year": 1961,
+        "country": "Algeria",
+        "reserves": 5.5,
+        "rank": 9,
+        "share": 0.018500030945506313
+      },
+      {
+        "year": 1962,
+        "country": "Algeria",
+        "reserves": 6.5,
+        "rank": 9,
+        "share": 0.020918448623485623
+      },
+      {
+        "year": 1963,
+        "country": "Algeria",
+        "reserves": 7,
+        "rank": 10,
+        "share": 0.021062139630552014
+      },
+      {
+        "year": 1964,
+        "country": "Libya",
+        "reserves": 9,
+        "rank": 9,
+        "share": 0.026275684481580745
+      },
+      {
+        "year": 1965,
+        "country": "Libya",
+        "reserves": 10,
+        "rank": 9,
+        "share": 0.028267176832674143
+      },
+      {
+        "year": 1966,
+        "country": "Libya",
+        "reserves": 20,
+        "rank": 7,
+        "share": 0.05135955152839605
+      },
+      {
+        "year": 1967,
+        "country": "Libya",
+        "reserves": 29.2,
+        "rank": 6,
+        "share": 0.07093421822960823
+      },
+      {
+        "year": 1968,
+        "country": "Libya",
+        "reserves": 30,
+        "rank": 6,
+        "share": 0.06463490435650028
+      },
+      {
+        "year": 1969,
+        "country": "Libya",
+        "reserves": 28.866,
+        "rank": 6,
+        "share": 0.05467563216213656
+      },
+      {
+        "year": 1970,
+        "country": "Libya",
+        "reserves": 27.655,
+        "rank": 7,
+        "share": 0.050423719696994565
+      },
+      {
+        "year": 1971,
+        "country": "Libya",
+        "reserves": 26.648,
+        "rank": 7,
+        "share": 0.04680965603700703
+      },
+      {
+        "year": 1972,
+        "country": "Libya",
+        "reserves": 25.829,
+        "rank": 7,
+        "share": 0.04462645108532171
+      },
+      {
+        "year": 1973,
+        "country": "Libya",
+        "reserves": 25.036,
+        "rank": 8,
+        "share": 0.04296891320127986
+      },
+      {
+        "year": 1974,
+        "country": "Libya",
+        "reserves": 24.481,
+        "rank": 8,
+        "share": 0.03798147268695996
+      },
+      {
+        "year": 1975,
+        "country": "Libya",
+        "reserves": 23.942,
+        "rank": 8,
+        "share": 0.037607596030060676
+      },
+      {
+        "year": 1976,
+        "country": "Libya",
+        "reserves": 23.236,
+        "rank": 8,
+        "share": 0.037394720332387485
+      },
+      {
+        "year": 1977,
+        "country": "Libya",
+        "reserves": 22.484,
+        "rank": 8,
+        "share": 0.036029659276898204
+      },
+      {
+        "year": 1978,
+        "country": "Libya",
+        "reserves": 21.761,
+        "rank": 8,
+        "share": 0.035281763970489835
+      },
+      {
+        "year": 1979,
+        "country": "Libya",
+        "reserves": 20.999,
+        "rank": 9,
+        "share": 0.03371226837104644
+      },
+      {
+        "year": 1980,
+        "country": "Libya",
+        "reserves": 20.33,
+        "rank": 9,
+        "share": 0.03156860512425515
+      },
+      {
+        "year": 1981,
+        "country": "Libya",
+        "reserves": 22.6,
+        "rank": 9,
+        "share": 0.034365619782432175
+      },
+      {
+        "year": 1982,
+        "country": "Libya",
+        "reserves": 22.186,
+        "rank": 10,
+        "share": 0.03230849929282844
+      },
+      {
+        "year": 1983,
+        "country": "Libya",
+        "reserves": 21.784,
+        "rank": 10,
+        "share": 0.031207669029661975
+      },
+      {
+        "year": 1984,
+        "country": "Libya",
+        "reserves": 21.425,
+        "rank": 10,
+        "share": 0.029255306490178344
+      },
+      {
+        "year": 1985,
+        "country": "Libya",
+        "reserves": 21.3,
+        "rank": 10,
+        "share": 0.028094018717517946
+      },
+      {
+        "year": 1986,
+        "country": "Libya",
+        "reserves": 22.8,
+        "rank": 10,
+        "share": 0.026355627278901665
+      },
+      {
+        "year": 1987,
+        "country": "Libya",
+        "reserves": 22.8,
+        "rank": 10,
+        "share": 0.025354561510387244
+      },
+      {
+        "year": 1988,
+        "country": "Libya",
+        "reserves": 22.8,
+        "rank": 10,
+        "share": 0.02308745661216302
+      },
+      {
+        "year": 1989,
+        "country": "Libya",
+        "reserves": 22.8,
+        "rank": 10,
+        "share": 0.022905070528916445
+      },
+      {
+        "year": 1990,
+        "country": "Libya",
+        "reserves": 22.8,
+        "rank": 10,
+        "share": 0.022961348535105616
+      },
+      {
+        "year": 1991,
+        "country": "Libya",
+        "reserves": 22.8,
+        "rank": 10,
+        "share": 0.02287080188469551
+      },
+      {
+        "year": 1992,
+        "country": "Libya",
+        "reserves": 22.8,
+        "rank": 10,
+        "share": 0.022753853024450377
+      },
+      {
+        "year": 1993,
+        "country": "Libya",
+        "reserves": 22.8,
+        "rank": 10,
+        "share": 0.022725158893339183
+      },
+      {
+        "year": 1994,
+        "country": "Libya",
+        "reserves": 22.8,
+        "rank": 9,
+        "share": 0.022591046431613054
+      },
+      {
+        "year": 1995,
+        "country": "Libya",
+        "reserves": 29.5,
+        "rank": 9,
+        "share": 0.028959077801995883
+      },
+      {
+        "year": 1996,
+        "country": "Libya",
+        "reserves": 29.5,
+        "rank": 9,
+        "share": 0.02852453375446955
+      },
+      {
+        "year": 1997,
+        "country": "Libya",
+        "reserves": 29.5,
+        "rank": 9,
+        "share": 0.028363127564964157
+      },
+      {
+        "year": 1998,
+        "country": "Libya",
+        "reserves": 29.5,
+        "rank": 8,
+        "share": 0.02818227656024993
+      },
+      {
+        "year": 1999,
+        "country": "Libya",
+        "reserves": 29.5,
+        "rank": 8,
+        "share": 0.027744907664613416
+      },
+      {
+        "year": 2000,
+        "country": "Libya",
+        "reserves": 36,
+        "rank": 8,
+        "share": 0.03315152478476782
+      },
+      {
+        "year": 2001,
+        "country": "Libya",
+        "reserves": 36,
+        "rank": 9,
+        "share": 0.031993528178487905
+      },
+      {
+        "year": 2002,
+        "country": "Libya",
+        "reserves": 36,
+        "rank": 9,
+        "share": 0.030992274513548076
+      },
+      {
+        "year": 2003,
+        "country": "Libya",
+        "reserves": 39.126,
+        "rank": 9,
+        "share": 0.03307161341546845
+      },
+      {
+        "year": 2004,
+        "country": "Libya",
+        "reserves": 39.126,
+        "rank": 9,
+        "share": 0.032848987469504966
+      },
+      {
+        "year": 2005,
+        "country": "Libya",
+        "reserves": 41.464,
+        "rank": 8,
+        "share": 0.03455029483644585
+      },
+      {
+        "year": 2006,
+        "country": "Libya",
+        "reserves": 41.464,
+        "rank": 8,
+        "share": 0.034232048640504824
+      },
+      {
+        "year": 2007,
+        "country": "Libya",
+        "reserves": 43.663,
+        "rank": 8,
+        "share": 0.03615410683941571
+      },
+      {
+        "year": 2008,
+        "country": "Libya",
+        "reserves": 44.271,
+        "rank": 8,
+        "share": 0.03443307323914678
+      },
+      {
+        "year": 2009,
+        "country": "Libya",
+        "reserves": 46.422,
+        "rank": 8,
+        "share": 0.035067422142513835
+      },
+      {
+        "year": 2010,
+        "country": "Libya",
+        "reserves": 47.097,
+        "rank": 8,
+        "share": 0.032312291607047634
+      },
+      {
+        "year": 2011,
+        "country": "Libya",
+        "reserves": 48.014,
+        "rank": 8,
+        "share": 0.032741547400689776
+      },
+      {
+        "year": 2012,
+        "country": "Libya",
+        "reserves": 48.472,
+        "rank": 8,
+        "share": 0.03275225159567224
+      },
+      {
+        "year": 2013,
+        "country": "Libya",
+        "reserves": 48.363,
+        "rank": 8,
+        "share": 0.03245798582422989
+      },
+      {
+        "year": 2014,
+        "country": "Libya",
+        "reserves": 48.363,
+        "rank": 8,
+        "share": 0.032449555948160236
+      },
+      {
+        "year": 2015,
+        "country": "Libya",
+        "reserves": 48.363,
+        "rank": 8,
+        "share": 0.032534499749897125
+      },
+      {
+        "year": 2016,
+        "country": "Libya",
+        "reserves": 48.363,
+        "rank": 8,
+        "share": 0.03249060511409098
+      },
+      {
+        "year": 2017,
+        "country": "Libya",
+        "reserves": 48.363,
+        "rank": 8,
+        "share": 0.03246404323437538
+      },
+      {
+        "year": 2018,
+        "country": "Libya",
+        "reserves": 48.363,
+        "rank": 8,
+        "share": 0.03239000044960104
+      },
+      {
+        "year": 2019,
+        "country": "Libya",
+        "reserves": 48.363,
+        "rank": 8,
+        "share": 0.03112013546493364
+      },
+      {
+        "year": 2020,
+        "country": "Libya",
+        "reserves": 48.363,
+        "rank": 8,
+        "share": 0.03132700071257122
+      },
+      {
+        "year": 2021,
+        "country": "Libya",
+        "reserves": 48.363,
+        "rank": 8,
+        "share": 0.031028673134714618
+      },
+      {
+        "year": 2022,
+        "country": "Libya",
+        "reserves": 48.363,
+        "rank": 8,
+        "share": 0.030922778366501747
+      },
+      {
+        "year": 2023,
+        "country": "Libya",
+        "reserves": 48.363,
+        "rank": 8,
+        "share": 0.030899803500467313
+      },
+      {
+        "year": 2024,
+        "country": "Libya",
+        "reserves": 48.363,
+        "rank": 8,
+        "share": 0.030900002539052902
+      },
+      {
+        "year": 2025,
+        "country": "Libya",
+        "reserves": 48.363,
+        "rank": 8,
+        "share": 0.030756292178543376
+      },
+      {
+        "year": 1971,
+        "country": "Nigeria",
+        "reserves": 11.68,
+        "rank": 10,
+        "share": 0.02051699123807573
+      },
+      {
+        "year": 1972,
+        "country": "Nigeria",
+        "reserves": 15,
+        "rank": 9,
+        "share": 0.02591648016879576
+      },
+      {
+        "year": 1973,
+        "country": "Nigeria",
+        "reserves": 20,
+        "rank": 9,
+        "share": 0.034325701550790746
+      },
+      {
+        "year": 1974,
+        "country": "Nigeria",
+        "reserves": 20.9,
+        "rank": 9,
+        "share": 0.032425668034698873
+      },
+      {
+        "year": 1975,
+        "country": "Nigeria",
+        "reserves": 20.2,
+        "rank": 9,
+        "share": 0.03172974019744489
+      },
+      {
+        "year": 1976,
+        "country": "Nigeria",
+        "reserves": 19.445,
+        "rank": 9,
+        "share": 0.03129369671472175
+      },
+      {
+        "year": 1977,
+        "country": "Nigeria",
+        "reserves": 18.7,
+        "rank": 9,
+        "share": 0.02996595928117756
+      },
+      {
+        "year": 1978,
+        "country": "Nigeria",
+        "reserves": 18.2,
+        "rank": 10,
+        "share": 0.029508207539309543
+      },
+      {
+        "year": 1999,
+        "country": "Nigeria",
+        "reserves": 29,
+        "rank": 9,
+        "share": 0.02727465499233183
+      },
+      {
+        "year": 2000,
+        "country": "Nigeria",
+        "reserves": 29,
+        "rank": 9,
+        "share": 0.026705394965507414
+      },
+      {
+        "year": 2001,
+        "country": "Nigeria",
+        "reserves": 31.506,
+        "rank": 10,
+        "share": 0.027999669410873333
+      },
+      {
+        "year": 2002,
+        "country": "Nigeria",
+        "reserves": 34.349,
+        "rank": 10,
+        "share": 0.02957093436849619
+      },
+      {
+        "year": 2003,
+        "country": "Nigeria",
+        "reserves": 35.255,
+        "rank": 10,
+        "share": 0.029799614858721575
+      },
+      {
+        "year": 2004,
+        "country": "Nigeria",
+        "reserves": 35.876,
+        "rank": 10,
+        "share": 0.03012038732443797
+      },
+      {
+        "year": 2005,
+        "country": "Nigeria",
+        "reserves": 36.22,
+        "rank": 10,
+        "share": 0.030180679118658803
+      },
+      {
+        "year": 2006,
+        "country": "Nigeria",
+        "reserves": 37.2,
+        "rank": 10,
+        "share": 0.03071175500257524
+      },
+      {
+        "year": 2007,
+        "country": "Nigeria",
+        "reserves": 37.2,
+        "rank": 9,
+        "share": 0.030802573676253685
+      },
+      {
+        "year": 2008,
+        "country": "Nigeria",
+        "reserves": 37.2,
+        "rank": 9,
+        "share": 0.028933394874664238
+      },
+      {
+        "year": 2009,
+        "country": "Nigeria",
+        "reserves": 37.2,
+        "rank": 9,
+        "share": 0.02810107500110971
+      },
+      {
+        "year": 2010,
+        "country": "Nigeria",
+        "reserves": 37.2,
+        "rank": 9,
+        "share": 0.02552216166172308
+      },
+      {
+        "year": 2011,
+        "country": "Nigeria",
+        "reserves": 36.247,
+        "rank": 9,
+        "share": 0.024717433844978598
+      },
+      {
+        "year": 2012,
+        "country": "Nigeria",
+        "reserves": 37.139,
+        "rank": 9,
+        "share": 0.025094608681541328
+      },
+      {
+        "year": 2013,
+        "country": "Nigeria",
+        "reserves": 37.071,
+        "rank": 9,
+        "share": 0.024879556530612783
+      },
+      {
+        "year": 2014,
+        "country": "Nigeria",
+        "reserves": 37.448,
+        "rank": 9,
+        "share": 0.025126046174693557
+      },
+      {
+        "year": 2015,
+        "country": "Nigeria",
+        "reserves": 37.062,
+        "rank": 9,
+        "share": 0.024932151225744624
+      },
+      {
+        "year": 2016,
+        "country": "Nigeria",
+        "reserves": 37.453,
+        "rank": 9,
+        "share": 0.02516119002828711
+      },
+      {
+        "year": 2017,
+        "country": "Nigeria",
+        "reserves": 37.453,
+        "rank": 10,
+        "share": 0.02514062012813641
+      },
+      {
+        "year": 2018,
+        "country": "Nigeria",
+        "reserves": 36.972,
+        "rank": 10,
+        "share": 0.02476114171210739
+      },
+      {
+        "year": 2019,
+        "country": "Nigeria",
+        "reserves": 36.89,
+        "rank": 10,
+        "share": 0.023737605138254493
+      },
+      {
+        "year": 2020,
+        "country": "Nigeria",
+        "reserves": 36.91,
+        "rank": 9,
+        "share": 0.023908351349192638
+      },
+      {
+        "year": 2021,
+        "country": "Nigeria",
+        "reserves": 37.05,
+        "rank": 10,
+        "share": 0.023770492724627845
+      },
+      {
+        "year": 2022,
+        "country": "Nigeria",
+        "reserves": 36.967,
+        "rank": 10,
+        "share": 0.02363629939984017
+      },
+      {
+        "year": 2023,
+        "country": "Nigeria",
+        "reserves": 37.5,
+        "rank": 10,
+        "share": 0.02395927943402031
+      },
+      {
+        "year": 2024,
+        "country": "Nigeria",
+        "reserves": 37.28,
+        "rank": 10,
+        "share": 0.02381887175435544
+      },
+      {
+        "year": 2025,
+        "country": "Nigeria",
+        "reserves": 37.01,
+        "rank": 10,
+        "share": 0.02353638884121933
+      },
+      {
+        "year": 1960,
+        "country": "Russia",
+        "reserves": 23.579,
+        "rank": 6,
+        "share": 0.08098096214134008
+      },
+      {
+        "year": 1961,
+        "country": "Russia",
+        "reserves": 23.5,
+        "rank": 6,
+        "share": 0.07904558676716333
+      },
+      {
+        "year": 1962,
+        "country": "Russia",
+        "reserves": 29,
+        "rank": 5,
+        "share": 0.0933284630893974
+      },
+      {
+        "year": 1963,
+        "country": "Russia",
+        "reserves": 32,
+        "rank": 4,
+        "share": 0.0962840668825235
+      },
+      {
+        "year": 1964,
+        "country": "Russia",
+        "reserves": 33,
+        "rank": 4,
+        "share": 0.09634417643246274
+      },
+      {
+        "year": 1965,
+        "country": "Russia",
+        "reserves": 35,
+        "rank": 4,
+        "share": 0.0989351189143595
+      },
+      {
+        "year": 1966,
+        "country": "Russia",
+        "reserves": 38,
+        "rank": 4,
+        "share": 0.0975831479039525
+      },
+      {
+        "year": 1967,
+        "country": "Russia",
+        "reserves": 36,
+        "rank": 4,
+        "share": 0.0874531457625307
+      },
+      {
+        "year": 1968,
+        "country": "Russia",
+        "reserves": 60,
+        "rank": 3,
+        "share": 0.12926980871300056
+      },
+      {
+        "year": 1969,
+        "country": "Russia",
+        "reserves": 58,
+        "rank": 3,
+        "share": 0.10985888815228714
+      },
+      {
+        "year": 1970,
+        "country": "Russia",
+        "reserves": 58,
+        "rank": 4,
+        "share": 0.10575215123578682
+      },
+      {
+        "year": 1971,
+        "country": "Russia",
+        "reserves": 55.286,
+        "rank": 4,
+        "share": 0.09711492958803551
+      },
+      {
+        "year": 1972,
+        "country": "Russia",
+        "reserves": 52.412,
+        "rank": 4,
+        "share": 0.09055563724046156
+      },
+      {
+        "year": 1973,
+        "country": "Russia",
+        "reserves": 49.339,
+        "rank": 4,
+        "share": 0.08467978944072323
+      },
+      {
+        "year": 1974,
+        "country": "Russia",
+        "reserves": 56.341,
+        "rank": 4,
+        "share": 0.08741122309774974
+      },
+      {
+        "year": 1975,
+        "country": "Russia",
+        "reserves": 58.878,
+        "rank": 4,
+        "share": 0.09248433877946338
+      },
+      {
+        "year": 1976,
+        "country": "Russia",
+        "reserves": 59.9,
+        "rank": 4,
+        "share": 0.09639971371621665
+      },
+      {
+        "year": 1977,
+        "country": "Russia",
+        "reserves": 59,
+        "rank": 4,
+        "share": 0.09454500521868857
+      },
+      {
+        "year": 1978,
+        "country": "Russia",
+        "reserves": 58.438,
+        "rank": 4,
+        "share": 0.09474728748253687
+      },
+      {
+        "year": 1979,
+        "country": "Russia",
+        "reserves": 59.878,
+        "rank": 3,
+        "share": 0.09612949214350774
+      },
+      {
+        "year": 1980,
+        "country": "Russia",
+        "reserves": 63,
+        "rank": 3,
+        "share": 0.09782696128027912
+      },
+      {
+        "year": 1981,
+        "country": "Russia",
+        "reserves": 63,
+        "rank": 3,
+        "share": 0.09579796665014279
+      },
+      {
+        "year": 1982,
+        "country": "Russia",
+        "reserves": 63,
+        "rank": 3,
+        "share": 0.09174413844082718
+      },
+      {
+        "year": 1983,
+        "country": "Russia",
+        "reserves": 63,
+        "rank": 4,
+        "share": 0.09025354153822551
+      },
+      {
+        "year": 1984,
+        "country": "Russia",
+        "reserves": 63,
+        "rank": 4,
+        "share": 0.08602493857088614
+      },
+      {
+        "year": 1985,
+        "country": "Russia",
+        "reserves": 62.685,
+        "rank": 4,
+        "share": 0.0826795100144419
+      },
+      {
+        "year": 1986,
+        "country": "Russia",
+        "reserves": 62.983,
+        "rank": 6,
+        "share": 0.07280510846083611
+      },
+      {
+        "year": 1987,
+        "country": "Russia",
+        "reserves": 61.663,
+        "rank": 6,
+        "share": 0.0685718564217109
+      },
+      {
+        "year": 1988,
+        "country": "Russia",
+        "reserves": 63.161,
+        "rank": 6,
+        "share": 0.06395731785442231
+      },
+      {
+        "year": 1989,
+        "country": "Russia",
+        "reserves": 69.384,
+        "rank": 6,
+        "share": 0.06970374620957626
+      },
+      {
+        "year": 1990,
+        "country": "Russia",
+        "reserves": 65.28,
+        "rank": 6,
+        "share": 0.06574196633209187
+      },
+      {
+        "year": 1991,
+        "country": "Russia",
+        "reserves": 64.99,
+        "rank": 6,
+        "share": 0.0651918164248404
+      },
+      {
+        "year": 1992,
+        "country": "Russia",
+        "reserves": 64.58,
+        "rank": 6,
+        "share": 0.06444929071574584
+      },
+      {
+        "year": 1993,
+        "country": "Russia",
+        "reserves": 64.279,
+        "rank": 7,
+        "share": 0.06406800388179602
+      },
+      {
+        "year": 1994,
+        "country": "Russia",
+        "reserves": 63.938,
+        "rank": 7,
+        "share": 0.0633520318747577
+      },
+      {
+        "year": 1995,
+        "country": "Russia",
+        "reserves": 63.659,
+        "rank": 7,
+        "share": 0.062491726569398505
+      },
+      {
+        "year": 1996,
+        "country": "Russia",
+        "reserves": 54.086,
+        "rank": 7,
+        "share": 0.0522975570387878
+      },
+      {
+        "year": 1997,
+        "country": "Russia",
+        "reserves": 55.143,
+        "rank": 7,
+        "share": 0.05301789638355317
+      },
+      {
+        "year": 1998,
+        "country": "Russia",
+        "reserves": 55.757,
+        "rank": 7,
+        "share": 0.05326641336169001
+      },
+      {
+        "year": 1999,
+        "country": "Russia",
+        "reserves": 59.217,
+        "rank": 7,
+        "share": 0.05569390498899703
+      },
+      {
+        "year": 2000,
+        "country": "Russia",
+        "reserves": 59.639,
+        "rank": 7,
+        "share": 0.05492010518441023
+      },
+      {
+        "year": 2001,
+        "country": "Russia",
+        "reserves": 64.578,
+        "rank": 7,
+        "share": 0.05739105729751089
+      },
+      {
+        "year": 2002,
+        "country": "Russia",
+        "reserves": 73.949,
+        "rank": 7,
+        "share": 0.06366243633339908
+      },
+      {
+        "year": 2003,
+        "country": "Russia",
+        "reserves": 77.345,
+        "rank": 6,
+        "share": 0.06537657669118764
+      },
+      {
+        "year": 2004,
+        "country": "Russia",
+        "reserves": 76.772,
+        "rank": 7,
+        "share": 0.0644554124114102
+      },
+      {
+        "year": 2005,
+        "country": "Russia",
+        "reserves": 77.712,
+        "rank": 7,
+        "share": 0.06475430523658789
+      },
+      {
+        "year": 2006,
+        "country": "Russia",
+        "reserves": 79.306,
+        "rank": 7,
+        "share": 0.06547382909231805
+      },
+      {
+        "year": 2007,
+        "country": "Russia",
+        "reserves": 72.97,
+        "rank": 7,
+        "share": 0.0604210699235546
+      },
+      {
+        "year": 2008,
+        "country": "Russia",
+        "reserves": 75.954,
+        "rank": 7,
+        "share": 0.0590754589868346
+      },
+      {
+        "year": 2009,
+        "country": "Russia",
+        "reserves": 76.65,
+        "rank": 7,
+        "share": 0.057901811796641375
+      },
+      {
+        "year": 2010,
+        "country": "Russia",
+        "reserves": 77.403,
+        "rank": 7,
+        "share": 0.053104620405977195
+      },
+      {
+        "year": 2011,
+        "country": "Russia",
+        "reserves": 77.403,
+        "rank": 7,
+        "share": 0.052782396664630964
+      },
+      {
+        "year": 2012,
+        "country": "Russia",
+        "reserves": 80,
+        "rank": 7,
+        "share": 0.05405553985091968
+      },
+      {
+        "year": 2013,
+        "country": "Russia",
+        "reserves": 80,
+        "rank": 7,
+        "share": 0.05369060781875382
+      },
+      {
+        "year": 2014,
+        "country": "Russia",
+        "reserves": 80,
+        "rank": 7,
+        "share": 0.05367666347937099
+      },
+      {
+        "year": 2015,
+        "country": "Russia",
+        "reserves": 80,
+        "rank": 7,
+        "share": 0.05381717387241838
+      },
+      {
+        "year": 2016,
+        "country": "Russia",
+        "reserves": 80,
+        "rank": 7,
+        "share": 0.05374456524879098
+      },
+      {
+        "year": 2017,
+        "country": "Russia",
+        "reserves": 80,
+        "rank": 7,
+        "share": 0.05370062772677523
+      },
+      {
+        "year": 2018,
+        "country": "Russia",
+        "reserves": 80,
+        "rank": 7,
+        "share": 0.053578149328372585
+      },
+      {
+        "year": 2019,
+        "country": "Russia",
+        "reserves": 80,
+        "rank": 7,
+        "share": 0.05147759314340904
+      },
+      {
+        "year": 2020,
+        "country": "Russia",
+        "reserves": 80,
+        "rank": 7,
+        "share": 0.05181978076227069
+      },
+      {
+        "year": 2021,
+        "country": "Russia",
+        "reserves": 80,
+        "rank": 7,
+        "share": 0.05132630008016809
+      },
+      {
+        "year": 2022,
+        "country": "Russia",
+        "reserves": 80,
+        "rank": 7,
+        "share": 0.05115113349709778
+      },
+      {
+        "year": 2023,
+        "country": "Russia",
+        "reserves": 80,
+        "rank": 7,
+        "share": 0.05111312945924333
+      },
+      {
+        "year": 2024,
+        "country": "Russia",
+        "reserves": 80,
+        "rank": 7,
+        "share": 0.05111345870033356
+      },
+      {
+        "year": 2025,
+        "country": "Russia",
+        "reserves": 80,
+        "rank": 7,
+        "share": 0.05087573918664
+      },
+      {
+        "year": 1998,
+        "country": "Kazakhstan",
+        "reserves": 25.02,
+        "rank": 10,
+        "share": 0.02390239184872723
+      },
+      {
+        "year": 2000,
+        "country": "Kazakhstan",
+        "reserves": 25.02,
+        "rank": 10,
+        "share": 0.023040309725413637
+      },
+      {
+        "year": 2001,
+        "country": "Kazakhstan",
+        "reserves": 39.62,
+        "rank": 8,
+        "share": 0.03521065517865808
+      },
+      {
+        "year": 2002,
+        "country": "Kazakhstan",
+        "reserves": 39.62,
+        "rank": 8,
+        "share": 0.03410871989518818
+      },
+      {
+        "year": 2003,
+        "country": "Kazakhstan",
+        "reserves": 39.62,
+        "rank": 8,
+        "share": 0.03348917148496805
+      },
+      {
+        "year": 2004,
+        "country": "Kazakhstan",
+        "reserves": 39.62,
+        "rank": 8,
+        "share": 0.03326373469155514
+      },
+      {
+        "year": 2005,
+        "country": "Kazakhstan",
+        "reserves": 39.828,
+        "rank": 9,
+        "share": 0.033187081389783074
+      },
+      {
+        "year": 2006,
+        "country": "Kazakhstan",
+        "reserves": 39.828,
+        "rank": 9,
+        "share": 0.03288139188824104
+      },
+      {
+        "year": 2007,
+        "country": "Kazakhstan",
+        "reserves": 30,
+        "rank": 10,
+        "share": 0.02484078522278523
+      },
+      {
+        "year": 2008,
+        "country": "Kazakhstan",
+        "reserves": 30,
+        "rank": 10,
+        "share": 0.023333382963438898
+      },
+      {
+        "year": 2009,
+        "country": "Kazakhstan",
+        "reserves": 30,
+        "rank": 10,
+        "share": 0.02266215725895944
+      },
+      {
+        "year": 2010,
+        "country": "Kazakhstan",
+        "reserves": 30,
+        "rank": 10,
+        "share": 0.02058238843687345
+      },
+      {
+        "year": 2011,
+        "country": "Kazakhstan",
+        "reserves": 30,
+        "rank": 10,
+        "share": 0.020457500354494382
+      }
+    ]
+  }
+}
