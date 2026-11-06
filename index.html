@@ -165,6 +165,13 @@
     </details>
   </article>
  
+ 
+  <!-- ===================== THE CONSTRAINT ===================== -->
+  <div class="wrap part-head" id="constraint">
+    <span class="tab" aria-hidden="true" style="--accent: var(--red)"></span>
+    <h2>The constraint</h2>
+  </div>
+ 
   <article class="wrap viz" id="v4">
     <h3 class="title">The refining gap</h3>
     <p class="lede">The chart illustrates the historical gap between Venezuela’s oil refining capacity and its actual throughput (the volume of crude oil processed) from 1980 through 2025, alongside a snapshot for 2026. The data reveals that this deficit has widened significantly over the decades, having come closest to closing only in 1991. This disparity is attributed by experts to underinvestment in the infrastructure network, being fueled by five key issues: decaying infrastructure, neglected maintenance, widespread equipment damage, frequent power disruptions, and critical material shortages.</p>
@@ -178,43 +185,6 @@
       </div>
     </details>
   </article>
- 
- 
-  <!-- ===================== THE CONSTRAINT ===================== -->
-  <div class="wrap part-head" id="constraint">
-    <span class="tab" aria-hidden="true" style="--accent: var(--red)"></span>
-    <h2>The constraint</h2>
-  </div>
- 
-  <article class="wrap viz" id="v7">
-    <h3 class="title">The electricity constraint</h3>
-    <p class="lede">Oil infrastructure, electricity infrastructure and renewable potential. As operations recovered, electricity demand from the state oil company rose from about 1,383 MW to about 1,675 MW.</p>
-    <div class="chart" id="Location6" data-label="Chart 7 goes here"></div>
-    <p class="source">Sources: Geoportal, Global Energy Monitor, Global Solar Atlas, Global Wind Atlas. Demand figures are estimates for March to September 2026, from David Morán Bohórquez, “El límite eléctrico del crecimiento petrolero en Venezuela,” <a href="https://lapatilla.com/2026/10/16/david-moran-bohorquez-el-limite-electrico-del-crecimiento-petrolero-en-venezuela/" target="_blank" rel="noopener noreferrer">La Patilla, 16 October 2026</a>.</p>
-    <details class="how">
-      <summary>Notes for replication</summary>
-      <div class="body"><p>Add here how the data was downloaded, cleaned and checked.</p></div>
-    </details>
-  </article>
-
-    <article class="wrap viz" id="v7">
-    <h3 class="title">The electricity constraint</h3>
-    <p class="lede">Oil infrastructure, electricity infrastructure and renewable potential. As operations recovered, electricity demand from the state oil company rose from about 1,383 MW to about 1,675 MW.</p>
-    <div class="chart" id="Location7" data-label="Chart 7 goes here"></div>
-    <p class="source">Sources: Geoportal, Global Energy Monitor, Global Solar Atlas, Global Wind Atlas. Demand figures are estimates for March to September 2026, from David Morán Bohórquez, “El límite eléctrico del crecimiento petrolero en Venezuela,” <a href="https://lapatilla.com/2026/10/16/david-moran-bohorquez-el-limite-electrico-del-crecimiento-petrolero-en-venezuela/" target="_blank" rel="noopener noreferrer">La Patilla, 16 October 2026</a>.</p>
-    <details class="how">
-      <summary>Notes for replication</summary>
-      <div class="body"><p>Add here how the data was downloaded, cleaned and checked.</p></div>
-    </details>
-  </article>
- 
-  <section class="wrap prose" id="proposal">
-    <h2>The proposal</h2>
-    <div class="col">
-      <p>Maracaibo calls itself “La Tierra del Sol Amada”. The proposal is to take advantage of that sun for the oil fields, with solar power and storage for oilfield loads.</p>
-      <p>Falcón is known for its wind. The refineries of Paraguaná sit on one of Venezuela’s windiest coasts, and wind power could serve the Paraguaná refining complex.</p>
-    </div>
-  </section>
  
 </main>
  
@@ -239,21 +209,15 @@
   let figure_3_spec = "oil-reserves.json";        // 3. Our reserves
   let figure_4_spec = "oil-infrastructure.json";  // 4. The infrastructure network
   let figure_5_spec = "oil-capacity.json";        // 5. Refining capacity and actual output
-  let figure_6_spec = "";                              // 6. Where Venezuelan oil goes
-  let figure_7_spec = "";                              // 7. The geography of gas flaring
-  let figure_8_spec = "";                              // 8. The electricity constraint
 
   embedChart('#Location1', figure_1_spec);
   embedChart('#Location2', figure_2_spec);
   embedChart('#Location3', figure_3_spec);
   embedChart('#Location4', figure_4_spec);
   embedChart('#Location5', figure_5_spec);
-  embedChart('#Location6', figure_6_spec);
-  embedChart('#Location7', figure_7_spec);
-  // (or write your own lines in the usual way:  vegaEmbed('#Location3', figure_3_spec);  )
  
   // ---------------------------------------------------------------------------------------
-  // Everything below makes the page work. You do not need to edit it.
+  // Everything below makes the page work.
   // ---------------------------------------------------------------------------------------
   function embedChart(selector, spec) {
     var frame = document.querySelector(selector);
