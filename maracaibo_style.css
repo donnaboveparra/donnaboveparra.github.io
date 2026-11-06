@@ -1,253 +1,225 @@
+/* Oro Negro: one flowing page. White page, one flag/Cruz-Diez inspired panel, the charts are the color. */
 :root {
-  --black: #000;
-  --white: #fff;
-  --amber: #FFB020;
-  --teal: #00857F;
-  --coral: #E02F47;
-  --violet: #5B35E8;
-  --ink-soft: #3d3d3d;
-  --sans: "Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
-  --pad: clamp(1.25rem, 4vw, 3.5rem);
-  --sky: #55B9FF;
+  --text: #262626;
+  --soft: #6a6a6a;
+  --line: #dcdcdc;
+  --pad: clamp(1.1rem, 4vw, 3.5rem);
+  --measure: 46rem;                          /* one reading width for every block of text */
+  --space: clamp(2rem, 5vh, 3rem);           /* one gap between the big blocks of the page */
+  --serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --sans: "Instrument Sans", system-ui, -apple-system, sans-serif;
+ 
+  /* the three parts of the project, in the order of the flag */
+  --yellow: #FFC400;
+  --blue:   #3F7BFF;
+  --red:    #E02B35;
+ 
+  --shift: 0px;   /* set by the page script: the lines slide with the cursor and with scrolling */
+  --ribbon-a: linear-gradient(90deg, #FFC400 0 33.333%, #3F7BFF 33.333% 66.667%, #E02B35 66.667% 100%);
+  --ribbon-b: linear-gradient(90deg, #9E7A00 0 33.333%, #274C9E 33.333% 66.667%, #8B1B21 66.667% 100%);
 }
-
+ 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: var(--sans);
-  font-size: 1.0625rem;
-  line-height: 1.55;
-  color: var(--black);
-  background: var(--white);
-  -webkit-font-smoothing: antialiased;
-}
+body { margin: 0; background: #fff; color: var(--text); font-family: var(--serif); font-size: 1.1rem; line-height: 1.58; -webkit-font-smoothing: antialiased; }
 a { color: inherit; }
-:focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; }
-
-/* Straight rules between sections */
-.zig { height: 2px; background: var(--black); }
-
-/* ---------- Top ---------- */
-.nav {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 1.25rem var(--pad);
-  border-bottom: 2px solid var(--black);
-  font-size: 0.95rem;
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.wrap { max-width: 78rem; margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
+section[id], article[id] { scroll-margin-top: .8rem; }
+ 
+/* ---------- header ---------- */
+.top { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .4rem 1.5rem; padding-top: 1.2rem; padding-bottom: 1.2rem; font-family: var(--sans); font-size: .93rem; }
+.brand { font-weight: 600; font-size: 1.05rem; color: #000; text-decoration: none; }
+.top nav { display: flex; flex-wrap: wrap; column-gap: 1.4rem; }
+.top nav a { text-decoration: none; }
+.top nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+ 
+/* ---------- title ---------- */
+.hero { padding-top: clamp(1.6rem, 5vh, 3.6rem); padding-bottom: 0; }
+h1 { font-weight: 300; font-size: clamp(2rem, 4.2vw, 3.7rem); line-height: 1.07; letter-spacing: -.02em; max-width: 40ch; color: #000; margin: 0 0 1.2rem; text-wrap: balance; }
+.deck { font-size: clamp(1.05rem, 1.3vw, 1.22rem); max-width: var(--measure); }
+.deck p { margin: 0; }
+.deck p + p { margin-top: .9rem; }
+ 
+/* ---------- the Cruz-Diez side: aim and objectives ----------
+   A column of fine lines at the side: black lines interleaved with a second set in the colors of the flag, stacked in the
+   order of the flag (yellow, blue, red). The second set slides sideways with the cursor, so the colors seem to shift and
+   mix, as in a Physichromie. The text stays on plain white, away from the lines. */
+.aims { padding-top: var(--space); }
+.aims-grid { display: grid; grid-template-columns: clamp(96px, 15%, 190px) minmax(0, 1fr); gap: clamp(1.4rem, 4vw, 3rem); }
+.side { display: grid; grid-template-rows: repeat(3, 1fr); min-height: 290px; }
+.z, .tab { position: relative; overflow: hidden; background: #fff; }
+.z::before, .z::after, .tab::before, .tab::after { content: ""; position: absolute; inset: 0; }
+.z::before, .tab::before {
+  background: #000;
+  -webkit-mask: repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 7px);
+          mask: repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 7px);
 }
-.nav .name { font-weight: 700; text-decoration: none; }
-.nav ul { display: flex; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
-.nav ul a { text-decoration: none; }
-.nav ul a:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
-
-.title-row {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: var(--pad);
-  align-items: end;
-  padding: clamp(2rem, 5vw, 4rem) var(--pad) clamp(1.5rem, 3vw, 2.5rem);
+.z::after, .tab::after {
+  background: var(--accent); mix-blend-mode: multiply;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0 3px, #000 3px 6px, transparent 6px 7px);
+          mask-image: linear-gradient(90deg, transparent 0 3px, #000 3px 6px, transparent 6px 7px);
+  -webkit-mask-size: 7px 100%; mask-size: 7px 100%; -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
+  -webkit-mask-position: calc(var(--shift) * 0.1) 0; mask-position: calc(var(--shift) * 0.1) 0;
 }
-h1 {
-  margin: 0 0 1.5rem;
-  font-weight: 850;
-  font-stretch: 125%;
-  font-size: clamp(4rem, 14.5vw, 12.5rem);
-  line-height: 0.84;
-  letter-spacing: -0.035em;
-  margin-bottom: 40px;
+.aims h2 { font-weight: 400; font-size: clamp(1.5rem, 2.2vw, 1.9rem); line-height: 1.1; letter-spacing: -.01em; color: #000; margin: 0 0 .9rem; }
+.history-lede { font-size: clamp(1.2rem, 1.7vw, 1.4rem); line-height: 1.42; max-width: var(--measure); margin: 0; }
+ 
+/* two small photographs and a quotation: rectangles with the place underneath and the source linked */
+.figs { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1.5rem 1.2rem; margin-top: 1.6rem; }
+.figs figure { margin: 0; }
+.figs .photo { flex: 1 1 5.5rem; max-width: 9.5rem; }                     /* two fit side by side even on a small phone */
+.figs .photo img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 22%; background: #ebe9e3; }
+.figs .quote { flex: 1 1 20rem; max-width: 28rem; }                       /* the quotation drops under the photos when the row is too narrow */
+.figs .quote img { display: block; width: 100%; height: auto; }
+.figs figcaption { font-family: var(--sans); font-size: .78rem; line-height: 1.4; color: var(--soft); margin-top: .5rem; }
+.figs .place { display: block; color: var(--text); font-weight: 600; }
+.figs figcaption a { text-underline-offset: 3px; }
+ 
+/* ---------- the three parts, and the sections ---------- */
+.part-head { padding-top: var(--space); }
+.tab { display: block; width: 4.5rem; height: 26px; margin-bottom: .7rem; }
+.part-head h2 { font-weight: 400; font-size: clamp(1.7rem, 2.6vw, 2.2rem); line-height: 1.1; letter-spacing: -.012em; color: #000; margin: 0; display: inline; }
+.part-head p { display: inline; margin: 0 0 0 .8rem; font-family: var(--sans); font-size: .93rem; color: var(--soft); }
+ 
+.viz { padding-top: clamp(1.4rem, 3.4vh, 2rem); }
+h3.title { font-weight: 400; font-size: clamp(1.35rem, 2vw, 1.7rem); line-height: 1.15; letter-spacing: -.008em; color: #000; margin: 0 0 .35rem; }
+.viz .lede { max-width: var(--measure); margin: 0 0 .9rem; font-size: 1.05rem; }
+.chart { width: 100%; margin: 0; }
+.chart:not(.has-chart) { aspect-ratio: 16 / 6; display: grid; place-items: center; border: 1px dashed #c9c9c9; color: #8a8a8a; font-family: var(--sans); font-size: .93rem; }
+.chart:not(.has-chart)::before { content: attr(data-label); }
+.source { font-family: var(--sans); font-size: .82rem; line-height: 1.5; color: var(--soft); max-width: var(--measure); margin: .6rem 0 0; }
+.source a { text-underline-offset: 3px; }
+ 
+/* the chart itself (Vega-Lite). Vega-Embed puts its own class, .vega-embed, on the chart's div, so these rules sit on .chart */
+.chart.vega-embed { display: block; }
+.chart.fill svg { width: 100%; max-width: none; }                     /* fills the width of the text */
+.chart svg, .chart canvas { max-width: 100%; height: auto; }
+#vg-tooltip-element table tr td.value { max-height: none; max-width: 360px; }
+#vg-tooltip-element table tr td.key { max-width: 260px; } /* fixing so the text inside the tooltip does not overlap
+.chart .mark-text.role-mark, .chart .mark-text.role-mark * { pointer-events: none; }
+.chart svg text { -webkit-user-select: none; user-select: none; }
+.chart .role-legend-entry, .chart .role-legend-label, .chart .role-legend-symbol { cursor: pointer; }
+ 
+/* ---------- dropdowns: how the data was cleaned ---------- */
+details.how { margin-top: .6rem; max-width: var(--measure); font-family: var(--sans); font-size: .93rem; line-height: 1.5; }
+details.how summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: .55rem; font-weight: 600; color: #000; }
+details.how summary::-webkit-details-marker { display: none; }
+details.how summary::before { content: ""; width: .45rem; height: .45rem; border-right: 2px solid #000; border-bottom: 2px solid #000; transform: rotate(-45deg); transition: transform .2s; }
+details.how[open] summary::before { transform: rotate(45deg); }
+details.how summary:hover { text-decoration: underline; text-underline-offset: 4px; }
+details.how .body { padding: .5rem 0 .2rem 1.1rem; color: var(--text); }
+details.how .body p { margin: 0 0 .6rem; }
+details.how .body ul { margin: 0 0 .6rem; padding-left: 1.1rem; }
+details.how .body li { margin-bottom: .3rem; }
+ 
+/* ---------- the data, and the proposal ---------- */
+.prose { padding-top: var(--space); }
+.prose h2 { font-weight: 400; font-size: clamp(1.7rem, 2.6vw, 2.2rem); line-height: 1.1; letter-spacing: -.012em; color: #000; margin: 0 0 .7rem; }
+.col { max-width: var(--measure); }
+.col p { margin: 0 0 .9rem; }
+.col h4 { font-family: var(--sans); font-weight: 600; font-size: .95rem; color: #000; margin: 1.3rem 0 .4rem; }
+.col ul { margin: 0 0 .8rem; padding-left: 1.1rem; }
+.col li { margin-bottom: .35rem; }
+ 
+/* ---------- the closing ribbon: all the colors side by side ---------- */
+.ribbon { position: relative; height: clamp(30px, 4.5vh, 44px); overflow: hidden; background: #fff; margin-top: clamp(2.4rem, 6vh, 3.6rem); }
+.ribbon::before, .ribbon::after { content: ""; position: absolute; inset: 0; }
+.ribbon::before { background: var(--ribbon-a);
+  -webkit-mask: repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 6px); mask: repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 6px); }
+.ribbon::after { background: var(--ribbon-b); mix-blend-mode: multiply; opacity: .6;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0 2.5px, #000 2.5px 5.5px, transparent 5.5px 6px); mask-image: linear-gradient(90deg, transparent 0 2.5px, #000 2.5px 5.5px, transparent 5.5px 6px);
+  -webkit-mask-size: 6px 100%; mask-size: 6px 100%; -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
+  -webkit-mask-position: calc(var(--shift) * 0.1) 0; mask-position: calc(var(--shift) * 0.1) 0; }
+footer { font-family: var(--sans); font-size: .83rem; color: var(--soft); padding-top: 1rem; padding-bottom: 2rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+footer a { color: var(--text); }
+ 
+/* ====================================================================================================
+   Other screens: tablets, phones (iPhone), touch screens, and visitors who ask for less motion.
+   The same idea as the old stylesheet (one main breakpoint at 860 px), rebuilt for this layout.
+   ==================================================================================================== */
+ 
+/* iPhone and iPad: stop Safari from enlarging text when the phone is turned sideways */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+ 
+/* iPhone with a notch, turned sideways: keep the text clear of the notch (needs viewport-fit=cover in the HTML) */
+@supports (padding: max(0px)) {
+  .wrap { padding-left: max(var(--pad), env(safe-area-inset-left)); padding-right: max(var(--pad), env(safe-area-inset-right)); }
 }
-.sub { font-size: clamp(1.1rem, 1.7vw, 1.35rem); line-height: 1.4; max-width: 27rem; margin: 0 0 0.4rem; }
-.sub strong { font-weight: 700; }
-
-/* The sun sinks behind the bands: the bands are the lake, their top edge is the horizon */
-.sun {
-  position: relative; z-index: 1;
-  justify-self: end; align-self: end;
-  width: clamp(11rem, 27vw, 26rem);
-  transform: translateY(55%);
-  margin-top: -1rem;
+ 
+/* Tablets and smaller (iPad portrait, large phones) */
+@media (max-width: 900px) {
+  .chart.has-chart { overflow-x: auto; }              /* a wide chart scrolls sideways instead of shrinking */
+  .chart svg { width: var(--min-width, 900px); max-width: none; }
+  .chart.fill svg { width: max(var(--min-width, 900px), 100%); }       /* fills the text width, but never gets smaller than its readable minimum */
+  /* a small note under a wide chart: it stays at the left edge while the chart scrolls */
+  .chart.has-chart::after { content: "Swipe sideways to see the whole chart"; display: block; position: sticky; left: 0; width: max-content;
+                            margin-top: .4rem; font-family: var(--sans); font-size: .8rem; color: var(--soft); }
 }
-.sun svg { display: block; width: 100%; height: auto; overflow: visible; }
-
-/* Puente General Rafael Urdaneta: stands on the horizon, in front of the sun */
-.bridge { position: relative; z-index: 2; height: clamp(5rem, 12vw, 9rem); }
-.bridge svg { display: block; width: 100%; height: 100%; color: var(--black); }
-.key .credit { margin-left: auto; color: var(--ink-soft); }
-
-/* ---------- Bands: six chapters, one lattice ---------- */
-.bands {
-  position: relative; z-index: 2;
-  display: flex;
-  height: clamp(20rem, 52vh, 34rem);
-  border-top: 2px solid var(--black);
-  border-bottom: 2px solid var(--black);
-  background: var(--white);
-}
-.band {
-  --line: rgba(255,255,255,0.26);
-  position: relative;
-  flex: var(--f) 1 0;
-  min-width: 0;
-  display: flex; flex-direction: column; justify-content: space-between;
-  padding: 1rem 0.9rem;
-  background: var(--c);
-  color: var(--t);
-  text-decoration: none;
-  overflow: hidden;
-  transition: flex-grow 0.55s cubic-bezier(.6,.05,.2,1);
-  animation: rise 1s cubic-bezier(.6,.05,.2,1) both;
-}
-/* crossing diagonals: the lattice of a derrick */
-.band::before {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background:
-    repeating-linear-gradient(45deg, transparent 0 13px, var(--line) 13px 14px),
-    repeating-linear-gradient(-45deg, transparent 0 13px, var(--line) 13px 14px);
-}
-.band + .band { border-left: 2px solid var(--black); }
-.band.dark-line { --line: rgba(0,0,0,0.2); }
-.band:nth-child(1) { animation-delay: 0.05s; }
-.band:nth-child(2) { animation-delay: 0.15s; }
-.band:nth-child(3) { animation-delay: 0.25s; }
-.band:nth-child(4) { animation-delay: 0.35s; }
-.band:nth-child(5) { animation-delay: 0.45s; }
-.band:nth-child(6) { animation-delay: 0.55s; }
-@keyframes rise { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
-
-.b-num { position: relative; font-weight: 800; font-stretch: 125%; font-size: 1.6rem; line-height: 1; }
-.b-name {
-  position: relative;
-  writing-mode: vertical-rl; transform: rotate(180deg);
-  align-self: flex-start;
-  font-weight: 600; font-size: 1.1rem; white-space: nowrap;
-}
-.b-take {
-  position: absolute; top: 3.4rem; left: 0.9rem; right: 0.9rem;
-  max-width: 14rem; font-size: 0.95rem; line-height: 1.35;
-  opacity: 0; transition: opacity 0.3s ease 0.1s;
-}
-.band:hover, .band:focus-visible { flex-grow: 3.2; }
-@media (hover: hover) {
-  .band:hover .b-take, .band:focus-visible .b-take { opacity: 1; }
-}
-
-.key {
-  display: flex; flex-wrap: wrap; gap: 0.6rem 2rem;
-  padding: 1rem var(--pad);
-  font-size: 0.9rem;
-  border-bottom: 2px solid var(--black);
-}
-.key span { display: inline-flex; align-items: center; gap: 0.55rem; }
-.key i { width: 14px; height: 14px; display: inline-block; border: 1px solid var(--black); }
-
-/* ---------- Content ---------- */
-section { padding: clamp(3rem, 7vw, 6rem) var(--pad); }
-.inner { max-width: 78rem; margin: 0 auto; }
-
-.thesis p {
-  font-size: clamp(1.6rem, 3.3vw, 2.7rem);
-  line-height: 1.18; font-weight: 500; letter-spacing: -0.015em;
-  max-width: 46rem; margin: 0;
-}
-.thesis strong { font-weight: 800; }
-
-h2 {
-  margin: 0 0 0.75rem;
-  font-weight: 800; font-stretch: 112%;
-  font-size: clamp(2rem, 4.2vw, 3.4rem);
-  line-height: 1; letter-spacing: -0.02em;
-}
-.lede { color: var(--ink-soft); max-width: 34rem; margin: 0 0 2rem; }
-
-.power-grid, .method-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(2rem, 5vw, 5rem); align-items: start; }
-.bars { margin: 0; }
-.bar-row { margin-bottom: 1.4rem; }
-.bar-label { display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.4rem; }
-.bar-label b { font-weight: 700; font-variant-numeric: tabular-nums; }
-.bar-track { height: 28px; border: 2px solid var(--black); }
-.bar-fill {
-  height: 100%;
-  background:
-    repeating-linear-gradient(45deg, transparent 0 13px, rgba(255,255,255,0.26) 13px 14px),
-    repeating-linear-gradient(-45deg, transparent 0 13px, rgba(255,255,255,0.26) 13px 14px),
-    var(--violet);
-}
-.bars figcaption { font-size: 0.85rem; color: var(--ink-soft); max-width: 30rem; }
-.flag { color: var(--coral); font-weight: 700; }
-
-.map-block { margin: 0 0 clamp(2.5rem, 5vw, 4rem); padding-left: 1.25rem; border-left: 10px solid var(--c); }
-.map-head { display: flex; align-items: center; gap: 0.9rem; }
-.map-n {
-  display: inline-grid; place-items: center;
-  width: 2.4rem; height: 2.4rem;
-  font-weight: 800; font-stretch: 125%;
-  background: var(--c); color: var(--t);
-}
-.map-head h3 { margin: 0; font-weight: 700; font-stretch: 108%; font-size: 1.6rem; letter-spacing: -0.01em; }
-.map-take { margin: 0.5rem 0 1rem; color: var(--ink-soft); max-width: 40rem; }
-.map-frame {
-  aspect-ratio: 16 / 8;
-  border: 2px solid var(--black);
-  background: repeating-linear-gradient(0deg, transparent 0 11px, rgba(0,133,127,0.16) 11px 12px);
-  display: grid; place-items: center;
-  color: var(--ink-soft); font-size: 0.95rem;
-}
-
-/* Chapter 6: the day side */
-.sunband {
-  position: relative; overflow: hidden;
-  background: var(--amber);
-  border-top: 2px solid var(--black);
-  border-bottom: 2px solid var(--black);
-}
-.sunband .rings { position: absolute; right: -9rem; top: -9rem; width: 34rem; height: 34rem; pointer-events: none; }
-.sunband .inner { position: relative; }
-.sun-head { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.25rem; }
-.sun-head .map-n { background: var(--black); color: var(--white); }
-.sun-head h2 { margin: 0; font-size: clamp(1.6rem, 2.6vw, 2.2rem); }
-.quote {
-  font-size: clamp(1.7rem, 3.6vw, 3rem); line-height: 1.12; font-weight: 600;
-  letter-spacing: -0.015em; max-width: 42rem; margin: 0 0 2.25rem;
-}
-.moves { list-style: none; margin: 0 0 2.25rem; padding: 0; max-width: 42rem; border-top: 2px solid var(--black); }
-.moves li { padding: 0.85rem 0; border-bottom: 2px solid var(--black); font-weight: 500; }
-.sunband .map-frame { background: repeating-linear-gradient(0deg, transparent 0 11px, rgba(0,0,0,0.1) 11px 12px); color: var(--black); }
-
-.windband {
-  position: relative; overflow: hidden;
-  background: var(--sky);
-  border-bottom: 2px solid var(--black);
-}
-.windband .inner { position: relative; }
-.windband .map-frame { background: repeating-linear-gradient(0deg, transparent 0 11px, rgba(0,0,0,0.1) 11px 12px); color: var(--black); }
-.turbines { position: absolute; right: var(--pad); bottom: 0; width: clamp(14rem, 30vw, 27rem); height: auto; pointer-events: none; }
-.spin { animation: spin linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
-@media (max-width: 860px) { .turbines { opacity: 0.25; } }
-
-.method ul { margin: 0; padding-left: 1.1rem; color: var(--ink-soft); }
-.method li { margin-bottom: 0.5rem; }
-
-/* Derricks stand on a ground of the six colors */
-.skyline { display: block; width: 100%; height: 64px; color: var(--black); margin-top: clamp(1rem, 3vw, 2.5rem); }
-.endstripe { display: flex; height: 18px; border-top: 2px solid var(--black); }
-.endstripe i { flex: 1; background: var(--c); }
-.endstripe i + i { border-left: 2px solid var(--black); }
-
-footer { padding: 1.75rem var(--pad); font-size: 0.9rem; }
-footer .row { max-width: 78rem; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
-
 @media (max-width: 860px) {
-  .title-row, .power-grid, .method-grid { grid-template-columns: 1fr; }
-  .sun { justify-self: end; margin-top: 0; }
-  .nav ul { gap: 1.1rem; }
-  .band { padding: 0.75rem 0.5rem; }
-  .b-num { font-size: 1.2rem; }
-  .b-name { font-size: 0.95rem; }
-  .bands { height: 24rem; }
+  .top nav { column-gap: 1.1rem; }
 }
+ 
+/* Phones (iPhone, Android) */
+@media (max-width: 720px) {
+  .aims-grid { grid-template-columns: 64px minmax(0, 1fr); }
+  .part-head p { display: block; margin: .3rem 0 0; }
+}
+/* Laptops and wide screens: the history row fills the text column, with the photos and the quotation at the same height */
+@media (min-width: 1200px) {
+  .history-lede { font-size: 1.6rem; line-height: 1.38; }
+  .figs { margin-top: 1.9rem; }
+  .figs .photo { max-width: 11rem; }
+  .figs .quote { max-width: 33rem; }
+  .figs figcaption { font-size: .82rem; }
+}
+@media (max-width: 600px) {
+  .figs .quote { max-width: 24rem; }                     /* the taller card does not need to be huge on a big phone */
+}
+@media (max-width: 380px) {
+  .aims-grid { grid-template-columns: 44px minmax(0, 1fr); gap: 1rem; }
+}
+@media (max-width: 480px) {
+  body { font-size: 1.02rem; }
+  .top { font-size: .88rem; }
+  .top nav { column-gap: .9rem; }
+  .viz .lede { font-size: 1rem; }
+  .source { font-size: .8rem; }
+  .chart:not(.has-chart) { aspect-ratio: 4 / 3; }     /* an empty chart frame takes less room on a phone */
+}
+ 
+/* Touch screens: bigger targets for the thumb, and nothing that depends on hovering */
+@media (hover: none) and (pointer: coarse) {
+  .top nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 .2rem; }   /* 44 px: Apple's minimum for a finger */
+  details.how summary { min-height: 44px; }
+}
+ 
+/* Visitors who ask their device for less motion */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .band { animation: none; transition: none; }
-  .spin { animation: none; }
+  details.how summary::before { transition: none; }
 }
+
+/* ====================================================================================================
+   Text that runs from margin to margin, like the charts
+   ==================================================================================================== */
+:root { --measure: none; }                                       /* no narrower reading column: every block of text uses the full width between the margins */
+p, li, .lede, .history-lede, .source { text-wrap: pretty; }     /* no single word left alone on a last line */
+h1, h2, h3 { text-wrap: balance; }                               /* headings break into even lines */
+.deck p, .viz .lede, .col p { line-height: 1.66; }               /* a little more air between the lines, because the lines are longer */
+
+/* ====================================================================================================
+   Fixing the size of Chart 3, so it's the same size as 1 and 2
+   ==================================================================================================== */
+.chart .vega-bindings { margin: .9rem 0 0; }
+.chart .vega-bind label { display: flex; align-items: center; gap: 1.1rem; width: 100%; }
+.chart .vega-bind-name { font: 600 .88rem var(--sans); color: var(--text); min-width: 2.4rem; }
+.chart .vega-bind label > span:last-child { font: 400 1.7rem/1 var(--serif); min-width: 3.6rem; text-align: right; color: #000; font-variant-numeric: tabular-nums; }
+.chart .vega-bind input[type=range] { -webkit-appearance: none; appearance: none; flex: 1; height: 30px; margin: 0; background: transparent; cursor: pointer; }
+.chart .vega-bind input[type=range]:focus { outline: none; }
+.chart .vega-bind input[type=range]::-webkit-slider-runnable-track { height: 2px; background: #262626; border-radius: 1px; }
+.chart .vega-bind input[type=range]::-moz-range-track { height: 2px; background: #262626; border-radius: 1px; }
+.chart .vega-bind input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; margin-top: -9px; border-radius: 50%; background: #262626; border: 3px solid #fff; box-shadow: 0 0 0 1px #262626; }
+.chart .vega-bind input[type=range]::-moz-range-thumb { width: 14px; height: 14px; border-radius: 50%; background: #262626; border: 3px solid #fff; box-shadow: 0 0 0 1px #262626; }
+.chart .vega-bind input[type=range]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 1px #262626, 0 0 0 5px rgba(63,123,255,.45); }
+.chart .vega-bind input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 1px #262626, 0 0 0 5px rgba(63,123,255,.45); }
