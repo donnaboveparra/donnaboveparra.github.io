@@ -1,0 +1,2249 @@
+{
+  "config": {
+    "view": {"continuousWidth": 300, "continuousHeight": 300, "stroke": null},
+    "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif"
+  },
+  "vconcat": [
+    {
+      "layer": [
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#262626",
+            "font": "Newsreader, Georgia, serif",
+            "fontSize": 34
+          },
+          "encoding": {
+            "text": {"field": "year", "type": "nominal"},
+            "x": {"value": -40},
+            "y": {"value": 6}
+          },
+          "transform": [{"filter": "datum.year === active_year"}]
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#262626",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 14,
+            "fontWeight": 600
+          },
+          "encoding": {
+            "text": {"field": "l1", "type": "nominal"},
+            "x": {"value": 58},
+            "y": {"value": 8}
+          },
+          "transform": [{"filter": "datum.year === active_year"}]
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#262626",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 13
+          },
+          "encoding": {
+            "text": {"field": "l2", "type": "nominal"},
+            "x": {"value": 58},
+            "y": {"value": 28}
+          },
+          "transform": [{"filter": "datum.year === active_year"}]
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "color": "#6A6A6A",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 12.5,
+            "fontStyle": "italic"
+          },
+          "encoding": {
+            "text": {"field": "l3", "type": "nominal"},
+            "x": {"value": 58},
+            "y": {"value": 48}
+          },
+          "transform": [{"filter": "datum.year === active_year"}]
+        }
+      ],
+      "data": {"name": "data-92c9c18e6f166de8fd270e3356873866"},
+      "height": 62,
+      "width": 985
+    },
+    {
+      "hconcat": [
+        {
+          "layer": [
+            {
+              "data": {"name": "data-92c9c18e6f166de8fd270e3356873866"},
+              "mark": {
+                "type": "area",
+                "color": "#E7F0EB",
+                "interpolate": "monotone",
+                "opacity": 1
+              },
+              "encoding": {
+                "x": {
+                  "axis": {
+                    "domainColor": "#CFCFCF",
+                    "format": "d",
+                    "grid": false,
+                    "gridColor": "#E6E6E6",
+                    "labelColor": "#6A6A6A",
+                    "labelFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "labelFontSize": 12.5,
+                    "tickColor": "#CFCFCF",
+                    "title": null,
+                    "titleColor": "#6A6A6A",
+                    "titleFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "titleFontSize": 12.5,
+                    "titleFontWeight": "normal",
+                    "values": [1980, 1990, 2000, 2010, 2020, 2024]
+                  },
+                  "field": "year",
+                  "scale": {"domain": [1979.5, 2024.5], "nice": false},
+                  "type": "quantitative"
+                },
+                "y": {
+                  "axis": {
+                    "domainColor": "#CFCFCF",
+                    "format": ",.0f",
+                    "grid": true,
+                    "gridColor": "#E6E6E6",
+                    "labelColor": "#6A6A6A",
+                    "labelFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "labelFontSize": 12.5,
+                    "tickColor": "#CFCFCF",
+                    "title": "Gigawatts",
+                    "titleColor": "#6A6A6A",
+                    "titleFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "titleFontSize": 12.5,
+                    "titleFontWeight": "normal"
+                  },
+                  "field": "avg",
+                  "scale": {"domain": [0, 40]},
+                  "type": "quantitative"
+                },
+                "y2": {"field": "cap"}
+              }
+            },
+            {
+              "data": {"name": "data-92c9c18e6f166de8fd270e3356873866"},
+              "mark": {
+                "type": "line",
+                "color": "#9AA3AD",
+                "interpolate": "monotone",
+                "strokeWidth": 2.5
+              },
+              "encoding": {
+                "x": {
+                  "axis": {
+                    "domainColor": "#CFCFCF",
+                    "format": "d",
+                    "grid": false,
+                    "gridColor": "#E6E6E6",
+                    "labelColor": "#6A6A6A",
+                    "labelFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "labelFontSize": 12.5,
+                    "tickColor": "#CFCFCF",
+                    "title": null,
+                    "titleColor": "#6A6A6A",
+                    "titleFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "titleFontSize": 12.5,
+                    "titleFontWeight": "normal",
+                    "values": [1980, 1990, 2000, 2010, 2020, 2024]
+                  },
+                  "field": "year",
+                  "scale": {"domain": [1979.5, 2024.5], "nice": false},
+                  "type": "quantitative"
+                },
+                "y": {
+                  "field": "cap",
+                  "scale": {"domain": [0, 40]},
+                  "type": "quantitative"
+                }
+              }
+            },
+            {
+              "data": {"name": "data-92c9c18e6f166de8fd270e3356873866"},
+              "mark": {
+                "type": "line",
+                "color": "#6FA58C",
+                "interpolate": "monotone",
+                "strokeWidth": 3.5
+              },
+              "encoding": {
+                "x": {
+                  "axis": {
+                    "domainColor": "#CFCFCF",
+                    "format": "d",
+                    "grid": false,
+                    "gridColor": "#E6E6E6",
+                    "labelColor": "#6A6A6A",
+                    "labelFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "labelFontSize": 12.5,
+                    "tickColor": "#CFCFCF",
+                    "title": null,
+                    "titleColor": "#6A6A6A",
+                    "titleFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "titleFontSize": 12.5,
+                    "titleFontWeight": "normal",
+                    "values": [1980, 1990, 2000, 2010, 2020, 2024]
+                  },
+                  "field": "year",
+                  "scale": {"domain": [1979.5, 2024.5], "nice": false},
+                  "type": "quantitative"
+                },
+                "y": {
+                  "field": "avg",
+                  "scale": {"domain": [0, 40]},
+                  "type": "quantitative"
+                }
+              }
+            },
+            {
+              "data": {"name": "data-d3290817d13ef55d78a0710702b3c113"},
+              "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "bottom",
+                "color": "white",
+                "dy": -9,
+                "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                "fontSize": 13.5,
+                "fontWeight": 600,
+                "stroke": "white",
+                "strokeOpacity": 0.95,
+                "strokeWidth": 5
+              },
+              "encoding": {
+                "text": {"field": "t", "type": "nominal"},
+                "x": {
+                  "field": "year",
+                  "scale": {"domain": [1979.5, 2024.5], "nice": false},
+                  "type": "quantitative"
+                },
+                "y": {
+                  "field": "v",
+                  "scale": {"domain": [0, 40]},
+                  "type": "quantitative"
+                }
+              }
+            },
+            {
+              "data": {"name": "data-d3290817d13ef55d78a0710702b3c113"},
+              "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "bottom",
+                "color": "#262626",
+                "dy": -9,
+                "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                "fontSize": 13.5,
+                "fontWeight": 600
+              },
+              "encoding": {
+                "text": {"field": "t", "type": "nominal"},
+                "x": {
+                  "field": "year",
+                  "scale": {"domain": [1979.5, 2024.5], "nice": false},
+                  "type": "quantitative"
+                },
+                "y": {
+                  "field": "v",
+                  "scale": {"domain": [0, 40]},
+                  "type": "quantitative"
+                }
+              }
+            },
+            {
+              "data": {"name": "data-7e52c72e39a1c96622c35133069290c4"},
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "top",
+                "color": "white",
+                "dy": 10,
+                "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                "fontSize": 13,
+                "fontWeight": 600,
+                "stroke": "white",
+                "strokeOpacity": 0.95,
+                "strokeWidth": 5
+              },
+              "encoding": {
+                "text": {"field": "t", "type": "nominal"},
+                "x": {
+                  "field": "year",
+                  "scale": {"domain": [1979.5, 2024.5], "nice": false},
+                  "type": "quantitative"
+                },
+                "y": {
+                  "field": "v",
+                  "scale": {"domain": [0, 40]},
+                  "type": "quantitative"
+                }
+              }
+            },
+            {
+              "data": {"name": "data-7e52c72e39a1c96622c35133069290c4"},
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "top",
+                "color": "#262626",
+                "dy": 10,
+                "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                "fontSize": 13,
+                "fontWeight": 600
+              },
+              "encoding": {
+                "text": {"field": "t", "type": "nominal"},
+                "x": {
+                  "field": "year",
+                  "scale": {"domain": [1979.5, 2024.5], "nice": false},
+                  "type": "quantitative"
+                },
+                "y": {
+                  "field": "v",
+                  "scale": {"domain": [0, 40]},
+                  "type": "quantitative"
+                }
+              }
+            },
+            {
+              "data": {"name": "data-e083a967c174c2c3f152d06215058ec4"},
+              "mark": {
+                "type": "text",
+                "align": "center",
+                "baseline": "middle",
+                "color": "#E7F0EB",
+                "dy": 0,
+                "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                "fontSize": 13,
+                "fontWeight": 600,
+                "stroke": "#E7F0EB",
+                "strokeOpacity": 0.95,
+                "strokeWidth": 5
+              },
+              "encoding": {
+                "text": {"field": "t", "type": "nominal"},
+                "x": {
+                  "field": "year",
+                  "scale": {"domain": [1979.5, 2024.5], "nice": false},
+                  "type": "quantitative"
+                },
+                "y": {
+                  "field": "v",
+                  "scale": {"domain": [0, 40]},
+                  "type": "quantitative"
+                }
+              }
+            },
+            {
+              "data": {"name": "data-e083a967c174c2c3f152d06215058ec4"},
+              "mark": {
+                "type": "text",
+                "align": "center",
+                "baseline": "middle",
+                "color": "#262626",
+                "dy": 0,
+                "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                "fontSize": 13,
+                "fontWeight": 600
+              },
+              "encoding": {
+                "text": {"field": "t", "type": "nominal"},
+                "x": {
+                  "field": "year",
+                  "scale": {"domain": [1979.5, 2024.5], "nice": false},
+                  "type": "quantitative"
+                },
+                "y": {
+                  "field": "v",
+                  "scale": {"domain": [0, 40]},
+                  "type": "quantitative"
+                }
+              }
+            },
+            {
+              "data": {"name": "data-92c9c18e6f166de8fd270e3356873866"},
+              "mark": {
+                "type": "rule",
+                "color": "#3A3A3A",
+                "strokeDash": [3, 3],
+                "strokeWidth": 1
+              },
+              "encoding": {
+                "x": {
+                  "field": "year",
+                  "scale": {"domain": [1979.5, 2024.5], "nice": false},
+                  "type": "quantitative"
+                },
+                "y": {"value": 0},
+                "y2": {"value": 300}
+              },
+              "transform": [{"filter": "datum.year === active_year"}]
+            },
+            {
+              "data": {"name": "data-92c9c18e6f166de8fd270e3356873866"},
+              "mark": {
+                "type": "point",
+                "color": "#9AA3AD",
+                "filled": true,
+                "shape": "circle",
+                "size": 90,
+                "stroke": "white",
+                "strokeWidth": 1.6
+              },
+              "encoding": {
+                "x": {
+                  "field": "year",
+                  "scale": {"domain": [1979.5, 2024.5], "nice": false},
+                  "type": "quantitative"
+                },
+                "y": {
+                  "field": "cap",
+                  "scale": {"domain": [0, 40]},
+                  "type": "quantitative"
+                }
+              },
+              "transform": [{"filter": "datum.year === active_year"}]
+            },
+            {
+              "data": {"name": "data-92c9c18e6f166de8fd270e3356873866"},
+              "mark": {
+                "type": "point",
+                "color": "#6FA58C",
+                "filled": true,
+                "shape": "circle",
+                "size": 90,
+                "stroke": "white",
+                "strokeWidth": 1.6
+              },
+              "encoding": {
+                "x": {
+                  "field": "year",
+                  "scale": {"domain": [1979.5, 2024.5], "nice": false},
+                  "type": "quantitative"
+                },
+                "y": {
+                  "field": "avg",
+                  "scale": {"domain": [0, 40]},
+                  "type": "quantitative"
+                }
+              },
+              "transform": [{"filter": "datum.year === active_year"}]
+            },
+            {
+              "data": {"name": "data-92c9c18e6f166de8fd270e3356873866"},
+              "mark": {
+                "type": "rect",
+                "color": "black",
+                "cursor": "pointer",
+                "opacity": 0.002
+              },
+              "encoding": {
+                "x": {
+                  "axis": {
+                    "domainColor": "#CFCFCF",
+                    "format": "d",
+                    "grid": false,
+                    "gridColor": "#E6E6E6",
+                    "labelColor": "#6A6A6A",
+                    "labelFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "labelFontSize": 12.5,
+                    "tickColor": "#CFCFCF",
+                    "title": null,
+                    "titleColor": "#6A6A6A",
+                    "titleFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "titleFontSize": 12.5,
+                    "titleFontWeight": "normal",
+                    "values": [1980, 1990, 2000, 2010, 2020, 2024]
+                  },
+                  "field": "x0",
+                  "scale": {"domain": [1979.5, 2024.5], "nice": false},
+                  "type": "quantitative"
+                },
+                "x2": {"field": "x1"},
+                "y": {"value": 0},
+                "y2": {"value": 300}
+              },
+              "name": "view_9c1c7ea57b8ed791_0"
+            }
+          ],
+          "height": 300,
+          "title": {
+            "text": "Installed capacity and power generated, 1980–2024",
+            "anchor": "start",
+            "color": "#262626",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 14,
+            "fontWeight": 600,
+            "offset": 8,
+            "subtitle": "EIA annual data. Power generated is the year’s average.",
+            "subtitleColor": "#6A6A6A",
+            "subtitleFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "subtitleFontSize": 12.5
+          },
+          "width": 440
+        },
+        {
+          "vconcat": [
+            {
+              "layer": [
+                {
+                  "mark": {
+                    "type": "rect",
+                    "fill": "#E7F0EB",
+                    "stroke": "#E7F0EB",
+                    "strokeWidth": 0.8
+                  },
+                  "encoding": {
+                    "x": {"value": 0},
+                    "x2": {"value": 20},
+                    "y": {"value": 3},
+                    "y2": {"value": 15}
+                  }
+                },
+                {
+                  "mark": {
+                    "type": "text",
+                    "align": "left",
+                    "baseline": "middle",
+                    "color": "#4B5563",
+                    "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "fontSize": 12
+                  },
+                  "encoding": {
+                    "text": {
+                      "value": "Installed capacity: what the plants could produce"
+                    },
+                    "x": {"value": 28},
+                    "y": {"value": 9}
+                  }
+                },
+                {
+                  "mark": {
+                    "type": "rect",
+                    "fill": "#6FA58C",
+                    "stroke": "#6FA58C",
+                    "strokeWidth": 0.8
+                  },
+                  "encoding": {
+                    "x": {"value": 0},
+                    "x2": {"value": 20},
+                    "y": {"value": 24},
+                    "y2": {"value": 36}
+                  }
+                },
+                {
+                  "mark": {
+                    "type": "text",
+                    "align": "left",
+                    "baseline": "middle",
+                    "color": "#4B5563",
+                    "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "fontSize": 12
+                  },
+                  "encoding": {
+                    "text": {
+                      "value": "Operating: what they actually deliver (red: demand)"
+                    },
+                    "x": {"value": 28},
+                    "y": {"value": 30}
+                  }
+                },
+                {
+                  "mark": {"type": "rect", "fill": "#4B5563"},
+                  "encoding": {
+                    "x": {"value": 0},
+                    "x2": {"value": 20},
+                    "y": {"value": 50},
+                    "y2": {"value": 53}
+                  }
+                },
+                {
+                  "mark": {"type": "rect", "fill": "#4B5563"},
+                  "encoding": {
+                    "x": {"value": 18},
+                    "x2": {"value": 20.6},
+                    "y": {"value": 45},
+                    "y2": {"value": 58}
+                  }
+                },
+                {
+                  "mark": {
+                    "type": "text",
+                    "align": "left",
+                    "baseline": "middle",
+                    "color": "#4B5563",
+                    "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "fontSize": 12
+                  },
+                  "encoding": {
+                    "text": {
+                      "value": "Thin line: the high end of the estimate"
+                    },
+                    "x": {"value": 28},
+                    "y": {"value": 51}
+                  }
+                }
+              ],
+              "data": {"name": "data-c74ba06b70f449194e83602f6b2723d9"},
+              "height": 65,
+              "width": 215
+            },
+            {
+              "layer": [
+                {
+                  "data": {"name": "data-cec6f45010f0dd318f645bfefcd3dae4"},
+                  "mark": {
+                    "type": "rule",
+                    "color": "#CFCFCF",
+                    "strokeWidth": 1,
+                    "yOffset": 23
+                  },
+                  "encoding": {
+                    "x": {"value": -175},
+                    "x2": {"value": 305},
+                    "y": {
+                      "axis": null,
+                      "field": "tech",
+                      "scale": {
+                        "domain": [
+                          "Hydro",
+                          "Thermal",
+                          "Solar and wind",
+                          "Total",
+                          "Demand"
+                        ],
+                        "paddingInner": 0.4
+                      },
+                      "sort": [
+                        "Hydro",
+                        "Thermal",
+                        "Solar and wind",
+                        "Total",
+                        "Demand"
+                      ],
+                      "type": "nominal"
+                    }
+                  }
+                },
+                {
+                  "data": {"name": "data-be5aa9738baffad9c1b188d96e0624f0"},
+                  "mark": {"type": "bar", "color": "#E7F0EB", "height": 24},
+                  "encoding": {
+                    "x": {
+                      "axis": {
+                        "domainColor": "#CFCFCF",
+                        "format": ",.0f",
+                        "grid": true,
+                        "gridColor": "#E6E6E6",
+                        "labelColor": "#6A6A6A",
+                        "labelFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                        "labelFontSize": 12.5,
+                        "tickColor": "#CFCFCF",
+                        "title": "Megawatts",
+                        "titleColor": "#6A6A6A",
+                        "titleFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                        "titleFontSize": 12.5,
+                        "titleFontWeight": "normal",
+                        "values": [0, 10000, 20000, 30000]
+                      },
+                      "field": "inst",
+                      "scale": {"domain": [0, 36000], "nice": false},
+                      "type": "quantitative"
+                    },
+                    "y": {
+                      "axis": null,
+                      "field": "tech",
+                      "scale": {
+                        "domain": [
+                          "Hydro",
+                          "Thermal",
+                          "Solar and wind",
+                          "Total",
+                          "Demand"
+                        ],
+                        "paddingInner": 0.4
+                      },
+                      "sort": [
+                        "Hydro",
+                        "Thermal",
+                        "Solar and wind",
+                        "Total",
+                        "Demand"
+                      ],
+                      "type": "nominal"
+                    }
+                  }
+                },
+                {
+                  "data": {"name": "data-be5aa9738baffad9c1b188d96e0624f0"},
+                  "mark": {"type": "bar", "color": "#6FA58C", "height": 24},
+                  "encoding": {
+                    "x": {
+                      "field": "lo",
+                      "scale": {"domain": [0, 36000], "nice": false},
+                      "type": "quantitative"
+                    },
+                    "y": {
+                      "axis": null,
+                      "field": "tech",
+                      "scale": {
+                        "domain": [
+                          "Hydro",
+                          "Thermal",
+                          "Solar and wind",
+                          "Total",
+                          "Demand"
+                        ],
+                        "paddingInner": 0.4
+                      },
+                      "sort": [
+                        "Hydro",
+                        "Thermal",
+                        "Solar and wind",
+                        "Total",
+                        "Demand"
+                      ],
+                      "type": "nominal"
+                    }
+                  }
+                },
+                {
+                  "data": {"name": "data-8e2ae869ae1673247ce385d0c19ef011"},
+                  "mark": {"type": "bar", "color": "#E02B35", "height": 24},
+                  "encoding": {
+                    "x": {
+                      "field": "lo",
+                      "scale": {"domain": [0, 36000], "nice": false},
+                      "type": "quantitative"
+                    },
+                    "y": {
+                      "axis": null,
+                      "field": "tech",
+                      "scale": {
+                        "domain": [
+                          "Hydro",
+                          "Thermal",
+                          "Solar and wind",
+                          "Total",
+                          "Demand"
+                        ],
+                        "paddingInner": 0.4
+                      },
+                      "sort": [
+                        "Hydro",
+                        "Thermal",
+                        "Solar and wind",
+                        "Total",
+                        "Demand"
+                      ],
+                      "type": "nominal"
+                    }
+                  }
+                },
+                {
+                  "data": {"name": "data-9f755f5df3ed6b72a180a533fdd3b5d9"},
+                  "mark": {
+                    "type": "tick",
+                    "color": "#6FA58C",
+                    "height": 24,
+                    "thickness": 3.2
+                  },
+                  "encoding": {
+                    "x": {
+                      "field": "inst",
+                      "scale": {"domain": [0, 36000], "nice": false},
+                      "type": "quantitative"
+                    },
+                    "y": {
+                      "axis": null,
+                      "field": "tech",
+                      "scale": {
+                        "domain": [
+                          "Hydro",
+                          "Thermal",
+                          "Solar and wind",
+                          "Total",
+                          "Demand"
+                        ],
+                        "paddingInner": 0.4
+                      },
+                      "sort": [
+                        "Hydro",
+                        "Thermal",
+                        "Solar and wind",
+                        "Total",
+                        "Demand"
+                      ],
+                      "type": "nominal"
+                    }
+                  }
+                },
+                {
+                  "data": {"name": "data-769d44f7cfda4ab90eb4f9734b4ea33b"},
+                  "mark": {"type": "rule", "strokeWidth": 2.6},
+                  "encoding": {
+                    "color": {
+                      "field": "c",
+                      "legend": null,
+                      "scale": null,
+                      "type": "nominal"
+                    },
+                    "x": {
+                      "field": "lo",
+                      "scale": {"domain": [0, 36000], "nice": false},
+                      "type": "quantitative"
+                    },
+                    "x2": {"field": "hi"},
+                    "y": {
+                      "axis": null,
+                      "field": "tech",
+                      "scale": {
+                        "domain": [
+                          "Hydro",
+                          "Thermal",
+                          "Solar and wind",
+                          "Total",
+                          "Demand"
+                        ],
+                        "paddingInner": 0.4
+                      },
+                      "sort": [
+                        "Hydro",
+                        "Thermal",
+                        "Solar and wind",
+                        "Total",
+                        "Demand"
+                      ],
+                      "type": "nominal"
+                    }
+                  }
+                },
+                {
+                  "data": {"name": "data-769d44f7cfda4ab90eb4f9734b4ea33b"},
+                  "mark": {
+                    "type": "tick",
+                    "orient": "vertical",
+                    "size": 16,
+                    "thickness": 2.6
+                  },
+                  "encoding": {
+                    "color": {
+                      "field": "c",
+                      "legend": null,
+                      "scale": null,
+                      "type": "nominal"
+                    },
+                    "x": {
+                      "field": "hi",
+                      "scale": {"domain": [0, 36000], "nice": false},
+                      "type": "quantitative"
+                    },
+                    "y": {
+                      "axis": null,
+                      "field": "tech",
+                      "scale": {
+                        "domain": [
+                          "Hydro",
+                          "Thermal",
+                          "Solar and wind",
+                          "Total",
+                          "Demand"
+                        ],
+                        "paddingInner": 0.4
+                      },
+                      "sort": [
+                        "Hydro",
+                        "Thermal",
+                        "Solar and wind",
+                        "Total",
+                        "Demand"
+                      ],
+                      "type": "nominal"
+                    }
+                  }
+                },
+                {
+                  "data": {"name": "data-f81455c7e6262f7aee11feab826e2402"},
+                  "mark": {
+                    "type": "text",
+                    "align": "right",
+                    "baseline": "middle",
+                    "color": "#4B5563",
+                    "dy": -8,
+                    "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "fontSize": 13,
+                    "fontWeight": 600
+                  },
+                  "encoding": {
+                    "text": {"field": "tech", "type": "nominal"},
+                    "x": {"value": -10},
+                    "y": {
+                      "axis": null,
+                      "field": "tech",
+                      "scale": {
+                        "domain": [
+                          "Hydro",
+                          "Thermal",
+                          "Solar and wind",
+                          "Total",
+                          "Demand"
+                        ],
+                        "paddingInner": 0.4
+                      },
+                      "sort": [
+                        "Hydro",
+                        "Thermal",
+                        "Solar and wind",
+                        "Total",
+                        "Demand"
+                      ],
+                      "type": "nominal"
+                    }
+                  }
+                },
+                {
+                  "data": {"name": "data-f81455c7e6262f7aee11feab826e2402"},
+                  "mark": {
+                    "type": "text",
+                    "align": "right",
+                    "baseline": "middle",
+                    "color": "#6A6A6A",
+                    "dy": 8,
+                    "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "fontSize": 11.5
+                  },
+                  "encoding": {
+                    "text": {"field": "detail", "type": "nominal"},
+                    "x": {"value": -10},
+                    "y": {
+                      "axis": null,
+                      "field": "tech",
+                      "scale": {
+                        "domain": [
+                          "Hydro",
+                          "Thermal",
+                          "Solar and wind",
+                          "Total",
+                          "Demand"
+                        ],
+                        "paddingInner": 0.4
+                      },
+                      "sort": [
+                        "Hydro",
+                        "Thermal",
+                        "Solar and wind",
+                        "Total",
+                        "Demand"
+                      ],
+                      "type": "nominal"
+                    }
+                  }
+                },
+                {
+                  "data": {"name": "data-f81455c7e6262f7aee11feab826e2402"},
+                  "mark": {
+                    "type": "text",
+                    "align": "left",
+                    "baseline": "middle",
+                    "dx": 12,
+                    "dy": -7,
+                    "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": 600
+                  },
+                  "encoding": {
+                    "color": {
+                      "condition": {
+                        "test": "datum.tech === 'Demand'",
+                        "value": "#E02B35"
+                      },
+                      "value": "#262626"
+                    },
+                    "text": {"field": "big", "type": "nominal"},
+                    "x": {"value": 215},
+                    "y": {
+                      "axis": null,
+                      "field": "tech",
+                      "scale": {
+                        "domain": [
+                          "Hydro",
+                          "Thermal",
+                          "Solar and wind",
+                          "Total",
+                          "Demand"
+                        ],
+                        "paddingInner": 0.4
+                      },
+                      "sort": [
+                        "Hydro",
+                        "Thermal",
+                        "Solar and wind",
+                        "Total",
+                        "Demand"
+                      ],
+                      "type": "nominal"
+                    }
+                  }
+                },
+                {
+                  "data": {"name": "data-f81455c7e6262f7aee11feab826e2402"},
+                  "mark": {
+                    "type": "text",
+                    "align": "left",
+                    "baseline": "middle",
+                    "dx": 12,
+                    "dy": 9,
+                    "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+                    "fontSize": 11.5
+                  },
+                  "encoding": {
+                    "color": {
+                      "condition": {
+                        "test": "datum.tech === 'Demand'",
+                        "value": "#E02B35"
+                      },
+                      "value": "#6A6A6A"
+                    },
+                    "text": {"field": "small", "type": "nominal"},
+                    "x": {"value": 215},
+                    "y": {
+                      "axis": null,
+                      "field": "tech",
+                      "scale": {
+                        "domain": [
+                          "Hydro",
+                          "Thermal",
+                          "Solar and wind",
+                          "Total",
+                          "Demand"
+                        ],
+                        "paddingInner": 0.4
+                      },
+                      "sort": [
+                        "Hydro",
+                        "Thermal",
+                        "Solar and wind",
+                        "Total",
+                        "Demand"
+                      ],
+                      "type": "nominal"
+                    }
+                  }
+                },
+                {
+                  "data": {"name": "data-1f3035917fdf148081ec12a9c65c10b4"},
+                  "mark": {"type": "rect", "color": "black", "opacity": 0.001},
+                  "encoding": {
+                    "tooltip": [
+                      {"field": "tech", "title": "Group", "type": "nominal"},
+                      {
+                        "field": "a",
+                        "title": "Installed capacity",
+                        "type": "nominal"
+                      },
+                      {"field": "b", "title": "Operating", "type": "nominal"},
+                      {
+                        "field": "c",
+                        "title": "Share operating",
+                        "type": "nominal"
+                      },
+                      {"field": "src", "title": "Source", "type": "nominal"}
+                    ],
+                    "x": {"value": -175},
+                    "x2": {"value": 310},
+                    "y": {
+                      "axis": null,
+                      "field": "tech",
+                      "scale": {
+                        "domain": [
+                          "Hydro",
+                          "Thermal",
+                          "Solar and wind",
+                          "Total",
+                          "Demand"
+                        ],
+                        "paddingInner": 0.4
+                      },
+                      "sort": [
+                        "Hydro",
+                        "Thermal",
+                        "Solar and wind",
+                        "Total",
+                        "Demand"
+                      ],
+                      "type": "nominal"
+                    }
+                  }
+                },
+                {
+                  "data": {"name": "data-8ce3e79e75e956c2c19055069ab8b452"},
+                  "mark": {"type": "rect", "color": "black", "opacity": 0.001},
+                  "encoding": {
+                    "tooltip": [
+                      {"field": "tech", "title": "Group", "type": "nominal"},
+                      {"field": "a", "title": "Demand", "type": "nominal"},
+                      {
+                        "field": "b",
+                        "title": "Compared with delivery",
+                        "type": "nominal"
+                      },
+                      {"field": "src", "title": "Source", "type": "nominal"}
+                    ],
+                    "x": {"value": -175},
+                    "x2": {"value": 310},
+                    "y": {
+                      "axis": null,
+                      "field": "tech",
+                      "scale": {
+                        "domain": [
+                          "Hydro",
+                          "Thermal",
+                          "Solar and wind",
+                          "Total",
+                          "Demand"
+                        ],
+                        "paddingInner": 0.4
+                      },
+                      "sort": [
+                        "Hydro",
+                        "Thermal",
+                        "Solar and wind",
+                        "Total",
+                        "Demand"
+                      ],
+                      "type": "nominal"
+                    }
+                  }
+                }
+              ],
+              "height": 232,
+              "width": 215
+            }
+          ],
+          "spacing": 10,
+          "title": {
+            "text": "Late 2026: a press estimate",
+            "anchor": "start",
+            "color": "#262626",
+            "font": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "fontSize": 14,
+            "fontWeight": 600,
+            "offset": 8,
+            "subtitle": [
+              "El Regional del Zulia, 15 Nov 2026. Not official data.",
+              "Solar and wind are too small for a bar: shown as a line."
+            ],
+            "subtitleColor": "#6A6A6A",
+            "subtitleFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+            "subtitleFontSize": 12.5
+          }
+        }
+      ],
+      "center": false,
+      "spacing": 34
+    }
+  ],
+  "background": "white",
+  "padding": {"left": 14, "right": 14, "top": 12, "bottom": 12},
+  "params": [
+    {
+      "name": "hover",
+      "select": {
+        "type": "point",
+        "clear": "mouseout",
+        "fields": ["year"],
+        "on": "mouseover"
+      },
+      "views": ["view_9c1c7ea57b8ed791_0"]
+    },
+    {
+      "name": "active_year",
+      "expr": "(hover && hover.year && length(hover.year)) ? hover.year[0] : 2024"
+    }
+  ],
+  "spacing": 4,
+  "title": {
+    "text": [
+      "A widening gap between installed capacity and actual output leaves the national grid",
+      "unable to meet electricity demand"
+    ],
+    "anchor": "start",
+    "color": "#262626",
+    "font": "Newsreader, Georgia, serif",
+    "fontSize": 26,
+    "fontWeight": 400,
+    "lineHeight": 30,
+    "offset": 8,
+    "subtitle": "Installed capacity is what the plants could produce running non-stop; the rest is what they deliver.",
+    "subtitleColor": "#6A6A6A",
+    "subtitleFont": "Instrument Sans, Helvetica Neue, Arial, sans-serif",
+    "subtitleFontSize": 13,
+    "subtitlePadding": 5
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json",
+  "datasets": {
+    "data-92c9c18e6f166de8fd270e3356873866": [
+      {
+        "year": 1980,
+        "cap": 9.225,
+        "cap_th": 6.543,
+        "cap_h": 2.682,
+        "gen": 32.012,
+        "gen_th": 17.574,
+        "gen_h": 14.438,
+        "avg": 3.6543378995433793,
+        "share": 39.61341896523988,
+        "x0": 1979.5,
+        "x1": 1980.5,
+        "avg_h": 1.6481735159817352,
+        "avg_th": 2.0061643835616443,
+        "sh_h": 61.45315122974404,
+        "sh_th": 30.661231599597194,
+        "l1": "9.2 GW installed  ·  3.7 GW generated on average  ·  40% of capacity",
+        "l2": "Hydro plants: 1.6 of 2.7 GW (61%)  ·  thermal plants: 2.0 of 6.5 GW (31%)",
+        "l3": ""
+      },
+      {
+        "year": 1981,
+        "cap": 10.125,
+        "cap_th": 7.443,
+        "cap_h": 2.682,
+        "gen": 35.957,
+        "gen_th": 21.024,
+        "gen_h": 14.933,
+        "avg": 4.104680365296804,
+        "share": 40.540052990585714,
+        "x0": 1980.5,
+        "x1": 1981.5,
+        "avg_h": 1.7046803652968037,
+        "avg_th": 2.4000000000000004,
+        "sh_h": 63.56004344879954,
+        "sh_th": 32.24506247480855,
+        "l1": "10.1 GW installed  ·  4.1 GW generated on average  ·  41% of capacity",
+        "l2": "Hydro plants: 1.7 of 2.7 GW (64%)  ·  thermal plants: 2.4 of 7.4 GW (32%)",
+        "l3": ""
+      },
+      {
+        "year": 1982,
+        "cap": 10.875,
+        "cap_th": 7.075,
+        "cap_h": 3.8,
+        "gen": 38.274,
+        "gen_th": 22.44,
+        "gen_h": 15.834,
+        "avg": 4.369178082191781,
+        "share": 40.17635018107385,
+        "x0": 1981.5,
+        "x1": 1982.5,
+        "avg_h": 1.8075342465753426,
+        "avg_th": 2.5616438356164384,
+        "sh_h": 47.56669069935112,
+        "sh_th": 36.20698000871291,
+        "l1": "10.9 GW installed  ·  4.4 GW generated on average  ·  40% of capacity",
+        "l2": "Hydro plants: 1.8 of 3.8 GW (48%)  ·  thermal plants: 2.6 of 7.1 GW (36%)",
+        "l3": ""
+      },
+      {
+        "year": 1983,
+        "cap": 12.499,
+        "cap_th": 8.073,
+        "cap_h": 4.426,
+        "gen": 41.801,
+        "gen_th": 23.493,
+        "gen_h": 18.308,
+        "avg": 4.771803652968037,
+        "share": 38.17748342241809,
+        "x0": 1982.5,
+        "x1": 1983.5,
+        "avg_h": 2.0899543378995435,
+        "avg_th": 2.6818493150684932,
+        "sh_h": 47.219935334377396,
+        "sh_th": 33.219984083593374,
+        "l1": "12.5 GW installed  ·  4.8 GW generated on average  ·  38% of capacity",
+        "l2": "Hydro plants: 2.1 of 4.4 GW (47%)  ·  thermal plants: 2.7 of 8.1 GW (33%)",
+        "l3": ""
+      },
+      {
+        "year": 1984,
+        "cap": 15.511,
+        "cap_th": 10.546,
+        "cap_h": 4.965,
+        "gen": 42.645,
+        "gen_th": 23.185,
+        "gen_h": 19.46,
+        "avg": 4.868150684931507,
+        "share": 31.3851504411805,
+        "x0": 1983.5,
+        "x1": 1984.5,
+        "avg_h": 2.221461187214612,
+        "avg_th": 2.646689497716895,
+        "sh_h": 44.74242068911605,
+        "sh_th": 25.096619549752468,
+        "l1": "15.5 GW installed  ·  4.9 GW generated on average  ·  31% of capacity",
+        "l2": "Hydro plants: 2.2 of 5.0 GW (45%)  ·  thermal plants: 2.6 of 10.5 GW (25%)",
+        "l3": ""
+      },
+      {
+        "year": 1985,
+        "cap": 18.194,
+        "cap_th": 9.646,
+        "cap_h": 8.548,
+        "gen": 46.22,
+        "gen_th": 24.395,
+        "gen_h": 21.825,
+        "avg": 5.276255707762557,
+        "share": 28.999976408500373,
+        "x0": 1984.5,
+        "x1": 1985.5,
+        "avg_h": 2.4914383561643834,
+        "avg_th": 2.7848173515981736,
+        "sh_h": 29.1464477791809,
+        "sh_th": 28.87017781047246,
+        "l1": "18.2 GW installed  ·  5.3 GW generated on average  ·  29% of capacity",
+        "l2": "Hydro plants: 2.5 of 8.5 GW (29%)  ·  thermal plants: 2.8 of 9.6 GW (29%)",
+        "l3": ""
+      },
+      {
+        "year": 1986,
+        "cap": 19.357,
+        "cap_th": 9.451,
+        "cap_h": 9.906,
+        "gen": 48.363,
+        "gen_th": 23.456,
+        "gen_h": 24.907,
+        "avg": 5.520890410958904,
+        "share": 28.521415565216223,
+        "x0": 1985.5,
+        "x1": 1986.5,
+        "avg_h": 2.8432648401826484,
+        "avg_th": 2.6776255707762555,
+        "sh_h": 28.702451445413367,
+        "sh_th": 28.331664064927047,
+        "l1": "19.4 GW installed  ·  5.5 GW generated on average  ·  29% of capacity",
+        "l2": "Hydro plants: 2.8 of 9.9 GW (29%)  ·  thermal plants: 2.7 of 9.5 GW (28%)",
+        "l3": ""
+      },
+      {
+        "year": 1987,
+        "cap": 17.444,
+        "cap_th": 8.675,
+        "cap_h": 8.769,
+        "gen": 52.427,
+        "gen_th": 21.892,
+        "gen_h": 30.535,
+        "avg": 5.984817351598173,
+        "share": 34.308744276531606,
+        "x0": 1986.5,
+        "x1": 1987.5,
+        "avg_h": 3.485730593607306,
+        "avg_th": 2.4990867579908675,
+        "sh_h": 39.750605469350056,
+        "sh_th": 28.807916518626715,
+        "l1": "17.4 GW installed  ·  6.0 GW generated on average  ·  34% of capacity",
+        "l2": "Hydro plants: 3.5 of 8.8 GW (40%)  ·  thermal plants: 2.5 of 8.7 GW (29%)",
+        "l3": ""
+      },
+      {
+        "year": 1988,
+        "cap": 18.52,
+        "cap_th": 8.52,
+        "cap_h": 10,
+        "gen": 56.46,
+        "gen_th": 22.599,
+        "gen_h": 33.861,
+        "avg": 6.4452054794520555,
+        "share": 34.80132548300246,
+        "x0": 1987.5,
+        "x1": 1988.5,
+        "avg_h": 3.8654109589041092,
+        "avg_th": 2.5797945205479453,
+        "sh_h": 38.65410958904109,
+        "sh_th": 30.279278410187153,
+        "l1": "18.5 GW installed  ·  6.4 GW generated on average  ·  35% of capacity",
+        "l2": "Hydro plants: 3.9 of 10.0 GW (39%)  ·  thermal plants: 2.6 of 8.5 GW (30%)",
+        "l3": ""
+      },
+      {
+        "year": 1989,
+        "cap": 18.52,
+        "cap_th": 8.52,
+        "cap_h": 10,
+        "gen": 55.896,
+        "gen_th": 21.577,
+        "gen_h": 34.319,
+        "avg": 6.38082191780822,
+        "share": 34.45368206159946,
+        "x0": 1988.5,
+        "x1": 1989.5,
+        "avg_h": 3.917694063926941,
+        "avg_th": 2.4631278538812786,
+        "sh_h": 39.17694063926941,
+        "sh_th": 28.909951336634727,
+        "l1": "18.5 GW installed  ·  6.4 GW generated on average  ·  34% of capacity",
+        "l2": "Hydro plants: 3.9 of 10.0 GW (39%)  ·  thermal plants: 2.5 of 8.5 GW (29%)",
+        "l3": ""
+      },
+      {
+        "year": 1990,
+        "cap": 19.033,
+        "cap_th": 8.608,
+        "cap_h": 10.425,
+        "gen": 57.606,
+        "gen_th": 20.993,
+        "gen_h": 36.613,
+        "avg": 6.576027397260274,
+        "share": 34.550661468293356,
+        "x0": 1989.5,
+        "x1": 1990.5,
+        "avg_h": 4.179566210045662,
+        "avg_th": 2.3964611872146118,
+        "sh_h": 40.09176220667302,
+        "sh_th": 27.839930148868632,
+        "l1": "19.0 GW installed  ·  6.6 GW generated on average  ·  35% of capacity",
+        "l2": "Hydro plants: 4.2 of 10.4 GW (40%)  ·  thermal plants: 2.4 of 8.6 GW (28%)",
+        "l3": ""
+      },
+      {
+        "year": 1991,
+        "cap": 19.283,
+        "cap_th": 8.608,
+        "cap_h": 10.675,
+        "gen": 61.752,
+        "gen_th": 17.664,
+        "gen_h": 44.088,
+        "avg": 7.049315068493151,
+        "share": 36.55714913910258,
+        "x0": 1990.5,
+        "x1": 1991.5,
+        "avg_h": 5.032876712328767,
+        "avg_th": 2.0164383561643837,
+        "sh_h": 47.146386063969715,
+        "sh_th": 23.425166777002598,
+        "l1": "19.3 GW installed  ·  7.0 GW generated on average  ·  37% of capacity",
+        "l2": "Hydro plants: 5.0 of 10.7 GW (47%)  ·  thermal plants: 2.0 of 8.6 GW (23%)",
+        "l3": ""
+      },
+      {
+        "year": 1992,
+        "cap": 18.912,
+        "cap_th": 8.237,
+        "cap_h": 10.675,
+        "gen": 65.744,
+        "gen_th": 18.955,
+        "gen_h": 46.789,
+        "avg": 7.505022831050228,
+        "share": 39.683919368920414,
+        "x0": 1991.5,
+        "x1": 1992.5,
+        "avg_h": 5.341210045662101,
+        "avg_th": 2.1638127853881275,
+        "sh_h": 50.03475452610867,
+        "sh_th": 26.26942801248182,
+        "l1": "18.9 GW installed  ·  7.5 GW generated on average  ·  40% of capacity",
+        "l2": "Hydro plants: 5.3 of 10.7 GW (50%)  ·  thermal plants: 2.2 of 8.2 GW (26%)",
+        "l3": ""
+      },
+      {
+        "year": 1993,
+        "cap": 18.966,
+        "cap_th": 8.598,
+        "cap_h": 10.368,
+        "gen": 67.579,
+        "gen_th": 20.585,
+        "gen_h": 46.994,
+        "avg": 7.714497716894977,
+        "share": 40.67540713326466,
+        "x0": 1992.5,
+        "x1": 1993.5,
+        "avg_h": 5.364611872146119,
+        "avg_th": 2.3498858447488584,
+        "sh_h": 51.742012655730306,
+        "sh_th": 27.330609964513354,
+        "l1": "19.0 GW installed  ·  7.7 GW generated on average  ·  41% of capacity",
+        "l2": "Hydro plants: 5.4 of 10.4 GW (52%)  ·  thermal plants: 2.3 of 8.6 GW (27%)",
+        "l3": ""
+      },
+      {
+        "year": 1994,
+        "cap": 18.966,
+        "cap_th": 8.598,
+        "cap_h": 10.368,
+        "gen": 69.498,
+        "gen_th": 18.737,
+        "gen_h": 50.761,
+        "avg": 7.933561643835617,
+        "share": 41.8304420744259,
+        "x0": 1993.5,
+        "x1": 1994.5,
+        "avg_h": 5.794634703196348,
+        "avg_th": 2.1389269406392692,
+        "sh_h": 55.88960940582896,
+        "sh_th": 24.877028851352282,
+        "l1": "19.0 GW installed  ·  7.9 GW generated on average  ·  42% of capacity",
+        "l2": "Hydro plants: 5.8 of 10.4 GW (56%)  ·  thermal plants: 2.1 of 8.6 GW (25%)",
+        "l3": ""
+      },
+      {
+        "year": 1995,
+        "cap": 19.07,
+        "cap_th": 8.395,
+        "cap_h": 10.675,
+        "gen": 71.598,
+        "gen_th": 20.672,
+        "gen_h": 50.926,
+        "avg": 8.173287671232877,
+        "share": 42.85940047841048,
+        "x0": 1994.5,
+        "x1": 1995.5,
+        "avg_h": 5.813470319634703,
+        "avg_th": 2.3598173515981737,
+        "sh_h": 54.45873835723375,
+        "sh_th": 28.109795730770387,
+        "l1": "19.1 GW installed  ·  8.2 GW generated on average  ·  43% of capacity",
+        "l2": "Hydro plants: 5.8 of 10.7 GW (54%)  ·  thermal plants: 2.4 of 8.4 GW (28%)",
+        "l3": ""
+      },
+      {
+        "year": 1996,
+        "cap": 20.764,
+        "cap_th": 8.53,
+        "cap_h": 12.234,
+        "gen": 73.745,
+        "gen_th": 20.439,
+        "gen_h": 53.306,
+        "avg": 8.418378995433791,
+        "share": 40.54314677053454,
+        "x0": 1995.5,
+        "x1": 1996.5,
+        "avg_h": 6.085159817351598,
+        "avg_th": 2.333219178082192,
+        "sh_h": 49.73974021049206,
+        "sh_th": 27.35309704668455,
+        "l1": "20.8 GW installed  ·  8.4 GW generated on average  ·  41% of capacity",
+        "l2": "Hydro plants: 6.1 of 12.2 GW (50%)  ·  thermal plants: 2.3 of 8.5 GW (27%)",
+        "l3": ""
+      },
+      {
+        "year": 1997,
+        "cap": 21.551,
+        "cap_th": 8.525,
+        "cap_h": 13.026,
+        "gen": 76.245,
+        "gen_th": 19.55,
+        "gen_h": 56.695,
+        "avg": 8.703767123287673,
+        "share": 40.386836449759514,
+        "x0": 1996.5,
+        "x1": 1997.5,
+        "avg_h": 6.47203196347032,
+        "avg_th": 2.231735159817352,
+        "sh_h": 49.68549027691018,
+        "sh_th": 26.178711552109696,
+        "l1": "21.6 GW installed  ·  8.7 GW generated on average  ·  40% of capacity",
+        "l2": "Hydro plants: 6.5 of 13.0 GW (50%)  ·  thermal plants: 2.2 of 8.5 GW (26%)",
+        "l3": ""
+      },
+      {
+        "year": 1998,
+        "cap": 21.66,
+        "cap_th": 8.436,
+        "cap_h": 13.224,
+        "gen": 78.947,
+        "gen_th": 21.571,
+        "gen_h": 57.376,
+        "avg": 9.012214611872146,
+        "share": 41.60763902064703,
+        "x0": 1997.5,
+        "x1": 1998.5,
+        "avg_h": 6.5497716894977165,
+        "avg_th": 2.4624429223744295,
+        "sh_h": 49.5294289889422,
+        "sh_th": 29.189697989265404,
+        "l1": "21.7 GW installed  ·  9.0 GW generated on average  ·  42% of capacity",
+        "l2": "Hydro plants: 6.5 of 13.2 GW (50%)  ·  thermal plants: 2.5 of 8.4 GW (29%)",
+        "l3": ""
+      },
+      {
+        "year": 1999,
+        "cap": 21.292,
+        "cap_th": 8.077,
+        "cap_h": 13.215,
+        "gen": 78.777,
+        "gen_th": 18.828,
+        "gen_h": 59.949,
+        "avg": 8.992808219178082,
+        "share": 42.235620041227136,
+        "x0": 1998.5,
+        "x1": 1999.5,
+        "avg_h": 6.843493150684932,
+        "avg_th": 2.149315068493151,
+        "sh_h": 51.78579758369226,
+        "sh_th": 26.61031408311441,
+        "l1": "21.3 GW installed  ·  9.0 GW generated on average  ·  42% of capacity",
+        "l2": "Hydro plants: 6.8 of 13.2 GW (52%)  ·  thermal plants: 2.1 of 8.1 GW (27%)",
+        "l3": ""
+      },
+      {
+        "year": 2000,
+        "cap": 21.234,
+        "cap_th": 8.018,
+        "cap_h": 13.216,
+        "gen": 85.271,
+        "gen_th": 22.385,
+        "gen_h": 62.886,
+        "avg": 9.734132420091324,
+        "share": 45.8421984557376,
+        "x0": 1999.5,
+        "x1": 2000.5,
+        "avg_h": 7.178767123287671,
+        "avg_th": 2.5553652968036533,
+        "sh_h": 54.31875849945273,
+        "sh_th": 31.870357904759956,
+        "l1": "21.2 GW installed  ·  9.7 GW generated on average  ·  46% of capacity",
+        "l2": "Hydro plants: 7.2 of 13.2 GW (54%)  ·  thermal plants: 2.6 of 8.0 GW (32%)",
+        "l3": ""
+      },
+      {
+        "year": 2001,
+        "cap": 21.319,
+        "cap_th": 8.111,
+        "cap_h": 13.208,
+        "gen": 90.119,
+        "gen_th": 29.678,
+        "gen_h": 60.441,
+        "avg": 10.287557077625571,
+        "share": 48.25534536153465,
+        "x0": 2000.5,
+        "x1": 2001.5,
+        "avg_h": 6.899657534246575,
+        "avg_th": 3.3878995433789956,
+        "sh_h": 52.238473154501634,
+        "sh_th": 41.76919668818882,
+        "l1": "21.3 GW installed  ·  10.3 GW generated on average  ·  48% of capacity",
+        "l2": "Hydro plants: 6.9 of 13.2 GW (52%)  ·  thermal plants: 3.4 of 8.1 GW (42%)",
+        "l3": ""
+      },
+      {
+        "year": 2002,
+        "cap": 20.578,
+        "cap_th": 8.086,
+        "cap_h": 12.492,
+        "gen": 91.852,
+        "gen_th": 32.318,
+        "gen_h": 59.534,
+        "avg": 10.485388127853883,
+        "share": 50.95435964551406,
+        "x0": 2001.5,
+        "x1": 2002.5,
+        "avg_h": 6.796118721461188,
+        "avg_th": 3.689269406392694,
+        "sh_h": 54.403768183326825,
+        "sh_th": 45.62539458808674,
+        "l1": "20.6 GW installed  ·  10.5 GW generated on average  ·  51% of capacity",
+        "l2": "Hydro plants: 6.8 of 12.5 GW (54%)  ·  thermal plants: 3.7 of 8.1 GW (46%)",
+        "l3": ""
+      },
+      {
+        "year": 2003,
+        "cap": 20.578,
+        "cap_th": 8.086,
+        "cap_h": 12.492,
+        "gen": 91.944,
+        "gen_th": 31.412,
+        "gen_h": 60.532,
+        "avg": 10.495890410958905,
+        "share": 51.00539610729374,
+        "x0": 2002.5,
+        "x1": 2003.5,
+        "avg_h": 6.9100456621004565,
+        "avg_th": 3.5858447488584475,
+        "sh_h": 55.31576738793193,
+        "sh_th": 44.34633624608518,
+        "l1": "20.6 GW installed  ·  10.5 GW generated on average  ·  51% of capacity",
+        "l2": "Hydro plants: 6.9 of 12.5 GW (55%)  ·  thermal plants: 3.6 of 8.1 GW (44%)",
+        "l3": ""
+      },
+      {
+        "year": 2004,
+        "cap": 22.125,
+        "cap_th": 8.26,
+        "cap_h": 13.865,
+        "gen": 98.552,
+        "gen_th": 28.477,
+        "gen_h": 70.075,
+        "avg": 11.250228310502283,
+        "share": 50.84848953899337,
+        "x0": 2003.5,
+        "x1": 2004.5,
+        "avg_h": 7.9994292237442925,
+        "avg_th": 3.250799086757991,
+        "sh_h": 57.695126027726594,
+        "sh_th": 39.355921147191175,
+        "l1": "22.1 GW installed  ·  11.3 GW generated on average  ·  51% of capacity",
+        "l2": "Hydro plants: 8.0 of 13.9 GW (58%)  ·  thermal plants: 3.3 of 8.3 GW (39%)",
+        "l3": ""
+      },
+      {
+        "year": 2005,
+        "cap": 21.9538,
+        "cap_th": 7.538,
+        "cap_h": 14.4158,
+        "gen": 105.384,
+        "gen_th": 28.155,
+        "gen_h": 77.229,
+        "avg": 12.03013698630137,
+        "share": 54.79751562964667,
+        "x0": 2004.5,
+        "x1": 2005.5,
+        "avg_h": 8.81609589041096,
+        "avg_th": 3.214041095890411,
+        "sh_h": 61.15578663973529,
+        "sh_th": 42.6378495076998,
+        "l1": "22.0 GW installed  ·  12.0 GW generated on average  ·  55% of capacity",
+        "l2": "Hydro plants: 8.8 of 14.4 GW (61%)  ·  thermal plants: 3.2 of 7.5 GW (43%)",
+        "l3": ""
+      },
+      {
+        "year": 2006,
+        "cap": 22.2168,
+        "cap_th": 7.618,
+        "cap_h": 14.5988,
+        "gen": 110.422,
+        "gen_th": 28.822,
+        "gen_h": 81.6,
+        "avg": 12.605251141552511,
+        "share": 56.73747408066199,
+        "x0": 2005.5,
+        "x1": 2006.5,
+        "avg_h": 9.315068493150685,
+        "avg_th": 3.2901826484018266,
+        "sh_h": 63.80708341199745,
+        "sh_th": 43.18958582832536,
+        "l1": "22.2 GW installed  ·  12.6 GW generated on average  ·  57% of capacity",
+        "l2": "Hydro plants: 9.3 of 14.6 GW (64%)  ·  thermal plants: 3.3 of 7.6 GW (43%)",
+        "l3": ""
+      },
+      {
+        "year": 2007,
+        "cap": 22.5418,
+        "cap_th": 7.943,
+        "cap_h": 14.5988,
+        "gen": 114.214,
+        "gen_th": 31.155,
+        "gen_h": 83.059,
+        "avg": 13.038127853881278,
+        "share": 57.83978144549805,
+        "x0": 2006.5,
+        "x1": 2007.5,
+        "avg_h": 9.48162100456621,
+        "avg_th": 3.5565068493150687,
+        "sh_h": 64.94794780780755,
+        "sh_th": 44.77536005684337,
+        "l1": "22.5 GW installed  ·  13.0 GW generated on average  ·  58% of capacity",
+        "l2": "Hydro plants: 9.5 of 14.6 GW (65%)  ·  thermal plants: 3.6 of 7.9 GW (45%)",
+        "l3": ""
+      },
+      {
+        "year": 2008,
+        "cap": 23.2195,
+        "cap_th": 8.6207,
+        "cap_h": 14.5988,
+        "gen": 119.297,
+        "gen_th": 32.456,
+        "gen_h": 86.841,
+        "avg": 13.61837899543379,
+        "share": 58.65061261195888,
+        "x0": 2007.5,
+        "x1": 2008.5,
+        "avg_h": 9.913356164383561,
+        "avg_th": 3.7050228310502287,
+        "sh_h": 67.90528101202537,
+        "sh_th": 42.97821326632673,
+        "l1": "23.2 GW installed  ·  13.6 GW generated on average  ·  59% of capacity",
+        "l2": "Hydro plants: 9.9 of 14.6 GW (68%)  ·  thermal plants: 3.7 of 8.6 GW (43%)",
+        "l3": ""
+      },
+      {
+        "year": 2009,
+        "cap": 24.848,
+        "cap_th": 10.2242,
+        "cap_h": 14.6238,
+        "gen": 119.58,
+        "gen_th": 33.618,
+        "gen_h": 85.962,
+        "avg": 13.650684931506849,
+        "share": 54.93675519762898,
+        "x0": 2008.5,
+        "x1": 2009.5,
+        "avg_h": 9.813013698630138,
+        "avg_th": 3.837671232876713,
+        "sh_h": 67.10303545337149,
+        "sh_th": 37.5351737336585,
+        "l1": "24.8 GW installed  ·  13.7 GW generated on average  ·  55% of capacity",
+        "l2": "Hydro plants: 9.8 of 14.6 GW (67%)  ·  thermal plants: 3.8 of 10.2 GW (38%)",
+        "l3": ""
+      },
+      {
+        "year": 2010,
+        "cap": 26.1609,
+        "cap_th": 11.5353,
+        "cap_h": 14.6238,
+        "gen": 113.767,
+        "gen_th": 36.985,
+        "gen_h": 76.78,
+        "avg": 12.987100456621004,
+        "share": 49.64317151405725,
+        "x0": 2009.5,
+        "x1": 2010.5,
+        "avg_h": 8.764840182648403,
+        "avg_th": 4.22203196347032,
+        "sh_h": 59.93544894383405,
+        "sh_th": 36.60097234983329,
+        "l1": "26.2 GW installed  ·  13.0 GW generated on average  ·  50% of capacity",
+        "l2": "Hydro plants: 8.8 of 14.6 GW (60%)  ·  thermal plants: 4.2 of 11.5 GW (37%)",
+        "l3": ""
+      },
+      {
+        "year": 2011,
+        "cap": 27.0121,
+        "cap_th": 12.3863,
+        "cap_h": 14.6238,
+        "gen": 117.963,
+        "gen_th": 34.291,
+        "gen_h": 83.67,
+        "avg": 13.466095890410958,
+        "share": 49.85208810277971,
+        "x0": 2010.5,
+        "x1": 2011.5,
+        "avg_h": 9.551369863013699,
+        "avg_th": 3.914497716894977,
+        "sh_h": 65.31387097070323,
+        "sh_th": 31.60344668621765,
+        "l1": "27.0 GW installed  ·  13.5 GW generated on average  ·  50% of capacity",
+        "l2": "Hydro plants: 9.6 of 14.6 GW (65%)  ·  thermal plants: 3.9 of 12.4 GW (32%)",
+        "l3": ""
+      },
+      {
+        "year": 2012,
+        "cap": 29.0273,
+        "cap_th": 14.3712,
+        "cap_h": 14.6238,
+        "gen": 128.3161,
+        "gen_th": 46.2511,
+        "gen_h": 82.008,
+        "avg": 14.647956621004568,
+        "share": 50.462690711862855,
+        "x0": 2011.5,
+        "x1": 2012.5,
+        "avg_h": 9.361643835616437,
+        "avg_th": 5.27980593607306,
+        "sh_h": 64.01649253693594,
+        "sh_th": 36.73879659369475,
+        "l1": "29.0 GW installed  ·  14.6 GW generated on average  ·  50% of capacity",
+        "l2": "Hydro plants: 9.4 of 14.6 GW (64%)  ·  thermal plants: 5.3 of 14.4 GW (37%)",
+        "l3": ""
+      },
+      {
+        "year": 2013,
+        "cap": 31.6165,
+        "cap_th": 16.6621,
+        "cap_h": 14.8808,
+        "gen": 135.1317,
+        "gen_th": 51.4947,
+        "gen_h": 83.545,
+        "avg": 15.425993150684931,
+        "share": 48.7909577299351,
+        "x0": 2012.5,
+        "x1": 2013.5,
+        "avg_h": 9.537100456621005,
+        "avg_th": 5.878390410958905,
+        "sh_h": 64.08997134979977,
+        "sh_th": 35.280009188271016,
+        "l1": "31.6 GW installed  ·  15.4 GW generated on average  ·  49% of capacity",
+        "l2": "Hydro plants: 9.5 of 14.9 GW (64%)  ·  thermal plants: 5.9 of 16.7 GW (35%)",
+        "l3": "The year of the most power generated since 1980: 15.4 GW."
+      },
+      {
+        "year": 2014,
+        "cap": 31.7931,
+        "cap_th": 16.8376,
+        "cap_h": 14.8808,
+        "gen": 115.2271,
+        "gen_th": 50.8461,
+        "gen_h": 64.288,
+        "avg": 13.153778538812785,
+        "share": 41.37306062891881,
+        "x0": 2013.5,
+        "x1": 2014.5,
+        "avg_h": 7.338812785388128,
+        "avg_th": 5.804349315068493,
+        "sh_h": 49.317326927235946,
+        "sh_th": 34.47254546413084,
+        "l1": "31.8 GW installed  ·  13.2 GW generated on average  ·  41% of capacity",
+        "l2": "Hydro plants: 7.3 of 14.9 GW (49%)  ·  thermal plants: 5.8 of 16.8 GW (34%)",
+        "l3": ""
+      },
+      {
+        "year": 2015,
+        "cap": 32.0825,
+        "cap_th": 16.8689,
+        "cap_h": 15.1378,
+        "gen": 127.5083,
+        "gen_th": 52.5153,
+        "gen_h": 74.899,
+        "avg": 14.555742009132421,
+        "share": 45.36972495638563,
+        "x0": 2014.5,
+        "x1": 2015.5,
+        "avg_h": 8.550114155251142,
+        "avg_th": 5.994897260273973,
+        "sh_h": 56.48188082317868,
+        "sh_th": 35.538163485905855,
+        "l1": "32.1 GW installed  ·  14.6 GW generated on average  ·  45% of capacity",
+        "l2": "Hydro plants: 8.6 of 15.1 GW (56%)  ·  thermal plants: 6.0 of 16.9 GW (36%)",
+        "l3": ""
+      },
+      {
+        "year": 2016,
+        "cap": 34.6815,
+        "cap_th": 17.7769,
+        "cap_h": 16.8288,
+        "gen": 116.933,
+        "gen_th": 53.879,
+        "gen_h": 62.959,
+        "avg": 13.348515981735162,
+        "share": 38.48886576917135,
+        "x0": 2015.5,
+        "x1": 2016.5,
+        "avg_h": 7.187100456621005,
+        "avg_th": 6.150570776255708,
+        "sh_h": 42.707147607797374,
+        "sh_th": 34.59866892571657,
+        "l1": "34.7 GW installed  ·  13.3 GW generated on average  ·  38% of capacity",
+        "l2": "Hydro plants: 7.2 of 16.8 GW (43%)  ·  thermal plants: 6.2 of 17.8 GW (35%)",
+        "l3": ""
+      },
+      {
+        "year": 2017,
+        "cap": 34.6365,
+        "cap_th": 17.7319,
+        "cap_h": 16.8288,
+        "gen": 103.8015,
+        "gen_th": 43.1927,
+        "gen_h": 60.5068,
+        "avg": 11.849486301369863,
+        "share": 34.210980616892186,
+        "x0": 2016.5,
+        "x1": 2017.5,
+        "avg_h": 6.907168949771689,
+        "avg_th": 4.930673515981735,
+        "sh_h": 41.04374019402268,
+        "sh_th": 27.806797444051316,
+        "l1": "34.6 GW installed  ·  11.8 GW generated on average  ·  34% of capacity",
+        "l2": "Hydro plants: 6.9 of 16.8 GW (41%)  ·  thermal plants: 4.9 of 17.7 GW (28%)",
+        "l3": ""
+      },
+      {
+        "year": 2018,
+        "cap": 34.636,
+        "cap_th": 17.7319,
+        "cap_h": 16.8288,
+        "gen": 99.71,
+        "gen_th": 41.5105,
+        "gen_h": 58.1505,
+        "avg": 11.382420091324201,
+        "share": 32.862975203037884,
+        "x0": 2017.5,
+        "x1": 2018.5,
+        "avg_h": 6.638184931506849,
+        "avg_th": 4.738641552511416,
+        "sh_h": 39.445384884880966,
+        "sh_th": 26.72382289834375,
+        "l1": "34.6 GW installed  ·  11.4 GW generated on average  ·  33% of capacity",
+        "l2": "Hydro plants: 6.6 of 16.8 GW (39%)  ·  thermal plants: 4.7 of 17.7 GW (27%)",
+        "l3": ""
+      },
+      {
+        "year": 2019,
+        "cap": 34.3927,
+        "cap_th": 17.4869,
+        "cap_h": 16.8292,
+        "gen": 85.1383,
+        "gen_th": 35.4325,
+        "gen_h": 49.6368,
+        "avg": 9.718984018264841,
+        "share": 28.25885731060615,
+        "x0": 2018.5,
+        "x1": 2019.5,
+        "avg_h": 5.666301369863014,
+        "avg_th": 4.044805936073059,
+        "sh_h": 33.669463610052844,
+        "sh_th": 23.130491602702936,
+        "l1": "34.4 GW installed  ·  9.7 GW generated on average  ·  28% of capacity",
+        "l2": "Hydro plants: 5.7 of 16.8 GW (34%)  ·  thermal plants: 4.0 of 17.5 GW (23%)",
+        "l3": ""
+      },
+      {
+        "year": 2020,
+        "cap": 34.7207,
+        "cap_th": 17.836,
+        "cap_h": 16.8292,
+        "gen": 80.5017,
+        "gen_th": 17.9623,
+        "gen_h": 62.5104,
+        "avg": 9.189691780821917,
+        "share": 26.467472662768653,
+        "x0": 2019.5,
+        "x1": 2020.5,
+        "avg_h": 7.135890410958904,
+        "avg_th": 2.0504908675799087,
+        "sh_h": 42.401839724757586,
+        "sh_th": 11.496360549337906,
+        "l1": "34.7 GW installed  ·  9.2 GW generated on average  ·  26% of capacity",
+        "l2": "Hydro plants: 7.1 of 16.8 GW (42%)  ·  thermal plants: 2.1 of 17.8 GW (11%)",
+        "l3": ""
+      },
+      {
+        "year": 2021,
+        "cap": 36.1494,
+        "cap_th": 19.21,
+        "cap_h": 16.8292,
+        "gen": 82.9235,
+        "gen_th": 17.2205,
+        "gen_h": 65.675,
+        "avg": 9.46615296803653,
+        "share": 26.186196639602677,
+        "x0": 2020.5,
+        "x1": 2021.5,
+        "avg_h": 7.497146118721461,
+        "avg_th": 1.9658105022831052,
+        "sh_h": 44.548440322305645,
+        "sh_th": 10.23326653973506,
+        "l1": "36.1 GW installed  ·  9.5 GW generated on average  ·  26% of capacity",
+        "l2": "Hydro plants: 7.5 of 16.8 GW (45%)  ·  thermal plants: 2.0 of 19.2 GW (10%)",
+        "l3": ""
+      },
+      {
+        "year": 2022,
+        "cap": 33.4074,
+        "cap_th": 16.468,
+        "cap_h": 16.8292,
+        "gen": 82.3546,
+        "gen_th": 17.816,
+        "gen_h": 64.513,
+        "avg": 9.4012100456621,
+        "share": 28.141100611427706,
+        "x0": 2021.5,
+        "x1": 2022.5,
+        "avg_h": 7.364497716894978,
+        "avg_th": 2.0337899543378994,
+        "sh_h": 43.760236475263106,
+        "sh_th": 12.349951143659823,
+        "l1": "33.4 GW installed  ·  9.4 GW generated on average  ·  28% of capacity",
+        "l2": "Hydro plants: 7.4 of 16.8 GW (44%)  ·  thermal plants: 2.0 of 16.5 GW (12%)",
+        "l3": ""
+      },
+      {
+        "year": 2023,
+        "cap": 33.5122,
+        "cap_th": 16.468,
+        "cap_h": 16.914,
+        "gen": 71.9574,
+        "gen_th": 6.9453,
+        "gen_h": 64.9826,
+        "avg": 8.214315068493152,
+        "share": 24.51141694216778,
+        "x0": 2022.5,
+        "x1": 2023.5,
+        "avg_h": 7.4181050228310506,
+        "avg_th": 0.7928424657534247,
+        "sh_h": 43.85778067181654,
+        "sh_th": 4.814442954538649,
+        "l1": "33.5 GW installed  ·  8.2 GW generated on average  ·  25% of capacity",
+        "l2": "Hydro plants: 7.4 of 16.9 GW (44%)  ·  thermal plants: 0.8 of 16.5 GW (5%)",
+        "l3": ""
+      },
+      {
+        "year": 2024,
+        "cap": 35.799,
+        "cap_th": 18.7537,
+        "cap_h": 16.914,
+        "gen": 80.1296,
+        "gen_th": 7.1,
+        "gen_h": 73,
+        "avg": 9.147214611872146,
+        "share": 25.551592535747215,
+        "x0": 2023.5,
+        "x1": 2024.5,
+        "avg_h": 8.333333333333334,
+        "avg_th": 0.8105022831050228,
+        "sh_h": 49.268850262110284,
+        "sh_th": 4.32182600289555,
+        "l1": "35.8 GW installed  ·  9.1 GW generated on average  ·  26% of capacity",
+        "l2": "Hydro plants: 8.3 of 16.9 GW (49%)  ·  thermal plants: 0.8 of 18.8 GW (4%)",
+        "l3": "The latest annual figure."
+      }
+    ],
+    "data-d3290817d13ef55d78a0710702b3c113": [
+      {"year": 2023.1, "v": 36.1494, "t": "Installed capacity"}
+    ],
+    "data-7e52c72e39a1c96622c35133069290c4": [
+      {"year": 1980, "v": 3.6543378995433793, "t": "Power generated (average)"}
+    ],
+    "data-e083a967c174c2c3f152d06215058ec4": [
+      {
+        "year": 2007,
+        "v": 18.418939497716895,
+        "t": "Capacity not producing power"
+      }
+    ],
+    "data-c74ba06b70f449194e83602f6b2723d9": [{"a": 0}],
+    "data-cec6f45010f0dd318f645bfefcd3dae4": [{"tech": "Solar and wind"}],
+    "data-be5aa9738baffad9c1b188d96e0624f0": [
+      {
+        "tech": "Hydro",
+        "inst": 15137,
+        "lo": 8800,
+        "hi": 8800,
+        "detail": "8,800 of 15,137 MW",
+        "big": "58%",
+        "small": "operating"
+      },
+      {
+        "tech": "Thermal",
+        "inst": 18006,
+        "lo": 2737,
+        "hi": 2737,
+        "detail": "2,737 of 18,006 MW",
+        "big": "15%",
+        "small": "operating"
+      },
+      {
+        "tech": "Solar and wind",
+        "inst": 95,
+        "lo": 0.4,
+        "hi": 0.4,
+        "detail": "0.4 of 95 MW",
+        "big": "0.4%",
+        "small": "operating"
+      },
+      {
+        "tech": "Total",
+        "inst": 33238,
+        "lo": 11000,
+        "hi": 14000,
+        "detail": "11,000–14,000 of 33,000+ MW",
+        "big": "33–42%",
+        "small": "operating"
+      }
+    ],
+    "data-8e2ae869ae1673247ce385d0c19ef011": [
+      {
+        "tech": "Demand",
+        "lo": 15700,
+        "hi": 16300,
+        "detail": "15,700–16,300 MW",
+        "big": "+3,000 MW",
+        "small": "above delivery"
+      }
+    ],
+    "data-9f755f5df3ed6b72a180a533fdd3b5d9": [
+      {
+        "tech": "Solar and wind",
+        "inst": 95,
+        "lo": 0.4,
+        "hi": 0.4,
+        "detail": "0.4 of 95 MW",
+        "big": "0.4%",
+        "small": "operating"
+      }
+    ],
+    "data-769d44f7cfda4ab90eb4f9734b4ea33b": [
+      {"tech": "Total", "lo": 11000, "hi": 14000, "c": "#6FA58C"},
+      {"tech": "Demand", "lo": 15700, "hi": 16300, "c": "#E02B35"}
+    ],
+    "data-f81455c7e6262f7aee11feab826e2402": [
+      {
+        "tech": "Hydro",
+        "detail": "8,800 of 15,137 MW",
+        "big": "58%",
+        "small": "operating"
+      },
+      {
+        "tech": "Thermal",
+        "detail": "2,737 of 18,006 MW",
+        "big": "15%",
+        "small": "operating"
+      },
+      {
+        "tech": "Solar and wind",
+        "detail": "0.4 of 95 MW",
+        "big": "0.4%",
+        "small": "operating"
+      },
+      {
+        "tech": "Total",
+        "detail": "11,000–14,000 of 33,000+ MW",
+        "big": "33–42%",
+        "small": "operating"
+      },
+      {
+        "tech": "Demand",
+        "detail": "15,700–16,300 MW",
+        "big": "+3,000 MW",
+        "small": "above delivery"
+      }
+    ],
+    "data-1f3035917fdf148081ec12a9c65c10b4": [
+      {
+        "tech": "Hydro",
+        "a": "15,137 MW",
+        "b": "about 8,800 MW",
+        "c": "58%",
+        "src": "Press estimate (El Regional del Zulia, 15 Nov 2026). Not official data."
+      },
+      {
+        "tech": "Thermal",
+        "a": "18,006 MW",
+        "b": "2,737 MW",
+        "c": "15%",
+        "src": "Press estimate (El Regional del Zulia, 15 Nov 2026). Not official data."
+      },
+      {
+        "tech": "Solar and wind",
+        "a": "95 MW",
+        "b": "0.4 MW",
+        "c": "0.4%",
+        "src": "Press estimate (El Regional del Zulia, 15 Nov 2026). Not official data."
+      },
+      {
+        "tech": "Total",
+        "a": "33,238 MW (the article: more than 33,000 MW)",
+        "b": "11,000 to 14,000 MW (the article)",
+        "c": "33 to 42%",
+        "src": "Press estimate (El Regional del Zulia, 15 Nov 2026). Not official data."
+      }
+    ],
+    "data-8ce3e79e75e956c2c19055069ab8b452": [
+      {
+        "tech": "Demand",
+        "a": "15,700 to 16,300 MW",
+        "b": "More than 3,000 MW above what is delivered (the article)",
+        "src": "Press estimate (El Regional del Zulia, 15 Nov 2026). Not official data."
+      }
+    ]
+  }
+}
