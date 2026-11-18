@@ -90,12 +90,12 @@
   <section class="wrap prose" id="data">
     <h2>The data and design</h2>
     <div class="col">
-      <p>The data used includes geospatial datasets and oil industry data obtained though Geoportal Provita, Global Energy Monitor (GEM), OPEC.</p>
+      <p>I used Python (pandas, GeoPandas) through Colab to clean and merge datasets, as well as Altair, Vega-Lite and Visual Studio Code to create all visualizations. The workbooks and .json files can be accessed in the repository.</p>
       <p>The design of the website is inspired by the Venezuelan flag and the kinetic and optical art of Carlos Cruz-Diez, both representing an extension of our identity.</p>
       <details class="how">
         <summary>How all the data was managed</summary>
         <div class="body">
-          <p>I used Python (pandas, geopandas) through Google Colab to clean and merge datasets, as well as Altair, Vega-Lite and Visual Studio Code to create all visualizations. The workbooks and .json files can be accessed in the repository.</p>
+          <p>The data used includes geospatial datasets and oil industry data obtained though Geoportal Provita, GEM, OPEC, EIA, IEA, Global Solar Atlas, Global Wind Atlas and NASA. The data is supplemented and cross-checked by public sources and satellite data.</p>
           <ul>
           </ul>
         </div>
@@ -113,13 +113,13 @@
   <article class="wrap viz" id="v1">
     <!-- Replace the title with your finding, in one sentence. -->
     <h3 class="title">Oil production over time</h3>
-    <p class="lede">The chart below highlights the most recent data on historical oil production from 1960 to 2025. Historical context allows to track the boom, bust and partial recovery of the country’s oil production. Ultimately, the data shows the dramatic decline in global standing, as the share of world crude output fell from 13.6% to a mere 1.6%.</p>
+    <p class="lede">The chart below highlights data on historical oil production from 1960 to 2025, along with historical context to track the boom, bust and its partial recovery. The data shows Venezuela’s dramatic decline in global standing, as the share of world crude output fell from 13.6% to a mere 1.6%.</p>
     <div class="chart fill" id="Location1" data-label="Chart 1 goes here" style="--min-width: 640px"></div>
     <p class="source">Source: OPEC Annual Statistical Bulletin 2026, Table 3.5; share = Venezuela / world crude output. Event notes compiled from general historical sources.</p>
     <details class="how">
       <summary>Notes for replication</summary>
       <div class="body">
-        <p>The data is extracted from Table 3.5 of OPEC’s Annual Statistical Bulletin 2026. No year was missing, and no value was changed. The share is calculated using Venezuela’s production divided by the world total for the same year, times 100, rounded to two decimals. Each year carries a historical note and are classified into four periods, coming from my own research and general background knowledge of Venezuelan history.</p>
+        <p>The data is extracted from OPEC’s Annual Statistical Bulletin 2026. The share is calculated using Venezuela’s production divided by the world total for the same year, times 100, rounded to two decimals. Each year carries a historical note and are classified into four periods, coming from my own research and general background knowledge of Venezuelan history.</p>
     </details>
     <!-- Note to self: To add a dropdown to another section, copy the <details> block above. -->
   </article>
@@ -132,8 +132,8 @@
     <details class="how">
       <summary>Notes for replication</summary>
       <div class="body">
-        <p>The state boundaries and oil blocks come from Provita. All names were translated from Spanish into English, and where relevant, all special characters were preserved. The following blocks were placed manually to correct the location based on the state border: Mene Grande and Catatumbo in Zulia, La Ceiba in Trujillo, and Moruy blocks I and IV in Falcón.</p>
-        <p>Some of GEM's oil and gas fields had no coordinates (latitude and longitude), so these were added based manually based on satellite data. Each field was matched to a block: first by lying inside it, then by the operator’s name, then by the nearest block.</p>
+        <p>The state boundaries and oil blocks come from Provita. All names were translated from Spanish into English, preserving all special characters. The following blocks were placed manually to correct the location due to overlapping state boundaries: Mene Grande and Catatumbo in Zulia, La Ceiba in Trujillo, and Moruy blocks I and IV as offshore.</p>
+        <p>34 fields had no coordinates (latitude and longitude), so these were added based manually based on satellite data. Each field was matched to a block: first by lying inside it, then by the operator’s name, then by the nearest block.</p>
         <p>Blocks and fields were grouped into regions to make the map easier to read for an international audience.</p>
       </div>
     </details>
@@ -142,7 +142,7 @@
   <article class="wrap viz" id="v2">
     <h3 class="title">Our reserves</h3>
     <p class="lede">The chart illustrates the volume of proven oil reserves (in billions of bbl) for the top ten nations from 1960 to 2025. The data highlights Venezuela’s ascent from being a minor participant to the world leader, following the exploration of the Orinoco Oil Belt in 2010. Although OPEC’s reliance on self-reported data from member nations is frequently contested, a 2009 <a href="https://pubs.usgs.gov/publication/fs20093028" target="_blank" rel="noopener noreferrer">U.S. Geological Survey (USGS)</a> fact sheet validates the claim, and estimates that the Orinoco Belt alone contains between 380 and 652 billion bbl of ultimately recoverable oil.</p>
-    <div class="chart" id="Location3" data-label="Chart 2 goes here">style="--min-width: 640px"></div>
+    <div class="chart" id="Location3" data-label="Chart 3 goes here">style="--min-width: 640px"></div>
     <p class="source">Sources: OPEC Annual Statistical Bulletin 2026, Table 3.1; share = country / world total. Figures as at year-end. OPEC’s figure for Canada excludes oil sands; the Eurasian republics are listed separately only from 1996.</p>
   </article>
  
@@ -154,13 +154,13 @@
  
   <article class="wrap viz" id="v3">
     <h3 class="title">The infrastructure network</h3>
-    <p class="lede">The interactive map below tracks the refineries, upgraders and pipelines, as well as the blocks, by region. As shown in the map, Venezuela’s largest refinery is the Paraguaná Refinery Complex, having a nameplace capacity of 955,000 b/d and comprising the Amuay and Cardón refineries in Falcón state and the Bajo Grande refinery in Zulia state, being the largest in the Western Hemisphere and the second-largest in the world.</p>
-    <div class="chart" id="Location4" data-label="Chart 3 goes here"></div>
+    <p class="lede">The interactive map below tracks the refineries, upgraders and pipelines by region. The Paraguaná Refinery Complex is the largest in the Western Hemisphere and the second-largest in the world, with a nameplace capacity of 955,000 barrels per day (b/d). It encompasses the Amuay and Cardón refineries in Falcón state and the Bajo Grande refinery in Zulia state.</p>
+    <div class="chart" id="Location4" data-label="Chart 4 goes here"></div>
     <p class="source">Sources: GEM Global Oil and Gas Infrastructure Tracker (oil and NGL pipelines, June 2026; gas pipelines, November 2025; LNG terminals, September 2025). Refineries and upgraders: <a href="https://en.wikipedia.org/wiki/Paragua%C3%B1%C3%A1_refinery_complex" target="_blank" rel="noopener noreferrer">Wikipedia (Paraguaná refinery complex)</a>, <a href="https://www.overwatts.com/country/ve/refinery" target="_blank" rel="noopener noreferrer">OverWatts</a>, Reuters (<a href="https://www.reuters.com/business/energy/venezuelas-oil-exports-surpasses-700000-bpd-june-due-more-upgraded-crude-2023-07-06/" target="_blank" rel="noopener noreferrer">2023</a>; <a href="https://www.reuters.com/business/energy/venezuelas-refineries-boost-processing-35-capacity-sources-say-2026-02-19/" target="_blank" rel="noopener noreferrer">February 2026</a>, <a href="https://www.reuters.com/business/energy/venezuelas-smallest-refinery-restarts-catalytic-cracker-workers-say-2026-07-13/" target="_blank" rel="noopener noreferrer">El Palito</a> and <a href="https://www.reuters.com/business/energy/ugly-rusty-venezuelas-refineries-are-relics-that-will-be-hard-revive-2026-07-29/" target="_blank" rel="noopener noreferrer">refineries</a> in July 2026, <a href="https://www.reuters.com/business/energy/venezuelas-cardon-refinery-halted-amid-fire-sources-say-2026-10-06/" target="_blank" rel="noopener noreferrer">Cardón</a> in October 2026), <a href="https://lapatilla.com/2020/01/27/pdvsa-detiene-sus-dos-ultimas-refinerias-operativas/" target="_blank" rel="noopener noreferrer">La Patilla</a>, <a href="https://ursaspace.com/node/974" target="_blank" rel="noopener noreferrer">Ursa Space</a>; capacities are nameplate. Oil blocks: Ministry of Energy and Petroleum via ECOSIG/<a href="https://geoportal.provita.org.ve/en/" target="_blank" rel="noopener noreferrer">Provita</a> (records updated 2009 to 2018).</p>    <details class="how">
       <summary>Notes for replication</summary>
       <div class="body">
         <p>Each item was placed in a region based on its coordinates, following the same rules as visualization #2. The GEM trackers were filtered to all those running in Venezuela (i.e., excluding two gas pipelines running across borders, Trans-Caribbean and Dragon, and Venezuela-Colombia which was cancelled). All routes were simplified to about 200 meters.</p>
-        <p>The location of the refineries and upgraders were compiled from public sources, which are linked in the sources. All installed capacities are estimated, nameplate, not what they process. To improve the visualization, I only show Amuay and Cardón when zooming to Falcón and Paraguaná, given both are part of the Paraguaná Refinery Complex. The four upgraders at José share one location, so they are one dot on the map.</p>
+        <p>The location of the refineries and upgraders were double-checked with public sources. All installed capacities are estimated, nameplate, not what they process. To improve the visualization, Amuay and Cardón are shown when zooming to Falcón and Paraguaná, given both are part of the Paraguaná Refinery Complex. The four upgraders at José in Anzoátegui share one location, so they are one dot on the map.</p>
       </div>
     </details>
   </article>
@@ -174,18 +174,120 @@
  
   <article class="wrap viz" id="v4">
     <h3 class="title">The refining gap</h3>
-    <p class="lede">The chart illustrates the historical gap between Venezuela’s oil refining capacity and its actual throughput (the volume of crude oil processed) from 1980 through 2025, alongside a snapshot for 2026. The data reveals that this deficit has widened significantly over the decades, having come closest to closing only in 1991. This disparity is attributed by experts to underinvestment in the infrastructure network, being fueled by five key issues: decaying infrastructure, neglected maintenance, widespread equipment damage, frequent power disruptions, and critical material shortages.</p>
-    <div class="chart" id="Location5" data-label="Chart 4 goes here"></div>
-    <p class="source">Sources: Energy Institute (2026), <a href="https://www.energyinst.org/statistical-review/home" target="_blank" rel="noopener noreferrer">Statistical Review of World Energy 2026</a>, Energy Institute, London (refining capacity and refinery throughput, Venezuela, 1980 to 2025). 2026: <a href="https://www.reuters.com/business/energy/venezuelas-refineries-down-31-crude-processing-capacity-workers-say-2026-04-08/" target="_blank" rel="noopener noreferrer">Reuters, 8 April 2026</a>, from workers at the refineries; Cardón fire: <a href="https://www.reuters.com/business/energy/venezuelas-cardon-refinery-halted-amid-fire-sources-say-2026-10-06/" target="_blank" rel="noopener noreferrer">Reuters, 6 October 2026</a>.</p>
+    <p class="lede">The chart illustrates the historical gap between Venezuela’s oil refining capacity and its actual throughput (the volume of crude oil processed). The data reveals that this deficit has widened significantly over decades, coming closest to closing only in 1991. This disparity is attributed to infrastructure constrains fueled by five key issues: underinvestment, neglected maintenance, widespread equipment damage, frequent power disruptions, and critical material shortages.</p>
+    <div class="chart" id="Location5" data-label="Chart 5 goes here"></div>
+    <p class="source">Sources: Energy Institute (2026), <a href="https://www.energyinst.org/statistical-review/home" target="_blank" rel="noopener noreferrer">Statistical Review of World Energy 2026</a>, Energy Institute, London (refining capacity and refinery throughput, Venezuela, 1980 to 2025).</p>
     <details class="how">
       <summary>Notes for replication</summary>
       <div class="body">
-        <p>The data comes from the Energy Institute’s Statistical Review of World Energy 2026. Capacity starts in 1965 and throughput in 1980, so the chart starts in 1980. Both series are complete for the 46 years from 1980 to 2025, and no value was filled in or changed. The 2026 snapshot comes from an article by Reuters; given the numbers are reported by workers, and not an annual average, it is included as a separate marker.</p>
-        <p>Capacity not in use (gap) was calculated as capacity minus throughput, and the share in use is throughput divided by capacity.</p>
+        <p>The data comes from the Energy Institute’s Statistical Review of World Energy 2026. Capacity starts in 1965 and throughput in 1980, so the chart’s range is from 1980 to 2025. Capacity not in use (gap) was calculated as capacity minus throughput, and the share in use is throughput divided by capacity.</p>
       </div>
     </details>
   </article>
+
+  <article class="wrap viz" id="v7">
+    <h3 class="title">The electricity constraint</h3>
+    <p class="lede">The chart below illustrates the fragility of Venezuela’s energy sector, exposing a severe historical gap between capacity and actual electricity generation. 
+      As most of the power comes from the Guri hydropower plant, the entire grid remains highly vulnerable, leading to frequent nationwide blackouts. Despite its vast natural resources, Zulia state is one of the most affected. 
+      Reports from 2026 indicate that <a href="https://primicia.com.ve/nacion/encendido-navidad-maracaibo-bella-vista-apagones/" target="_blank" rel="noopener noreferrer">daily blackouts of up to eight hours and constant power fluctuations</a>, which <a href="https://eldiario.com/2026/09/05/crisis-electrica-venezuela-2/" target="_blank" rel="noopener noreferrer">affects as much as 99% of its population</a>.</p>
+    <p>This mismatch is critical, as industrial operations recover, and oil production is expected to expand. The main issue is that operations may demand more than what the current grid can sustain, triggering more shortages.</p>
+    <div class="chart" id="Location6" data-label="Chart 6 goes here"></div>
+    <p class="source">Installed capacity and power generated, 1980–2024: U.S. Energy Information Administration (EIA), <a href="https://www.eia.gov/international/data/country/VEN/electricity/electricity-capacity" target="_blank" rel="noopener noreferrer">International Energy Statistics, Venezuela, electricity</a> (net installed capacity and net generation: total, fossil fuels and hydroelectricity). Cross-check of generation: Energy Institute, <a href="https://www.energyinst.org/statistical-review/home" target="_blank" rel="noopener noreferrer">Statistical Review of World Energy 2026</a>. Late 2026: Noris Hernández, <a href="https://diarioelregionaldelzulia.com/crisis-del-sistema-electrico-nacional-mantiene-al-pais-parado-sobre-una-bomba-de-tiempo/" target="_blank" rel="noopener noreferrer">“Crisis del Sistema Eléctrico Nacional mantiene al país parado sobre una bomba de tiempo”</a>, El Regional del Zulia, 15 November 2026. The late-2026 figures are a press estimate, not official data. On the reliability of Venezuela’s electricity statistics: <a href="https://www.chathamhouse.org/sites/default/files/2021-12/2021-12-17-reforming-venezuelas-electricity-sector-sabatini-et-al.pdf" target="_blank" rel="noopener noreferrer">Chatham House (2021)</a>.</p>
+    <details class="how">
+      <summary>Notes for replication</summary>
+      <div class="body">
+        <p>The left panel draws data for installed capacity and power generated coming from the EIA. Energy generation data was compared year by year from 1985 to 2024 with the Energy Institute’s data. The median difference in total generation is 2.5%.</p>
+        <p>Capacity is measured in million kW (= GW), and generation in billion kWh (= TWh). To compare them, generation was converted to average power: TWh in a year divided by 8.76 (the thousands of hours in a year) gives GW. “Capacity not producing power” is installed capacity minus average power generated.</p>
+        <p>The right panel shows operating capacity at a specific time in 2026 coming from a newspaper article from El Regional del Zulia. The article indicates a total installed capacity is 33,238 MW (18,006 MW thermoelectric, 15,137 MW hydroelectric, and 95 MW solar/wind). However, only 11,000–14,000 MW is actually delivered—just 33%–42% of total capacity—falling short of the 15,700–16,300 MW demand by over 3,000 MW. On the chart, solid bars represent minimum estimates while thin lines extend to the maximums, and solar/wind figures (95 MW installed; 0.40 MW operating) appear as flat lines because they are too small for a 36,000 MW scale.</p>
+      </div>
+    </details>
+  </article>
+
+   <article class="wrap viz" id="v7">
+    <h3 class="title">Can satellite data reveal how power constraints reshaped Venezuela’s oil sector?</h3>
+    <p class="lede">To visualize how the electricity constraint impacted oil production, I tested whether nighttime light from space tracks refinery activity. Normally, we would expect that brighter lights would mean higher industrial activity, but by looking at the output, in Venezuela I found the opposite: between 2012 and 2025, light tripled while crude processing fell 70% (a -0.90 correlation). Actually, in the years where more crude was processed, there was less light.</p>
+    <p>To find out why, I split the light around each refinery into three zones: the plant, its gas flares, and the surrounding area, to build an interactive map to explore the zones by year and consider the activity.</p>
+    <div class="chart" id="Location7" data-label="Chart 7 goes here"></div>
+    <p class="source">Night-time light: <a href="https://blackmarble.gsfc.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA Black Marble</a>, product VNP46A4 (annual composite), from the VIIRS instrument on the Suomi NPP satellite, obtained from NASA’s LAADS DAAC. Reference: <a href="https://doi.org/10.1016/j.rse.2018.03.017" target="_blank" rel="noopener noreferrer">Román et al. (2018)</a>. Refinery throughput: Energy Institute, <a href="https://www.energyinst.org/statistical-review/home" target="_blank" rel="noopener noreferrer">Statistical Review of World Energy 2026</a> (includes data from ICIS and S&amp;P Global Energy). Locations of the refineries and upgraders (approximate): Wikipedia, the ends of Global Energy Monitor pipelines, and Mapcarta. Blackouts named under the year: <a href="https://www.pbs.org/newshour/world/most-of-venezuela-suffers-power-outage" target="_blank" rel="noopener noreferrer">March 2019</a> and <a href="https://www.pbs.org/newshour/world/venezuelan-government-blames-sabotage-as-capital-city-faces-major-power-outage" target="_blank" rel="noopener noreferrer">30 August 2024</a> (Associated Press, via PBS NewsHour). Country outline: boundary file supplied with the Global Solar Atlas download (World Bank Group). State boundaries and the Guayana Esequiba: Instituto Geográfico de Venezuela Simón Bolívar (IGVSB), via <a href="https://geoportal.provita.org.ve/en/" target="_blank" rel="noopener noreferrer">Provita’s geoportal</a>. The light was grouped into three zones around each plant and shown as a percentage of each place’s own usual level.</p>
+    <details class="how">
+      <summary>Notes for replication</summary>
+      <div class="body">
+        <p>The base map comes from from Provita. The satellite data comes from NASA Black Marble, which processes night-time images of the VIIRS instrument on the Suomi NPP satellite. The dataset used is VNP46A4, which provides the image correction for clouds, moonlight and the atmosphere and combines the nights of a year into one annual picture. The data was downloaded with NASA Earthdata access and the open-source package blackmarblepy, for the layer of the annual product that the package returns by default.</p>
+        <p>The map shows the main refineries as mapped by GEM and the throughput from the Energy Institute, following visualization #4 and #5 respectively. To differentiate between plant light, gas flaring (single brightest pixel) and the surrounding area (ring from 5 to 10 km, averaged per pixel, not counting the plant), the data was divided into three zones. Around each place, the plant is a disc of 1.5 km. A pixel counts if its center falls inside the shape. Gaps, clouds and fill values are left out.</p>
+        <p>Each zone is shown as a percentage of that area’s usual bright level: 100% is the 95th percentile of its own yearly values, and the number never goes above 100. A place is compared with itself, not with other places. Lit means 60% or more, dim 30 to 60%, and dark under 30%; flaring is “strong”, “some” or “little” on the same thresholds.</p>
+        <p>The satellite picture is the light of the whole country for the selected year, at about 1.3 km per pixel, on a logarithmic scale so that towns and flares both show. All years can be compared, as all have the same scale. All the lights outside Venezuela’s outline and those shown inside the satellite picture are shown at reduced brightness, so the refineries stand out.</p>
+        <p>Bajo Grande is inside Maracaibo, and Puerto La Cruz and San Roque are next to towns. For this reason, consider that their light includes the towns’ light. Additionally, a blackout of days or weeks barely changes it when using annual picture averages; to improve this map, month-by-month data would be needed.</p>
+        <p>For the periods, the average is the mean of the yearly percentages in the period; the swing is their standard deviation, in percentage points, so it measures how much one year differs from another.</p>
+      </div>
+    </details>
+  </article>
+
+  <!-- ===================== THE PROPOSAL ===================== -->
+  <section class="wrap prose" id="proposal">
+    <span class="tab" aria-hidden="true" style="--accent: var(--yellow)"></span>
+    <h2>The proposal</h2>
+    <div class="col">
+      <p>Venezuela possesses vast, untapped renewable energy potential. 
+        Spanning the states of Zulia, Falcón, Lara, Guárico, Anzoátegui, Sucre, and Nueva Esparta, 
+        offer a localized mix of wind and solar resource bands to diversify the national grid and support oil production. 
+        While this mapping does not determine final feasibility or where plants can be built, 
+        it serves as a visual catalyst to spark discussions on infrastructure modernization.</p>
+    </div>
+
+    <!-- Making the two cards be side by side -->
+      <style>
+        .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.4rem, 4vw, 3rem); margin-top: clamp(1.6rem, 4vw, 2.6rem); }
+        .cards .section-card { min-width: 0; }
+        .cards .section-card h2 { margin-top: 0; }
+        @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } }
+      </style>
+      <div class="cards">
+        <div class="section-card solar">
+          <h2>Solar Power</h2>
+          <p>The map covers the long-term average of the electricity a photovoltaic plant would produce per kilowatt installed, per day. The data reveals that Venezuela’s solar resource is globally competitive, categorized by three main tiers:</p>
+          <ul>
+            <li><strong>Elite efficiency (2.9% of territory):</strong> Premium, high yield zones.</li>
+            <li><strong>Immediate expansion (18.6% of territory):</strong> Centered in Zulia, Falcón and Guárico; ideal for powering states greatly affected by blackouts.</li>
+            <li><strong>Widespread baseline (38.4% of territory):</strong> Proves viable solar infrastructure can be deployed across more than half of the country.</li>
+          </ul>
+        </div>
+        <div class="section-card wind">
+          <h2>Wind Power</h2>
+          <p>The map covers the capacity factor for a generic turbine, meaning the share of its maximum output delivered on average over the year. The data reveals that wind energy potential is highly concentrated in specific coastal regions:</p>
+          <ul>
+            <li><strong>Elite wind zones (1.6% of territory):</strong> World-class resource located primarily on the coasts of Falcón.</li>
+            <li><strong>High-efficiency zones (1.7% of territory):</strong> Prime secondary locations for large-scale power grid injection.</li>
+            <li><strong>Moderate wind zones (5.6% of territory):</strong> A wider, inland resource, mostly across Anzoátegui, Bolívar and Guárico; larger than the two top classes combined.</li>
+          </ul>
+        </div>
+      </div>
+
+  </section>
  
+  <article class="wrap viz" id="v7">
+    <div class="chart" id="Location8" data-label="Chart 8 goes here"></div>
+    <p class="source">Photovoltaic power output, long-term daily average for a fixed-tilt utility-scale plant: <a href="https://globalsolaratlas.info/global-pv-potential-study" target="_blank" rel="noopener noreferrer">Global Solar Atlas, Global PV Power Potential by Country study</a> (World Bank Group, ESMAP, Solargis; PV power potential data © 2026 Solargis; <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>). Wind capacity factor, IEC class 3: data obtained from the Global Wind Atlas version 4.0, a free, web-based application developed, owned and operated by the Technical University of Denmark (DTU). The Global Wind Atlas version 4.0 is released in partnership with the World Bank Group, utilizing data provided by Vortex, using funding provided by the Energy Sector Management Assistance Program (ESMAP). For additional information: <a href="https://globalwindatlas.info" target="_blank" rel="noopener noreferrer">globalwindatlas.info</a> (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>). Main reference: <a href="https://doi.org/10.1175/BAMS-D-21-0075.1" target="_blank" rel="noopener noreferrer">Davis et al. (2023)</a>. Both layers were averaged to coarser cells and grouped into classes for this map. State boundaries and the Guayana Esequiba: Instituto Geográfico de Venezuela Simón Bolívar (IGVSB), via <a href="https://geoportal.provita.org.ve/en/" target="_blank" rel="noopener noreferrer">Provita’s geoportal</a>. The locations of the reference cities are approximate.</p>
+      <details class="how">
+      <summary>Notes for replication</summary>
+      <div class="body">
+        <p>The country outline, which cuts both layers and defines the land, is the boundary file supplied with the Global Solar and Wind Atlas download (World Bank Group). I used the state lines from Provita to add Guayana Esequiba to the base map. The region is shown in gray in both layers and is not counted in the shares because only the solar data covered it. For completeness, the two layers cover the same territory.</p>
+        <p>The solar data (photovoltaic output layer at 30 arc-seconds, about 1 km) comes from the Global Solar Atlas (World Bank Group, ESMAP and Solargis). The wind layer (turbine class IEC 3, at about 250 m) comes from the Global Wind Atlas. IEC 3 was chosen because it gives the highest capacity factor on 99.9% of the territory.</p>
+        <p>Both layers were cut to fit Venezuela’s map outline at about 909,000 km². Cells were averaged in blocks (about 3.7 km for solar and 3.3 km for wind) and kept if at least a quarter of it is land. Averages were grouped into six classes (in steps of 0.2 kWh per kWp per day for solar and 10 percentage points for wind). The class boundaries were drawn as slightly simplified polygons and specks smaller than six blocks were dropped. The lowest class of each layer is the color of the land itself.</p>
+        <p>The shares of the territory comes from the original, full-resolution layers.</p>
+      </div>
+    </details>
+
+    <details class="how">
+      <summary>Global Solar Atlas credits</summary>
+      <div class="body"><p>Data obtained from the Global Solar Atlas 2.0, a free, web-based application is developed and operated by the company Solargis s.r.o. on behalf of the World Bank Group, utilizing Solargis data, with funding provided by the Energy Sector Management Assistance Program (ESMAP). For additional information: <a href="https://globalsolaratlas.info" target="_blank" rel="noopener noreferrer">https://globalsolaratlas.info</a>.</p></div>
+    </details>
+
+    <details class="how">
+      <summary>Global Wind Atlas credits</summary>
+      <div class="body"><p>Data obtained from the Global Wind Atlas version 4.0, a free, web-based application developed, owned and operated by the Technical University of Denmark (DTU). The Global Wind Atlas version 4.0 is released in partnership with the World Bank Group, utilizing data provided by Vortex, using funding provided by the Energy Sector Management Assistance Program (ESMAP). For additional information: https://globalwindatlas.info. Main reference: Neil N. Davis, Jake Badger, Andrea N. Hahmann, Brian O. Hansen, Niels G. Mortensen, Mark Kelly, Xiaoli G. Larsén, Bjarke T. Olsen, Rogier Floors, Gil Lizcano, Pau Casso, Oriol Lacave, Albert Bosch, Ides Bauwens, Oliver James Knight, Albertine Potter van Loon, Rachel Fox, Tigran Parvanyan, Søren Bo Krohn Hansen, Duncan Heathfield, Marko Onninen, Ray Drummond; The Global Wind Atlas: A high-resolution dataset of climatologies and associated web-based application; Bulletin of the American Meteorological Society, Volume 104: Issue 8, Pages E1507-E1525, August 2023, DOI: <a href="https://doi.org/10.1175/BAMS-D-21-0075.1" target="_blank" rel="noopener noreferrer">https://doi.org/10.1175/BAMS-D-21-0075.1</a>.</p></div>
+    </details>
+  </article>
+
 </main>
  
 <!-- the closing ribbon: all the colors of the project, side by side -->
@@ -202,22 +304,29 @@
  
 <!-- ===================== CHARTS: ADD YOUR LOCATIONS AND vegaEmbed LINES HERE ===================== -->
 <script>
-  // Put the file name of each chart here as you finish it (the files go in the "data" folder).
+  // Put the file name of each chart here as they are finished.
   // A chart with an empty name keeps its dashed frame.
-  let figure_1_spec = "oil-production.json";      // 1. Oil production over time
-  let figure_2_spec = "oil-geography.json";       // 2. The geography of oil
-  let figure_3_spec = "oil-reserves.json";        // 3. Our reserves
-  let figure_4_spec = "oil-infrastructure.json";  // 4. The infrastructure network
-  let figure_5_spec = "oil-capacity.json";        // 5. Refining capacity and actual output
+  let figure_1_spec = "oil-production.json";              // 1. Oil production over time
+  let figure_2_spec = "oil-geography.json";               // 2. The geography of oil
+  let figure_3_spec = "oil-reserves.json";                // 3. Our reserves
+  let figure_4_spec = "oil-infrastructure.json";          // 4. The infrastructure network
+  let figure_5_spec = "oil-capacity.json";                // 5. Refining capacity and throughput
+  let figure_6_spec = "vzla-electricity-capacity.json";   // 6. The electricity constraint
+  let figure_7_spec = "vzla-refinery-lights.json";        // 7. Satellite lights
+  let figure_8_spec = "vzla-potential.json";              // 8. The policy proposal
 
   embedChart('#Location1', figure_1_spec);
   embedChart('#Location2', figure_2_spec);
   embedChart('#Location3', figure_3_spec);
   embedChart('#Location4', figure_4_spec);
   embedChart('#Location5', figure_5_spec);
+  embedChart('#Location6', figure_6_spec);
+  embedChart('#Location7', figure_7_spec);
+  embedChart('#Location8', figure_8_spec);
+  
  
   // ---------------------------------------------------------------------------------------
-  // Everything below makes the page work.
+  // Everything below makes the page work. You do not need to edit it.
   // ---------------------------------------------------------------------------------------
   function embedChart(selector, spec) {
     var frame = document.querySelector(selector);
