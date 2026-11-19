@@ -223,3 +223,42 @@ h1, h2, h3 { text-wrap: balance; }                               /* headings bre
 .chart .vega-bind input[type=range]::-moz-range-thumb { width: 14px; height: 14px; border-radius: 50%; background: #262626; border: 3px solid #fff; box-shadow: 0 0 0 1px #262626; }
 .chart .vega-bind input[type=range]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 1px #262626, 0 0 0 5px rgba(63,123,255,.45); }
 .chart .vega-bind input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 1px #262626, 0 0 0 5px rgba(63,123,255,.45); }
+
+/* ====================================================================================================
+   Fixing the size of Chart 3, so it's the same size as 1 and 2
+   ==================================================================================================== */
+.chart .vega-bindings { margin: .9rem 0 0; }
+.chart .vega-bind label { display: flex; align-items: center; gap: 1.1rem; width: 100%; }
+.chart .vega-bind-name { font: 600 .88rem var(--sans); color: var(--text); min-width: 2.4rem; }
+.chart .vega-bind label > span:last-child { font: 400 1.7rem/1 var(--serif); min-width: 3.6rem; text-align: right; color: #000; font-variant-numeric: tabular-nums; }
+.chart .vega-bind input[type=range] { -webkit-appearance: none; appearance: none; flex: 1; height: 30px; margin: 0; background: transparent; cursor: pointer; }
+.chart .vega-bind input[type=range]:focus { outline: none; }
+.chart .vega-bind input[type=range]::-webkit-slider-runnable-track { height: 2px; background: #262626; border-radius: 1px; }
+.chart .vega-bind input[type=range]::-moz-range-track { height: 2px; background: #262626; border-radius: 1px; }
+.chart .vega-bind input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; margin-top: -9px; border-radius: 50%; background: #262626; border: 3px solid #fff; box-shadow: 0 0 0 1px #262626; }
+.chart .vega-bind input[type=range]::-moz-range-thumb { width: 14px; height: 14px; border-radius: 50%; background: #262626; border: 3px solid #fff; box-shadow: 0 0 0 1px #262626; }
+.chart .vega-bind input[type=range]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 1px #262626, 0 0 0 5px rgba(63,123,255,.45); }
+.chart .vega-bind input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 1px #262626, 0 0 0 5px rgba(63,123,255,.45); }
+
+/* ====================================================================================================
+   The eight stars of the flag, in the blue band of the stripes (the history column and the closing ribbon).
+   They stay fixed. Inside them there are the same fine lines as in the stripes: fixed dark lines, and white stripes that
+   slide with the cursor. When the white stripes cover the lines the star is pure white; when they slide away the lines
+   show through and the star turns darker, as the colors of the stripes do.
+   ==================================================================================================== */
+.z .stars, .ribbon .stars { position: absolute; z-index: 2; pointer-events: none; background: #fff;
+  -webkit-mask: var(--shape) center / contain no-repeat; mask: var(--shape) center / contain no-repeat; }
+.z .stars { inset: 0; --shape: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 86'%3E%3Cg fill='%23000' stroke='%23000' stroke-width='.7' stroke-linejoin='round'%3E%3Cpolygon points='10.05,44.12 11.26,47.85 15.19,47.85 12.01,50.16 13.22,53.89 10.05,51.58 6.88,53.89 8.09,50.16 4.91,47.85 8.84,47.85'/%3E%3Cpolygon points='20.57,38.08 21.79,41.82 25.71,41.82 22.54,44.12 23.75,47.85 20.57,45.55 17.40,47.85 18.61,44.12 15.44,41.82 19.36,41.82'/%3E%3Cpolygon points='31.98,33.96 33.20,37.69 37.12,37.69 33.95,40.00 35.16,43.73 31.98,41.42 28.81,43.73 30.02,40.00 26.85,37.69 30.77,37.69'/%3E%3Cpolygon points='43.93,31.86 45.15,35.59 49.07,35.59 45.90,37.90 47.11,41.63 43.93,39.33 40.76,41.63 41.97,37.90 38.80,35.59 42.72,35.59'/%3E%3Cpolygon points='56.07,31.86 57.28,35.59 61.20,35.59 58.03,37.90 59.24,41.63 56.07,39.33 52.89,41.63 54.10,37.90 50.93,35.59 54.85,35.59'/%3E%3Cpolygon points='68.02,33.96 69.23,37.69 73.15,37.69 69.98,40.00 71.19,43.73 68.02,41.42 64.84,43.73 66.05,40.00 62.88,37.69 66.80,37.69'/%3E%3Cpolygon points='79.43,38.08 80.64,41.82 84.56,41.82 81.39,44.12 82.60,47.85 79.43,45.55 76.25,47.85 77.46,44.12 74.29,41.82 78.21,41.82'/%3E%3Cpolygon points='89.95,44.12 91.16,47.85 95.09,47.85 91.91,50.16 93.12,53.89 89.95,51.58 86.78,53.89 87.99,50.16 84.81,47.85 88.74,47.85'/%3E%3C/g%3E%3C/svg%3E"); }
+.ribbon .stars { top: 0; left: 33.333%; width: 33.333%; height: 100%; --shape: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 22'%3E%3Cg fill='%23000' stroke='%23000' stroke-width='.7' stroke-linejoin='round'%3E%3Cpolygon points='5.99,8.80 7.16,12.39 10.93,12.39 7.88,14.62 9.04,18.21 5.99,15.99 2.93,18.21 4.10,14.62 1.04,12.39 4.82,12.39'/%3E%3Cpolygon points='18.40,6.11 19.57,9.71 23.35,9.71 20.29,11.93 21.46,15.52 18.40,13.30 15.35,15.52 16.51,11.93 13.46,9.71 17.24,9.71'/%3E%3Cpolygon points='30.98,4.31 32.15,7.91 35.92,7.91 32.87,10.13 34.03,13.72 30.98,11.50 27.92,13.72 29.09,10.13 26.03,7.91 29.81,7.91'/%3E%3Cpolygon points='43.65,3.41 44.82,7.01 48.59,7.01 45.54,9.23 46.71,12.82 43.65,10.60 40.59,12.82 41.76,9.23 38.70,7.01 42.48,7.01'/%3E%3Cpolygon points='56.35,3.41 57.52,7.01 61.30,7.01 58.24,9.23 59.41,12.82 56.35,10.60 53.29,12.82 54.46,9.23 51.41,7.01 55.18,7.01'/%3E%3Cpolygon points='69.02,4.31 70.19,7.91 73.97,7.91 70.91,10.13 72.08,13.72 69.02,11.50 65.97,13.72 67.13,10.13 64.08,7.91 67.85,7.91'/%3E%3Cpolygon points='81.60,6.11 82.76,9.71 86.54,9.71 83.49,11.93 84.65,15.52 81.60,13.30 78.54,15.52 79.71,11.93 76.65,9.71 80.43,9.71'/%3E%3Cpolygon points='94.01,8.80 95.18,12.39 98.96,12.39 95.90,14.62 97.07,18.21 94.01,15.99 90.96,18.21 92.12,14.62 89.07,12.39 92.84,12.39'/%3E%3C/g%3E%3C/svg%3E"); }
+.stars::before, .stars::after { content: ""; position: absolute; inset: 0; }
+/* history column: black lines, 2 px every 7 px, like the stripes, but half a period away from them, so the star never melts into the stripes */
+.z .stars { --line: #FFFFFF; }         /* the lines inside the stars: a lighter color here makes the dark phase softer */
+.z .stars::before { background: repeating-linear-gradient(90deg, transparent 0 3.5px, var(--line) 3.5px 5.5px, transparent 5.5px 7px); }
+.z .stars::after  { background-image: linear-gradient(90deg, transparent 0 2.5px, #fff 2.5px 7px); background-size: 7px 100%; background-repeat: repeat-x;
+                    background-position: calc(var(--shift) * 0.1) 0; }
+/* closing ribbon: dark blue lines, 2 px every 6 px, like the ribbon */
+.ribbon .stars { --line: ##FFFFFF; }
+.ribbon .stars::before { background: repeating-linear-gradient(90deg, var(--line) 0 2px, transparent 2px 6px); }
+.ribbon .stars::after  { background-image: linear-gradient(90deg, #fff 0 4px, transparent 4px 6px); background-size: 6px 100%; background-repeat: repeat-x;
+                         background-position: calc(var(--shift) * 0.1 - 1px) 0; }
+@media (max-width: 380px) { .z .stars { display: none; } }          /* on a very narrow phone the blue band is only 44 px wide: the stars would be specks */
