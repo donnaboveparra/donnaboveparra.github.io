@@ -44,12 +44,12 @@
     <div class="aims-grid">
       <div class="side" aria-hidden="true">
         <div class="z" style="--accent: var(--yellow)"></div>
-        <div class="z" style="--accent: var(--blue)"></div>
+        <div class="z" style="--accent: var(--blue)"><span class="stars" aria-hidden="true"></span></div>
         <div class="z" style="--accent: var(--red)"></div>
       </div>
       <div class="text">
         <h2>A brief history</h2>
-        <p class="history-lede">The two most famous and consequential oil blowouts (<i>reventones</i>) in Venezuela’s history occurred in Zulia State in the early 1900s, shaping the country’s economic and social trajectory.</p>
+        <p class="history-lede">The two most famous and consequential oil blowouts (<i>reventones</i>) in Venezuela’s history occurred in Zulia State, and they still shape the country’s economic and social course.</p>
  
         <!-- Photographs: small, rectangular, with the place and year underneath and a link to where each one comes from. -->
         <div class="figs">
@@ -72,8 +72,8 @@
           <figure class="quote">
             <!-- a wide card for larger screens, and a taller one with bigger type for phones -->
             <picture>
-              <source media="(max-width: 600px)" srcset="constitution-article-12-tall.png" width="1000" height="1156">
-              <img src="constitution-article-12.png" width="1400" height="634"
+              <source media="(max-width: 600px)" srcset="constitution-articles-12-13-tall.png" width="1000" height="1156">
+              <img src="constitution-articles-12-13.png" width="1400" height="634"
                    alt="“Mineral and hydrocarbon deposits of any nature that exist within the territory of [Venezuela], beneath the territorial seabed, within the exclusive economic zone and on the continental shelf, are the property of the Republic, are of public domain, and therefore inalienable and not transferable.” – Constitution of the Bolivarian Republic of Venezuela, art. 12">
             </picture>
             <figcaption>
@@ -292,7 +292,7 @@
 </main>
  
 <!-- the closing ribbon: all the colors of the project, side by side -->
-<div class="wrap"><div class="ribbon" aria-hidden="true"></div></div>
+<div class="wrap"><div class="ribbon" aria-hidden="true"><span class="stars" aria-hidden="true"></span></div></div>
 <footer class="wrap">
   <span>© 2026 Donnatella Bove Parra · PP434, MPA, LSE</span>
   <span>
@@ -325,7 +325,7 @@
   
  
   // ---------------------------------------------------------------------------------------
-  // Everything below makes the page work
+  // Everything below makes the page work.
   // ---------------------------------------------------------------------------------------
   function embedChart(selector, spec) {
     var frame = document.querySelector(selector);
