@@ -1,0 +1,1030 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "description": "Patient needs in Italy against the responses documented, proposed and measured in the sources.",
+ "title": {
+  "text": "What people with lupus in Italy need, and what the sources show",
+  "subtitle": [
+   "Bars: share of respondents who flagged each need. Each bar comes from a different survey question, so compare within a row, not across rows. Circles: whether a",
+   "response is documented, proposed, and whether the gap itself is measured. Select a row to read the evidence. Sources: Lupus Europe Swiss Knife Survey 2024",
+   "(Italy), PaLESiamoci survey (Italy, n=151), LUNET registry protocol."
+  ]
+ },
+ "config": {
+  "background": "transparent",
+  "font": "Helvetica Neue, Helvetica, Arial, sans-serif",
+  "view": {
+   "stroke": null
+  },
+  "axis": {
+   "labelColor": "#6b6b6b",
+   "titleColor": "#6b6b6b",
+   "domainColor": "#d0d0d0",
+   "tickColor": "#d0d0d0",
+   "gridColor": "#ececec",
+   "labelFontSize": 13,
+   "titleFontSize": 13,
+   "titleFontWeight": "normal"
+  },
+  "axisY": {
+   "labelLimit": 320,
+   "domain": false,
+   "ticks": false,
+   "labelColor": "#2b2b2b",
+   "labelFontSize": 14
+  },
+  "legend": {
+   "labelColor": "#6b6b6b",
+   "titleColor": "#6b6b6b",
+   "labelFontSize": 12,
+   "titleFontSize": 12,
+   "titleFontWeight": "normal"
+  },
+  "title": {
+   "color": "#2b2b2b",
+   "fontSize": 24,
+   "fontWeight": 600,
+   "subtitleColor": "#6b6b6b",
+   "subtitleFontSize": 14.5,
+   "anchor": "start",
+   "offset": 36,
+   "subtitlePadding": 6
+  },
+  "text": {
+   "color": "#2b2b2b"
+  }
+ },
+ "hconcat": [
+  {
+   "width": 210,
+   "height": {
+    "step": 40
+   },
+   "data": {
+    "values": [
+     {
+      "need": "Specialist care and earlier diagnosis",
+      "order": 0,
+      "signal": 56,
+      "signal_label": "Want more specialised SLE centres across Italy (PaLESiamoci survey)"
+     },
+     {
+      "need": "Multidisciplinary care",
+      "order": 1,
+      "signal": 59,
+      "signal_label": "Want a more multidisciplinary approach to treatment (PaLESiamoci survey)"
+     },
+     {
+      "need": "Psychological support",
+      "order": 2,
+      "signal": 35.4,
+      "signal_label": "Regularly experience depression or anxiety (Swiss Knife Survey, Italy)"
+     },
+     {
+      "need": "Safer treatment, less steroid harm",
+      "order": 3,
+      "signal": 66,
+      "signal_label": "Adverse effects of treatment: most frequent concern (PaLESiamoci survey)"
+     },
+     {
+      "need": "Fatigue and lifestyle support",
+      "order": 4,
+      "signal": 41.0,
+      "signal_label": "Unmet need: less fatigue (Swiss Knife Survey, Italy)"
+     },
+     {
+      "need": "Long-term organ protection",
+      "order": 5,
+      "signal": 22.5,
+      "signal_label": "Unmet need: long-term kidney protection (Swiss Knife Survey, Italy)"
+     },
+     {
+      "need": "Affordable care",
+      "order": 6,
+      "signal": 61,
+      "signal_label": "Need more financial support for therapy-related costs (PaLESiamoci survey)"
+     },
+     {
+      "need": "Being heard by doctors",
+      "order": 7,
+      "signal": 30,
+      "signal_label": "Found information from health professionals unclear (PaLESiamoci survey)"
+     }
+    ]
+   },
+   "layer": [
+    {
+     "params": [
+      {
+       "name": "pick",
+       "select": {
+        "type": "point",
+        "fields": [
+         "need"
+        ],
+        "toggle": false
+       },
+       "value": [
+        {
+         "need": "Specialist care and earlier diagnosis"
+        }
+       ]
+      }
+     ],
+     "mark": {
+      "type": "bar",
+      "cornerRadiusEnd": 2,
+      "height": {
+       "band": 0.7
+      }
+     },
+     "encoding": {
+      "y": {
+       "field": "need",
+       "type": "nominal",
+       "sort": {
+        "field": "order",
+        "op": "min"
+       },
+       "title": null,
+       "scale": {
+        "paddingInner": 0.1
+       },
+       "axis": {
+        "labelLimit": 250
+       }
+      },
+      "x": {
+       "field": "signal",
+       "type": "quantitative",
+       "title": "% of respondents flagging the need",
+       "scale": {
+        "domain": [
+         0,
+         100
+        ]
+       },
+       "axis": {
+        "values": [
+         0,
+         25,
+         50,
+         75,
+         100
+        ],
+        "grid": true
+       }
+      },
+      "color": {
+       "condition": {
+        "param": "pick",
+        "empty": false,
+        "value": "#6b66c6"
+       },
+       "value": "#d5cdf3"
+      },
+      "tooltip": [
+       {
+        "field": "need",
+        "title": "Need"
+       },
+       {
+        "field": "signal",
+        "title": "%"
+       },
+       {
+        "field": "signal_label",
+        "title": "Question"
+       }
+      ]
+     }
+    },
+    {
+     "mark": {
+      "type": "text",
+      "align": "left",
+      "dx": 5,
+      "fontSize": 13.5
+     },
+     "encoding": {
+      "y": {
+       "field": "need",
+       "type": "nominal",
+       "sort": {
+        "field": "order",
+        "op": "min"
+       }
+      },
+      "x": {
+       "field": "signal",
+       "type": "quantitative"
+      },
+      "text": {
+       "field": "signal",
+       "type": "quantitative",
+       "format": ".0f"
+      },
+      "color": {
+       "condition": {
+        "param": "pick",
+        "empty": false,
+        "value": "#2b2b2b"
+       },
+       "value": "#6b6b6b"
+      }
+     }
+    },
+    {
+     "data": {
+      "values": [
+       {
+        "tier": "solid"
+       },
+       {
+        "tier": "light"
+       },
+       {
+        "tier": "empty"
+       }
+      ]
+     },
+     "mark": {
+      "type": "point",
+      "opacity": 0,
+      "size": 1
+     },
+     "encoding": {
+      "x": {
+       "value": 0
+      },
+      "y": {
+       "value": 0
+      },
+      "fill": {
+       "field": "tier",
+       "type": "nominal",
+       "title": null,
+       "sort": null,
+       "scale": {
+        "domain": [
+         "solid",
+         "light",
+         "empty"
+        ],
+        "range": [
+         "#6b66c6",
+         "#cdc2f5",
+         "#ffffff"
+        ]
+       },
+       "legend": {
+        "orient": "none",
+        "legendX": -262,
+        "legendY": -60,
+        "direction": "horizontal",
+        "symbolType": "circle",
+        "symbolOpacity": 1,
+        "symbolSize": 200,
+        "symbolStrokeColor": "#6b66c6",
+        "symbolStrokeWidth": 1.6,
+        "labelFontSize": 14,
+        "labelColor": "#2b2b2b",
+        "labelLimit": 460,
+        "columnPadding": 38,
+        "labelOffset": 8,
+        "padding": 0,
+        "offset": 0,
+        "labelExpr": "{'solid':'Documented as in place','light':'Planned, proposed or partly measured','empty':'Nothing found, so we cannot tell'}[datum.label]"
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "width": 270,
+   "height": {
+    "step": 40
+   },
+   "data": {
+    "values": [
+     {
+      "need": "Specialist care and earlier diagnosis",
+      "order": 0,
+      "column": "Exists",
+      "tier": "light",
+      "status": "Plan only",
+      "detail": "The LUNET registry protocol lists 18 referral centres with defined SLE expertise. It is a protocol, not a measure of access. Earlier Italian registries were LIRE (2015–2021) and the Early Lupus Project."
+     },
+     {
+      "need": "Specialist care and earlier diagnosis",
+      "order": 0,
+      "column": "Proposed",
+      "tier": "light",
+      "status": "Proposed",
+      "detail": "56% of respondents ask for more specialised centres. The PaLESiamoci authors also call for more awareness of lupus among general practitioners to speed up diagnosis."
+     },
+     {
+      "need": "Specialist care and earlier diagnosis",
+      "order": 0,
+      "column": "Gap measured",
+      "tier": "light",
+      "status": "Partly",
+      "detail": "Respondents report 2.7 years on average to diagnosis, 20% travelling far for specialist care and over a third of follow-up visits being private. How many patients live near an SLE centre is not measured."
+     },
+     {
+      "need": "Multidisciplinary care",
+      "order": 1,
+      "column": "Exists",
+      "tier": "empty",
+      "status": "None found",
+      "detail": "No source documents a multidisciplinary service as in place. Patients and clinicians define the term differently: patients mean seeing several specialists, clinicians mean specialists discussing cases together."
+     },
+     {
+      "need": "Multidisciplinary care",
+      "order": 1,
+      "column": "Proposed",
+      "tier": "light",
+      "status": "Proposed",
+      "detail": "Coordinated pathways with continuity of contact and a shared definition of multidisciplinary care (patients and the advisory board)."
+     },
+     {
+      "need": "Multidisciplinary care",
+      "order": 1,
+      "column": "Gap measured",
+      "tier": "light",
+      "status": "Partly",
+      "detail": "44% say they are managed by a multidisciplinary team. How many centres offer one is not measured."
+     },
+     {
+      "need": "Psychological support",
+      "order": 2,
+      "column": "Exists",
+      "tier": "solid",
+      "status": "In place",
+      "detail": "Psychological support exists but only 20% of PaLESiamoci respondents had it early in the disease; 80% said they were not referred. LUNET plans to record anxiety and depression with the HADS scale."
+     },
+     {
+      "need": "Psychological support",
+      "order": 2,
+      "column": "Proposed",
+      "tier": "light",
+      "status": "Proposed",
+      "detail": "Psychological support built into SLE care pathways (advisory board and analyst)."
+     },
+     {
+      "need": "Psychological support",
+      "order": 2,
+      "column": "Gap measured",
+      "tier": "light",
+      "status": "Partly",
+      "detail": "Early referral is measured (20%), but the share of people who need support, and later access, is not."
+     },
+     {
+      "need": "Safer treatment, less steroid harm",
+      "order": 3,
+      "column": "Exists",
+      "tier": "solid",
+      "status": "In place",
+      "detail": "Belimumab, anifrolumab and voclosporin are described as approved. Reimbursement and access in Italy are not covered. LUNET plans to track adverse reactions."
+     },
+     {
+      "need": "Safer treatment, less steroid harm",
+      "order": 3,
+      "column": "Proposed",
+      "tier": "light",
+      "status": "Proposed",
+      "detail": "Steroid-sparing treatment in line with EULAR 2023 advice, plus open discussion of risks (advisory board)."
+     },
+     {
+      "need": "Safer treatment, less steroid harm",
+      "order": 3,
+      "column": "Gap measured",
+      "tier": "light",
+      "status": "Partly",
+      "detail": "64% were on corticosteroids (96% in the severe group). Whether use is falling, or how easily newer drugs can be reached, is not measured."
+     },
+     {
+      "need": "Fatigue and lifestyle support",
+      "order": 4,
+      "column": "Exists",
+      "tier": "light",
+      "status": "Plan only",
+      "detail": "The LUNET protocol records fatigue impact with the MFIS scale. A plan, no results yet."
+     },
+     {
+      "need": "Fatigue and lifestyle support",
+      "order": 4,
+      "column": "Proposed",
+      "tier": "light",
+      "status": "Proposed",
+      "detail": "Structured access to exercise, nutrition and lifestyle support (advisory board). 40.4% also name access to non-drug treatments as an unmet need."
+     },
+     {
+      "need": "Fatigue and lifestyle support",
+      "order": 4,
+      "column": "Gap measured",
+      "tier": "empty",
+      "status": "No",
+      "detail": "No source shows what fatigue or lifestyle support exists in Italy, or whether it helps."
+     },
+     {
+      "need": "Long-term organ protection",
+      "order": 5,
+      "column": "Exists",
+      "tier": "solid",
+      "status": "In place",
+      "detail": "Belimumab is described as approved for lupus nephritis and voclosporin as approved. LUNET plans to profile lupus nephritis and monitor heart and bone health."
+     },
+     {
+      "need": "Long-term organ protection",
+      "order": 5,
+      "column": "Proposed",
+      "tier": "light",
+      "status": "Proposed",
+      "detail": "Education on how irreversible organ damage can be (advisory board). Patients focus on current symptoms; clinicians stress long-term risk."
+     },
+     {
+      "need": "Long-term organ protection",
+      "order": 5,
+      "column": "Gap measured",
+      "tier": "empty",
+      "status": "No",
+      "detail": "Screening and monitoring coverage in Italy is not measured. Kidney is also the top worry today (30.6%) and long term (35.8%)."
+     },
+     {
+      "need": "Affordable care",
+      "order": 6,
+      "column": "Exists",
+      "tier": "solid",
+      "status": "In place",
+      "detail": "Law 104 benefits exist, but respondents ask for easier access. How many eligible people use them is not measured."
+     },
+     {
+      "need": "Affordable care",
+      "order": 6,
+      "column": "Proposed",
+      "tier": "light",
+      "status": "Proposed",
+      "detail": "Financial support for therapy-related costs and easier access to Law 104 benefits (patients: 61% and 29%)."
+     },
+     {
+      "need": "Affordable care",
+      "order": 6,
+      "column": "Gap measured",
+      "tier": "light",
+      "status": "Partly",
+      "detail": "Out-of-pocket follow-up costs averaged more than €700 a year. What share of total cost is covered is not measured."
+     },
+     {
+      "need": "Being heard by doctors",
+      "order": 7,
+      "column": "Exists",
+      "tier": "light",
+      "status": "Plan only",
+      "detail": "LUNET plans to record patient-reported measures (HAQ, EQ-5D-5L, MFIS, HADS) at enrolment and yearly. A plan, no results yet."
+     },
+     {
+      "need": "Being heard by doctors",
+      "order": 7,
+      "column": "Proposed",
+      "tier": "light",
+      "status": "Proposed",
+      "detail": "Stronger rheumatologist–patient communication and tailored educational materials (advisory board)."
+     },
+     {
+      "need": "Being heard by doctors",
+      "order": 7,
+      "column": "Gap measured",
+      "tier": "empty",
+      "status": "No",
+      "detail": "In the Swiss Knife Survey 18.2% of Italian respondents most miss attention to what cannot be measured (Europe 25.0%). Whether clinics record fatigue or mood routinely is not measured."
+     }
+    ]
+   },
+   "layer": [
+    {
+     "mark": {
+      "type": "circle",
+      "size": 260,
+      "strokeWidth": 1.6,
+      "stroke": "#6b66c6"
+     },
+     "encoding": {
+      "y": {
+       "field": "need",
+       "type": "nominal",
+       "sort": {
+        "field": "order",
+        "op": "min"
+       },
+       "axis": null,
+       "scale": {
+        "paddingInner": 0.1
+       }
+      },
+      "x": {
+       "field": "column",
+       "type": "nominal",
+       "sort": [
+        "Exists",
+        "Proposed",
+        "Gap measured"
+       ],
+       "title": null,
+       "scale": {
+        "paddingInner": 0.1
+       },
+       "axis": {
+        "orient": "top",
+        "labelAngle": 0,
+        "labelFontSize": 14,
+        "labelColor": "#6b6b6b",
+        "ticks": false,
+        "domain": false,
+        "labelPadding": 6
+       }
+      },
+      "fill": {
+       "field": "tier",
+       "type": "nominal",
+       "title": null,
+       "scale": {
+        "domain": [
+         "solid",
+         "light",
+         "empty"
+        ],
+        "range": [
+         "#6b66c6",
+         "#cdc2f5",
+         "#ffffff"
+        ]
+       },
+       "legend": null
+      },
+      "opacity": {
+       "condition": {
+        "param": "pick",
+        "value": 1
+       },
+       "value": 0.6
+      },
+      "tooltip": [
+       {
+        "field": "need",
+        "title": "Need"
+       },
+       {
+        "field": "column",
+        "title": "Question"
+       },
+       {
+        "field": "status",
+        "title": "Status"
+       },
+       {
+        "field": "detail",
+        "title": "Evidence"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "width": 390,
+   "height": 420,
+   "data": {
+    "values": [
+     {
+      "need": "Specialist care and earlier diagnosis",
+      "title": "Specialist care and earlier diagnosis",
+      "signal_text": "56% of respondents: Want more specialised SLE|centres across Italy (PaLESiamoci survey)",
+      "y_title": -22,
+      "y_sig": 6,
+      "h1": "What exists (documented): Plan only",
+      "yh1": 54,
+      "b1": "The LUNET registry protocol lists 18 referral|centres with defined SLE expertise. It is a|protocol, not a measure of access. Earlier|Italian registries were LIRE (2015–2021) and|the Early Lupus Project.",
+      "yb1": 76,
+      "h2": "What is proposed",
+      "yh2": 189,
+      "b2": "56% of respondents ask for more specialised|centres. The PaLESiamoci authors also call for|more awareness of lupus among general|practitioners to speed up diagnosis.",
+      "yb2": 211,
+      "h3": "Gap measured: Partly",
+      "yh3": 305,
+      "b3": "Respondents report 2.7 years on average to|diagnosis, 20% travelling far for specialist|care and over a third of follow-up visits|being private. How many patients live near an|SLE centre is not measured.",
+      "yb3": 327
+     },
+     {
+      "need": "Multidisciplinary care",
+      "title": "Multidisciplinary care",
+      "signal_text": "59% of respondents: Want a more multidisciplinary|approach to treatment (PaLESiamoci survey)",
+      "y_title": -22,
+      "y_sig": 6,
+      "h1": "What exists (documented): None found",
+      "yh1": 54,
+      "b1": "No source documents a multidisciplinary|service as in place. Patients and clinicians|define the term differently: patients mean|seeing several specialists, clinicians mean|specialists discussing cases together.",
+      "yb1": 76,
+      "h2": "What is proposed",
+      "yh2": 189,
+      "b2": "Coordinated pathways with continuity of|contact and a shared definition of|multidisciplinary care (patients and the|advisory board).",
+      "yb2": 211,
+      "h3": "Gap measured: Partly",
+      "yh3": 305,
+      "b3": "44% say they are managed by a|multidisciplinary team. How many centres offer|one is not measured.",
+      "yb3": 327
+     },
+     {
+      "need": "Psychological support",
+      "title": "Psychological support",
+      "signal_text": "35.4% of respondents: Regularly experience|depression or anxiety (Swiss Knife Survey, Italy)",
+      "y_title": -22,
+      "y_sig": 6,
+      "h1": "What exists (documented): In place",
+      "yh1": 54,
+      "b1": "Psychological support exists but only 20% of|PaLESiamoci respondents had it early in the|disease; 80% said they were not referred.|LUNET plans to record anxiety and depression|with the HADS scale.",
+      "yb1": 76,
+      "h2": "What is proposed",
+      "yh2": 189,
+      "b2": "Psychological support built into SLE care|pathways (advisory board and analyst).",
+      "yb2": 211,
+      "h3": "Gap measured: Partly",
+      "yh3": 267,
+      "b3": "Early referral is measured (20%), but the|share of people who need support, and later|access, is not.",
+      "yb3": 289
+     },
+     {
+      "need": "Safer treatment, less steroid harm",
+      "title": "Safer treatment, less steroid harm",
+      "signal_text": "66% of respondents: Adverse effects of treatment:|most frequent concern (PaLESiamoci survey)",
+      "y_title": -22,
+      "y_sig": 6,
+      "h1": "What exists (documented): In place",
+      "yh1": 54,
+      "b1": "Belimumab, anifrolumab and voclosporin are|described as approved. Reimbursement and|access in Italy are not covered. LUNET plans|to track adverse reactions.",
+      "yb1": 76,
+      "h2": "What is proposed",
+      "yh2": 170,
+      "b2": "Steroid-sparing treatment in line with EULAR|2023 advice, plus open discussion of risks|(advisory board).",
+      "yb2": 192,
+      "h3": "Gap measured: Partly",
+      "yh3": 267,
+      "b3": "64% were on corticosteroids (96% in the severe|group). Whether use is falling, or how easily|newer drugs can be reached, is not measured.",
+      "yb3": 289
+     },
+     {
+      "need": "Fatigue and lifestyle support",
+      "title": "Fatigue and lifestyle support",
+      "signal_text": "41% of respondents: Unmet need: less fatigue|(Swiss Knife Survey, Italy)",
+      "y_title": -22,
+      "y_sig": 6,
+      "h1": "What exists (documented): Plan only",
+      "yh1": 54,
+      "b1": "The LUNET protocol records fatigue impact with|the MFIS scale. A plan, no results yet.",
+      "yb1": 76,
+      "h2": "What is proposed",
+      "yh2": 132,
+      "b2": "Structured access to exercise, nutrition and|lifestyle support (advisory board). 40.4% also|name access to non-drug treatments as an unmet|need.",
+      "yb2": 154,
+      "h3": "Gap measured: No",
+      "yh3": 248,
+      "b3": "No source shows what fatigue or lifestyle|support exists in Italy, or whether it helps.",
+      "yb3": 270
+     },
+     {
+      "need": "Long-term organ protection",
+      "title": "Long-term organ protection",
+      "signal_text": "22.5% of respondents: Unmet need: long-term kidney|protection (Swiss Knife Survey, Italy)",
+      "y_title": -22,
+      "y_sig": 6,
+      "h1": "What exists (documented): In place",
+      "yh1": 54,
+      "b1": "Belimumab is described as approved for lupus|nephritis and voclosporin as approved. LUNET|plans to profile lupus nephritis and monitor|heart and bone health.",
+      "yb1": 76,
+      "h2": "What is proposed",
+      "yh2": 170,
+      "b2": "Education on how irreversible organ damage can|be (advisory board). Patients focus on current|symptoms; clinicians stress long-term risk.",
+      "yb2": 192,
+      "h3": "Gap measured: No",
+      "yh3": 267,
+      "b3": "Screening and monitoring coverage in Italy is|not measured. Kidney is also the top worry|today (30.6%) and long term (35.8%).",
+      "yb3": 289
+     },
+     {
+      "need": "Affordable care",
+      "title": "Affordable care",
+      "signal_text": "61% of respondents: Need more financial support|for therapy-related costs (PaLESiamoci survey)",
+      "y_title": -22,
+      "y_sig": 6,
+      "h1": "What exists (documented): In place",
+      "yh1": 54,
+      "b1": "Law 104 benefits exist, but respondents ask|for easier access. How many eligible people|use them is not measured.",
+      "yb1": 76,
+      "h2": "What is proposed",
+      "yh2": 151,
+      "b2": "Financial support for therapy-related costs|and easier access to Law 104 benefits|(patients: 61% and 29%).",
+      "yb2": 173,
+      "h3": "Gap measured: Partly",
+      "yh3": 248,
+      "b3": "Out-of-pocket follow-up costs averaged more|than €700 a year. What share of total cost is|covered is not measured.",
+      "yb3": 270
+     },
+     {
+      "need": "Being heard by doctors",
+      "title": "Being heard by doctors",
+      "signal_text": "30% of respondents: Found information from health|professionals unclear (PaLESiamoci survey)",
+      "y_title": -22,
+      "y_sig": 6,
+      "h1": "What exists (documented): Plan only",
+      "yh1": 54,
+      "b1": "LUNET plans to record patient-reported|measures (HAQ, EQ-5D-5L, MFIS, HADS) at|enrolment and yearly. A plan, no results yet.",
+      "yb1": 76,
+      "h2": "What is proposed",
+      "yh2": 151,
+      "b2": "Stronger rheumatologist–patient communication|and tailored educational materials (advisory|board).",
+      "yb2": 173,
+      "h3": "Gap measured: No",
+      "yh3": 248,
+      "b3": "In the Swiss Knife Survey 18.2% of Italian|respondents most miss attention to what cannot|be measured (Europe 25.0%). Whether clinics|record fatigue or mood routinely is not|measured.",
+      "yb3": 270
+     }
+    ]
+   },
+   "layer": [
+    {
+     "transform": [
+      {
+       "filter": {
+        "param": "pick",
+        "empty": false
+       }
+      }
+     ],
+     "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "top",
+      "limit": 420,
+      "lineBreak": "|",
+      "lineHeight": 19,
+      "fontSize": 18,
+      "fontWeight": 600
+     },
+     "encoding": {
+      "x": {
+       "value": 0
+      },
+      "y": {
+       "field": "y_title",
+       "type": "quantitative",
+       "scale": null
+      },
+      "text": {
+       "field": "title"
+      }
+     }
+    },
+    {
+     "transform": [
+      {
+       "filter": {
+        "param": "pick",
+        "empty": false
+       }
+      }
+     ],
+     "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "top",
+      "limit": 420,
+      "lineBreak": "|",
+      "lineHeight": 19,
+      "fontSize": 13,
+      "color": "#6b6b6b"
+     },
+     "encoding": {
+      "x": {
+       "value": 0
+      },
+      "y": {
+       "field": "y_sig",
+       "type": "quantitative",
+       "scale": null
+      },
+      "text": {
+       "field": "signal_text"
+      }
+     }
+    },
+    {
+     "transform": [
+      {
+       "filter": {
+        "param": "pick",
+        "empty": false
+       }
+      }
+     ],
+     "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "top",
+      "limit": 420,
+      "lineBreak": "|",
+      "lineHeight": 19,
+      "fontSize": 14.5,
+      "fontWeight": 600
+     },
+     "encoding": {
+      "x": {
+       "value": 0
+      },
+      "y": {
+       "field": "yh1",
+       "type": "quantitative",
+       "scale": null
+      },
+      "text": {
+       "field": "h1"
+      }
+     }
+    },
+    {
+     "transform": [
+      {
+       "filter": {
+        "param": "pick",
+        "empty": false
+       }
+      }
+     ],
+     "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "top",
+      "limit": 420,
+      "lineBreak": "|",
+      "lineHeight": 19,
+      "fontSize": 14.5,
+      "fontWeight": 600
+     },
+     "encoding": {
+      "x": {
+       "value": 0
+      },
+      "y": {
+       "field": "yh2",
+       "type": "quantitative",
+       "scale": null
+      },
+      "text": {
+       "field": "h2"
+      }
+     }
+    },
+    {
+     "transform": [
+      {
+       "filter": {
+        "param": "pick",
+        "empty": false
+       }
+      }
+     ],
+     "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "top",
+      "limit": 420,
+      "lineBreak": "|",
+      "lineHeight": 19,
+      "fontSize": 14.5,
+      "fontWeight": 600
+     },
+     "encoding": {
+      "x": {
+       "value": 0
+      },
+      "y": {
+       "field": "yh3",
+       "type": "quantitative",
+       "scale": null
+      },
+      "text": {
+       "field": "h3"
+      }
+     }
+    },
+    {
+     "transform": [
+      {
+       "filter": {
+        "param": "pick",
+        "empty": false
+       }
+      }
+     ],
+     "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "top",
+      "limit": 420,
+      "lineBreak": "|",
+      "lineHeight": 19,
+      "fontSize": 13.5,
+      "color": "#6b6b6b"
+     },
+     "encoding": {
+      "x": {
+       "value": 0
+      },
+      "y": {
+       "field": "yb1",
+       "type": "quantitative",
+       "scale": null
+      },
+      "text": {
+       "field": "b1"
+      }
+     }
+    },
+    {
+     "transform": [
+      {
+       "filter": {
+        "param": "pick",
+        "empty": false
+       }
+      }
+     ],
+     "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "top",
+      "limit": 420,
+      "lineBreak": "|",
+      "lineHeight": 19,
+      "fontSize": 13.5,
+      "color": "#6b6b6b"
+     },
+     "encoding": {
+      "x": {
+       "value": 0
+      },
+      "y": {
+       "field": "yb2",
+       "type": "quantitative",
+       "scale": null
+      },
+      "text": {
+       "field": "b2"
+      }
+     }
+    },
+    {
+     "transform": [
+      {
+       "filter": {
+        "param": "pick",
+        "empty": false
+       }
+      }
+     ],
+     "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "top",
+      "limit": 420,
+      "lineBreak": "|",
+      "lineHeight": 19,
+      "fontSize": 13.5,
+      "color": "#6b6b6b"
+     },
+     "encoding": {
+      "x": {
+       "value": 0
+      },
+      "y": {
+       "field": "yb3",
+       "type": "quantitative",
+       "scale": null
+      },
+      "text": {
+       "field": "b3"
+      }
+     }
+    }
+   ]
+  }
+ ],
+ "spacing": 22,
+ "resolve": {
+  "scale": {
+   "y": "independent"
+  },
+  "axis": {
+   "y": "independent"
+  }
+ }
+}
