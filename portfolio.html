@@ -58,7 +58,7 @@
       <li><a href="#cc6"><span class="cc">CC6</span> Loops</a></li>
       <li><a href="#cc7"><span class="cc">CC7</span> Maps</a></li>
       <li><a href="#cc8"><span class="cc">CC8</span> Big data</a></li>
-      <li class="upcoming"><a href="#cc9"><span class="cc">CC9</span> Challenge 9</a></li>
+      <li><a href="#cc9"><span class="cc">CC9</span> Interactive charts</a></li>
       <li class="upcoming"><a href="#cc10"><span class="cc">CC10</span> Challenge 10</a></li>
       <li class="upcoming"><a href="#cc11"><span class="cc">CC11</span> Challenge 11</a></li>
     </ul>
@@ -326,7 +326,8 @@
       <section class="piece">
         <div class="chart-description">
           <h3>Section 3: Italian Tourism Dashboard</h3>
-          <p>The insights were unexpected to me, offering a fascinating look at how travelers experience la dolce vita.</p>
+          <p>I developed a dedicated dashboard to analyze Eurostat data on Italy’s tourism landscape. 
+            The insights were highly unexpected, offering a fascinating look at how modern travelers experience la dolce vita.</p>
         <p>
         <a href="italy-tourism-dashboard.html">Open the Italian Dashboard</a>
       </p>
@@ -371,11 +372,55 @@
         </div>
         <figure id="Location17"></figure>
       </section>
+    </article>
 
+     <!-- ===================== CC9 ===================== -->
+
+     <article class="challenge" id="cc9">
+      <header class="challenge-head">
+        <h2><span class="cc">CC9</span>Interactive charts</h2>
+        <p>Produce two charts that include interactivity</p>
+      </header>
+      <section class="piece">
+        <div class="chart-description">
+          <h3>Measuring the invisible: Lupus, stigma, and the case for policy reform</h3>
+          <p><strong>Living with Lupus means fighting a daily battle that no one else can see</strong>. From the outside, someone with lupus can look completely healthy, smiling, working, and showing up, while their immune system is silently attacking their own body, causing crushing fatigue, chronic pain, and internal inflammation.
+             Since these symptoms are invisible, people with Lupus are too often met with doubt, dismissal, or the unfair assumption that they are exaggerating. Having to constantly prove that you are sick when you are already fighting to get through the day is deeply isolating.</p>
+          <p>It is time to change how we view and support invisible illnesses, both as compassionate human beings and as a society. Empathy starts with listening and believing someone when they say they are unwell, even if they "look fine." 
+             At the same time, our workplaces, healthcare systems, and disability policies must evolve to recognize the unpredictable, fluctuating nature of Lupus.</p>
+          <p>Raising awareness isn't just about understanding a medical diagnosis; it is about ensuring that people living with autoimmune diseases are met with dignity and meaningful support.</p>
+          <p><strong>Disclaimer:</strong> Individual patient data is not publicly available because of privacy protections. The charts use published aggregated figures in academic papers and reports. These are survey responses from self-selected Italian participants, not estimates across the Italian population.</p>
+          <p><strong>Reflection:</strong> Putting this together made me realize how scarce data really is. Perhaps, making more of it accessible, respecting the necessary safeguards, could be key to raising real awareness.</p>
+          <p><strong>Data sources:</strong>
+          <a href="https://www.lupus-europe.org/wp-content/uploads/2025/11/SKS2024-ITALY.pdf">Lupus Europe Swiss Knife Survey 2024</a> (Italy, 442 respondents);
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12693608/">PaLESiamoci survey</a> (Italy, 151 respondents, GSK-funded); 
+          <a href="https://www.mdpi.com/2077-0383/14/17/6197">LUNET registry protocol</a>.
+        </p>
+        </div>
+
+        <section class="piece">
+        <div class="chart-description">
+          <h3>Section 1: The invisible burden</h3>
+          <p>This graph shows which symptoms Italian respondents live with, how much they limit life, what worries them most, and what they feel is overlooked.
+            Fatigue stands out: 79.3% of respondents experience it regularly and 50.2% say it most stops them living fully.
+          </p>
+        </div>
+        <figure id="Location18"></figure>
+        </section>
+
+        <section class="piece">
+        <div class="chart-description">
+          <h3>Section 2: From patient needs to policy questions</h3>
+          <p>This chart compares eight key needs raised by Italian patients against what existing policy and research sources actually track. 
+             Since existing data measures patient need rather than real-world provision, the true gap in support remains unmeasured.
+          </p>
+        </div>
+        <figure id="Location19"></figure>
+      </section>
     </article>
 
     <!-- ==========================================================
-         CC7 to CC11: ready for your next challenges.
+         CC10 to CC11: ready for your next challenges.
 
          For each one:
            1. Replace "Challenge N" and the text with your own.
@@ -389,20 +434,6 @@
          <section class="piece">...</section> block and give its
          <figure> the next free number (Location20, Location21...).
          ========================================================== -->
-
-    <article class="challenge upcoming" id="cc9">
-      <header class="challenge-head">
-        <h2><span class="cc">CC9</span>Challenge 9</h2>
-        <p>One line describing this challenge</p>
-      </header>
-      <section class="piece">
-        <div class="chart-description">
-          <h3>Section 1: Title of your chart</h3>
-          <p>What this chart shows.</p>
-        </div>
-        <figure id="Location17" class="pending"></figure>
-      </section>
-    </article>
 
     <article class="challenge upcoming" id="cc10">
       <header class="challenge-head">
@@ -440,10 +471,10 @@
 <footer id="footer" class="footer">
   <div>&copy; 2026 Donnatella Bove Parra</div>
 
-  <!-- TODO: replace # with your real profile addresses -->
+  <!-- Footer -->
   <div class="footer-links">
-    <a href="#">GitHub</a>
-    <a href="#">LinkedIn</a>
+    <a href="https://github.com/donnaboveparra">GitHub</a>
+    <a href="https://www.linkedin.com/in/donnatella-bove-parra/">LinkedIn</a>
   </div>
 </footer>
 
@@ -516,16 +547,19 @@ vegaEmbed('#Location16', figure_16_spec);
 let figure_17_spec = "cheeseburger_price_points.json";
 vegaEmbed('#Location17', figure_17_spec);
 
-/* ---------- CC8 to CC11: uncomment and add your file name ----------
-
-let figure_18_spec = "your-cc9-chart.json";
+let figure_18_spec = "lupus-chart-1.json";
 vegaEmbed('#Location18', figure_18_spec);
 
-let figure_19_spec = "your-cc10-chart.json";
+let figure_19_spec = "lupus-chart-2.json";
 vegaEmbed('#Location19', figure_19_spec);
 
-let figure_20_spec = "your-cc11-chart.json";
-vegaEmbed('#Location20', figure_20_spec);
+/* ---------- CC10 to CC11 ----------
+
+let figure_21_spec = "your-cc10-chart.json";
+vegaEmbed('#Location21', figure_21_spec);
+
+let figure_22_spec = "your-cc11-chart.json";
+vegaEmbed('#Location22', figure_22_spec);
 
 ---------------------------------------------------------------------- */
 
